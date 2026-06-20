@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>もらえるお金ナビ活用術！年間10万円以上得する「賢い使い方」完全ガイド｜もらえるお金ナビ</title>
+<meta name="description" content="もらえるお金ナビの全機能を使いこなして年間10万円以上の補助金を確実にゲットする方法。エリア検索・条件絞り込み・移住特集・アラート機能の賢い使い方を完全解説。">
+<meta name="keywords" content="もらえるお金ナビ 使い方,補助金 検索 アプリ,補助金 年間10万円,移住支援金 検索,補助金 活用術">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) --><!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.app-hero{background:linear-gradient(135deg,#065f46,#047857);border-radius:20px;padding:28px;margin:28px 0;text-align:center;}
+.app-hero-label{font-size:12px;color:rgba(255,255,255,.65);font-weight:700;margin-bottom:8px;}
+.app-hero-num{font-size:clamp(40px,9vw,62px);font-weight:900;color:#6ee7b7;line-height:1.1;}
+.app-hero-unit{font-size:17px;font-weight:900;color:#fff;margin-top:6px;}
+.app-hero-sub{font-size:13px;color:rgba(255,255,255,.8);margin-top:12px;line-height:1.7;}
+
+/* 機能カード5選 */
+.func-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:20px 0;}
+.func-card{border-radius:14px;padding:20px;text-align:center;border:2px solid;}
+.func-card.f1{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;}
+.func-card.f2{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;}
+.func-card.f3{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#fcd34d;}
+.func-card.f4{background:linear-gradient(135deg,#fce7f3,#fbcfe8);border-color:#f9a8d4;}
+.func-card.f5{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border-color:#c4b5fd;}
+.func-card-emoji{font-size:32px;margin-bottom:10px;}
+.func-card-title{font-size:14px;font-weight:900;color:#111827;margin-bottom:6px;}
+.func-card-desc{font-size:12px;color:#4b5563;line-height:1.6;}
+
+/* 使い方ステップ */
+.usage-steps{margin:20px 0;}
+.usage-step{display:flex;gap:16px;position:relative;margin-bottom:0;}
+.usage-step:not(:last-child)::after{content:'';position:absolute;left:19px;top:40px;bottom:0;width:2px;background:linear-gradient(#6ee7b7,#93c5fd);}
+.usage-step-num{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#059669,#047857);color:#fff;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.usage-step-body{padding-bottom:28px;}
+.usage-step-title{font-weight:900;font-size:15px;color:#111827;margin-bottom:4px;}
+.usage-step-desc{font-size:13px;color:#4b5563;line-height:1.7;}
+.usage-step-desc strong{color:#059669;}
+
+/* スクリーン風モック */
+.screen-mock{background:#f9fafb;border:2px solid #e5e7eb;border-radius:16px;padding:20px;margin:20px 0;}
+.screen-mock-title{font-size:12px;font-weight:900;color:#6b7280;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.screen-mock-title::before{content:'📱';font-size:16px;}
+.search-bar-mock{display:flex;gap:8px;margin-bottom:12px;}
+.mock-select{flex:1;background:#fff;border:1px solid #d1d5db;border-radius:8px;padding:8px 12px;font-size:13px;color:#374151;font-family:inherit;}
+.mock-btn{background:linear-gradient(135deg,#059669,#047857);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:900;font-family:inherit;cursor:pointer;}
+.mock-result{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:12px 14px;margin-bottom:8px;}
+.mock-result-cat{font-size:10px;font-weight:900;color:#059669;background:#d1fae5;padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:4px;}
+.mock-result-title{font-size:13px;font-weight:700;color:#111827;margin-bottom:2px;}
+.mock-result-amount{font-size:14px;font-weight:900;color:#dc2626;}
+
+/* 移住マップカード */
+.ijyu-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:20px 0;}
+.ijyu-card{border-radius:12px;padding:16px;border:1px solid #e5e7eb;background:#fff;}
+.ijyu-card-pref{font-size:12px;color:#6b7280;margin-bottom:4px;}
+.ijyu-card-city{font-size:14px;font-weight:900;color:#111827;margin-bottom:4px;}
+.ijyu-card-amount{font-size:16px;font-weight:900;color:#dc2626;}
+.ijyu-card-cat{font-size:11px;color:#4b5563;margin-top:4px;}
+
+/* ロードマップ */
+.roadmap{margin:20px 0;}
+.roadmap-month{display:flex;gap:16px;margin-bottom:0;position:relative;}
+.roadmap-month:not(:last-child)::after{content:'';position:absolute;left:32px;top:48px;bottom:0;width:2px;background:#d1fae5;}
+.roadmap-badge{width:64px;height:40px;border-radius:10px;background:linear-gradient(135deg,#059669,#047857);color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px;}
+.roadmap-body{padding-bottom:28px;flex:1;}
+.roadmap-title{font-size:15px;font-weight:900;color:#111827;margin-bottom:4px;}
+.roadmap-desc{font-size:13px;color:#4b5563;line-height:1.6;}
+.roadmap-amount{font-size:13px;font-weight:700;color:#dc2626;margin-top:4px;}
+
+/* スポンサー機能 */
+.sponsor-box{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid #fcd34d;border-radius:16px;padding:22px;margin:20px 0;}
+.sponsor-box-title{font-size:15px;font-weight:900;color:#78350f;margin-bottom:12px;}
+.sponsor-list{list-style:none;padding:0;margin:0;}
+.sponsor-list li{font-size:13px;color:#374151;padding:8px 0;border-bottom:1px dashed #fde68a;display:flex;gap:10px;align-items:flex-start;line-height:1.6;}
+.sponsor-list li:last-child{border-bottom:none;}
+.sponsor-list li::before{content:'⭐';flex-shrink:0;}
+
+.merit-box{background:#f0fdf4;border:2px solid #86efac;border-radius:14px;padding:18px 20px;margin:20px 0;}
+.merit-box-title{font-weight:900;font-size:15px;color:#14532d;margin-bottom:8px;}
+.merit-box p{font-size:13px;color:#14532d;line-height:1.7;margin:0;}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner"><a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a><a href="/" class="nav-cta">▶ 無料で補助金を検索</a></div></nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">💡 アプリ活用</span>
+    <h1>もらえるお金ナビ活用術！<br>年間10万円以上得する「賢い使い方」完全ガイド</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 アプリ活用ガイド</span>
+      <span>⏱ 読了約8分</span>
+      <span>💡 保存版・全機能解説</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「補助金があるのは知っているけど、どこで調べればいいかわからない」</p>
+<p>「自分が受け取れるかどうかの判断が難しい」</p>
+<p>そんな悩みを解決するために作ったのが「もらえるお金ナビ」です。このアプリを使いこなせば、<strong>年間10万円以上の補助金を確実にゲット</strong>できます。</p>
+
+<div class="app-hero">
+  <div class="app-hero-label">もらえるお金ナビのデータベース規模</div>
+  <div class="app-hero-num">1,308件</div>
+  <div class="app-hero-unit">全国278市区の補助金を収録</div>
+  <div class="app-hero-sub">住宅・子育て・移住・省エネ・医療・教育・起業まで<br>あなたに関係する補助金が必ず見つかります</div>
+</div>
+
+<p>このガイドでは「もらえるお金ナビ」のすべての機能を使いこなす方法を、ステップ形式でお伝えします。</p>
+
+<h2>① もらえるお金ナビでできること5選（機能一覧）</h2>
+
+<div class="func-cards">
+  <div class="func-card f1">
+    <div class="func-card-emoji">🗺</div>
+    <div class="func-card-title">エリア検索</div>
+    <div class="func-card-desc">都道府県・市区を選択するだけで、その地域の補助金が一覧表示される</div>
+  </div>
+  <div class="func-card f2">
+    <div class="func-card-emoji">🔍</div>
+    <div class="func-card-title">カテゴリ絞り込み</div>
+    <div class="func-card-desc">子育て・住宅・移住・省エネ・医療など9カテゴリから目的別に検索できる</div>
+  </div>
+  <div class="func-card f3">
+    <div class="func-card-emoji">🚚</div>
+    <div class="func-card-title">移住特集</div>
+    <div class="func-card-desc">今住んでいない地域の移住支援金を横断検索。引越し前の下調べに最適</div>
+  </div>
+  <div class="func-card f4">
+    <div class="func-card-emoji">📊</div>
+    <div class="func-card-title">金額ランキング</div>
+    <div class="func-card-desc">高額な補助金順に並べ替え可能。「どこへ引越せば一番もらえるか」もわかる</div>
+  </div>
+  <div class="func-card f5">
+    <div class="func-card-emoji">🤝</div>
+    <div class="func-card-title">地域業者マッチング</div>
+    <div class="func-card-desc">スポンサー企業（リフォーム業者・不動産など）と補助金情報が連動して表示される</div>
+  </div>
+</div>
+
+<p>すべての機能が<strong>無料</strong>で使えます。会員登録も不要、スマホブラウザから即アクセス可能です。</p>
+
+<h2>② エリア検索の使い方（市区選択→条件絞り込み→結果一覧の手順）</h2>
+
+<p>最もよく使われる「エリア検索」の手順を詳しく説明します。3ステップで完了します。</p>
+
+<div class="usage-steps">
+  <div class="usage-step">
+    <div class="usage-step-num">1</div>
+    <div class="usage-step-body">
+      <div class="usage-step-title">都道府県・市区を選択する</div>
+      <div class="usage-step-desc">トップページのドロップダウンから都道府県を選択。続いて市区を選ぶと、<strong>その地域の補助金が全件表示</strong>されます。全国278市区に対応しているため、ほとんどの方のお住まいがカバーされています。</div>
+    </div>
+  </div>
+  <div class="usage-step">
+    <div class="usage-step-num">2</div>
+    <div class="usage-step-body">
+      <div class="usage-step-title">カテゴリで絞り込む</div>
+      <div class="usage-step-desc">検索結果の上部にある「全て」「子育て」「住宅」「移住」「省エネ」「医療」「起業」などのタブで絞り込みます。<strong>今の自分のライフステージに合ったカテゴリを選ぶ</strong>だけで、関係する補助金だけが表示されます。</div>
+    </div>
+  </div>
+  <div class="usage-step">
+    <div class="usage-step-num">3</div>
+    <div class="usage-step-body">
+      <div class="usage-step-title">詳細を確認して申請ページへ</div>
+      <div class="usage-step-desc">各補助金のカードをタップすると、<strong>制度の概要・対象者・申請窓口・必要書類・公式リンク</strong>が表示されます。そのまま自治体の申請ページへアクセスできるので、手間が最小限です。</div>
+    </div>
+  </div>
+</div>
+
+<div class="screen-mock">
+  <div class="screen-mock-title">もらえるお金ナビの検索画面イメージ</div>
+  <div class="search-bar-mock">
+    <select class="mock-select"><option>東京都 → 八王子市</option></select>
+    <button class="mock-btn">検索</button>
+  </div>
+  <div style="font-size:12px;color:#6b7280;margin-bottom:10px;">八王子市で見つかった補助金：47件</div>
+  <div class="mock-result">
+    <div class="mock-result-cat">🏠 住宅</div>
+    <div class="mock-result-title">省エネ住宅リフォーム補助金（八王子市）</div>
+    <div class="mock-result-amount">最大 <strong>30万円</strong></div>
+  </div>
+  <div class="mock-result">
+    <div class="mock-result-cat">👶 子育て</div>
+    <div class="mock-result-title">こども医療費助成（八王子市・18歳まで）</div>
+    <div class="mock-result-amount">18年間 実質 <strong>無料</strong></div>
+  </div>
+  <div class="mock-result">
+    <div class="mock-result-cat">🚚 移住</div>
+    <div class="mock-result-title">移住・定住促進補助（家賃補助）</div>
+    <div class="mock-result-amount">月 <strong>3万円</strong> × 最長2年</div>
+  </div>
+</div>
+
+<h2>③ 移住支援金特集の活用法（今住んでいない場所の補助金を探す方法）</h2>
+
+<p>「地方移住を検討している」「テレワークで地方に住みたい」という方に特に役立つのが「移住支援金特集」です。</p>
+
+<div class="ijyu-cards">
+  <div class="ijyu-card">
+    <div class="ijyu-card-pref">長野県</div>
+    <div class="ijyu-card-city">飯山市</div>
+    <div class="ijyu-card-amount">最大100万円</div>
+    <div class="ijyu-card-cat">移住支援＋子ども加算</div>
+  </div>
+  <div class="ijyu-card">
+    <div class="ijyu-card-pref">徳島県</div>
+    <div class="ijyu-card-city">三好市</div>
+    <div class="ijyu-card-amount">最大100万円</div>
+    <div class="ijyu-card-cat">移住支援金（テレワーク）</div>
+  </div>
+  <div class="ijyu-card">
+    <div class="ijyu-card-pref">鳥取県</div>
+    <div class="ijyu-card-city">鳥取市</div>
+    <div class="ijyu-card-amount">最大100万円</div>
+    <div class="ijyu-card-cat">移住就業・起業支援</div>
+  </div>
+  <div class="ijyu-card">
+    <div class="ijyu-card-pref">福井県</div>
+    <div class="ijyu-card-city">越前市</div>
+    <div class="ijyu-card-amount">最大60万円</div>
+    <div class="ijyu-card-cat">移住＋子育て支援</div>
+  </div>
+  <div class="ijyu-card">
+    <div class="ijyu-card-pref">北海道</div>
+    <div class="ijyu-card-city">富良野市</div>
+    <div class="ijyu-card-amount">最大100万円</div>
+    <div class="ijyu-card-cat">移住支援＋起業補助</div>
+  </div>
+  <div class="ijyu-card">
+    <div class="ijyu-card-pref">沖縄県</div>
+    <div class="ijyu-card-city">うるま市</div>
+    <div class="ijyu-card-amount">最大50万円</div>
+    <div class="ijyu-card-cat">移住定住促進補助</div>
+  </div>
+</div>
+
+<p>移住支援金は<strong>「移住先の市区」の補助金</strong>なので、今住んでいる地域では検索できません。「もらえるお金ナビ」なら移住候補地を複数チェックして比較できるのが大きな強みです。</p>
+
+<p>活用のコツは<strong>「移住支援＋起業支援＋結婚支援」のコンボ</strong>を狙うこと。移住先で起業や結婚も絡めると、合計で200万円以上の支援を受けられる自治体も存在します。</p>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2>④ 補助金を年間10万円以上ゲットするための活用ロードマップ</h2>
+
+<p>「1度検索して終わり」ではなく、<strong>年間を通じた戦略的な活用</strong>が10万円超えのカギです。</p>
+
+<div class="roadmap">
+  <div class="roadmap-month">
+    <div class="roadmap-badge">4月</div>
+    <div class="roadmap-body">
+      <div class="roadmap-title">年度始めに「全件チェック」を実施</div>
+      <div class="roadmap-desc">4月は新年度スタートで多くの補助金が受付開始。エリア検索で全カテゴリを一気にチェックして「今年申請できるもの」をリストアップする。</div>
+      <div class="roadmap-amount">想定ゲット：省エネ補助・子育て給付金など 数万円〜</div>
+    </div>
+  </div>
+  <div class="roadmap-month">
+    <div class="roadmap-badge">5〜6月</div>
+    <div class="roadmap-body">
+      <div class="roadmap-title">住民税通知書が届いたら所得ラインを確認</div>
+      <div class="roadmap-desc">所得要件がある補助金の対象ライン確認。収入が減った年は「非課税世帯向け給付金」が受け取れる可能性も。補助金の受給要件を所得通知書で照合する。</div>
+      <div class="roadmap-amount">想定ゲット：非課税世帯給付金 最大10万円</div>
+    </div>
+  </div>
+  <div class="roadmap-month">
+    <div class="roadmap-badge">7〜8月</div>
+    <div class="roadmap-body">
+      <div class="roadmap-title">省エネ家電・夏の補助を駆け込み申請</div>
+      <div class="roadmap-desc">エアコン・冷蔵庫の省エネ補助は夏に申請が集中して予算切れになりやすい。7月以前に検索して早めに申請するのが正解。</div>
+      <div class="roadmap-amount">想定ゲット：省エネ家電補助 最大3〜5万円</div>
+    </div>
+  </div>
+  <div class="roadmap-month">
+    <div class="roadmap-badge">10〜12月</div>
+    <div class="roadmap-body">
+      <div class="roadmap-title">ふるさと納税・年末調整の準備チェック</div>
+      <div class="roadmap-desc">ふるさと納税の控除上限額をシミュレーションして残枠活用。年末調整書類の提出忘れがないか最終確認。移住を検討中なら年内に情報収集。</div>
+      <div class="roadmap-amount">想定ゲット：ふるさと納税控除 数万円〜</div>
+    </div>
+  </div>
+  <div class="roadmap-month">
+    <div class="roadmap-badge">1〜3月</div>
+    <div class="roadmap-body">
+      <div class="roadmap-title">確定申告で医療費控除・住宅ローン控除を確実に申請</div>
+      <div class="roadmap-desc">年間10万円を超えた医療費は確定申告で還付。住宅ローン控除は初年度のみ確定申告が必要（2年目以降は年末調整）。e-Taxなら自宅から完結。</div>
+      <div class="roadmap-amount">想定ゲット：医療費控除・住宅ローン控除 数万〜数十万円</div>
+    </div>
+  </div>
+</div>
+
+<div class="merit-box">
+  <div class="merit-box-title">✅ 年間10万円超えは十分リアルな目標</div>
+  <p>省エネ補助<strong>3万円</strong>＋医療費控除<strong>2万円還付</strong>＋児童手当<strong>月1万円</strong>＋ふるさと納税控除<strong>3万円相当</strong>＋自治体給付金<strong>2万円</strong>…こうして合計すると、意識して動くだけで年間<strong>10万円以上</strong>は決して難しくありません。</p>
+</div>
+
+<h2>⑤ スポンサー活用・地域業者マッチング機能の使い方</h2>
+
+<p>「もらえるお金ナビ」には、補助金情報に連動した<strong>地域の専門業者マッチング</strong>機能があります。</p>
+
+<div class="sponsor-box">
+  <div class="sponsor-box-title">🤝 地域業者マッチング機能でできること</div>
+  <ul class="sponsor-list">
+    <li>省エネリフォームの補助金と地域のリフォーム業者が連動表示。補助金を活用した工事の相談がそのままできる</li>
+    <li>移住支援金のある市区では、地元不動産業者や就職支援窓口の情報が同時に確認できる</li>
+    <li>結婚・子育て系の補助金ページでは、地域の産院・保育園・子育て支援センターとの連動情報も提供</li>
+    <li>起業・創業系の補助金では、地元商工会・中小企業支援センターのリンクと一緒に表示</li>
+    <li>スポンサー企業は地域ごとに「1業種1社」限定のため、信頼できる専門業者が選定されている</li>
+  </ul>
+</div>
+
+<p>補助金は「申請するだけ」ではなく、<strong>実際に使って初めて意味が生まれます</strong>。地域の業者と連携することで「補助金を活用したリフォーム」「補助金を活用した移住」を実現しやすくなります。</p>
+
+<p>「もらえるお金ナビ」は今後もデータを随時更新し、より多くの市区・より多くの制度をカバーしていきます。ブックマークして定期的にチェックするのが、補助金の取りこぼしをゼロにする最善の方法です。</p>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div>
+</div>
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え！もらえるお金大全</div></a><a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？まとめ</div></a><a href="098-calendar-2026.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">📅</div><div class="related-body">2026年もらえるお金カレンダー</div></a><a href="064-siyakusyo-kakure.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#ecfdf5,#d1fae5);">🏛</div><div class="related-body">市役所の隠れ補助金の見つけ方</div></a></div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

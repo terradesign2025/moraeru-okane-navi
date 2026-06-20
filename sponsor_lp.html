@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>スポンサー募集 | もらえるお金ナビ 補助金連動広告</title>
+  <meta name="description" content="もらえるお金ナビのスポンサープラン。関東79市区・486件以上の補助金を調べているユーザーに、1市区1枠独占でPRバナーを表示。月¥19,800〜。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#2563eb',
+              'blue-dark': '#1d4ed8',
+              'blue-light': '#eff6ff',
+              green: '#059669',
+              'green-dark': '#047857',
+              'green-light': '#ecfdf5',
+            }
+          },
+          fontFamily: {
+            sans: ['Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif; }
+    .gradient-hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 40%, #2563eb 70%, #0f766e 100%);
+    }
+    .pulse-ring {
+      animation: pulse-ring 2s ease-out infinite;
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.9); opacity: 1; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+    .badge-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s ease; }
+    .plan-card:hover { transform: translateY(-4px); }
+    .plan-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #success-message { display: none; }
+    .city-grid { columns: 2; column-gap: 0.5rem; }
+    @media (min-width: 640px) { .city-grid { columns: 3; } }
+    @media (min-width: 768px) { .city-grid { columns: 4; } }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- ============================================================
+     HEADER NAV
+============================================================ -->
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center">
+        <span class="text-white text-xs font-bold">¥</span>
+      </div>
+      <div>
+        <div class="text-sm font-bold text-brand-blue leading-none">もらえるお金ナビ</div>
+        <div class="text-xs text-gray-500 leading-none">スポンサー募集</div>
+      </div>
+    </div>
+    <a href="#form-section"
+       class="bg-brand-green hover:bg-brand-green-dark text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
+      スポンサーに申込む
+    </a>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     SECTION 1: HERO / FIRST VIEW
+============================================================ -->
+<section class="gradient-hero text-white py-14 px-4 overflow-hidden relative">
+  <!-- 装飾バブル -->
+  <div class="absolute top-4 right-4 w-40 h-40 bg-white/5 rounded-full"></div>
+  <div class="absolute bottom-0 left-0 w-56 h-56 bg-white/5 rounded-full -translate-x-1/2 translate-y-1/2"></div>
+
+  <div class="max-w-5xl mx-auto relative">
+    <!-- タグライン -->
+    <div class="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 text-xs font-semibold mb-5">
+      <span class="w-2 h-2 bg-yellow-300 rounded-full"></span>
+      関東79市区 対応・1市区1枠独占
+    </div>
+
+    <h1 class="text-2xl sm:text-3xl font-black leading-snug mb-4">
+      補助金を調べている人に<br>
+      <span class="text-yellow-300">あなたの会社を直接表示。</span>
+    </h1>
+    <p class="text-sm sm:text-base text-blue-100 mb-8 leading-relaxed max-w-lg">
+      「もらえるお金ナビ」は、関東圏の補助金・助成金を無料で検索できるスマホアプリです。
+      補助金を探しているユーザー＝今まさに費用を検討しているユーザーに、
+      スポンサーとして直接リーチできます。
+    </p>
+
+    <!-- ========= アプリ画面モックUI ========= -->
+    <div class="flex flex-col sm:flex-row gap-6 items-start justify-center">
+
+      <!-- スマホ本体モック -->
+      <div class="mx-auto sm:mx-0 flex-shrink-0 w-56">
+        <div class="bg-gray-900 rounded-3xl p-2 shadow-2xl">
+          <div class="bg-white rounded-2xl overflow-hidden">
+            <!-- ステータスバー -->
+            <div class="bg-gray-100 px-4 py-1 flex justify-between items-center">
+              <span class="text-xs text-gray-500 font-medium">9:41</span>
+              <div class="flex gap-1 items-center">
+                <div class="w-3 h-2 border border-gray-400 rounded-sm relative">
+                  <div class="absolute left-0 top-0 bottom-0 w-2/3 bg-gray-500 rounded-sm"></div>
+                </div>
+              </div>
+            </div>
+            <!-- アプリヘッダー -->
+            <div class="bg-brand-blue px-3 py-2">
+              <div class="text-white text-xs font-bold">もらえるお金ナビ</div>
+              <div class="text-blue-200 text-xs">八王子市の補助金一覧</div>
+            </div>
+            <!-- 補助金リスト -->
+            <div class="px-2 py-2 space-y-1">
+              <div class="bg-blue-50 rounded-lg p-2">
+                <div class="text-xs font-semibold text-gray-800">省エネ家電買替補助</div>
+                <div class="text-xs text-brand-blue font-bold">最大 3万円</div>
+              </div>
+              <div class="bg-blue-50 rounded-lg p-2">
+                <div class="text-xs font-semibold text-gray-800">居住環境整備補助金</div>
+                <div class="text-xs text-brand-blue font-bold">最大 100万円</div>
+              </div>
+              <!-- ★PRバナー（スポンサー枠） -->
+              <div class="relative border-2 border-yellow-400 rounded-lg p-2 bg-yellow-50">
+                <div class="absolute -top-2 left-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-0.5 rounded-full leading-none">
+                  PR
+                </div>
+                <div class="flex items-center gap-2 mt-1">
+                  <div class="w-8 h-8 bg-brand-green rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span class="text-white text-xs font-bold">Co.</span>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-gray-800">◯◯リフォーム</div>
+                    <div class="text-xs text-gray-600">補助金申請もお任せください</div>
+                  </div>
+                </div>
+                <div class="mt-1.5 bg-brand-green text-white text-center text-xs font-bold py-1 rounded-md">
+                  無料相談はこちら →
+                </div>
+              </div>
+              <div class="bg-blue-50 rounded-lg p-2 opacity-60">
+                <div class="text-xs font-semibold text-gray-800">子育て支援給付金</div>
+                <div class="text-xs text-brand-blue font-bold">2万円/人</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center text-white/60 text-xs mt-2">↑ 実際の表示イメージ</div>
+      </div>
+
+      <!-- 説明テキスト -->
+      <div class="flex-1 space-y-4 sm:pt-4">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="text-gray-900 text-sm font-black">1</span>
+          </div>
+          <div>
+            <div class="font-bold text-sm">ユーザーが市区を選んで補助金を検索</div>
+            <div class="text-blue-200 text-xs mt-0.5">「八王子市で使える補助金は？」と探す</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="text-gray-900 text-sm font-black">2</span>
+          </div>
+          <div>
+            <div class="font-bold text-sm">スポンサーのPRバナーが常に表示</div>
+            <div class="text-blue-200 text-xs mt-0.5">検索結果に1枠独占でリーチ</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="text-gray-900 text-sm font-black">3</span>
+          </div>
+          <div>
+            <div class="font-bold text-sm">ボタンから問合せ・成約へ</div>
+            <div class="text-blue-200 text-xs mt-0.5">購買意欲が高い状態で直接コンタクト</div>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <a href="#form-section"
+             class="inline-block bg-brand-green hover:bg-brand-green-dark text-white font-bold text-sm px-8 py-3 rounded-xl transition-colors shadow-lg">
+            スポンサーに申込む（月¥19,800〜）
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 数字バッジ -->
+    <div class="mt-10 grid grid-cols-3 gap-3 max-w-lg mx-auto sm:mx-0">
+      <div class="text-center bg-white/15 rounded-xl py-3">
+        <div class="text-xl font-black text-yellow-300">79</div>
+        <div class="text-xs text-blue-200 mt-0.5">対応市区</div>
+      </div>
+      <div class="text-center bg-white/15 rounded-xl py-3">
+        <div class="text-xl font-black text-yellow-300">486<span class="text-sm">+</span></div>
+        <div class="text-xs text-blue-200 mt-0.5">補助金件数</div>
+      </div>
+      <div class="text-center bg-white/15 rounded-xl py-3">
+        <div class="text-xl font-black text-yellow-300">1枠</div>
+        <div class="text-xs text-blue-200 mt-0.5">1市区独占</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 2: なぜ今、補助金連動広告か？
+============================================================ -->
+<section class="py-14 px-4 bg-white">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="inline-block bg-brand-blue-light text-brand-blue text-xs font-bold px-3 py-1 rounded-full mb-3">
+        広告効果の理由
+      </span>
+      <h2 class="text-xl sm:text-2xl font-black text-gray-900">
+        なぜ今、補助金連動広告なのか？
+      </h2>
+      <p class="text-sm text-gray-600 mt-3 max-w-xl mx-auto">
+        補助金を検索するユーザーは、すでに「費用をかけて何かをしたい」と考えています。
+        購買意欲が最も高いタイミングに、あなたの会社を表示できます。
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-5">
+      <!-- カード1 -->
+      <div class="bg-brand-blue-light rounded-2xl p-5">
+        <div class="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+        <div class="font-bold text-gray-900 text-sm mb-2">意図ある検索＝高い購買温度</div>
+        <p class="text-xs text-gray-600 leading-relaxed">
+          「省エネ補助金 八王子」と検索している人は、すでにリフォームや家電購入を検討中。
+          他の広告媒体より遥かに高い購買意欲のユーザーにリーチできます。
+        </p>
+      </div>
+
+      <!-- カード2 -->
+      <div class="bg-brand-green-light rounded-2xl p-5">
+        <div class="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div class="font-bold text-gray-900 text-sm mb-2">エリア密着で競合ゼロ</div>
+        <p class="text-xs text-gray-600 leading-relaxed">
+          1市区1枠の独占制なので、あなたが契約した市区では競合他社は表示されません。
+          地域密着ビジネスの方に特に有効です。
+        </p>
+      </div>
+
+      <!-- カード3 -->
+      <div class="bg-yellow-50 rounded-2xl p-5">
+        <div class="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div class="font-bold text-gray-900 text-sm mb-2">費用対効果が明確</div>
+        <p class="text-xs text-gray-600 leading-relaxed">
+          月¥19,800〜の定額制。クリック単価課金ではなく月額固定なので、
+          予算管理がしやすく、費用対効果を計算しやすい構造です。
+        </p>
+      </div>
+    </div>
+
+    <!-- 補足強調 -->
+    <div class="mt-8 bg-gray-900 text-white rounded-2xl p-5 flex items-start gap-4">
+      <div class="w-10 h-10 bg-yellow-400 rounded-xl flex items-center justify-center flex-shrink-0">
+        <span class="text-gray-900 font-black text-lg">!</span>
+      </div>
+      <div>
+        <div class="font-bold text-sm mb-1">補助金調査中のユーザー＝あなたの見込み客</div>
+        <p class="text-xs text-gray-300 leading-relaxed">
+          「居住環境整備補助金（最大100万円）」を調べているユーザーは、
+          高確率でリフォーム業者を探しています。
+          「子育て給付金」を調べている親御さんは、育児用品や学習サービスを検討中です。
+          補助金の種類とスポンサーの業種を合わせることで、驚くほど高い反応率が期待できます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 3: 仕組み説明（フロー）
+============================================================ -->
+<section class="py-14 px-4 bg-gray-50">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="inline-block bg-brand-blue-light text-brand-blue text-xs font-bold px-3 py-1 rounded-full mb-3">
+        広告の仕組み
+      </span>
+      <h2 class="text-xl sm:text-2xl font-black text-gray-900">
+        検索から成約までの流れ
+      </h2>
+    </div>
+
+    <!-- フロー -->
+    <div class="space-y-4">
+      <!-- Step1 -->
+      <div class="bg-white rounded-2xl p-5 flex items-start gap-4 shadow-sm">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-brand-blue rounded-xl flex items-center justify-center">
+            <span class="text-white font-black text-sm">01</span>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="font-bold text-gray-900 text-sm">ユーザーがアプリで市区を選んで補助金を検索</div>
+          <p class="text-xs text-gray-500 mt-1">「八王子市」「新宿区」など自分が住む市区を選択。
+          住まい・子育て・省エネなどカテゴリで絞り込みながら補助金を探します。</p>
+        </div>
+        <div class="flex-shrink-0 w-12 text-right">
+          <span class="text-2xl">📱</span>
+        </div>
+      </div>
+
+      <!-- 矢印 -->
+      <div class="flex justify-center">
+        <div class="w-0.5 h-6 bg-brand-blue/30"></div>
+      </div>
+
+      <!-- Step2 -->
+      <div class="bg-white rounded-2xl p-5 flex items-start gap-4 shadow-sm border-2 border-yellow-400">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-yellow-400 rounded-xl flex items-center justify-center">
+            <span class="text-gray-900 font-black text-sm">02</span>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="font-bold text-gray-900 text-sm flex items-center gap-2">
+            スポンサーのPRバナーが常時表示
+            <span class="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-0.5 rounded-full">独占</span>
+          </div>
+          <p class="text-xs text-gray-500 mt-1">検索結果ページにスポンサーのPRバナーが固定表示されます。
+          会社名・キャッチコピー・ボタン（外部リンク）を自由に設定できます。
+          その市区でのスポンサーはあなた1社のみです。</p>
+        </div>
+        <div class="flex-shrink-0 w-12 text-right">
+          <span class="text-2xl">🏷️</span>
+        </div>
+      </div>
+
+      <!-- 矢印 -->
+      <div class="flex justify-center">
+        <div class="w-0.5 h-6 bg-brand-blue/30"></div>
+      </div>
+
+      <!-- Step3 -->
+      <div class="bg-white rounded-2xl p-5 flex items-start gap-4 shadow-sm">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-brand-green rounded-xl flex items-center justify-center">
+            <span class="text-white font-black text-sm">03</span>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="font-bold text-gray-900 text-sm">ユーザーがボタンをタップして問合せ</div>
+          <p class="text-xs text-gray-500 mt-1">「無料相談はこちら」「詳しく見る」など、
+          スポンサーが設定したCTAボタンをタップ。あなたのサイトや問合せページへ誘導されます。</p>
+        </div>
+        <div class="flex-shrink-0 w-12 text-right">
+          <span class="text-2xl">📞</span>
+        </div>
+      </div>
+
+      <!-- 矢印 -->
+      <div class="flex justify-center">
+        <div class="w-0.5 h-6 bg-brand-green/30"></div>
+      </div>
+
+      <!-- Step4 -->
+      <div class="bg-brand-green-light rounded-2xl p-5 flex items-start gap-4 border border-brand-green/30">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-brand-green rounded-xl flex items-center justify-center">
+            <span class="text-white font-black text-sm">04</span>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="font-bold text-gray-900 text-sm">成約へ</div>
+          <p class="text-xs text-gray-600 mt-1">補助金申請という共通の関心事でつながったユーザーとの商談は、
+          信頼度が高く、成約率も高い傾向があります。</p>
+        </div>
+        <div class="flex-shrink-0 w-12 text-right">
+          <span class="text-2xl">🎯</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 相性のいい業種 -->
+    <div class="mt-10">
+      <div class="text-center text-sm font-bold text-gray-700 mb-4">スポンサーに向いている業種</div>
+      <div class="flex flex-wrap justify-center gap-2">
+        <span class="bg-white border border-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">🏠 リフォーム・外壁塗装</span>
+        <span class="bg-white border border-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">🌿 省エネ・太陽光・蓄電池</span>
+        <span class="bg-white border border-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">👶 保育・学童・習い事</span>
+        <span class="bg-white border border-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">🏥 不妊治療クリニック</span>
+        <span class="bg-white border border-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">🛋️ 家電・インテリア</span>
+        <span class="bg-white border border-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">🚗 カーディーラー・EV</span>
+        <span class="bg-white border border-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">🏢 行政書士・社労士</span>
+        <span class="bg-white border border-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">🔒 防犯・見守りサービス</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 4: 料金プラン
+============================================================ -->
+<section class="py-14 px-4 bg-white" id="plans">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="inline-block bg-brand-blue-light text-brand-blue text-xs font-bold px-3 py-1 rounded-full mb-3">
+        料金プラン
+      </span>
+      <h2 class="text-xl sm:text-2xl font-black text-gray-900">
+        3つのプランから選べます
+      </h2>
+      <p class="text-sm text-gray-500 mt-2">すべて月額制・1市区1枠独占・いつでも解約可能</p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-5">
+
+      <!-- スタンダード -->
+      <div class="plan-card bg-white border-2 border-gray-200 rounded-2xl p-6 shadow-sm">
+        <div class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">STANDARD</div>
+        <div class="text-gray-900 font-black text-3xl mb-1">¥19,800</div>
+        <div class="text-xs text-gray-500 mb-5">/月（税込）</div>
+        <div class="space-y-3 mb-6">
+          <div class="flex items-start gap-2 text-sm">
+            <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-gray-700">検索結果ページのPRバナー（1枠独占）</span>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-gray-700">会社名・キャッチコピー表示</span>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-gray-700">外部リンクボタン設置</span>
+          </div>
+        </div>
+        <a href="#form-section"
+           class="block w-full text-center bg-brand-green hover:bg-brand-green-dark text-white font-bold text-sm py-3 rounded-xl transition-colors">
+          このプランで申込む
+        </a>
+      </div>
+
+      <!-- プレミアム（人気） -->
+      <div class="plan-card bg-brand-blue rounded-2xl p-6 shadow-xl relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-black px-4 py-1 rounded-full">
+          人気 No.1
+        </div>
+        <div class="text-xs font-bold text-blue-200 uppercase tracking-wide mb-2">PREMIUM</div>
+        <div class="text-white font-black text-3xl mb-1">¥39,800</div>
+        <div class="text-xs text-blue-200 mb-5">/月（税込）</div>
+        <div class="space-y-3 mb-6">
+          <div class="flex items-start gap-2 text-sm">
+            <svg class="w-4 h-4 text-yellow-300 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-blue-100">スタンダードの全機能</span>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <svg class="w-4 h-4 text-yellow-300 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-blue-100">おすすめ業者3枠（スタッフ紹介スタイル）</span>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <svg class="w-4 h-4 text-yellow-300 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-blue-100">補助金連動の関連表示<br><span class="text-xs opacity-75">「この補助金と一緒に使われています」</span></span>
+          </div>
+        </div>
+        <a href="#form-section"
+           class="block w-full text-center bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-sm py-3 rounded-xl transition-colors">
+          このプランで申込む
+        </a>
+      </div>
+
+      <!-- プラチナ -->
+      <div class="plan-card bg-white border-2 border-gray-800 rounded-2xl p-6 shadow-sm relative">
+        <div class="absolute -top-3 left-4 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full">
+          最上位
+        </div>
+        <div class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">PLATINUM</div>
+        <div class="text-gray-900 font-black text-3xl mb-1">¥69,800</div>
+        <div class="text-xs text-gray-500 mb-5">/月（税込）</div>
+        <div class="space-y-3 mb-6">
+          <div class="flex items-start gap-2 text-sm">
+            <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-gray-700">プレミアムの全機能</span>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-gray-700">申請詳細ページ固定バナー</span>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-gray-700">月次レポート（クリック・流入数）</span>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <svg class="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-gray-700">連携コラム記事1本/月<br><span class="text-xs text-gray-500">補助金×自社サービス</span></span>
+          </div>
+        </div>
+        <a href="#form-section"
+           class="block w-full text-center bg-brand-green hover:bg-brand-green-dark text-white font-bold text-sm py-3 rounded-xl transition-colors">
+          このプランで申込む
+        </a>
+      </div>
+    </div>
+
+    <!-- プラン比較表 -->
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full text-xs text-center border-collapse">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="text-left px-3 py-2 font-bold text-gray-700 rounded-tl-lg">機能</th>
+            <th class="px-3 py-2 font-bold text-gray-700">スタンダード</th>
+            <th class="px-3 py-2 font-bold text-white bg-brand-blue">プレミアム</th>
+            <th class="px-3 py-2 font-bold text-gray-700 rounded-tr-lg">プラチナ</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="bg-white">
+            <td class="text-left px-3 py-2 text-gray-600">PRバナー（検索結果）</td>
+            <td class="px-3 py-2 text-brand-green font-bold">✓</td>
+            <td class="px-3 py-2 text-yellow-400 bg-blue-50 font-bold">✓</td>
+            <td class="px-3 py-2 text-brand-green font-bold">✓</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="text-left px-3 py-2 text-gray-600">おすすめ業者3枠</td>
+            <td class="px-3 py-2 text-gray-300">—</td>
+            <td class="px-3 py-2 text-yellow-400 bg-blue-50 font-bold">✓</td>
+            <td class="px-3 py-2 text-brand-green font-bold">✓</td>
+          </tr>
+          <tr class="bg-white">
+            <td class="text-left px-3 py-2 text-gray-600">補助金連動表示</td>
+            <td class="px-3 py-2 text-gray-300">—</td>
+            <td class="px-3 py-2 text-yellow-400 bg-blue-50 font-bold">✓</td>
+            <td class="px-3 py-2 text-brand-green font-bold">✓</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="text-left px-3 py-2 text-gray-600">申請詳細ページ固定バナー</td>
+            <td class="px-3 py-2 text-gray-300">—</td>
+            <td class="px-3 py-2 text-gray-300 bg-blue-50">—</td>
+            <td class="px-3 py-2 text-brand-green font-bold">✓</td>
+          </tr>
+          <tr class="bg-white">
+            <td class="text-left px-3 py-2 text-gray-600">月次レポート</td>
+            <td class="px-3 py-2 text-gray-300">—</td>
+            <td class="px-3 py-2 text-gray-300 bg-blue-50">—</td>
+            <td class="px-3 py-2 text-brand-green font-bold">✓</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="text-left px-3 py-2 text-gray-600">連携コラム記事1本/月</td>
+            <td class="px-3 py-2 text-gray-300">—</td>
+            <td class="px-3 py-2 text-gray-300 bg-blue-50">—</td>
+            <td class="px-3 py-2 text-brand-green font-bold">✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 5: 対応市区一覧
+============================================================ -->
+<section class="py-14 px-4 bg-gray-50">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-8">
+      <span class="inline-block bg-brand-blue-light text-brand-blue text-xs font-bold px-3 py-1 rounded-full mb-3">
+        対応エリア
+      </span>
+      <h2 class="text-xl sm:text-2xl font-black text-gray-900">
+        関東79市区に対応
+      </h2>
+      <p class="text-sm text-gray-500 mt-2">順次拡大中 ・ 空き枠は早い者勝ちです</p>
+    </div>
+
+    <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
+      <summary class="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-gray-50 transition-colors select-none">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center">
+            <span class="text-white text-xs font-bold">79</span>
+          </div>
+          <span class="font-bold text-gray-900 text-sm">対応市区一覧を見る（クリックで開く）</span>
+        </div>
+        <span class="faq-icon text-brand-blue text-xl font-bold">+</span>
+      </summary>
+      <div class="px-5 pb-6 border-t border-gray-100 pt-4">
+
+        <!-- 東京都 -->
+        <div class="mb-5">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-1.5 h-5 bg-brand-blue rounded-full"></div>
+            <span class="font-bold text-sm text-gray-900">東京都 <span class="text-xs text-gray-500 font-normal">（33市区）</span></span>
+          </div>
+          <div class="city-grid">
+            <div class="text-xs text-gray-700 py-0.5">千代田区</div>
+            <div class="text-xs text-gray-700 py-0.5">中央区</div>
+            <div class="text-xs text-gray-700 py-0.5">港区</div>
+            <div class="text-xs text-gray-700 py-0.5">新宿区</div>
+            <div class="text-xs text-gray-700 py-0.5">文京区</div>
+            <div class="text-xs text-gray-700 py-0.5">台東区</div>
+            <div class="text-xs text-gray-700 py-0.5">墨田区</div>
+            <div class="text-xs text-gray-700 py-0.5">江東区</div>
+            <div class="text-xs text-gray-700 py-0.5">品川区</div>
+            <div class="text-xs text-gray-700 py-0.5">目黒区</div>
+            <div class="text-xs text-gray-700 py-0.5">大田区</div>
+            <div class="text-xs text-gray-700 py-0.5">世田谷区</div>
+            <div class="text-xs text-gray-700 py-0.5">渋谷区</div>
+            <div class="text-xs text-gray-700 py-0.5">中野区</div>
+            <div class="text-xs text-gray-700 py-0.5">杉並区</div>
+            <div class="text-xs text-gray-700 py-0.5">豊島区</div>
+            <div class="text-xs text-gray-700 py-0.5">北区</div>
+            <div class="text-xs text-gray-700 py-0.5">荒川区</div>
+            <div class="text-xs text-gray-700 py-0.5">板橋区</div>
+            <div class="text-xs text-gray-700 py-0.5">練馬区</div>
+            <div class="text-xs text-gray-700 py-0.5">足立区</div>
+            <div class="text-xs text-gray-700 py-0.5">葛飾区</div>
+            <div class="text-xs text-gray-700 py-0.5">江戸川区</div>
+            <div class="text-xs text-gray-700 py-0.5 flex items-center gap-1">
+              八王子市 <span class="bg-brand-green text-white text-xs px-1 rounded font-bold">済</span>
+            </div>
+            <div class="text-xs text-gray-700 py-0.5">町田市</div>
+            <div class="text-xs text-gray-700 py-0.5">立川市</div>
+            <div class="text-xs text-gray-700 py-0.5">府中市</div>
+            <div class="text-xs text-gray-700 py-0.5">調布市</div>
+            <div class="text-xs text-gray-700 py-0.5">三鷹市</div>
+            <div class="text-xs text-gray-700 py-0.5">武蔵野市</div>
+            <div class="text-xs text-gray-700 py-0.5">日野市</div>
+            <div class="text-xs text-gray-700 py-0.5">西東京市</div>
+            <div class="text-xs text-gray-700 py-0.5">小平市</div>
+          </div>
+        </div>
+
+        <!-- 神奈川県 -->
+        <div class="mb-5">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-1.5 h-5 bg-brand-blue rounded-full"></div>
+            <span class="font-bold text-sm text-gray-900">神奈川県 <span class="text-xs text-gray-500 font-normal">（12市区）</span></span>
+          </div>
+          <div class="city-grid">
+            <div class="text-xs text-gray-700 py-0.5">横浜市</div>
+            <div class="text-xs text-gray-700 py-0.5">川崎市</div>
+            <div class="text-xs text-gray-700 py-0.5">相模原市</div>
+            <div class="text-xs text-gray-700 py-0.5">横須賀市</div>
+            <div class="text-xs text-gray-700 py-0.5">藤沢市</div>
+            <div class="text-xs text-gray-700 py-0.5">平塚市</div>
+            <div class="text-xs text-gray-700 py-0.5">茅ヶ崎市</div>
+            <div class="text-xs text-gray-700 py-0.5">小田原市</div>
+            <div class="text-xs text-gray-700 py-0.5">大和市</div>
+            <div class="text-xs text-gray-700 py-0.5">厚木市</div>
+            <div class="text-xs text-gray-700 py-0.5">海老名市</div>
+            <div class="text-xs text-gray-700 py-0.5">鎌倉市</div>
+          </div>
+        </div>
+
+        <!-- 埼玉県 -->
+        <div class="mb-5">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-1.5 h-5 bg-brand-blue rounded-full"></div>
+            <span class="font-bold text-sm text-gray-900">埼玉県 <span class="text-xs text-gray-500 font-normal">（12市）</span></span>
+          </div>
+          <div class="city-grid">
+            <div class="text-xs text-gray-700 py-0.5">さいたま市</div>
+            <div class="text-xs text-gray-700 py-0.5">川越市</div>
+            <div class="text-xs text-gray-700 py-0.5">熊谷市</div>
+            <div class="text-xs text-gray-700 py-0.5">川口市</div>
+            <div class="text-xs text-gray-700 py-0.5">所沢市</div>
+            <div class="text-xs text-gray-700 py-0.5">春日部市</div>
+            <div class="text-xs text-gray-700 py-0.5">越谷市</div>
+            <div class="text-xs text-gray-700 py-0.5">草加市</div>
+            <div class="text-xs text-gray-700 py-0.5">三郷市</div>
+            <div class="text-xs text-gray-700 py-0.5">新座市</div>
+            <div class="text-xs text-gray-700 py-0.5">入間市</div>
+            <div class="text-xs text-gray-700 py-0.5">朝霞市</div>
+          </div>
+        </div>
+
+        <!-- 千葉県 -->
+        <div class="mb-5">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-1.5 h-5 bg-brand-blue rounded-full"></div>
+            <span class="font-bold text-sm text-gray-900">千葉県 <span class="text-xs text-gray-500 font-normal">（12市）</span></span>
+          </div>
+          <div class="city-grid">
+            <div class="text-xs text-gray-700 py-0.5">千葉市</div>
+            <div class="text-xs text-gray-700 py-0.5">船橋市</div>
+            <div class="text-xs text-gray-700 py-0.5">市川市</div>
+            <div class="text-xs text-gray-700 py-0.5">松戸市</div>
+            <div class="text-xs text-gray-700 py-0.5">柏市</div>
+            <div class="text-xs text-gray-700 py-0.5">流山市</div>
+            <div class="text-xs text-gray-700 py-0.5">浦安市</div>
+            <div class="text-xs text-gray-700 py-0.5">習志野市</div>
+            <div class="text-xs text-gray-700 py-0.5">市原市</div>
+            <div class="text-xs text-gray-700 py-0.5">木更津市</div>
+            <div class="text-xs text-gray-700 py-0.5">我孫子市</div>
+            <div class="text-xs text-gray-700 py-0.5">野田市</div>
+          </div>
+        </div>
+
+        <!-- 茨城・栃木・群馬 -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-1.5 h-5 bg-brand-blue rounded-full"></div>
+            <span class="font-bold text-sm text-gray-900">茨城・栃木・群馬 <span class="text-xs text-gray-500 font-normal">（各4市）</span></span>
+          </div>
+          <div class="city-grid">
+            <div class="text-xs text-gray-700 py-0.5">水戸市</div>
+            <div class="text-xs text-gray-700 py-0.5">つくば市</div>
+            <div class="text-xs text-gray-700 py-0.5">日立市</div>
+            <div class="text-xs text-gray-700 py-0.5">土浦市</div>
+            <div class="text-xs text-gray-700 py-0.5">宇都宮市</div>
+            <div class="text-xs text-gray-700 py-0.5">小山市</div>
+            <div class="text-xs text-gray-700 py-0.5">栃木市</div>
+            <div class="text-xs text-gray-700 py-0.5">足利市</div>
+            <div class="text-xs text-gray-700 py-0.5">前橋市</div>
+            <div class="text-xs text-gray-700 py-0.5">高崎市</div>
+            <div class="text-xs text-gray-700 py-0.5">太田市</div>
+            <div class="text-xs text-gray-700 py-0.5">伊勢崎市</div>
+          </div>
+        </div>
+
+        <div class="mt-4 bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-3 text-xs text-gray-700">
+          <span class="font-bold text-yellow-700">空き枠：</span>
+          現在八王子市のみ先行データあり。他市区は2026年内に順次データ整備予定。
+          整備が完了した市区から広告表示が開始されます。先行申込みは随時受付中です。
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 6: よくある質問
+============================================================ -->
+<section class="py-14 px-4 bg-white">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="inline-block bg-brand-blue-light text-brand-blue text-xs font-bold px-3 py-1 rounded-full mb-3">
+        FAQ
+      </span>
+      <h2 class="text-xl sm:text-2xl font-black text-gray-900">よくある質問</h2>
+    </div>
+
+    <div class="space-y-3">
+
+      <!-- Q1 -->
+      <details class="bg-gray-50 rounded-2xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-gray-100 transition-colors select-none">
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-6 h-6 bg-brand-blue rounded-full flex items-center justify-center text-white text-xs font-black mt-0.5">Q</span>
+            <span class="text-sm font-bold text-gray-900">1市区しか契約できないのですか？</span>
+          </div>
+          <span class="faq-icon flex-shrink-0 text-brand-blue text-xl font-bold ml-3">+</span>
+        </summary>
+        <div class="px-5 pb-5 pt-1 border-t border-gray-200">
+          <div class="flex gap-3">
+            <span class="flex-shrink-0 w-6 h-6 bg-brand-green rounded-full flex items-center justify-center text-white text-xs font-black">A</span>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              いいえ、複数市区の契約が可能です。例えば「八王子市」「町田市」「相模原市」を同時契約することで、
+              広域エリアをカバーすることもできます。その場合は市区数に応じた料金となります。
+              詳しくはお問合せください。
+            </p>
+          </div>
+        </div>
+      </details>
+
+      <!-- Q2 -->
+      <details class="bg-gray-50 rounded-2xl overflow-hidden">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-gray-100 transition-colors select-none">
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-6 h-6 bg-brand-blue rounded-full flex items-center justify-center text-white text-xs font-black mt-0.5">Q</span>
+            <span class="text-sm font-bold text-gray-900">契約の最低期間はありますか？</span>
+          </div>
+          <span class="faq-icon flex-shrink-0 text-brand-blue text-xl font-bold ml-3">+</span>
+        </summary>
+        <div class="px-5 pb-5 pt-1 border-t border-gray-200">
+          <div class="flex gap-3">
+            <span class="flex-shrink-0 w-6 h-6 bg-brand-green rounded-full flex items-center justify-center text-white text-xs font-black">A</span>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              最低契約期間は1ヶ月です。月単位で自由に解約いただけます。
+              ただし、同一市区の次のスポンサーが決まっている場合は翌月末をもって終了となります。
+              長期契約の場合は割引プランもご相談ください。
+            </p>
+          </div>
+        </div>
+      </details>
+
+      <!-- Q3 -->
+      <details class="bg-gray-50 rounded-2xl overflow-hidden">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-gray-100 transition-colors select-none">
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-6 h-6 bg-brand-blue rounded-full flex items-center justify-center text-white text-xs font-black mt-0.5">Q</span>
+            <span class="text-sm font-bold text-gray-900">バナーのデザインは自由に変更できますか？</span>
+          </div>
+          <span class="faq-icon flex-shrink-0 text-brand-blue text-xl font-bold ml-3">+</span>
+        </summary>
+        <div class="px-5 pb-5 pt-1 border-t border-gray-200">
+          <div class="flex gap-3">
+            <span class="flex-shrink-0 w-6 h-6 bg-brand-green rounded-full flex items-center justify-center text-white text-xs font-black">A</span>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              会社名・キャッチコピー・リンク先URLはご自由に設定いただけます。
+              バナーのテンプレートデザインはアプリのUIに合わせた統一フォーマットになりますが、
+              ロゴ画像・写真の掲載（プレミアム以上）も対応しています。
+              変更回数に制限はなく、月1回程度の更新を推奨しています。
+            </p>
+          </div>
+        </div>
+      </details>
+
+      <!-- Q4 -->
+      <details class="bg-gray-50 rounded-2xl overflow-hidden">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-gray-100 transition-colors select-none">
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-6 h-6 bg-brand-blue rounded-full flex items-center justify-center text-white text-xs font-black mt-0.5">Q</span>
+            <span class="text-sm font-bold text-gray-900">希望の市区がすでに埋まっている場合はどうなりますか？</span>
+          </div>
+          <span class="faq-icon flex-shrink-0 text-brand-blue text-xl font-bold ml-3">+</span>
+        </summary>
+        <div class="px-5 pb-5 pt-1 border-t border-gray-200">
+          <div class="flex gap-3">
+            <span class="flex-shrink-0 w-6 h-6 bg-brand-green rounded-full flex items-center justify-center text-white text-xs font-black">A</span>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              キャンセル待ちとして登録を受け付けます。空き次第、優先的にご連絡します。
+              現在（2026年5月時点）は多くの市区で空き枠がございます。
+              先着順となりますので、ご希望の方はお早めにお問合せください。
+            </p>
+          </div>
+        </div>
+      </details>
+
+      <!-- Q5 -->
+      <details class="bg-gray-50 rounded-2xl overflow-hidden">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-gray-100 transition-colors select-none">
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-6 h-6 bg-brand-blue rounded-full flex items-center justify-center text-white text-xs font-black mt-0.5">Q</span>
+            <span class="text-sm font-bold text-gray-900">申込みから掲載開始まで、どのくらいかかりますか？</span>
+          </div>
+          <span class="faq-icon flex-shrink-0 text-brand-blue text-xl font-bold ml-3">+</span>
+        </summary>
+        <div class="px-5 pb-5 pt-1 border-t border-gray-200">
+          <div class="flex gap-3">
+            <span class="flex-shrink-0 w-6 h-6 bg-brand-green rounded-full flex items-center justify-center text-white text-xs font-black">A</span>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              お申込み後、バナー情報のご提出・ご確認を経て、通常3〜5営業日で掲載が開始されます。
+              掲載開始日をもって月額料金が発生します。
+              急ぎの場合はフォームのメッセージ欄にご記入ください。
+            </p>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 7: 申込みフォーム CTA
+============================================================ -->
+<section class="py-16 px-4 bg-gray-900 text-white" id="form-section">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-8">
+      <span class="inline-block bg-brand-green/20 text-brand-green text-xs font-bold px-3 py-1 rounded-full mb-3">
+        スポンサー申込みフォーム
+      </span>
+      <h2 class="text-xl sm:text-2xl font-black">
+        まずはお気軽にお問合せください
+      </h2>
+      <p class="text-sm text-gray-400 mt-2">
+        内容を確認のうえ、担当者より2営業日以内にご連絡します。
+      </p>
+    </div>
+
+    <!-- 送信完了メッセージ -->
+    <div id="success-message"
+         class="bg-brand-green-light border-2 border-brand-green rounded-2xl p-8 text-center mb-8">
+      <div class="w-16 h-16 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <div class="text-brand-green-dark font-black text-xl mb-2">送信完了しました</div>
+      <p class="text-gray-700 text-sm">
+        お問合せありがとうございます。<br>
+        内容を確認のうえ、2営業日以内にご連絡いたします。
+      </p>
+    </div>
+
+    <!-- フォーム本体 -->
+    <form id="sponsor-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="bg-gray-800 rounded-2xl p-6 sm:p-8 space-y-5">
+
+      <!-- Web3Forms access key -->
+      <input type="hidden" name="access_key" value="8b664d19-f0b7-4739-bbfc-e9c1417eac98">
+      <input type="hidden" name="subject" value="【もらえるお金ナビ】スポンサー申込み">
+      <input type="hidden" name="from_name" value="もらえるお金ナビ スポンサーLP">
+      <input type="hidden" name="redirect" value="">
+
+      <!-- 会社名 -->
+      <div>
+        <label for="company" class="block text-sm font-bold text-gray-300 mb-1.5">
+          会社名 <span class="text-red-400">*</span>
+        </label>
+        <input type="text" id="company" name="company" required
+               placeholder="株式会社テラデザイン"
+               class="w-full bg-gray-700 border border-gray-600 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors">
+      </div>
+
+      <!-- 担当者名 -->
+      <div>
+        <label for="name" class="block text-sm font-bold text-gray-300 mb-1.5">
+          担当者名 <span class="text-red-400">*</span>
+        </label>
+        <input type="text" id="name" name="name" required
+               placeholder="山田 太郎"
+               class="w-full bg-gray-700 border border-gray-600 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors">
+      </div>
+
+      <!-- メールアドレス -->
+      <div>
+        <label for="email" class="block text-sm font-bold text-gray-300 mb-1.5">
+          メールアドレス <span class="text-red-400">*</span>
+        </label>
+        <input type="email" id="email" name="email" required
+               placeholder="info@example.co.jp"
+               class="w-full bg-gray-700 border border-gray-600 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors">
+      </div>
+
+      <!-- 希望市区 -->
+      <div>
+        <label for="area" class="block text-sm font-bold text-gray-300 mb-1.5">
+          希望市区 <span class="text-red-400">*</span>
+          <span class="text-xs text-gray-500 font-normal ml-1">（複数可・例：八王子市・町田市）</span>
+        </label>
+        <input type="text" id="area" name="area" required
+               placeholder="八王子市"
+               class="w-full bg-gray-700 border border-gray-600 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors">
+      </div>
+
+      <!-- 希望プラン -->
+      <div>
+        <label for="plan" class="block text-sm font-bold text-gray-300 mb-1.5">
+          希望プラン <span class="text-red-400">*</span>
+        </label>
+        <select id="plan" name="plan" required
+                class="w-full bg-gray-700 border border-gray-600 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors appearance-none cursor-pointer">
+          <option value="" disabled selected class="text-gray-500">プランを選択してください</option>
+          <option value="スタンダード（¥19,800/月）">スタンダード（¥19,800/月）</option>
+          <option value="プレミアム（¥39,800/月）">プレミアム（¥39,800/月）</option>
+          <option value="プラチナ（¥69,800/月）">プラチナ（¥69,800/月）</option>
+          <option value="未定（相談したい）">未定（まず相談したい）</option>
+        </select>
+      </div>
+
+      <!-- メッセージ -->
+      <div>
+        <label for="message" class="block text-sm font-bold text-gray-300 mb-1.5">
+          ご質問・ご要望
+          <span class="text-xs text-gray-500 font-normal ml-1">（任意）</span>
+        </label>
+        <textarea id="message" name="message" rows="4"
+                  placeholder="業種、複数市区のご希望、急ぎのご要望など、自由にご記入ください。"
+                  class="w-full bg-gray-700 border border-gray-600 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors resize-none"></textarea>
+      </div>
+
+      <!-- 送信ボタン -->
+      <button type="submit"
+              class="w-full bg-brand-green hover:bg-brand-green-dark text-white font-black text-base py-4 rounded-xl transition-colors shadow-lg">
+        内容を確認して送信する
+      </button>
+
+      <p class="text-center text-xs text-gray-500">
+        送信後、2営業日以内にメールにてご連絡します。<br>
+        ご入力いただいた情報はスポンサー対応のみに使用します。
+      </p>
+    </form>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="bg-gray-950 text-gray-500 py-8 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="flex items-center justify-center gap-2 mb-3">
+      <div class="w-7 h-7 bg-brand-blue rounded-lg flex items-center justify-center">
+        <span class="text-white text-xs font-bold">¥</span>
+      </div>
+      <span class="text-white font-bold text-sm">もらえるお金ナビ</span>
+    </div>
+    <p class="text-xs mb-2">関東79市区・486件以上の補助金・助成金を無料検索</p>
+    <p class="text-xs">スポンサー・広告掲載に関するお問合せ：上記フォームよりご連絡ください</p>
+    <div class="mt-5 pt-5 border-t border-gray-800 text-xs">
+      &copy; 2026 もらえるお金ナビ / 株式会社テラデザイン. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     JavaScript: フォーム送信・FAQ アニメーション
+============================================================ -->
+<script>
+  // フォーム送信処理
+  const form = document.getElementById('sponsor-form');
+  const successMsg = document.getElementById('success-message');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.textContent = '送信中...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+        // スクロールして完了メッセージを表示
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        alert('送信に失敗しました。しばらく経ってから再度お試しください。');
+        submitBtn.textContent = '内容を確認して送信する';
+        submitBtn.disabled = false;
+      }
+    } catch (error) {
+      alert('ネットワークエラーが発生しました。接続を確認してから再度お試しください。');
+      submitBtn.textContent = '内容を確認して送信する';
+      submitBtn.disabled = false;
+    }
+  });
+
+  // スムーズスクロール（ナビ・プランのアンカーリンク）
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const offset = 64; // sticky headerの高さ分
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

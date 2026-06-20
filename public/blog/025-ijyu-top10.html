@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>移住支援金×自然環境×物価で選ぶ「理想の移住先」独自ランキング10選【2026年版】｜もらえるお金ナビ</title>
+<meta name="description" content="移住支援金の金額だけでなく自然環境・物価・医療・交通を総合スコアで比較した独自の「理想の移住先ランキング2026年版」。家族・単身・シニア別のおすすめ移住先も。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<!-- Google tag --><!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.score-radar{background:#f9fafb;border-radius:16px;padding:20px 24px;margin:24px 0;border:1px solid #e5e7eb;}
+.score-radar h3{font-size:14px;font-weight:900;color:#374151;margin-bottom:16px;}
+.score-bar-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.score-bar-label{width:100px;font-size:12px;font-weight:700;color:#374151;flex-shrink:0;}
+.score-bar-track{flex:1;height:12px;background:#e5e7eb;border-radius:6px;overflow:hidden;}
+.score-bar-fill{height:100%;border-radius:6px;}
+.score-bar-fill.subsidy{background:linear-gradient(90deg,#10b981,#0d9488);}
+.score-bar-fill.price{background:linear-gradient(90deg,#2563eb,#1d4ed8);}
+.score-bar-fill.nature{background:linear-gradient(90deg,#7c3aed,#6d28d9);}
+.score-bar-fill.medical{background:linear-gradient(90deg,#ea580c,#c2410c);}
+.score-bar-fill.transport{background:linear-gradient(90deg,#d97706,#b45309);}
+.score-bar-pct{width:40px;font-size:12px;font-weight:700;text-align:right;flex-shrink:0;}
+
+.top10-card{border-radius:16px;margin-bottom:20px;overflow:hidden;border:2px solid #e5e7eb;transition:transform .2s;}
+.top10-card:hover{transform:translateY(-2px);}
+.top10-card.rank1{border-color:#f59e0b;box-shadow:0 4px 20px rgba(245,158,11,.15);}
+.top10-card.rank2{border-color:#9ca3af;}
+.top10-card.rank3{border-color:#b45309;}
+.top10-head{display:flex;align-items:center;gap:16px;padding:16px 20px;flex-wrap:wrap;}
+.top10-badge{width:52px;height:52px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;color:#fff;flex-shrink:0;}
+.top10-badge.gold{background:linear-gradient(135deg,#f59e0b,#d97706);}
+.top10-badge.silver{background:linear-gradient(135deg,#9ca3af,#6b7280);}
+.top10-badge.bronze{background:linear-gradient(135deg,#b45309,#92400e);}
+.top10-badge.green{background:linear-gradient(135deg,#10b981,#0d9488);}
+.top10-badge-num{font-size:22px;line-height:1;}
+.top10-badge-label{font-size:9px;letter-spacing:.5px;opacity:.85;}
+.top10-info{flex:1;min-width:0;}
+.top10-name{font-size:18px;font-weight:900;color:#111827;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.top10-pref{font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;background:#f3f4f6;color:#6b7280;}
+.top10-catch{font-size:12px;color:#9ca3af;margin-top:3px;}
+.top10-scores{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.top10-score-pill{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.top10-score-pill.s{background:#d1fae5;color:#065f46;}
+.top10-score-pill.a{background:#dbeafe;color:#1d4ed8;}
+.top10-score-pill.b{background:#fef3c7;color:#92400e;}
+.top10-right{text-align:right;flex-shrink:0;}
+.top10-total{font-size:26px;font-weight:900;color:#10b981;}
+.top10-total-label{font-size:10px;color:#9ca3af;}
+.top10-body{padding:0 20px 16px;}
+.top10-desc{font-size:13px;color:#4b5563;line-height:1.8;}
+.top10-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
+.top10-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:#ecfdf5;color:#059669;border:1px solid #d1fae5;}
+.top10-tag.blue{background:#eff6ff;color:#2563eb;border-color:#bfdbfe;}
+.top10-tag.purple{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe;}
+.top10-bar{height:8px;background:#f3f4f6;border-radius:4px;overflow:hidden;margin-top:12px;}
+.top10-bar-fill{height:100%;background:linear-gradient(90deg,#10b981,#0d9488);border-radius:4px;}
+
+.segment-card{border-radius:16px;overflow:hidden;margin-bottom:20px;}
+.segment-head{padding:16px 20px;display:flex;align-items:center;gap:14px;}
+.segment-head.family{background:linear-gradient(135deg,#2563eb,#1d4ed8);}
+.segment-head.single{background:linear-gradient(135deg,#7c3aed,#6d28d9);}
+.segment-head.senior{background:linear-gradient(135deg,#ea580c,#c2410c);}
+.segment-icon{font-size:32px;}
+.segment-title{font-size:18px;font-weight:900;color:#fff;}
+.segment-sub{font-size:12px;color:rgba(255,255,255,.75);margin-top:2px;}
+.segment-body{border:2px solid #e5e7eb;border-top:none;border-radius:0 0 16px 16px;padding:20px;}
+.seg-rank-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #f3f4f6;align-items:flex-start;}
+.seg-rank-item:last-child{border-bottom:none;}
+.seg-num{width:36px;height:36px;border-radius:10px;color:#fff;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.seg-num.family{background:linear-gradient(135deg,#2563eb,#1d4ed8);}
+.seg-num.single{background:linear-gradient(135deg,#7c3aed,#6d28d9);}
+.seg-num.senior{background:linear-gradient(135deg,#ea580c,#c2410c);}
+.seg-body{flex:1;}
+.seg-name{font-size:15px;font-weight:900;color:#111827;margin-bottom:4px;}
+.seg-reason{font-size:13px;color:#4b5563;line-height:1.7;}
+.seg-amount{font-size:13px;font-weight:700;color:#059669;margin-top:4px;}
+
+.score-method{background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:16px;padding:24px;margin:24px 0;color:#fff;}
+.score-method h3{font-size:15px;font-weight:900;color:#fff;margin-bottom:14px;}
+.score-factor{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.score-factor:last-child{border-bottom:none;}
+.score-factor-pct{font-size:22px;font-weight:900;color:#10b981;width:50px;flex-shrink:0;}
+.score-factor-name{font-size:14px;font-weight:700;color:#fff;}
+.score-factor-desc{font-size:12px;color:rgba(255,255,255,.55);margin-top:2px;}
+.score-factor-bar{flex:1;height:6px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;}
+.score-factor-bar-fill{height:100%;border-radius:3px;}
+
+.table-sm{width:100%;border-collapse:collapse;font-size:13px;margin:20px 0;}
+.table-sm th{background:#1e293b;color:#fff;padding:10px 12px;text-align:left;}
+.table-sm td{padding:10px 12px;border-bottom:1px solid #e5e7eb;}
+.table-sm tr:nth-child(even) td{background:#f9fafb;}
+.table-sm .score-s{font-weight:900;color:#059669;}
+.table-sm .score-a{font-weight:700;color:#2563eb;}
+.table-sm .score-b{font-weight:700;color:#d97706;}
+
+@media(max-width:600px){
+  .top10-total{font-size:20px;}
+  .top10-name{font-size:15px;}
+  .score-bar-label{width:80px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">✈️ 移住・総合ランキング</span>
+    <h1>移住支援金×自然環境×物価で選ぶ<br>「理想の移住先」独自ランキング10選【2026年版】</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 移住先ランキング</span>
+      <span>⏱ 読了約8分</span>
+      <span>📊 独自5指標スコア</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>移住支援金が多い自治体＝移住先として最高、とは限りません。<strong>物価が高すぎたら意味がない。医療機関が遠かったら怖い。自然があっても交通が不便では詰む。</strong></p>
+
+<p>このランキングは「補助金の金額だけ」で選ばない。<em>補助金・物価・自然・医療・交通</em>の5指標を独自スコアで総合評価した、もらえるお金ナビ編集部だけの移住先ランキング2026年版です。</p>
+
+<div class="info-box"><p>📌 このランキングは一般公開情報をもとにした独自編集部スコアです。移住の最終判断は必ず現地訪問・各自治体への問い合わせで確認してください。</p></div>
+
+<h2>📐 独自スコアの計算方法｜補助金40%＋物価25%＋自然・医療・交通35%</h2>
+
+<div class="score-method">
+  <h3>🔢 もらえるお金ナビ 移住先スコア算出方式</h3>
+  <div class="score-factor">
+    <div class="score-factor-pct">40%</div>
+    <div style="flex:1;">
+      <div class="score-factor-name">補助金・支援金の充実度</div>
+      <div class="score-factor-desc">移住支援金・子ども加算・自治体独自加算・空き家補助の合計金額と申請のしやすさ</div>
+    </div>
+    <div class="score-factor-bar"><div class="score-factor-bar-fill" style="width:40%;background:linear-gradient(90deg,#10b981,#0d9488);"></div></div>
+  </div>
+  <div class="score-factor">
+    <div class="score-factor-pct">25%</div>
+    <div style="flex:1;">
+      <div class="score-factor-name">物価・生活費の安さ</div>
+      <div class="score-factor-desc">家賃・食費・光熱費の東京比。車維持費を加味した「実質生活コスト」で評価</div>
+    </div>
+    <div class="score-factor-bar"><div class="score-factor-bar-fill" style="width:25%;background:linear-gradient(90deg,#2563eb,#1d4ed8);"></div></div>
+  </div>
+  <div class="score-factor">
+    <div class="score-factor-pct">15%</div>
+    <div style="flex:1;">
+      <div class="score-factor-name">自然環境・気候</div>
+      <div class="score-factor-desc">豊かな自然・温暖な気候・観光資源・アウトドア環境。積雪・台風リスクも考慮</div>
+    </div>
+    <div class="score-factor-bar"><div class="score-factor-bar-fill" style="width:15%;background:linear-gradient(90deg,#7c3aed,#6d28d9);"></div></div>
+  </div>
+  <div class="score-factor">
+    <div class="score-factor-pct">10%</div>
+    <div style="flex:1;">
+      <div class="score-factor-name">医療環境</div>
+      <div class="score-factor-desc">総合病院・救急・専門科へのアクセス。小児科・産婦人科・高齢者向け施設の充実度</div>
+    </div>
+    <div class="score-factor-bar"><div class="score-factor-bar-fill" style="width:10%;background:linear-gradient(90deg,#ea580c,#c2410c);"></div></div>
+  </div>
+  <div class="score-factor">
+    <div class="score-factor-pct">10%</div>
+    <div style="flex:1;">
+      <div class="score-factor-name">交通・アクセス</div>
+      <div class="score-factor-desc">最寄り駅・高速IC・空港からの距離。都市部への戻りやすさ（帰省・出張対応）</div>
+    </div>
+    <div class="score-factor-bar"><div class="score-factor-bar-fill" style="width:10%;background:linear-gradient(90deg,#d97706,#b45309);"></div></div>
+  </div>
+</div>
+
+<div class="table-wrap">
+<table class="table-sm">
+  <thead>
+    <tr><th>スコア帯</th><th>評価</th><th>目安</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="score-s">90〜100点</td><td>S：総合最強クラス</td><td>全5指標で平均以上。迷ったらここ</td></tr>
+    <tr><td class="score-a">75〜89点</td><td>A：強みが際立つ優良自治体</td><td>特定の軸（子育て・自然等）で突出</td></tr>
+    <tr><td class="score-b">60〜74点</td><td>B：個人の価値観次第で◎</td><td>ライフスタイルにハマれば高満足</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>🏆 総合ランキングTOP10｜独自スコアと特色</h2>
+
+<!-- RANK 1 -->
+<div class="top10-card rank1">
+  <div class="top10-head">
+    <div class="top10-badge gold">
+      <div class="top10-badge-num">1</div>
+      <div class="top10-badge-label">RANK</div>
+    </div>
+    <div class="top10-info">
+      <div class="top10-name">松山市 <span class="top10-pref">愛媛県</span> 🏯</div>
+      <div class="top10-catch">温暖×物価安×医療充実×移住支援充実の「全方位最強」</div>
+      <div class="top10-scores">
+        <span class="top10-score-pill s">補助金 S</span>
+        <span class="top10-score-pill s">物価 S</span>
+        <span class="top10-score-pill s">医療 S</span>
+        <span class="top10-score-pill a">自然 A</span>
+        <span class="top10-score-pill a">交通 A</span>
+      </div>
+    </div>
+    <div class="top10-right">
+      <div class="top10-total">93点</div>
+      <div class="top10-total-label">総合スコア/100</div>
+    </div>
+  </div>
+  <div class="top10-body">
+    <div class="top10-desc">四国最大の都市でありながら、東京比で家賃が約60%安い。移住支援金<strong>100万円（世帯）</strong>に加えて松山市独自の移住促進補助も充実。市立病院・基幹病院が市内に複数あり医療環境は地方トップクラス。道後温泉もあり、生活の豊かさも抜群。松山空港から羽田1時間というアクセスも強み。</div>
+    <div class="top10-tags">
+      <span class="top10-tag">🏥 医療体制◎</span>
+      <span class="top10-tag blue">✈️ 空港1時間</span>
+      <span class="top10-tag purple">♨️ 道後温泉</span>
+      <span class="top10-tag">💰 補助金充実</span>
+    </div>
+    <div class="top10-bar"><div class="top10-bar-fill" style="width:93%"></div></div>
+  </div>
+</div>
+
+<!-- RANK 2 -->
+<div class="top10-card rank2">
+  <div class="top10-head">
+    <div class="top10-badge silver">
+      <div class="top10-badge-num">2</div>
+      <div class="top10-badge-label">RANK</div>
+    </div>
+    <div class="top10-info">
+      <div class="top10-name">飯山市 <span class="top10-pref">長野県</span> ⛷</div>
+      <div class="top10-catch">スキー×北陸新幹線1時間×長野県最大の移住補助</div>
+      <div class="top10-scores">
+        <span class="top10-score-pill s">補助金 S</span>
+        <span class="top10-score-pill a">物価 A</span>
+        <span class="top10-score-pill s">自然 S</span>
+        <span class="top10-score-pill a">医療 A</span>
+        <span class="top10-score-pill a">交通 A</span>
+      </div>
+    </div>
+    <div class="top10-right">
+      <div class="top10-total">89点</div>
+      <div class="top10-total-label">総合スコア/100</div>
+    </div>
+  </div>
+  <div class="top10-body">
+    <div class="top10-desc">北陸新幹線・飯山駅停車で東京まで約1時間20分。スキーリゾートが徒歩圏内、夏は登山・キャンプ・カヌーと自然アクティビティが揃う。移住支援金に加えて長野県の上乗せ補助あり。<strong>子ども加算は1人+30万円</strong>で子育て世帯に人気が高い。</div>
+    <div class="top10-tags">
+      <span class="top10-tag">⛷ スキーリゾート隣接</span>
+      <span class="top10-tag blue">🚄 新幹線1時間</span>
+      <span class="top10-tag">👶 子育て補助◎</span>
+    </div>
+    <div class="top10-bar"><div class="top10-bar-fill" style="width:89%"></div></div>
+  </div>
+</div>
+
+<!-- RANK 3 -->
+<div class="top10-card rank3">
+  <div class="top10-head">
+    <div class="top10-badge bronze">
+      <div class="top10-badge-num">3</div>
+      <div class="top10-badge-label">RANK</div>
+    </div>
+    <div class="top10-info">
+      <div class="top10-name">宮崎市 <span class="top10-pref">宮崎県</span> 🌊</div>
+      <div class="top10-catch">年間晴れ日日本トップ級×サーフィン×温暖気候</div>
+      <div class="top10-scores">
+        <span class="top10-score-pill s">補助金 S</span>
+        <span class="top10-score-pill s">物価 S</span>
+        <span class="top10-score-pill s">自然 S</span>
+        <span class="top10-score-pill a">医療 A</span>
+        <span class="top10-score-pill b">交通 B</span>
+      </div>
+    </div>
+    <div class="top10-right">
+      <div class="top10-total">86点</div>
+      <div class="top10-total-label">総合スコア/100</div>
+    </div>
+  </div>
+  <div class="top10-body">
+    <div class="top10-desc">年間2,250時間超えの日照時間は全国トップ級。物価は東京比で家賃が約55%安く、野菜・肉・魚が新鮮かつ安価。移住支援金<strong>100万円</strong>＋宮崎県の独自移住補助も充実。サーフィン・マリンスポーツが日常に溶け込む生活は、テレワーカーに絶大な人気。空港から東京1時間30分。</div>
+    <div class="top10-tags">
+      <span class="top10-tag">🌞 晴天日本トップ</span>
+      <span class="top10-tag blue">🏄 サーフィン聖地</span>
+      <span class="top10-tag">🥩 食材の安さ◎</span>
+    </div>
+    <div class="top10-bar"><div class="top10-bar-fill" style="width:86%"></div></div>
+  </div>
+</div>
+
+<!-- RANK 4〜10 テーブル -->
+<h3>📋 4位〜10位 スコア一覧</h3>
+
+<div class="score-radar">
+  <h3>各指標の凡例：S=最高 / A=優秀 / B=平均以上 / C=課題あり</h3>
+  <div class="score-bar-row">
+    <div class="score-bar-label">補助金（40%）</div>
+    <div class="score-bar-track"><div class="score-bar-fill subsidy" style="width:40%"></div></div>
+    <div class="score-bar-pct">40pt</div>
+  </div>
+  <div class="score-bar-row">
+    <div class="score-bar-label">物価安さ（25%）</div>
+    <div class="score-bar-track"><div class="score-bar-fill price" style="width:25%"></div></div>
+    <div class="score-bar-pct">25pt</div>
+  </div>
+  <div class="score-bar-row">
+    <div class="score-bar-label">自然環境（15%）</div>
+    <div class="score-bar-track"><div class="score-bar-fill nature" style="width:15%"></div></div>
+    <div class="score-bar-pct">15pt</div>
+  </div>
+  <div class="score-bar-row">
+    <div class="score-bar-label">医療（10%）</div>
+    <div class="score-bar-track"><div class="score-bar-fill medical" style="width:10%"></div></div>
+    <div class="score-bar-pct">10pt</div>
+  </div>
+  <div class="score-bar-row">
+    <div class="score-bar-label">交通（10%）</div>
+    <div class="score-bar-track"><div class="score-bar-fill transport" style="width:10%"></div></div>
+    <div class="score-bar-pct">10pt</div>
+  </div>
+</div>
+
+<div class="table-wrap">
+<table class="table-sm">
+  <thead>
+    <tr><th>順位</th><th>自治体</th><th>都道府県</th><th>補助金</th><th>物価</th><th>自然</th><th>医療</th><th>交通</th><th>総合</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>4位</strong></td><td><strong>上田市</strong></td><td>長野県</td>
+      <td class="score-s">S</td><td class="score-a">A</td><td class="score-a">A</td><td class="score-s">S</td><td class="score-s">S</td>
+      <td class="score-s"><strong>84点</strong></td>
+    </tr>
+    <tr>
+      <td><strong>5位</strong></td><td><strong>鹿児島市</strong></td><td>鹿児島県</td>
+      <td class="score-s">S</td><td class="score-s">S</td><td class="score-s">S</td><td class="score-a">A</td><td class="score-a">A</td>
+      <td class="score-s"><strong>83点</strong></td>
+    </tr>
+    <tr>
+      <td><strong>6位</strong></td><td><strong>高知市</strong></td><td>高知県</td>
+      <td class="score-s">S</td><td class="score-s">S</td><td class="score-s">S</td><td class="score-a">A</td><td class="score-b">B</td>
+      <td class="score-s"><strong>81点</strong></td>
+    </tr>
+    <tr>
+      <td><strong>7位</strong></td><td><strong>大分市</strong></td><td>大分県</td>
+      <td class="score-s">S</td><td class="score-a">A</td><td class="score-s">S</td><td class="score-s">S</td><td class="score-a">A</td>
+      <td class="score-s"><strong>80点</strong></td>
+    </tr>
+    <tr>
+      <td><strong>8位</strong></td><td><strong>富山市</strong></td><td>富山県</td>
+      <td class="score-a">A</td><td class="score-s">S</td><td class="score-a">A</td><td class="score-s">S</td><td class="score-s">S</td>
+      <td class="score-a"><strong>79点</strong></td>
+    </tr>
+    <tr>
+      <td><strong>9位</strong></td><td><strong>長崎市</strong></td><td>長崎県</td>
+      <td class="score-s">S</td><td class="score-s">S</td><td class="score-a">A</td><td class="score-a">A</td><td class="score-a">A</td>
+      <td class="score-a"><strong>78点</strong></td>
+    </tr>
+    <tr>
+      <td><strong>10位</strong></td><td><strong>盛岡市</strong></td><td>岩手県</td>
+      <td class="score-s">S</td><td class="score-a">A</td><td class="score-a">A</td><td class="score-s">S</td><td class="score-a">A</td>
+      <td class="score-a"><strong>77点</strong></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>👨‍👩‍👧‍👦 家族向け移住先TOP3｜子育て補助を重視した選び方</h2>
+
+<div class="segment-card">
+  <div class="segment-head family">
+    <div class="segment-icon">👨‍👩‍👧‍👦</div>
+    <div>
+      <div class="segment-title">家族向け移住先 TOP3</div>
+      <div class="segment-sub">子育て補助・学校環境・地域コミュニティの充実度で選定</div>
+    </div>
+  </div>
+  <div class="segment-body">
+    <div class="seg-rank-item">
+      <div class="seg-num family">1</div>
+      <div class="seg-body">
+        <div class="seg-name">上田市（長野県）🏔</div>
+        <div class="seg-reason">子どもの医療費無償化が充実。北陸新幹線で東京1時間半。自然学校・農業体験が学校カリキュラムに組まれており「子どもの生きる力」を育む環境として移住ファミリーから高評価。小中高の選択肢も長野県内最多級。</div>
+        <div class="seg-amount">移住支援金：世帯100万円＋子ども1人30万円。子ども3人なら合計190万円。</div>
+      </div>
+    </div>
+    <div class="seg-rank-item">
+      <div class="seg-num family">2</div>
+      <div class="seg-body">
+        <div class="seg-name">松山市（愛媛県）🏯</div>
+        <div class="seg-reason">市立病院に小児科・産婦人科が完備。保育所待機児童ゼロを達成した実績あり。私立・公立中学の選択肢が地方としては豊富で子どもの教育環境が整っている。四国の中心都市として就業先も多く、共働き移住に最適。</div>
+        <div class="seg-amount">移住支援金：世帯100万円＋子ども加算。愛媛県の独自上乗せ補助も確認要。</div>
+      </div>
+    </div>
+    <div class="seg-rank-item">
+      <div class="seg-num family">3</div>
+      <div class="seg-body">
+        <div class="seg-name">大分市（大分県）🌋</div>
+        <div class="seg-reason">別府・由布院などの温泉地が日常。子どもの習い事・スポーツ施設が充実しており「遊びと学び」のバランスが優れた都市。大分大学・大分県立病院があり、医療・教育のインフラが安定。気候が温暖で年中屋外で遊べる環境も魅力。</div>
+        <div class="seg-amount">移住支援金：世帯100万円。大分県が上乗せ補助を実施中（2026年度確認推奨）。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- アプリバナー① -->
+<div class="app-banner">
+  <div class="app-banner-inner">
+    <div class="app-banner-emoji">💰</div>
+    <div class="app-banner-text">
+      <p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p>
+      <p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p>
+    </div>
+    <a href="/" class="app-banner-btn">今すぐ確認する →</a>
+  </div>
+</div>
+
+<h2>💻 単身テレワーカー向けTOP3｜コスパ×自然重視で選ぶ</h2>
+
+<div class="segment-card">
+  <div class="segment-head single">
+    <div class="segment-icon">💻</div>
+    <div>
+      <div class="segment-title">単身テレワーカー向け TOP3</div>
+      <div class="segment-sub">コスパ・コワーキング環境・自然アクセスで選定</div>
+    </div>
+  </div>
+  <div class="segment-body">
+    <div class="seg-rank-item">
+      <div class="seg-num single">1</div>
+      <div class="seg-body">
+        <div class="seg-name">宮崎市（宮崎県）🌊</div>
+        <div class="seg-reason">年間晴れ日数が全国トップ級で気分のいい「作業日」が続く。市内にコワーキングスペースが増加中。光回線も市街地は全域普及。家賃5万円台でオーシャンビュー物件も存在。仕事終わりにサーフィンができる生活は、単身テレワーカーの夢そのもの。</div>
+        <div class="seg-amount">単身移住支援金：60万円。宮崎市の就業対象企業リストへのリモート就業で申請可能。</div>
+      </div>
+    </div>
+    <div class="seg-rank-item">
+      <div class="seg-num single">2</div>
+      <div class="seg-body">
+        <div class="seg-name">高知市（高知県）🏄</div>
+        <div class="seg-reason">高知県は「移住先として住みたい都道府県ランキング」常連。四万十川・桂浜など自然環境が圧倒的。市内に超高速光ファイバーが整備されテレワーク環境は問題なし。物価は東京比で家賃50〜60%安、飲食費も安く、単身なら月15万円以下の生活費が現実的。</div>
+        <div class="seg-amount">単身移住支援金：60万円。高知県の独自移住支援制度も充実。</div>
+      </div>
+    </div>
+    <div class="seg-rank-item">
+      <div class="seg-num single">3</div>
+      <div class="seg-body">
+        <div class="seg-name">飯山市（長野県）⛷</div>
+        <div class="seg-reason">スキー場まで徒歩・自転車圏内という「雪好きテレワーカー」の理想郷。冬は夜になったらスキー、夏はトレッキング・カヌーという自然三昧の生活。北陸新幹線で東京まで1時間20分と意外なアクセスの良さも◎。移住支援金の申請条件となる対象企業も増加中。</div>
+        <div class="seg-amount">単身移住支援金：60万円＋長野県独自の上乗せ補助。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>👴 シニア向け移住先TOP3｜医療×温泉×気候で選ぶ</h2>
+
+<div class="segment-card">
+  <div class="segment-head senior">
+    <div class="segment-icon">♨️</div>
+    <div>
+      <div class="segment-title">シニア向け移住先 TOP3</div>
+      <div class="segment-sub">医療体制・温泉・温暖気候・交通利便性で選定</div>
+    </div>
+  </div>
+  <div class="segment-body">
+    <div class="seg-rank-item">
+      <div class="seg-num senior">1</div>
+      <div class="seg-body">
+        <div class="seg-name">松山市（愛媛県）♨️</div>
+        <div class="seg-reason">道後温泉が日常にあり、市立病院・愛媛大学病院などの医療機関が市内に集中。救急体制も充実しており「安心して年を重ねられる」と評判が高い。冬も温暖で雪かきが不要。路面電車が走る便利な市街地で、車がなくても生活できる数少ない地方都市。</div>
+        <div class="seg-amount">移住支援金は現役世代向けの制度が中心ですが、自治体の定住促進補助で高齢者向け支援も確認を。</div>
+      </div>
+    </div>
+    <div class="seg-rank-item">
+      <div class="seg-num senior">2</div>
+      <div class="seg-body">
+        <div class="seg-name">大分市（大分県）🌋</div>
+        <div class="seg-reason">「おんせん県おおいた」のブランド通り、日常的に温泉に入れる環境が整っている。大分大学医学部附属病院があり、専門的な治療も市内で受けられる。鹿児島・熊本と並んで九州でも温暖な気候が続き、寒冷地が苦手なシニアに特に人気が高い。</div>
+        <div class="seg-amount">大分市の高齢者向け定住支援・地域活動参加補助も合わせて確認推奨。</div>
+      </div>
+    </div>
+    <div class="seg-rank-item">
+      <div class="seg-num senior">3</div>
+      <div class="seg-body">
+        <div class="seg-name">富山市（富山県）🏔</div>
+        <div class="seg-reason">「コンパクトシティ」政策で全国的に注目される富山市は、路面電車・バスのアクセスが充実し車なしで生活できる整備が進む。富山大学附属病院など高度医療機関が揃い、全国的にも医療水準が高い県として知られる。自然が美しく、立山連峰の絶景が日常の中にある生活を送れる。</div>
+        <div class="seg-amount">富山市の移住定住支援制度・福祉サービスを合わせて窓口で確認を。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="warning-box"><p>⚠️ 移住支援金（最大100万円）は「東京23区に1年以上在住・在勤」で「移住先の対象企業へ就業」が基本要件です。シニアの方は就業要件を満たさないケースもあるため、各自治体の独自支援制度を個別に確認してください。</p></div>
+
+<!-- アプリバナー② -->
+<div class="app-banner">
+  <div class="app-banner-inner">
+    <div class="app-banner-emoji">💰</div>
+    <div class="app-banner-text">
+      <p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p>
+      <p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p>
+    </div>
+    <a href="/" class="app-banner-btn">今すぐ確認する →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 関連記事 -->
+<div class="related">
+  <div class="container">
+    <h3>📚 関連記事</h3>
+    <div class="related-grid">
+      <a href="006-ijyu-ranking.html" class="related-card">
+        <div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">✈️</div>
+        <div class="related-body">全国移住支援金ランキングTOP20</div>
+      </a>
+      <a href="011-ijyu-kodomo-kasan.html" class="related-card">
+        <div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">👶</div>
+        <div class="related-body">子ども加算の破壊力を試算</div>
+      </a>
+      <a href="079-sougaku-1000man.html" class="related-card">
+        <div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div>
+        <div class="related-body">総額1,000万円超え大全</div>
+      </a>
+      <a href="001-ijyu-nagano.html" class="related-card">
+        <div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">🏔</div>
+        <div class="related-body">東京に住みながら長野の100万円</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">💰 もらえるお金ナビ</div>
+    <p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p>
+    <p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p>
+    <p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p>
+  </div>
+</footer>
+
+</body>
+</html>

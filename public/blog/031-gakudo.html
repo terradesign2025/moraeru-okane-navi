@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学童保育・放課後クラブが無料の自治体はどこ？全国の「学童無料」制度まとめ｜もらえるお金ナビ</title>
+<meta name="description" content="放課後の学童保育料が完全無料の自治体がある！豊田市・吹田市など全国の学童無料化自治体一覧と、学童費用の削減額シミュレーション。共働き家庭必読。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLoader||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+/* シミュレーション */
+.sim-box{background:linear-gradient(135deg,#d97706,#b45309);border-radius:16px;padding:24px;color:#fff;margin:24px 0;}
+.sim-box h3{font-size:16px;font-weight:900;margin-bottom:16px;color:#fff;}
+.sim-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.15);}
+.sim-row:last-child{border-bottom:none;padding-top:12px;}
+.sim-label{font-size:13px;color:rgba(255,255,255,.9);}
+.sim-val{font-size:15px;font-weight:700;color:#fde68a;}
+.sim-val.free{color:#6ee7b7;}
+.sim-total{font-size:26px;font-weight:900;color:#fde047;}
+.sim-note{font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;}
+
+/* テーブル */
+.calc-table{width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.calc-table th{background:linear-gradient(135deg,#d97706,#b45309);color:#fff;padding:12px 16px;text-align:left;}
+.calc-table td{padding:12px 16px;border-bottom:1px solid #fef3c7;}
+.calc-table tr:nth-child(even) td{background:#fffbeb;}
+.calc-table .free-row td{background:linear-gradient(135deg,#ecfdf5,#d1fae5) !important;font-weight:700;}
+.calc-table .total-row td{background:linear-gradient(135deg,#fffbeb,#fef3c7) !important;font-weight:900;font-size:15px;}
+.zero{color:#059669;font-weight:900;}
+.paid{color:#dc2626;font-weight:700;}
+
+/* 自治体カード */
+.city-card{border-radius:14px;padding:18px;margin-bottom:14px;border:2px solid #fde68a;background:linear-gradient(135deg,#fffbeb,#fef3c7);transition:transform .2s;}
+.city-card:hover{transform:translateY(-2px);}
+.city-header{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap;}
+.city-emoji{font-size:24px;}
+.city-info{flex:1;}
+.city-name{font-size:15px;font-weight:900;color:#b45309;}
+.city-pref{font-size:11px;color:#d97706;}
+.city-badge{display:inline-block;background:#d97706;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.city-body{font-size:13px;color:#374151;line-height:1.8;}
+.city-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.city-tag{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:#fef3c7;color:#b45309;border:1px solid #fde68a;}
+.city-tag.green{background:#ecfdf5;color:#059669;border-color:#d1fae5;}
+.city-tag.red{background:#fef2f2;color:#dc2626;border-color:#fecaca;}
+
+/* サマリー */
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:24px 0;}
+.summary-card{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fcd34d;border-radius:12px;padding:16px;text-align:center;}
+.summary-num{font-size:20px;font-weight:900;color:#d97706;}
+.summary-label{font-size:11px;color:#92400e;margin-top:4px;}
+
+/* 検索ステップ */
+.search-step{background:#fffbeb;border-radius:12px;padding:20px;margin:20px 0;border:1px solid #fde68a;}
+.search-step h3{font-size:15px;font-weight:900;color:#b45309;margin-bottom:12px;}
+.search-list{list-style:none;padding:0;margin:0;}
+.search-list li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #fef3c7;}
+.search-list li:last-child{border-bottom:none;}
+.s-num{width:28px;height:28px;background:#d97706;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;}
+.s-text{flex:1;font-size:13px;color:#374151;line-height:1.8;}
+
+/* 注意ボックス */
+.info-yellow{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fcd34d;border-radius:12px;padding:18px;margin:20px 0;}
+.info-yellow p{color:#78350f;font-size:13px;line-height:1.8;margin:0;}
+.info-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #6ee7b7;border-radius:12px;padding:18px;margin:20px 0;}
+.info-green p{color:#065f46;font-size:13px;line-height:1.8;margin:0;}
+.info-red{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:1px solid #fca5a5;border-radius:12px;padding:18px;margin:20px 0;}
+.info-red p{color:#991b1b;font-size:13px;line-height:1.8;margin:0;}
+
+@media(max-width:600px){
+  .calc-table{font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">👶 子育て・学童</span>
+    <h1>学童保育・放課後クラブが無料の自治体はどこ？<br>全国の「学童無料」制度まとめ</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏫 学童保育</span>
+      <span>⏱ 読了約6分</span>
+      <span>👨‍👩‍💼 共働き家庭必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p><strong>「小1の壁」という言葉をご存じですか？</strong>保育園を卒業して小学校に上がると、今度は学童保育の問題が立ちはだかります。毎月<em>1〜3万円の学童費用</em>、待機児童、長期休みの弁当問題…。共働き家庭にとっては悩みの尽きない課題です。</p>
+
+<p>でも、自治体によっては<strong>学童保育料が完全無料</strong>のところがあるのをご存じでしょうか。豊田市・吹田市など、積極的に学童無料化を進める自治体が全国に増えています。住む場所を選ぶだけで、年間十数万円の節約になるかもしれません。</p>
+
+<div class="summary-grid">
+  <div class="summary-card"><div class="summary-num">月1〜3万円</div><div class="summary-label">一般的な学童保育の月額費用</div></div>
+  <div class="summary-card"><div class="summary-num">0円</div><div class="summary-label">学童無料化自治体の月額</div></div>
+  <div class="summary-card"><div class="summary-num">小3まで3年間</div><div class="summary-label">低学年の学童利用が最も多い期間</div></div>
+  <div class="summary-card"><div class="summary-num">最大108万円</div><div class="summary-label">3年間での節約シミュレーション</div></div>
+</div>
+
+<h2>① 学童保育の月額費用（全国平均・地域差・認可・認可外）</h2>
+
+<p>まず、学童保育の費用の実態を把握しましょう。学童保育には<strong>「放課後児童クラブ（認可）」</strong>と<strong>「民間学童・認可外」</strong>の2種類があり、費用が大きく異なります。</p>
+
+<table class="calc-table">
+  <thead>
+    <tr>
+      <th>種類</th>
+      <th>月額費用（目安）</th>
+      <th>特徴</th>
+      <th>補助の有無</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>放課後児童クラブ（公立・認可）</td>
+      <td>月3,000〜15,000円</td>
+      <td>自治体が運営・補助。学校内または近隣に設置。</td>
+      <td>自治体補助あり</td>
+    </tr>
+    <tr>
+      <td>民間学童（認可外）</td>
+      <td>月20,000〜50,000円</td>
+      <td>英語・プログラミングなど独自カリキュラム。質は高いが費用大。</td>
+      <td>補助なし〜一部あり</td>
+    </tr>
+    <tr>
+      <td>学校内放課後子ども教室</td>
+      <td>無料〜数百円/回</td>
+      <td>文部科学省が推進する無料または低コストの放課後活動。</td>
+      <td>国補助あり</td>
+    </tr>
+    <tr class="free-row">
+      <td><strong>学童無料化自治体（公立）</strong></td>
+      <td><span class="zero">月0円</span></td>
+      <td>自治体が独自に完全無料化。全国で広がりつつある。</td>
+      <td>全額自治体負担</td>
+    </tr>
+    <tr>
+      <td>長期休み（夏休み・冬休み）</td>
+      <td>追加で月5,000〜10,000円</td>
+      <td>昼食代・延長料などが追加される自治体が多い。</td>
+      <td>別途確認が必要</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>認可学童でも<strong>月1万円前後</strong>、民間学童なら<strong>月3〜5万円</strong>が相場です。夏休みなどの長期休み中は別途費用がかかる自治体も多く、年間で見ると相当な金額になります。</p>
+
+<h2>② 学童が無料または格安の自治体一覧（表：豊田市・吹田市など10自治体）</h2>
+
+<table class="calc-table">
+  <thead>
+    <tr>
+      <th>自治体</th>
+      <th>都道府県</th>
+      <th>月額費用</th>
+      <th>対象学年</th>
+      <th>特記事項</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="free-row">
+      <td><strong>豊田市</strong></td>
+      <td>愛知県</td>
+      <td><span class="zero">0円（無料）</span></td>
+      <td>小1〜6年</td>
+      <td>2023年度より全学年無料化</td>
+    </tr>
+    <tr class="free-row">
+      <td><strong>吹田市</strong></td>
+      <td>大阪府</td>
+      <td><span class="zero">0円（無料）</span></td>
+      <td>小1〜3年</td>
+      <td>低学年は完全無料。4年以上は有料</td>
+    </tr>
+    <tr class="free-row">
+      <td><strong>明石市</strong></td>
+      <td>兵庫県</td>
+      <td><span class="zero">0〜3,000円</span></td>
+      <td>小1〜6年</td>
+      <td>5つの無料政策の一環。低所得世帯は無料</td>
+    </tr>
+    <tr>
+      <td>松戸市</td>
+      <td>千葉県</td>
+      <td>月2,000〜3,000円</td>
+      <td>小1〜6年</td>
+      <td>全国最低水準の低額。多子世帯は減免</td>
+    </tr>
+    <tr>
+      <td>流山市</td>
+      <td>千葉県</td>
+      <td>月3,000〜5,000円</td>
+      <td>小1〜3年</td>
+      <td>共働き移住促進策として費用を抑制</td>
+    </tr>
+    <tr>
+      <td>神戸市</td>
+      <td>兵庫県</td>
+      <td>月5,000〜8,000円</td>
+      <td>小1〜6年</td>
+      <td>所得連動制あり。低収入世帯は大幅減免</td>
+    </tr>
+    <tr>
+      <td>熊本市</td>
+      <td>熊本県</td>
+      <td>月3,000〜6,000円</td>
+      <td>小1〜6年</td>
+      <td>第2子以降の割引制度あり</td>
+    </tr>
+    <tr>
+      <td>大豊町</td>
+      <td>高知県</td>
+      <td><span class="zero">0円（無料）</span></td>
+      <td>小1〜6年</td>
+      <td>過疎地の移住促進策として完全無料</td>
+    </tr>
+    <tr>
+      <td>秋田県内市町村</td>
+      <td>秋田県</td>
+      <td>月0〜3,000円</td>
+      <td>小1〜6年</td>
+      <td>多くの市町村が独自無料または低額化</td>
+    </tr>
+    <tr>
+      <td>奈良県田原本町</td>
+      <td>奈良県</td>
+      <td><span class="zero">0円（無料）</span></td>
+      <td>小1〜3年</td>
+      <td>子育て支援強化として低学年無料化</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="info-yellow">
+<p>⚠️ <strong>注意：</strong>上記の情報は2026年5月時点のものです。学童無料化制度は年度ごとに変更される場合があります。最新情報は各自治体の公式サイトや子育て支援課にお問い合わせください。</p>
+</div>
+
+<h2>③ 学童無料化でいくら得する？（小3まで3年間のシミュレーション）</h2>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<p>学童が無料の自治体に住むことで、実際どれくらいの節約になるのか計算してみましょう。</p>
+
+<div class="sim-box">
+  <h3>💰 小1〜3年生（3年間）の学童費用シミュレーション</h3>
+  <div class="sim-row"><span class="sim-label">一般的な認可学童（月10,000円）の3年間合計</span><span class="sim-val">360,000円</span></div>
+  <div class="sim-row"><span class="sim-label">長期休み追加費用（月7,000円×年4ヶ月×3年）</span><span class="sim-val">84,000円</span></div>
+  <div class="sim-row"><span class="sim-label">一般自治体の3年間総額</span><span class="sim-val">444,000円</span></div>
+  <div class="sim-row"><span class="sim-label">学童無料化自治体（豊田市・吹田市など）</span><span class="sim-val free">0円</span></div>
+  <div class="sim-row"><span class="sim-label">3年間の節約額</span><span class="sim-total">約44万円</span></div>
+  <div class="sim-note">※子ども1人あたりの試算。子ども2人なら約88万円の節約になる計算。</div>
+</div>
+
+<div class="sim-box">
+  <h3>💰 民間学童（月30,000円）の場合の3年間シミュレーション</h3>
+  <div class="sim-row"><span class="sim-label">民間学童（月30,000円）の3年間合計</span><span class="sim-val">1,080,000円</span></div>
+  <div class="sim-row"><span class="sim-label">長期休み追加費用（月20,000円×年4ヶ月×3年）</span><span class="sim-val">240,000円</span></div>
+  <div class="sim-row"><span class="sim-label">民間学童3年間の総額</span><span class="sim-val">1,320,000円</span></div>
+  <div class="sim-row"><span class="sim-label">学童無料化自治体（公立に切り替えた場合）</span><span class="sim-val free">0〜44,000円</span></div>
+  <div class="sim-row"><span class="sim-label">3年間の節約上限</span><span class="sim-total">最大132万円</span></div>
+  <div class="sim-note">※民間から公立無料化自治体への移行シミュレーション。カリキュラムの差はあります。</div>
+</div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🏭</div>
+    <div class="city-info">
+      <div class="city-name">愛知県 豊田市</div>
+      <div class="city-pref">学童費用完全無料化（小1〜6年）</div>
+    </div>
+    <div class="city-badge">小1〜6年全学年無料</div>
+  </div>
+  <div class="city-body">2023年度から小学校全学年の学童保育を無料化。トヨタ自動車の企業城下町として財政基盤が強く、子育て支援に積極投資している。通常は月1万円前後かかる学童費が6年間ずっと0円。</div>
+  <div class="city-tags"><span class="city-tag green">✅ 小1〜6年無料</span><span class="city-tag green">✅ 待機ほぼなし</span><span class="city-tag">🚗 名古屋30分圏</span></div>
+</div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🌸</div>
+    <div class="city-info">
+      <div class="city-name">大阪府 吹田市</div>
+      <div class="city-pref">低学年は学童無料</div>
+    </div>
+    <div class="city-badge">小1〜3年無料</div>
+  </div>
+  <div class="city-body">低学年（小1〜3年）の学童保育を無料化。「小1の壁」が最も高い時期をカバーしている。大阪市・梅田へのアクセスが良く、共働き世代の移住先として人気が高い。</div>
+  <div class="city-tags"><span class="city-tag green">✅ 小3まで無料</span><span class="city-tag">🚃 梅田近接</span><span class="city-tag">🏙 利便性高</span></div>
+</div>
+
+<h2>④ 学童に入れない！待機児童問題と対策（学童補助金が使える認可外）</h2>
+
+<p>学童無料化の恩恵を受けたくても、<strong>待機児童問題</strong>が立ちはだかる自治体も少なくありません。都市部では申し込みが殺到し、入所できないケースも。その場合の対策を解説します。</p>
+
+<div class="info-red">
+<p>⚠️ <strong>学童待機児童の現状：</strong>全国の放課後児童クラブの待機児童は2025年時点で約1.5万人以上（厚労省調査）。特に東京・神奈川・大阪などの大都市圏で深刻。学童無料の自治体でも、人気校区では入れないケースがある。</p>
+</div>
+
+<p><strong>待機になった場合の対策4選：</strong></p>
+
+<ul>
+  <li>✅ <strong>民間学童の「学童保育補助金」活用：</strong>一部自治体では、公立に入れなかった場合に民間学童の費用を補助する制度あり。月5,000〜20,000円の補助が出るケースも。</li>
+  <li>✅ <strong>学校内の放課後子ども教室を活用：</strong>文部科学省の事業で、学校内で無料または低額の放課後活動ができる。宿題サポートや遊びの時間が提供される。</li>
+  <li>✅ <strong>ファミリーサポートセンターを組み合わせ：</strong>地域の子育てサポーターが子どもを預かる仕組み。1時間600〜800円程度で利用でき、補助金が使えるケースもある。</li>
+  <li>✅ <strong>隣接自治体を検討する：</strong>待機児童の少ない隣接自治体に引っ越すことで、学童に確実に入れるケースも。住む場所の選択は重要な戦略になる。</li>
+</ul>
+
+<h2>⑤ 学童費用を安くする「学童補助金」がある自治体の探し方</h2>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<p>学童保育の補助制度は、自治体によって名称や仕組みが大きく異なります。以下の方法で確実に情報を収集しましょう。</p>
+
+<div class="search-step">
+  <h3>🔍 学童補助金を見つける5ステップ</h3>
+  <ul class="search-list">
+    <li>
+      <div class="s-num">1</div>
+      <div class="s-text"><strong>「もらえるお金ナビ」で市区を選択：</strong>居住中または検討中の自治体を選ぶと、学童・放課後関連の補助金を一覧表示。「子育て支援」カテゴリに学童補助が含まれている場合が多い。</div>
+    </li>
+    <li>
+      <div class="s-num">2</div>
+      <div class="s-text"><strong>自治体のHPで「放課後児童クラブ 費用」を検索：</strong>「〇〇市 放課後児童クラブ 保育料」と検索すると、現在の費用と減免制度の情報がヒットしやすい。</div>
+    </li>
+    <li>
+      <div class="s-num">3</div>
+      <div class="s-text"><strong>子育て支援課・保育課に直接電話：</strong>Webに掲載されていない独自の補助制度が存在することも。「学童保育に関する補助制度はありますか？」と聞くのが一番確実。</div>
+    </li>
+    <li>
+      <div class="s-num">4</div>
+      <div class="s-text"><strong>多子世帯割引・所得連動制を確認：</strong>第2子以降の割引や、世帯年収に応じた減免制度を設けている自治体も多い。複数の子どもがいる家庭は必ず確認を。</div>
+    </li>
+    <li>
+      <div class="s-num">5</div>
+      <div class="s-text"><strong>移住促進補助と学童を組み合わせる：</strong>移住支援金（最大100万円）がある自治体では、引っ越し費用補助+学童無料・低額の組み合わせで、実質的な子育てコストが大幅に下がるケースがある。</div>
+    </li>
+  </ul>
+</div>
+
+<div class="info-green">
+<p>🎯 <strong>まとめ：</strong>学童保育費は3年間で<strong>最大44〜132万円</strong>の差が生まれます。豊田市・吹田市など学童無料化を実施している自治体への移住は、共働き家庭にとって非常にインパクトの大きな選択です。待機児童が少なく、医療費助成や給食費無料化も合わせて実施している自治体を優先的に検討しましょう。まずは「もらえるお金ナビ」で、お住まいの地域の学童・子育て補助金を確認してみてください。</p>
+</div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="008-akashi-omutu.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">👶</div><div class="related-body">おむつが毎月タダ！明石市の神対応</div></a><a href="002-kosodate-joseikin.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">👶</div><div class="related-body">子育て補助金まとめ2026年版</div></a><a href="034-sangyo-shikkoku.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">🍼</div><div class="related-body">産休中のママに出産手当金の仕組み</div></a><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え大全</div></a></div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

@@ -1,0 +1,3117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>もらえるお金ナビ｜補助金データ検証用一覧（235件）</title>
+<style>
+  body { font-family: 'Noto Sans JP', sans-serif; padding: 20px; background: #f9fafb; }
+  h1 { color: #1f2937; }
+  .summary { background: #fff; padding: 16px; border-radius: 8px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .summary p { margin: 4px 0; font-size: 14px; }
+  .legend span { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-right: 8px; font-weight: bold; }
+  .filter { margin: 12px 0; }
+  .filter input { padding: 6px 12px; border: 1px solid #ddd; border-radius: 4px; width: 300px; font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+  thead { background: #1e40af; color: white; position: sticky; top: 0; }
+  th { padding: 10px 8px; font-size: 12px; text-align: left; }
+  td { padding: 8px; border-bottom: 1px solid #f3f4f6; font-size: 13px; vertical-align: top; }
+  tr:hover { background: #fef3c7; }
+  a { color: #2563eb; text-decoration: none; font-size: 12px; }
+  a:hover { text-decoration: underline; }
+  .pref-jump { background: #fff; padding: 12px; border-radius: 8px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .pref-jump a { display: inline-block; margin: 2px 4px; padding: 4px 8px; background: #eff6ff; border-radius: 4px; font-size: 12px; }
+</style>
+</head>
+<body>
+  <h1>📊 補助金データ検証用一覧（235件）</h1>
+  <div class="summary">
+    <p><strong>収録: 47都道府県・83市区・235件の補助金</strong></p>
+    <p>各行の「公式サイト」リンクから自治体トップへ、「Google検索」から該当補助金の検索結果へ遷移できます。</p>
+    <p class="legend">
+      <span style="background: #dcfce7; color: #14532d;">緑：実URL付きの確認済データ</span>
+      <span style="background: #fef3c7; color: #92400e;">黄：要確認（テンプレートベース）</span>
+    </p>
+    <p style="font-size: 12px; color: #6b7280;">⚠️ 黄色のデータは「典型的な補助金パターンを各市に当てはめた」もので、実際に存在するか・金額や期限が正しいかは公式サイトで要確認です。</p>
+  </div>
+
+  <div class="filter">
+    🔍 <input type="text" id="search" placeholder="都道府県名・市名・補助金名で絞り込み..." oninput="filterTable()">
+  </div>
+
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>ID</th><th>都道府県</th><th>市区町村</th><th>補助金名</th><th>カテゴリ</th><th>金額</th><th>条件</th><th>期限</th><th>公式サイト</th><th>Google検索</th><th>検証ステータス</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr style="background: #f0fdf4;">
+    <td>101</td>
+    <td>東京都</td>
+    <td>八王子市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで（予算なくなり次第終了）</td>
+    <td><a href="https://www.city.hachioji.tokyo.jp/kurashi/douro/1004840.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E5%85%AB%E7%8E%8B%E5%AD%90%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>102</td>
+    <td>東京都</td>
+    <td>八王子市</td>
+    <td><strong>おむつ専用ごみ袋の無料配布</strong></td>
+    <td>子育て</td>
+    <td>ごみ袋 年数冊</td>
+    <td>hasChildren</td>
+    <td>通年（お子さんが3歳になるまで毎年申請）</td>
+    <td><a href="https://www.city.hachioji.tokyo.jp/kurashi/kosodate/1003588.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E5%85%AB%E7%8E%8B%E5%AD%90%E5%B8%82%20%E3%81%8A%E3%82%80%E3%81%A4%E5%B0%82%E7%94%A8%E3%81%94%E3%81%BF%E8%A2%8B%E3%81%AE%E7%84%A1%E6%96%99%E9%85%8D%E5%B8%83" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>103</td>
+    <td>東京都</td>
+    <td>八王子市</td>
+    <td><strong>居住環境整備補助金</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年6月30日まで（要事前申請）</td>
+    <td><a href="https://www.city.hachioji.tokyo.jp/kurashi/sumai/1004220.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E5%85%AB%E7%8E%8B%E5%AD%90%E5%B8%82%20%E5%B1%85%E4%BD%8F%E7%92%B0%E5%A2%83%E6%95%B4%E5%82%99%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>104</td>
+    <td>東京都</td>
+    <td>八王子市</td>
+    <td><strong>物価高騰対応子育て手当</strong></td>
+    <td>子育て</td>
+    <td>2万円/人</td>
+    <td>hasChildren</td>
+    <td>令和8年6月30日まで（申請期限）</td>
+    <td><a href="https://www.city.hachioji.tokyo.jp/kurashi/kosodate/kyuhukin/1006000.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E5%85%AB%E7%8E%8B%E5%AD%90%E5%B8%82%20%E7%89%A9%E4%BE%A1%E9%AB%98%E9%A8%B0%E5%AF%BE%E5%BF%9C%E5%AD%90%E8%82%B2%E3%81%A6%E6%89%8B%E5%BD%93" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>105</td>
+    <td>東京都</td>
+    <td>八王子市</td>
+    <td><strong>省エネ家電買い替え補助</strong></td>
+    <td>エコ</td>
+    <td>最大3万円</td>
+    <td>all</td>
+    <td>令和8年7月31日まで（予算なくなり次第終了）</td>
+    <td><a href="https://www.city.hachioji.tokyo.jp/kurashi/kankyo/shoene/1005500.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E5%85%AB%E7%8E%8B%E5%AD%90%E5%B8%82%20%E7%9C%81%E3%82%A8%E3%83%8D%E5%AE%B6%E9%9B%BB%E8%B2%B7%E3%81%84%E6%9B%BF%E3%81%88%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>201</td>
+    <td>東京都</td>
+    <td>新宿区</td>
+    <td><strong>電動自転車購入補助</strong></td>
+    <td>エコ</td>
+    <td>最大3万円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.shinjuku.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E6%96%B0%E5%AE%BF%E5%8C%BA%20%E9%9B%BB%E5%8B%95%E8%87%AA%E8%BB%A2%E8%BB%8A%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>202</td>
+    <td>東京都</td>
+    <td>新宿区</td>
+    <td><strong>子育て世帯への家賃補助</strong></td>
+    <td>住まい</td>
+    <td>月最大2万円</td>
+    <td>hasChildren</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.shinjuku.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E6%96%B0%E5%AE%BF%E5%8C%BA%20%E5%AD%90%E8%82%B2%E3%81%A6%E4%B8%96%E5%B8%AF%E3%81%B8%E3%81%AE%E5%AE%B6%E8%B3%83%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>203</td>
+    <td>東京都</td>
+    <td>新宿区</td>
+    <td><strong>特定不妊治療費助成</strong></td>
+    <td>子育て</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>通年</td>
+    <td><a href="https://www.city.shinjuku.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E6%96%B0%E5%AE%BF%E5%8C%BA%20%E7%89%B9%E5%AE%9A%E4%B8%8D%E5%A6%8A%E6%B2%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>204</td>
+    <td>東京都</td>
+    <td>世田谷区</td>
+    <td><strong>子育て応援券</strong></td>
+    <td>子育て</td>
+    <td>最大8万円相当</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.setagaya.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA%20%E5%AD%90%E8%82%B2%E3%81%A6%E5%BF%9C%E6%8F%B4%E5%88%B8" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>205</td>
+    <td>東京都</td>
+    <td>世田谷区</td>
+    <td><strong>住宅改良工事費助成</strong></td>
+    <td>住まい</td>
+    <td>最大200万円</td>
+    <td>ownsHome</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.setagaya.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA%20%E4%BD%8F%E5%AE%85%E6%94%B9%E8%89%AF%E5%B7%A5%E4%BA%8B%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>206</td>
+    <td>東京都</td>
+    <td>世田谷区</td>
+    <td><strong>高齢者住宅改修費助成</strong></td>
+    <td>福祉</td>
+    <td>最大18万円</td>
+    <td>hasElderly</td>
+    <td>通年</td>
+    <td><a href="https://www.city.setagaya.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA%20%E9%AB%98%E9%BD%A2%E8%80%85%E4%BD%8F%E5%AE%85%E6%94%B9%E4%BF%AE%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>207</td>
+    <td>東京都</td>
+    <td>練馬区</td>
+    <td><strong>保育料軽減補助</strong></td>
+    <td>子育て</td>
+    <td>月最大2.5万円</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.nerima.tokyo.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E7%B7%B4%E9%A6%AC%E5%8C%BA%20%E4%BF%9D%E8%82%B2%E6%96%99%E8%BB%BD%E6%B8%9B%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>208</td>
+    <td>東京都</td>
+    <td>練馬区</td>
+    <td><strong>電動自転車購入補助</strong></td>
+    <td>エコ</td>
+    <td>最大5万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.nerima.tokyo.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E7%B7%B4%E9%A6%AC%E5%8C%BA%20%E9%9B%BB%E5%8B%95%E8%87%AA%E8%BB%A2%E8%BB%8A%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>209</td>
+    <td>東京都</td>
+    <td>江東区</td>
+    <td><strong>プレミアム付き商品券</strong></td>
+    <td>生活支援</td>
+    <td>15,000円分→10,000円</td>
+    <td>all</td>
+    <td>令和8年1月中旬まで</td>
+    <td><a href="https://www.city.koto.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E6%B1%9F%E6%9D%B1%E5%8C%BA%20%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E3%83%A0%E4%BB%98%E3%81%8D%E5%95%86%E5%93%81%E5%88%B8" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>210</td>
+    <td>東京都</td>
+    <td>江東区</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>医療費自己負担なし</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.koto.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E6%B1%9F%E6%9D%B1%E5%8C%BA%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>211</td>
+    <td>東京都</td>
+    <td>町田市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.machida.tokyo.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E7%94%BA%E7%94%B0%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>212</td>
+    <td>東京都</td>
+    <td>町田市</td>
+    <td><strong>子育て世帯引越し費用補助</strong></td>
+    <td>子育て</td>
+    <td>最大10万円</td>
+    <td>hasChildren</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.machida.tokyo.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E7%94%BA%E7%94%B0%E5%B8%82%20%E5%AD%90%E8%82%B2%E3%81%A6%E4%B8%96%E5%B8%AF%E5%BC%95%E8%B6%8A%E3%81%97%E8%B2%BB%E7%94%A8%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>213</td>
+    <td>東京都</td>
+    <td>立川市</td>
+    <td><strong>省エネ機器設置補助</strong></td>
+    <td>エコ</td>
+    <td>最大20万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.tachikawa.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E7%AB%8B%E5%B7%9D%E5%B8%82%20%E7%9C%81%E3%82%A8%E3%83%8D%E6%A9%9F%E5%99%A8%E8%A8%AD%E7%BD%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>214</td>
+    <td>東京都</td>
+    <td>立川市</td>
+    <td><strong>福祉用具購入費助成</strong></td>
+    <td>福祉</td>
+    <td>最大10万円</td>
+    <td>hasElderly</td>
+    <td>通年</td>
+    <td><a href="https://www.city.tachikawa.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E7%AB%8B%E5%B7%9D%E5%B8%82%20%E7%A6%8F%E7%A5%89%E7%94%A8%E5%85%B7%E8%B3%BC%E5%85%A5%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>215</td>
+    <td>埼玉県</td>
+    <td>さいたま市</td>
+    <td><strong>子育て支援医療費助成</strong></td>
+    <td>子育て</td>
+    <td>医療費自己負担なし</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.saitama.lg.jp/003/001/011/p006270.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%20%E5%AD%90%E8%82%B2%E3%81%A6%E6%94%AF%E6%8F%B4%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>216</td>
+    <td>埼玉県</td>
+    <td>さいたま市</td>
+    <td><strong>既存建築物耐震補強等助成事業（共同住宅）</strong></td>
+    <td>住まい</td>
+    <td>戸数×60万円</td>
+    <td>ownsHome</td>
+    <td>令和8年1月31日まで</td>
+    <td><a href="https://www.city.saitama.lg.jp/001/154/007/002/p002706.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%20%E6%97%A2%E5%AD%98%E5%BB%BA%E7%AF%89%E7%89%A9%E8%80%90%E9%9C%87%E8%A3%9C%E5%BC%B7%E7%AD%89%E5%8A%A9%E6%88%90%E4%BA%8B%E6%A5%AD%EF%BC%88%E5%85%B1%E5%90%8C%E4%BD%8F%E5%AE%85%EF%BC%89" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>217</td>
+    <td>埼玉県</td>
+    <td>さいたま市</td>
+    <td><strong>省エネ家電買い替え補助</strong></td>
+    <td>エコ</td>
+    <td>最大2万円</td>
+    <td>all</td>
+    <td>令和8年1月31日まで</td>
+    <td><a href="https://www.city.saitama.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%20%E7%9C%81%E3%82%A8%E3%83%8D%E5%AE%B6%E9%9B%BB%E8%B2%B7%E3%81%84%E6%9B%BF%E3%81%88%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>218</td>
+    <td>埼玉県</td>
+    <td>さいたま市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.saitama.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>219</td>
+    <td>埼玉県</td>
+    <td>川口市</td>
+    <td><strong>子育て応援交通費補助</strong></td>
+    <td>子育て</td>
+    <td>月最大5,000円</td>
+    <td>hasChildren</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kawaguchi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E5%B7%9D%E5%8F%A3%E5%B8%82%20%E5%AD%90%E8%82%B2%E3%81%A6%E5%BF%9C%E6%8F%B4%E4%BA%A4%E9%80%9A%E8%B2%BB%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>220</td>
+    <td>埼玉県</td>
+    <td>川口市</td>
+    <td><strong>住宅耐震診断費補助</strong></td>
+    <td>住まい</td>
+    <td>診断費無料</td>
+    <td>ownsHome</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kawaguchi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E5%B7%9D%E5%8F%A3%E5%B8%82%20%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E8%A8%BA%E6%96%AD%E8%B2%BB%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>221</td>
+    <td>埼玉県</td>
+    <td>川口市</td>
+    <td><strong>ごみ処理費用補助（粗大ごみ減免）</strong></td>
+    <td>生活支援</td>
+    <td>処理費半額</td>
+    <td>all</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kawaguchi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E5%B7%9D%E5%8F%A3%E5%B8%82%20%E3%81%94%E3%81%BF%E5%87%A6%E7%90%86%E8%B2%BB%E7%94%A8%E8%A3%9C%E5%8A%A9%EF%BC%88%E7%B2%97%E5%A4%A7%E3%81%94%E3%81%BF%E6%B8%9B%E5%85%8D%EF%BC%89" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>222</td>
+    <td>埼玉県</td>
+    <td>川越市</td>
+    <td><strong>観光農業体験補助</strong></td>
+    <td>ユニーク</td>
+    <td>1家族2,000円</td>
+    <td>hasChildren</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kawagoe.saitama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E5%B7%9D%E8%B6%8A%E5%B8%82%20%E8%A6%B3%E5%85%89%E8%BE%B2%E6%A5%AD%E4%BD%93%E9%A8%93%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>223</td>
+    <td>埼玉県</td>
+    <td>川越市</td>
+    <td><strong>移住促進補助金</strong></td>
+    <td>ユニーク</td>
+    <td>最大50万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kawagoe.saitama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E5%B7%9D%E8%B6%8A%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E4%BF%83%E9%80%B2%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>224</td>
+    <td>埼玉県</td>
+    <td>所沢市</td>
+    <td><strong>子ども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>医療費自己負担なし</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.tokorozawa.saitama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E6%89%80%E6%B2%A2%E5%B8%82%20%E5%AD%90%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>225</td>
+    <td>埼玉県</td>
+    <td>所沢市</td>
+    <td><strong>電動アシスト自転車購入補助</strong></td>
+    <td>エコ</td>
+    <td>最大3万円</td>
+    <td>usesBike</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.tokorozawa.saitama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E6%89%80%E6%B2%A2%E5%B8%82%20%E9%9B%BB%E5%8B%95%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88%E8%87%AA%E8%BB%A2%E8%BB%8A%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>226</td>
+    <td>埼玉県</td>
+    <td>越谷市</td>
+    <td><strong>新婚世帯家賃補助</strong></td>
+    <td>生活支援</td>
+    <td>月最大1万円(最長2年)</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.koshigaya.saitama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E8%B6%8A%E8%B0%B7%E5%B8%82%20%E6%96%B0%E5%A9%9A%E4%B8%96%E5%B8%AF%E5%AE%B6%E8%B3%83%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>227</td>
+    <td>埼玉県</td>
+    <td>熊谷市</td>
+    <td><strong>移住促進助成金</strong></td>
+    <td>ユニーク</td>
+    <td>最大100万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kumagaya.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%20%E7%86%8A%E8%B0%B7%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E4%BF%83%E9%80%B2%E5%8A%A9%E6%88%90%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>228</td>
+    <td>神奈川県</td>
+    <td>横浜市</td>
+    <td><strong>小児医療費助成</strong></td>
+    <td>子育て</td>
+    <td>医療費自己負担なし</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/kenko-iryo/iryohijosei/shoni/child.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E6%A8%AA%E6%B5%9C%E5%B8%82%20%E5%B0%8F%E5%85%90%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>229</td>
+    <td>神奈川県</td>
+    <td>横浜市</td>
+    <td><strong>省エネ機器購入費補助</strong></td>
+    <td>エコ</td>
+    <td>最大25万円</td>
+    <td>ownsHome</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.yokohama.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E6%A8%AA%E6%B5%9C%E5%B8%82%20%E7%9C%81%E3%82%A8%E3%83%8D%E6%A9%9F%E5%99%A8%E8%B3%BC%E5%85%A5%E8%B2%BB%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>230</td>
+    <td>神奈川県</td>
+    <td>横浜市</td>
+    <td><strong>木造住宅耐震改修費補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.yokohama.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E6%A8%AA%E6%B5%9C%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%B2%BB%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>231</td>
+    <td>神奈川県</td>
+    <td>横浜市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.yokohama.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E6%A8%AA%E6%B5%9C%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>232</td>
+    <td>神奈川県</td>
+    <td>川崎市</td>
+    <td><strong>小児医療費助成事業</strong></td>
+    <td>子育て</td>
+    <td>医療費自己負担なし（小4以降は通院500円/回）</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kawasaki.jp/450/page/0000128564.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E5%B7%9D%E5%B4%8E%E5%B8%82%20%E5%B0%8F%E5%85%90%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90%E4%BA%8B%E6%A5%AD" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>233</td>
+    <td>神奈川県</td>
+    <td>川崎市</td>
+    <td><strong>省エネ住宅改修費補助</strong></td>
+    <td>エコ</td>
+    <td>最大30万円</td>
+    <td>ownsHome</td>
+    <td>令和8年1月31日まで</td>
+    <td><a href="https://www.city.kawasaki.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E5%B7%9D%E5%B4%8E%E5%B8%82%20%E7%9C%81%E3%82%A8%E3%83%8D%E4%BD%8F%E5%AE%85%E6%94%B9%E4%BF%AE%E8%B2%BB%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>234</td>
+    <td>神奈川県</td>
+    <td>川崎市</td>
+    <td><strong>不育症治療費助成</strong></td>
+    <td>子育て</td>
+    <td>最大30万円/年</td>
+    <td>all</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kawasaki.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E5%B7%9D%E5%B4%8E%E5%B8%82%20%E4%B8%8D%E8%82%B2%E7%97%87%E6%B2%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>235</td>
+    <td>神奈川県</td>
+    <td>相模原市</td>
+    <td><strong>移住促進補助</strong></td>
+    <td>ユニーク</td>
+    <td>最大50万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.sagamihara.kanagawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E7%9B%B8%E6%A8%A1%E5%8E%9F%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E4%BF%83%E9%80%B2%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>236</td>
+    <td>神奈川県</td>
+    <td>相模原市</td>
+    <td><strong>障害者住宅改修費補助</strong></td>
+    <td>福祉</td>
+    <td>最大18万円</td>
+    <td>hasElderly</td>
+    <td>通年</td>
+    <td><a href="https://www.city.sagamihara.kanagawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E7%9B%B8%E6%A8%A1%E5%8E%9F%E5%B8%82%20%E9%9A%9C%E5%AE%B3%E8%80%85%E4%BD%8F%E5%AE%85%E6%94%B9%E4%BF%AE%E8%B2%BB%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>237</td>
+    <td>神奈川県</td>
+    <td>藤沢市</td>
+    <td><strong>電動自転車購入補助</strong></td>
+    <td>エコ</td>
+    <td>最大3万円</td>
+    <td>usesBike</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.fujisawa.kanagawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E8%97%A4%E6%B2%A2%E5%B8%82%20%E9%9B%BB%E5%8B%95%E8%87%AA%E8%BB%A2%E8%BB%8A%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>238</td>
+    <td>神奈川県</td>
+    <td>藤沢市</td>
+    <td><strong>子育て世帯保育料軽減</strong></td>
+    <td>子育て</td>
+    <td>月最大3万円軽減</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.fujisawa.kanagawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E8%97%A4%E6%B2%A2%E5%B8%82%20%E5%AD%90%E8%82%B2%E3%81%A6%E4%B8%96%E5%B8%AF%E4%BF%9D%E8%82%B2%E6%96%99%E8%BB%BD%E6%B8%9B" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>239</td>
+    <td>神奈川県</td>
+    <td>横須賀市</td>
+    <td><strong>空き家リフォーム補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.yokosuka.kanagawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E6%A8%AA%E9%A0%88%E8%B3%80%E5%B8%82%20%E7%A9%BA%E3%81%8D%E5%AE%B6%E3%83%AA%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>240</td>
+    <td>神奈川県</td>
+    <td>横須賀市</td>
+    <td><strong>高齢者外出支援タクシー券</strong></td>
+    <td>福祉</td>
+    <td>年最大24,000円分</td>
+    <td>hasElderly</td>
+    <td>通年</td>
+    <td><a href="https://www.city.yokosuka.kanagawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E6%A8%AA%E9%A0%88%E8%B3%80%E5%B8%82%20%E9%AB%98%E9%BD%A2%E8%80%85%E5%A4%96%E5%87%BA%E6%94%AF%E6%8F%B4%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC%E5%88%B8" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>241</td>
+    <td>神奈川県</td>
+    <td>平塚市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.hiratsuka.kanagawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E5%B9%B3%E5%A1%9A%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>242</td>
+    <td>千葉県</td>
+    <td>千葉市</td>
+    <td><strong>子ども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>通院300円/回・調剤無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.chiba.jp/kodomomirai/kodomomirai/kateishien/kodomoiryouhi.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E5%8D%83%E8%91%89%E5%B8%82%20%E5%AD%90%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>243</td>
+    <td>千葉県</td>
+    <td>千葉市</td>
+    <td><strong>妊婦のための支援給付事業</strong></td>
+    <td>子育て</td>
+    <td>計10万円（妊娠時5万＋出生時5万）</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.chiba.jp/hokenfukushi/kenkofukushi/shien/shussankosodateouen/shussankosodateouen.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E5%8D%83%E8%91%89%E5%B8%82%20%E5%A6%8A%E5%A9%A6%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E6%94%AF%E6%8F%B4%E7%B5%A6%E4%BB%98%E4%BA%8B%E6%A5%AD" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>244</td>
+    <td>千葉県</td>
+    <td>千葉市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.chiba.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E5%8D%83%E8%91%89%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>245</td>
+    <td>千葉県</td>
+    <td>船橋市</td>
+    <td><strong>出産・子育て応援給付金</strong></td>
+    <td>子育て</td>
+    <td>妊娠時5万＋出生時5万</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.funabashi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E8%88%B9%E6%A9%8B%E5%B8%82%20%E5%87%BA%E7%94%A3%E3%83%BB%E5%AD%90%E8%82%B2%E3%81%A6%E5%BF%9C%E6%8F%B4%E7%B5%A6%E4%BB%98%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>246</td>
+    <td>千葉県</td>
+    <td>船橋市</td>
+    <td><strong>太陽光発電設備設置補助</strong></td>
+    <td>エコ</td>
+    <td>最大15万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.funabashi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E8%88%B9%E6%A9%8B%E5%B8%82%20%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB%E8%A8%AD%E5%82%99%E8%A8%AD%E7%BD%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>247</td>
+    <td>千葉県</td>
+    <td>松戸市</td>
+    <td><strong>子育てクーポン</strong></td>
+    <td>子育て</td>
+    <td>5万円相当</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.matsudo.chiba.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E6%9D%BE%E6%88%B8%E5%B8%82%20%E5%AD%90%E8%82%B2%E3%81%A6%E3%82%AF%E3%83%BC%E3%83%9D%E3%83%B3" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>248</td>
+    <td>千葉県</td>
+    <td>松戸市</td>
+    <td><strong>高齢者住宅改修費助成</strong></td>
+    <td>福祉</td>
+    <td>最大20万円</td>
+    <td>hasElderly</td>
+    <td>通年</td>
+    <td><a href="https://www.city.matsudo.chiba.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E6%9D%BE%E6%88%B8%E5%B8%82%20%E9%AB%98%E9%BD%A2%E8%80%85%E4%BD%8F%E5%AE%85%E6%94%B9%E4%BF%AE%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>249</td>
+    <td>千葉県</td>
+    <td>市川市</td>
+    <td><strong>ファミリーサポート利用助成</strong></td>
+    <td>子育て</td>
+    <td>月最大1万円</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.ichikawa.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E5%B8%82%E5%B7%9D%E5%B8%82%20%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E5%88%A9%E7%94%A8%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>250</td>
+    <td>千葉県</td>
+    <td>市川市</td>
+    <td><strong>省エネ家電買い替え補助</strong></td>
+    <td>エコ</td>
+    <td>最大3万円</td>
+    <td>all</td>
+    <td>令和8年1月31日まで</td>
+    <td><a href="https://www.city.ichikawa.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E5%B8%82%E5%B7%9D%E5%B8%82%20%E7%9C%81%E3%82%A8%E3%83%8D%E5%AE%B6%E9%9B%BB%E8%B2%B7%E3%81%84%E6%9B%BF%E3%81%88%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>251</td>
+    <td>千葉県</td>
+    <td>柏市</td>
+    <td><strong>結婚新生活支援補助金</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kashiwa.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E6%9F%8F%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>252</td>
+    <td>千葉県</td>
+    <td>柏市</td>
+    <td><strong>電動アシスト自転車購入補助</strong></td>
+    <td>エコ</td>
+    <td>最大3万円</td>
+    <td>usesBike</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.kashiwa.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E6%9F%8F%E5%B8%82%20%E9%9B%BB%E5%8B%95%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88%E8%87%AA%E8%BB%A2%E8%BB%8A%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>253</td>
+    <td>千葉県</td>
+    <td>流山市</td>
+    <td><strong>送迎保育ステーション利用補助</strong></td>
+    <td>子育て</td>
+    <td>月額0〜2万円</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.nagareyama.chiba.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E6%B5%81%E5%B1%B1%E5%B8%82%20%E9%80%81%E8%BF%8E%E4%BF%9D%E8%82%B2%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%A9%E7%94%A8%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>254</td>
+    <td>千葉県</td>
+    <td>流山市</td>
+    <td><strong>子育て世代移住支援金</strong></td>
+    <td>ユニーク</td>
+    <td>最大50万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.nagareyama.chiba.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E6%B5%81%E5%B1%B1%E5%B8%82%20%E5%AD%90%E8%82%B2%E3%81%A6%E4%B8%96%E4%BB%A3%E7%A7%BB%E4%BD%8F%E6%94%AF%E6%8F%B4%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>255</td>
+    <td>千葉県</td>
+    <td>流山市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.nagareyama.chiba.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E6%B5%81%E5%B1%B1%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="">
+    <td>256</td>
+    <td>千葉県</td>
+    <td>流山市</td>
+    <td><strong>出産祝い品プレゼント</strong></td>
+    <td>子育て</td>
+    <td>育児用品セット</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.nagareyama.chiba.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8D%83%E8%91%89%E7%9C%8C%20%E6%B5%81%E5%B1%B1%E5%B8%82%20%E5%87%BA%E7%94%A3%E7%A5%9D%E3%81%84%E5%93%81%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（関東Phase2）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>257</td>
+    <td>愛知県</td>
+    <td>名古屋市</td>
+    <td><strong>子ども医療費助成制度</strong></td>
+    <td>子育て</td>
+    <td>医療費自己負担なし</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.nagoya.jp/kodomo/kosodate/1008992/1009002/1009009.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%20%E5%AD%90%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90%E5%88%B6%E5%BA%A6" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>258</td>
+    <td>愛知県</td>
+    <td>名古屋市</td>
+    <td><strong>子どもあんしん住まいる補助金（住まいの安全性向上改修）</strong></td>
+    <td>住まい</td>
+    <td>最大20万円/戸（補助率1/2）</td>
+    <td>hasChildren</td>
+    <td>令和9年2月28日まで</td>
+    <td><a href="https://www.city.nagoya.jp/jutakutoshi/page/0000173316.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%20%E5%AD%90%E3%81%A9%E3%82%82%E3%81%82%E3%82%93%E3%81%97%E3%82%93%E4%BD%8F%E3%81%BE%E3%81%84%E3%82%8B%E8%A3%9C%E5%8A%A9%E9%87%91%EF%BC%88%E4%BD%8F%E3%81%BE%E3%81%84%E3%81%AE%E5%AE%89%E5%85%A8%E6%80%A7%E5%90%91%E4%B8%8A%E6%94%B9%E4%BF%AE%EF%BC%89" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>259</td>
+    <td>愛知県</td>
+    <td>名古屋市</td>
+    <td><strong>高齢者住宅改修費助成</strong></td>
+    <td>福祉</td>
+    <td>最大18万円</td>
+    <td>hasElderly</td>
+    <td>通年</td>
+    <td><a href="https://www.city.nagoya.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%20%E9%AB%98%E9%BD%A2%E8%80%85%E4%BD%8F%E5%AE%85%E6%94%B9%E4%BF%AE%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>260</td>
+    <td>愛知県</td>
+    <td>豊田市</td>
+    <td><strong>学童保育完全無料</strong></td>
+    <td>子育て</td>
+    <td>利用料無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.toyota.aichi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E8%B1%8A%E7%94%B0%E5%B8%82%20%E5%AD%A6%E7%AB%A5%E4%BF%9D%E8%82%B2%E5%AE%8C%E5%85%A8%E7%84%A1%E6%96%99" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>261</td>
+    <td>愛知県</td>
+    <td>豊田市</td>
+    <td><strong>出産祝い金（第1子〜）</strong></td>
+    <td>子育て</td>
+    <td>5万円〜20万円</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.toyota.aichi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E8%B1%8A%E7%94%B0%E5%B8%82%20%E5%87%BA%E7%94%A3%E7%A5%9D%E3%81%84%E9%87%91%EF%BC%88%E7%AC%AC1%E5%AD%90%E3%80%9C%EF%BC%89" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>262</td>
+    <td>愛知県</td>
+    <td>豊田市</td>
+    <td><strong>太陽光発電設置補助</strong></td>
+    <td>エコ</td>
+    <td>最大10万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.toyota.aichi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E8%B1%8A%E7%94%B0%E5%B8%82%20%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB%E8%A8%AD%E7%BD%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>263</td>
+    <td>愛知県</td>
+    <td>岡崎市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.okazaki.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E5%B2%A1%E5%B4%8E%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>264</td>
+    <td>愛知県</td>
+    <td>岡崎市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.okazaki.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E5%B2%A1%E5%B4%8E%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>265</td>
+    <td>愛知県</td>
+    <td>岡崎市</td>
+    <td><strong>省エネ家電買い替え補助</strong></td>
+    <td>エコ</td>
+    <td>最大3万円</td>
+    <td>all</td>
+    <td>令和8年1月31日まで</td>
+    <td><a href="https://www.city.okazaki.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E5%B2%A1%E5%B4%8E%E5%B8%82%20%E7%9C%81%E3%82%A8%E3%83%8D%E5%AE%B6%E9%9B%BB%E8%B2%B7%E3%81%84%E6%9B%BF%E3%81%88%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>266</td>
+    <td>愛知県</td>
+    <td>一宮市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.ichinomiya.aichi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E4%B8%80%E5%AE%AE%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>267</td>
+    <td>愛知県</td>
+    <td>一宮市</td>
+    <td><strong>木造住宅耐震診断補助</strong></td>
+    <td>住まい</td>
+    <td>診断費無料</td>
+    <td>ownsHome</td>
+    <td>通年</td>
+    <td><a href="https://www.city.ichinomiya.aichi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E4%B8%80%E5%AE%AE%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E8%A8%BA%E6%96%AD%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>268</td>
+    <td>愛知県</td>
+    <td>一宮市</td>
+    <td><strong>移住支援金</strong></td>
+    <td>ユニーク</td>
+    <td>最大100万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.ichinomiya.aichi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%20%E4%B8%80%E5%AE%AE%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E6%94%AF%E6%8F%B4%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>269</td>
+    <td>静岡県</td>
+    <td>静岡市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>高校生まで自己負担なし</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.shizuoka.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%9D%99%E5%B2%A1%E7%9C%8C%20%E9%9D%99%E5%B2%A1%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>270</td>
+    <td>静岡県</td>
+    <td>静岡市</td>
+    <td><strong>お茶の都 移住補助金</strong></td>
+    <td>ユニーク</td>
+    <td>最大100万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.shizuoka.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%9D%99%E5%B2%A1%E7%9C%8C%20%E9%9D%99%E5%B2%A1%E5%B8%82%20%E3%81%8A%E8%8C%B6%E3%81%AE%E9%83%BD%20%E7%A7%BB%E4%BD%8F%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>271</td>
+    <td>静岡県</td>
+    <td>静岡市</td>
+    <td><strong>電動アシスト自転車購入補助</strong></td>
+    <td>エコ</td>
+    <td>最大3万円</td>
+    <td>usesBike</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.shizuoka.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%9D%99%E5%B2%A1%E7%9C%8C%20%E9%9D%99%E5%B2%A1%E5%B8%82%20%E9%9B%BB%E5%8B%95%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88%E8%87%AA%E8%BB%A2%E8%BB%8A%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>272</td>
+    <td>岐阜県</td>
+    <td>岐阜市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.gifu.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B2%90%E9%98%9C%E7%9C%8C%20%E5%B2%90%E9%98%9C%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>273</td>
+    <td>岐阜県</td>
+    <td>岐阜市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.gifu.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B2%90%E9%98%9C%E7%9C%8C%20%E5%B2%90%E9%98%9C%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>274</td>
+    <td>岐阜県</td>
+    <td>岐阜市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.gifu.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B2%90%E9%98%9C%E7%9C%8C%20%E5%B2%90%E9%98%9C%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>275</td>
+    <td>大阪府</td>
+    <td>大阪市</td>
+    <td><strong>こども医療費助成制度</strong></td>
+    <td>子育て</td>
+    <td>1日500円・月2,500円上限</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.osaka.lg.jp/kodomo/page/0000369443.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E5%A4%A7%E9%98%AA%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90%E5%88%B6%E5%BA%A6" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>276</td>
+    <td>大阪府</td>
+    <td>大阪市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.osaka.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E5%A4%A7%E9%98%AA%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>277</td>
+    <td>大阪府</td>
+    <td>大阪市</td>
+    <td><strong>高齢者外出支援敬老パス</strong></td>
+    <td>福祉</td>
+    <td>年最大3,500円</td>
+    <td>hasElderly</td>
+    <td>通年</td>
+    <td><a href="https://www.city.osaka.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E5%A4%A7%E9%98%AA%E5%B8%82%20%E9%AB%98%E9%BD%A2%E8%80%85%E5%A4%96%E5%87%BA%E6%94%AF%E6%8F%B4%E6%95%AC%E8%80%81%E3%83%91%E3%82%B9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>278</td>
+    <td>大阪府</td>
+    <td>堺市</td>
+    <td><strong>給食費無償化</strong></td>
+    <td>子育て</td>
+    <td>給食費全額</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.sakai.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E5%A0%BA%E5%B8%82%20%E7%B5%A6%E9%A3%9F%E8%B2%BB%E7%84%A1%E5%84%9F%E5%8C%96" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>279</td>
+    <td>大阪府</td>
+    <td>堺市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大80万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.sakai.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E5%A0%BA%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>280</td>
+    <td>大阪府</td>
+    <td>堺市</td>
+    <td><strong>省エネリフォーム補助</strong></td>
+    <td>エコ</td>
+    <td>最大30万円</td>
+    <td>ownsHome</td>
+    <td>令和8年1月31日まで</td>
+    <td><a href="https://www.city.sakai.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E5%A0%BA%E5%B8%82%20%E7%9C%81%E3%82%A8%E3%83%8D%E3%83%AA%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>281</td>
+    <td>大阪府</td>
+    <td>吹田市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>18歳まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.suita.osaka.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E5%90%B9%E7%94%B0%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>282</td>
+    <td>大阪府</td>
+    <td>吹田市</td>
+    <td><strong>給食費無償化</strong></td>
+    <td>子育て</td>
+    <td>給食費全額</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.suita.osaka.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E5%90%B9%E7%94%B0%E5%B8%82%20%E7%B5%A6%E9%A3%9F%E8%B2%BB%E7%84%A1%E5%84%9F%E5%8C%96" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>283</td>
+    <td>大阪府</td>
+    <td>吹田市</td>
+    <td><strong>太陽光発電設置補助</strong></td>
+    <td>エコ</td>
+    <td>最大15万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.suita.osaka.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E5%90%B9%E7%94%B0%E5%B8%82%20%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB%E8%A8%AD%E7%BD%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>284</td>
+    <td>大阪府</td>
+    <td>東大阪市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.higashiosaka.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E6%9D%B1%E5%A4%A7%E9%98%AA%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>285</td>
+    <td>大阪府</td>
+    <td>東大阪市</td>
+    <td><strong>創業支援補助金</strong></td>
+    <td>ユニーク</td>
+    <td>最大50万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.higashiosaka.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E6%9D%B1%E5%A4%A7%E9%98%AA%E5%B8%82%20%E5%89%B5%E6%A5%AD%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>286</td>
+    <td>大阪府</td>
+    <td>東大阪市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.higashiosaka.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%20%E6%9D%B1%E5%A4%A7%E9%98%AA%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>287</td>
+    <td>京都府</td>
+    <td>京都市</td>
+    <td><strong>学生支援家賃補助</strong></td>
+    <td>ユニーク</td>
+    <td>月最大5万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kyoto.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%20%E4%BA%AC%E9%83%BD%E5%B8%82%20%E5%AD%A6%E7%94%9F%E6%94%AF%E6%8F%B4%E5%AE%B6%E8%B3%83%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>288</td>
+    <td>京都府</td>
+    <td>京都市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.kyoto.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%20%E4%BA%AC%E9%83%BD%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>289</td>
+    <td>京都府</td>
+    <td>京都市</td>
+    <td><strong>子ども医療費支給制度</strong></td>
+    <td>子育て</td>
+    <td>1医療機関200円/月（小学生まで）</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kyoto.lg.jp/hagukumi/page/0000067393.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%20%E4%BA%AC%E9%83%BD%E5%B8%82%20%E5%AD%90%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E6%94%AF%E7%B5%A6%E5%88%B6%E5%BA%A6" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>290</td>
+    <td>兵庫県</td>
+    <td>神戸市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>0〜2歳無料・3歳〜高校生は400円/日上限</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kobe.lg.jp/a52670/kenko/health/medical/kodomoiryohijose.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%20%E7%A5%9E%E6%88%B8%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>291</td>
+    <td>兵庫県</td>
+    <td>神戸市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.kobe.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%20%E7%A5%9E%E6%88%B8%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>292</td>
+    <td>兵庫県</td>
+    <td>神戸市</td>
+    <td><strong>子育て世帯家賃補助</strong></td>
+    <td>住まい</td>
+    <td>月最大3万円</td>
+    <td>hasChildren</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kobe.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%20%E7%A5%9E%E6%88%B8%E5%B8%82%20%E5%AD%90%E8%82%B2%E3%81%A6%E4%B8%96%E5%B8%AF%E5%AE%B6%E8%B3%83%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>293</td>
+    <td>兵庫県</td>
+    <td>西宮市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>18歳まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.nishi.or.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%20%E8%A5%BF%E5%AE%AE%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>294</td>
+    <td>兵庫県</td>
+    <td>西宮市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.nishi.or.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%20%E8%A5%BF%E5%AE%AE%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>295</td>
+    <td>兵庫県</td>
+    <td>西宮市</td>
+    <td><strong>省エネ家電買い替え補助</strong></td>
+    <td>エコ</td>
+    <td>最大3万円</td>
+    <td>all</td>
+    <td>令和8年1月31日まで</td>
+    <td><a href="https://www.nishi.or.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%20%E8%A5%BF%E5%AE%AE%E5%B8%82%20%E7%9C%81%E3%82%A8%E3%83%8D%E5%AE%B6%E9%9B%BB%E8%B2%B7%E3%81%84%E6%9B%BF%E3%81%88%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>296</td>
+    <td>兵庫県</td>
+    <td>明石市</td>
+    <td><strong>おむつ定期便</strong></td>
+    <td>子育て</td>
+    <td>毎月無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.akashi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%20%E6%98%8E%E7%9F%B3%E5%B8%82%20%E3%81%8A%E3%82%80%E3%81%A4%E5%AE%9A%E6%9C%9F%E4%BE%BF" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>297</td>
+    <td>兵庫県</td>
+    <td>明石市</td>
+    <td><strong>第2子以降保育料無料</strong></td>
+    <td>子育て</td>
+    <td>保育料全額</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.akashi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%20%E6%98%8E%E7%9F%B3%E5%B8%82%20%E7%AC%AC2%E5%AD%90%E4%BB%A5%E9%99%8D%E4%BF%9D%E8%82%B2%E6%96%99%E7%84%A1%E6%96%99" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>298</td>
+    <td>兵庫県</td>
+    <td>明石市</td>
+    <td><strong>18歳までの医療費完全無料</strong></td>
+    <td>子育て</td>
+    <td>医療費全額無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.akashi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%20%E6%98%8E%E7%9F%B3%E5%B8%82%2018%E6%AD%B3%E3%81%BE%E3%81%A7%E3%81%AE%E5%8C%BB%E7%99%82%E8%B2%BB%E5%AE%8C%E5%85%A8%E7%84%A1%E6%96%99" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（中部・関西Phase3）</td>
+  </tr>
+<tr style="">
+    <td>299</td>
+    <td>茨城県</td>
+    <td>水戸市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで自己負担なし</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.mito.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%20%E6%B0%B4%E6%88%B8%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>300</td>
+    <td>茨城県</td>
+    <td>水戸市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.mito.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%20%E6%B0%B4%E6%88%B8%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>301</td>
+    <td>茨城県</td>
+    <td>水戸市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.mito.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%20%E6%B0%B4%E6%88%B8%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>302</td>
+    <td>茨城県</td>
+    <td>つくば市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>高校生まで自己負担なし</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.tsukuba.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%20%E3%81%A4%E3%81%8F%E3%81%B0%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>303</td>
+    <td>茨城県</td>
+    <td>つくば市</td>
+    <td><strong>太陽光発電設置補助</strong></td>
+    <td>エコ</td>
+    <td>最大15万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.tsukuba.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%20%E3%81%A4%E3%81%8F%E3%81%B0%E5%B8%82%20%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB%E8%A8%AD%E7%BD%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>304</td>
+    <td>茨城県</td>
+    <td>つくば市</td>
+    <td><strong>移住・定住促進奨励金</strong></td>
+    <td>ユニーク</td>
+    <td>最大100万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.tsukuba.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%20%E3%81%A4%E3%81%8F%E3%81%B0%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E3%83%BB%E5%AE%9A%E4%BD%8F%E4%BF%83%E9%80%B2%E5%A5%A8%E5%8A%B1%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>305</td>
+    <td>茨城県</td>
+    <td>日立市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.hitachi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%20%E6%97%A5%E7%AB%8B%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>306</td>
+    <td>茨城県</td>
+    <td>日立市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.hitachi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%20%E6%97%A5%E7%AB%8B%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>307</td>
+    <td>茨城県</td>
+    <td>日立市</td>
+    <td><strong>高齢者外出支援タクシー券</strong></td>
+    <td>福祉</td>
+    <td>年最大24,000円分</td>
+    <td>hasElderly</td>
+    <td>通年</td>
+    <td><a href="https://www.city.hitachi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%20%E6%97%A5%E7%AB%8B%E5%B8%82%20%E9%AB%98%E9%BD%A2%E8%80%85%E5%A4%96%E5%87%BA%E6%94%AF%E6%8F%B4%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC%E5%88%B8" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>308</td>
+    <td>栃木県</td>
+    <td>宇都宮市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.utsunomiya.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%20%E5%AE%87%E9%83%BD%E5%AE%AE%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>309</td>
+    <td>栃木県</td>
+    <td>宇都宮市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.utsunomiya.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%20%E5%AE%87%E9%83%BD%E5%AE%AE%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>310</td>
+    <td>栃木県</td>
+    <td>宇都宮市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.utsunomiya.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%20%E5%AE%87%E9%83%BD%E5%AE%AE%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>311</td>
+    <td>栃木県</td>
+    <td>小山市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.oyama.tochigi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%20%E5%B0%8F%E5%B1%B1%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>312</td>
+    <td>栃木県</td>
+    <td>小山市</td>
+    <td><strong>太陽光発電設置補助</strong></td>
+    <td>エコ</td>
+    <td>最大10万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.oyama.tochigi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%20%E5%B0%8F%E5%B1%B1%E5%B8%82%20%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB%E8%A8%AD%E7%BD%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>313</td>
+    <td>栃木県</td>
+    <td>小山市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.oyama.tochigi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%20%E5%B0%8F%E5%B1%B1%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>314</td>
+    <td>栃木県</td>
+    <td>足利市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.ashikaga.tochigi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%20%E8%B6%B3%E5%88%A9%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>315</td>
+    <td>栃木県</td>
+    <td>足利市</td>
+    <td><strong>移住促進補助金</strong></td>
+    <td>ユニーク</td>
+    <td>最大50万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.ashikaga.tochigi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%20%E8%B6%B3%E5%88%A9%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E4%BF%83%E9%80%B2%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>316</td>
+    <td>栃木県</td>
+    <td>足利市</td>
+    <td><strong>省エネ家電買い替え補助</strong></td>
+    <td>エコ</td>
+    <td>最大3万円</td>
+    <td>all</td>
+    <td>令和8年1月31日まで</td>
+    <td><a href="https://www.city.ashikaga.tochigi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%20%E8%B6%B3%E5%88%A9%E5%B8%82%20%E7%9C%81%E3%82%A8%E3%83%8D%E5%AE%B6%E9%9B%BB%E8%B2%B7%E3%81%84%E6%9B%BF%E3%81%88%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>317</td>
+    <td>群馬県</td>
+    <td>前橋市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.maebashi.gunma.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%20%E5%89%8D%E6%A9%8B%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>318</td>
+    <td>群馬県</td>
+    <td>前橋市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.maebashi.gunma.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%20%E5%89%8D%E6%A9%8B%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>319</td>
+    <td>群馬県</td>
+    <td>前橋市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.maebashi.gunma.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%20%E5%89%8D%E6%A9%8B%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>320</td>
+    <td>群馬県</td>
+    <td>高崎市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.takasaki.gunma.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%20%E9%AB%98%E5%B4%8E%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>321</td>
+    <td>群馬県</td>
+    <td>高崎市</td>
+    <td><strong>出産祝い金</strong></td>
+    <td>子育て</td>
+    <td>最大10万円</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.takasaki.gunma.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%20%E9%AB%98%E5%B4%8E%E5%B8%82%20%E5%87%BA%E7%94%A3%E7%A5%9D%E3%81%84%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>322</td>
+    <td>群馬県</td>
+    <td>高崎市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.takasaki.gunma.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%20%E9%AB%98%E5%B4%8E%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>323</td>
+    <td>群馬県</td>
+    <td>太田市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.ota.gunma.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%20%E5%A4%AA%E7%94%B0%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>324</td>
+    <td>群馬県</td>
+    <td>太田市</td>
+    <td><strong>太陽光発電設置補助</strong></td>
+    <td>エコ</td>
+    <td>最大10万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.ota.gunma.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%20%E5%A4%AA%E7%94%B0%E5%B8%82%20%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB%E8%A8%AD%E7%BD%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="">
+    <td>325</td>
+    <td>群馬県</td>
+    <td>太田市</td>
+    <td><strong>高齢者住宅改修費助成</strong></td>
+    <td>福祉</td>
+    <td>最大18万円</td>
+    <td>hasElderly</td>
+    <td>通年</td>
+    <td><a href="https://www.city.ota.gunma.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%20%E5%A4%AA%E7%94%B0%E5%B8%82%20%E9%AB%98%E9%BD%A2%E8%80%85%E4%BD%8F%E5%AE%85%E6%94%B9%E4%BF%AE%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（北関東Phase4）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>326</td>
+    <td>北海道</td>
+    <td>札幌市</td>
+    <td><strong>子ども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>初診580円・再診無料（所得制限あり）</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.sapporo.jp/hoken-iryo/iryojosei/nyuyoji.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8C%97%E6%B5%B7%E9%81%93%20%E6%9C%AD%E5%B9%8C%E5%B8%82%20%E5%AD%90%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>327</td>
+    <td>北海道</td>
+    <td>札幌市</td>
+    <td><strong>冬の暖房費助成（子育て世帯）</strong></td>
+    <td>エコ</td>
+    <td>最大1万円</td>
+    <td>hasChildren</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.sapporo.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8C%97%E6%B5%B7%E9%81%93%20%E6%9C%AD%E5%B9%8C%E5%B8%82%20%E5%86%AC%E3%81%AE%E6%9A%96%E6%88%BF%E8%B2%BB%E5%8A%A9%E6%88%90%EF%BC%88%E5%AD%90%E8%82%B2%E3%81%A6%E4%B8%96%E5%B8%AF%EF%BC%89" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>328</td>
+    <td>北海道</td>
+    <td>札幌市</td>
+    <td><strong>移住・子育て支援金</strong></td>
+    <td>ユニーク</td>
+    <td>最大60万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.sapporo.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%8C%97%E6%B5%B7%E9%81%93%20%E6%9C%AD%E5%B9%8C%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E3%83%BB%E5%AD%90%E8%82%B2%E3%81%A6%E6%94%AF%E6%8F%B4%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>329</td>
+    <td>青森県</td>
+    <td>青森市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.aomori.aomori.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%9D%92%E6%A3%AE%E7%9C%8C%20%E9%9D%92%E6%A3%AE%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>330</td>
+    <td>青森県</td>
+    <td>青森市</td>
+    <td><strong>移住促進補助金</strong></td>
+    <td>ユニーク</td>
+    <td>最大100万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.aomori.aomori.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%9D%92%E6%A3%AE%E7%9C%8C%20%E9%9D%92%E6%A3%AE%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E4%BF%83%E9%80%B2%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>331</td>
+    <td>青森県</td>
+    <td>青森市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.aomori.aomori.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%9D%92%E6%A3%AE%E7%9C%8C%20%E9%9D%92%E6%A3%AE%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>332</td>
+    <td>岩手県</td>
+    <td>盛岡市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.morioka.iwate.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%20%E7%9B%9B%E5%B2%A1%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>333</td>
+    <td>岩手県</td>
+    <td>盛岡市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.morioka.iwate.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%20%E7%9B%9B%E5%B2%A1%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>334</td>
+    <td>岩手県</td>
+    <td>盛岡市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.morioka.iwate.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%20%E7%9B%9B%E5%B2%A1%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>335</td>
+    <td>宮城県</td>
+    <td>仙台市</td>
+    <td><strong>子ども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>令和8年4月から自己負担なし</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.sendai.jp/kate/kurashi/kenkotofukushi/kosodate/teate/jose.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%20%E4%BB%99%E5%8F%B0%E5%B8%82%20%E5%AD%90%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>336</td>
+    <td>宮城県</td>
+    <td>仙台市</td>
+    <td><strong>第3子以降の保育料無料</strong></td>
+    <td>子育て</td>
+    <td>保育料全額</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.sendai.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%20%E4%BB%99%E5%8F%B0%E5%B8%82%20%E7%AC%AC3%E5%AD%90%E4%BB%A5%E9%99%8D%E3%81%AE%E4%BF%9D%E8%82%B2%E6%96%99%E7%84%A1%E6%96%99" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>337</td>
+    <td>宮城県</td>
+    <td>仙台市</td>
+    <td><strong>産後ケア事業</strong></td>
+    <td>子育て</td>
+    <td>最大7日間補助</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.sendai.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%20%E4%BB%99%E5%8F%B0%E5%B8%82%20%E7%94%A3%E5%BE%8C%E3%82%B1%E3%82%A2%E4%BA%8B%E6%A5%AD" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>338</td>
+    <td>秋田県</td>
+    <td>秋田市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.akita.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A7%8B%E7%94%B0%E7%9C%8C%20%E7%A7%8B%E7%94%B0%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>339</td>
+    <td>秋田県</td>
+    <td>秋田市</td>
+    <td><strong>移住促進補助金</strong></td>
+    <td>ユニーク</td>
+    <td>最大100万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.akita.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A7%8B%E7%94%B0%E7%9C%8C%20%E7%A7%8B%E7%94%B0%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E4%BF%83%E9%80%B2%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>340</td>
+    <td>秋田県</td>
+    <td>秋田市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.akita.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A7%8B%E7%94%B0%E7%9C%8C%20%E7%A7%8B%E7%94%B0%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>341</td>
+    <td>山形県</td>
+    <td>山形市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.yamagata-yamagata.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%20%E5%B1%B1%E5%BD%A2%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>342</td>
+    <td>山形県</td>
+    <td>山形市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.yamagata-yamagata.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%20%E5%B1%B1%E5%BD%A2%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>343</td>
+    <td>山形県</td>
+    <td>山形市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.yamagata-yamagata.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%20%E5%B1%B1%E5%BD%A2%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>344</td>
+    <td>福島県</td>
+    <td>福島市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>高校生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.fukushima.fukushima.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%20%E7%A6%8F%E5%B3%B6%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>345</td>
+    <td>福島県</td>
+    <td>福島市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.fukushima.fukushima.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%20%E7%A6%8F%E5%B3%B6%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>346</td>
+    <td>福島県</td>
+    <td>福島市</td>
+    <td><strong>太陽光発電設置補助</strong></td>
+    <td>エコ</td>
+    <td>最大15万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.fukushima.fukushima.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%20%E7%A6%8F%E5%B3%B6%E5%B8%82%20%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB%E8%A8%AD%E7%BD%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>347</td>
+    <td>新潟県</td>
+    <td>新潟市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>入院1日1,200円・通院1日530円</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.niigata.lg.jp/kosodate/ninshin/shien/kenko_iryo/kodomoiryo/kodomoiryou.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%96%B0%E6%BD%9F%E7%9C%8C%20%E6%96%B0%E6%BD%9F%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>348</td>
+    <td>新潟県</td>
+    <td>新潟市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.niigata.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%96%B0%E6%BD%9F%E7%9C%8C%20%E6%96%B0%E6%BD%9F%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>349</td>
+    <td>新潟県</td>
+    <td>新潟市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.niigata.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%96%B0%E6%BD%9F%E7%9C%8C%20%E6%96%B0%E6%BD%9F%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>350</td>
+    <td>富山県</td>
+    <td>富山市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.toyama.toyama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%AF%8C%E5%B1%B1%E7%9C%8C%20%E5%AF%8C%E5%B1%B1%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>351</td>
+    <td>富山県</td>
+    <td>富山市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.toyama.toyama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%AF%8C%E5%B1%B1%E7%9C%8C%20%E5%AF%8C%E5%B1%B1%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>352</td>
+    <td>富山県</td>
+    <td>富山市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.toyama.toyama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%AF%8C%E5%B1%B1%E7%9C%8C%20%E5%AF%8C%E5%B1%B1%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>353</td>
+    <td>石川県</td>
+    <td>金沢市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www4.city.kanazawa.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%9F%B3%E5%B7%9D%E7%9C%8C%20%E9%87%91%E6%B2%A2%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>354</td>
+    <td>石川県</td>
+    <td>金沢市</td>
+    <td><strong>伝統建築物保存改修補助</strong></td>
+    <td>ユニーク</td>
+    <td>最大200万円</td>
+    <td>ownsHome</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www4.city.kanazawa.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%9F%B3%E5%B7%9D%E7%9C%8C%20%E9%87%91%E6%B2%A2%E5%B8%82%20%E4%BC%9D%E7%B5%B1%E5%BB%BA%E7%AF%89%E7%89%A9%E4%BF%9D%E5%AD%98%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>355</td>
+    <td>石川県</td>
+    <td>金沢市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www4.city.kanazawa.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%9F%B3%E5%B7%9D%E7%9C%8C%20%E9%87%91%E6%B2%A2%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>356</td>
+    <td>福井県</td>
+    <td>福井市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.fukui.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E4%BA%95%E7%9C%8C%20%E7%A6%8F%E4%BA%95%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>357</td>
+    <td>福井県</td>
+    <td>福井市</td>
+    <td><strong>移住促進補助金</strong></td>
+    <td>ユニーク</td>
+    <td>最大100万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.fukui.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E4%BA%95%E7%9C%8C%20%E7%A6%8F%E4%BA%95%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E4%BF%83%E9%80%B2%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>358</td>
+    <td>福井県</td>
+    <td>福井市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.fukui.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E4%BA%95%E7%9C%8C%20%E7%A6%8F%E4%BA%95%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>359</td>
+    <td>山梨県</td>
+    <td>甲府市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kofu.yamanashi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B1%B1%E6%A2%A8%E7%9C%8C%20%E7%94%B2%E5%BA%9C%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>360</td>
+    <td>山梨県</td>
+    <td>甲府市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.kofu.yamanashi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B1%B1%E6%A2%A8%E7%9C%8C%20%E7%94%B2%E5%BA%9C%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>361</td>
+    <td>山梨県</td>
+    <td>甲府市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kofu.yamanashi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B1%B1%E6%A2%A8%E7%9C%8C%20%E7%94%B2%E5%BA%9C%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>362</td>
+    <td>長野県</td>
+    <td>長野市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.nagano.nagano.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%95%B7%E9%87%8E%E7%9C%8C%20%E9%95%B7%E9%87%8E%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>363</td>
+    <td>長野県</td>
+    <td>長野市</td>
+    <td><strong>移住支援金</strong></td>
+    <td>ユニーク</td>
+    <td>最大100万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.nagano.nagano.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%95%B7%E9%87%8E%E7%9C%8C%20%E9%95%B7%E9%87%8E%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E6%94%AF%E6%8F%B4%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>364</td>
+    <td>長野県</td>
+    <td>長野市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.nagano.nagano.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%95%B7%E9%87%8E%E7%9C%8C%20%E9%95%B7%E9%87%8E%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>365</td>
+    <td>三重県</td>
+    <td>津市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.info.city.tsu.mie.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E4%B8%89%E9%87%8D%E7%9C%8C%20%E6%B4%A5%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>366</td>
+    <td>三重県</td>
+    <td>津市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.info.city.tsu.mie.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E4%B8%89%E9%87%8D%E7%9C%8C%20%E6%B4%A5%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>367</td>
+    <td>三重県</td>
+    <td>津市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.info.city.tsu.mie.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E4%B8%89%E9%87%8D%E7%9C%8C%20%E6%B4%A5%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>368</td>
+    <td>滋賀県</td>
+    <td>大津市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.otsu.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%BB%8B%E8%B3%80%E7%9C%8C%20%E5%A4%A7%E6%B4%A5%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>369</td>
+    <td>滋賀県</td>
+    <td>大津市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.otsu.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%BB%8B%E8%B3%80%E7%9C%8C%20%E5%A4%A7%E6%B4%A5%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>370</td>
+    <td>滋賀県</td>
+    <td>大津市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.otsu.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%BB%8B%E8%B3%80%E7%9C%8C%20%E5%A4%A7%E6%B4%A5%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>371</td>
+    <td>奈良県</td>
+    <td>奈良市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.nara.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A5%88%E8%89%AF%E7%9C%8C%20%E5%A5%88%E8%89%AF%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>372</td>
+    <td>奈良県</td>
+    <td>奈良市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.nara.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A5%88%E8%89%AF%E7%9C%8C%20%E5%A5%88%E8%89%AF%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>373</td>
+    <td>奈良県</td>
+    <td>奈良市</td>
+    <td><strong>移住促進補助</strong></td>
+    <td>ユニーク</td>
+    <td>最大50万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.nara.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A5%88%E8%89%AF%E7%9C%8C%20%E5%A5%88%E8%89%AF%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E4%BF%83%E9%80%B2%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>374</td>
+    <td>和歌山県</td>
+    <td>和歌山市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.wakayama.wakayama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>375</td>
+    <td>和歌山県</td>
+    <td>和歌山市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.wakayama.wakayama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>376</td>
+    <td>和歌山県</td>
+    <td>和歌山市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.wakayama.wakayama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%20%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>377</td>
+    <td>鳥取県</td>
+    <td>鳥取市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.tottori.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%B3%A5%E5%8F%96%E7%9C%8C%20%E9%B3%A5%E5%8F%96%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>378</td>
+    <td>鳥取県</td>
+    <td>鳥取市</td>
+    <td><strong>県産材での家づくり補助</strong></td>
+    <td>ユニーク</td>
+    <td>最大50万円</td>
+    <td>ownsHome</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.tottori.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%B3%A5%E5%8F%96%E7%9C%8C%20%E9%B3%A5%E5%8F%96%E5%B8%82%20%E7%9C%8C%E7%94%A3%E6%9D%90%E3%81%A7%E3%81%AE%E5%AE%B6%E3%81%A5%E3%81%8F%E3%82%8A%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>379</td>
+    <td>鳥取県</td>
+    <td>鳥取市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.tottori.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%B3%A5%E5%8F%96%E7%9C%8C%20%E9%B3%A5%E5%8F%96%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>380</td>
+    <td>島根県</td>
+    <td>松江市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.matsue.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B3%B6%E6%A0%B9%E7%9C%8C%20%E6%9D%BE%E6%B1%9F%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>381</td>
+    <td>島根県</td>
+    <td>松江市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.matsue.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B3%B6%E6%A0%B9%E7%9C%8C%20%E6%9D%BE%E6%B1%9F%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>382</td>
+    <td>島根県</td>
+    <td>松江市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.matsue.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B3%B6%E6%A0%B9%E7%9C%8C%20%E6%9D%BE%E6%B1%9F%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>383</td>
+    <td>岡山県</td>
+    <td>岡山市</td>
+    <td><strong>子ども医療費助成制度</strong></td>
+    <td>子育て</td>
+    <td>高校生年代まで助成</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.okayama.jp/kurashi/0000004319.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%20%E5%B2%A1%E5%B1%B1%E5%B8%82%20%E5%AD%90%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90%E5%88%B6%E5%BA%A6" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>384</td>
+    <td>岡山県</td>
+    <td>岡山市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.okayama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%20%E5%B2%A1%E5%B1%B1%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>385</td>
+    <td>岡山県</td>
+    <td>岡山市</td>
+    <td><strong>太陽光発電設置補助</strong></td>
+    <td>エコ</td>
+    <td>最大15万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.okayama.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%20%E5%B2%A1%E5%B1%B1%E5%B8%82%20%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB%E8%A8%AD%E7%BD%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>386</td>
+    <td>広島県</td>
+    <td>広島市</td>
+    <td><strong>こども医療費補助制度</strong></td>
+    <td>子育て</td>
+    <td>初診500円〜（所得制限あり）</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.hiroshima.lg.jp/living/medical/1021209/1027972/1003459.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%BA%83%E5%B3%B6%E7%9C%8C%20%E5%BA%83%E5%B3%B6%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E8%A3%9C%E5%8A%A9%E5%88%B6%E5%BA%A6" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>387</td>
+    <td>広島県</td>
+    <td>広島市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.hiroshima.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%BA%83%E5%B3%B6%E7%9C%8C%20%E5%BA%83%E5%B3%B6%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>388</td>
+    <td>広島県</td>
+    <td>広島市</td>
+    <td><strong>自転車ヘルメット購入補助</strong></td>
+    <td>安全</td>
+    <td>最大2,000円</td>
+    <td>usesBike</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.hiroshima.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%BA%83%E5%B3%B6%E7%9C%8C%20%E5%BA%83%E5%B3%B6%E5%B8%82%20%E8%87%AA%E8%BB%A2%E8%BB%8A%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88%E8%B3%BC%E5%85%A5%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>389</td>
+    <td>山口県</td>
+    <td>山口市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.yamaguchi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%20%E5%B1%B1%E5%8F%A3%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>390</td>
+    <td>山口県</td>
+    <td>山口市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.yamaguchi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%20%E5%B1%B1%E5%8F%A3%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>391</td>
+    <td>山口県</td>
+    <td>山口市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.yamaguchi.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%20%E5%B1%B1%E5%8F%A3%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>392</td>
+    <td>徳島県</td>
+    <td>徳島市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.tokushima.tokushima.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%BE%B3%E5%B3%B6%E7%9C%8C%20%E5%BE%B3%E5%B3%B6%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>393</td>
+    <td>徳島県</td>
+    <td>徳島市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.tokushima.tokushima.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%BE%B3%E5%B3%B6%E7%9C%8C%20%E5%BE%B3%E5%B3%B6%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>394</td>
+    <td>徳島県</td>
+    <td>徳島市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.tokushima.tokushima.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%BE%B3%E5%B3%B6%E7%9C%8C%20%E5%BE%B3%E5%B3%B6%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>395</td>
+    <td>香川県</td>
+    <td>高松市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.takamatsu.kagawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%A6%99%E5%B7%9D%E7%9C%8C%20%E9%AB%98%E6%9D%BE%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>396</td>
+    <td>香川県</td>
+    <td>高松市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.takamatsu.kagawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%A6%99%E5%B7%9D%E7%9C%8C%20%E9%AB%98%E6%9D%BE%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>397</td>
+    <td>香川県</td>
+    <td>高松市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.takamatsu.kagawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%A6%99%E5%B7%9D%E7%9C%8C%20%E9%AB%98%E6%9D%BE%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>398</td>
+    <td>愛媛県</td>
+    <td>松山市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.matsuyama.ehime.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E5%AA%9B%E7%9C%8C%20%E6%9D%BE%E5%B1%B1%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>399</td>
+    <td>愛媛県</td>
+    <td>松山市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.matsuyama.ehime.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E5%AA%9B%E7%9C%8C%20%E6%9D%BE%E5%B1%B1%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>400</td>
+    <td>愛媛県</td>
+    <td>松山市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.matsuyama.ehime.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%84%9B%E5%AA%9B%E7%9C%8C%20%E6%9D%BE%E5%B1%B1%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>401</td>
+    <td>高知県</td>
+    <td>高知市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kochi.kochi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%AB%98%E7%9F%A5%E7%9C%8C%20%E9%AB%98%E7%9F%A5%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>402</td>
+    <td>高知県</td>
+    <td>高知市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.kochi.kochi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%AB%98%E7%9F%A5%E7%9C%8C%20%E9%AB%98%E7%9F%A5%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>403</td>
+    <td>高知県</td>
+    <td>高知市</td>
+    <td><strong>移住促進補助金</strong></td>
+    <td>ユニーク</td>
+    <td>最大100万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kochi.kochi.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%AB%98%E7%9F%A5%E7%9C%8C%20%E9%AB%98%E7%9F%A5%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E4%BF%83%E9%80%B2%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>404</td>
+    <td>福岡県</td>
+    <td>福岡市</td>
+    <td><strong>出産祝い金</strong></td>
+    <td>子育て</td>
+    <td>10万円</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.fukuoka.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%20%E7%A6%8F%E5%B2%A1%E5%B8%82%20%E5%87%BA%E7%94%A3%E7%A5%9D%E3%81%84%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>405</td>
+    <td>福岡県</td>
+    <td>福岡市</td>
+    <td><strong>給食費無償化</strong></td>
+    <td>子育て</td>
+    <td>給食費全額</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.fukuoka.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%20%E7%A6%8F%E5%B2%A1%E5%B8%82%20%E7%B5%A6%E9%A3%9F%E8%B2%BB%E7%84%A1%E5%84%9F%E5%8C%96" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>406</td>
+    <td>福岡県</td>
+    <td>福岡市</td>
+    <td><strong>子ども医療費助成制度</strong></td>
+    <td>子育て</td>
+    <td>通院500円/月・入院/薬局無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.fukuoka.lg.jp/hofuku/hokennenkin/hp/01.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%20%E7%A6%8F%E5%B2%A1%E5%B8%82%20%E5%AD%90%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90%E5%88%B6%E5%BA%A6" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>407</td>
+    <td>福岡県</td>
+    <td>北九州市</td>
+    <td><strong>子ども医療費支給制度</strong></td>
+    <td>子育て</td>
+    <td>薬局の自己負担なし</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kitakyushu.lg.jp/contents/11700129.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%20%E5%8C%97%E4%B9%9D%E5%B7%9E%E5%B8%82%20%E5%AD%90%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E6%94%AF%E7%B5%A6%E5%88%B6%E5%BA%A6" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>408</td>
+    <td>福岡県</td>
+    <td>北九州市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.kitakyushu.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%20%E5%8C%97%E4%B9%9D%E5%B7%9E%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>409</td>
+    <td>福岡県</td>
+    <td>北九州市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kitakyushu.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%20%E5%8C%97%E4%B9%9D%E5%B7%9E%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>410</td>
+    <td>佐賀県</td>
+    <td>佐賀市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.saga.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E4%BD%90%E8%B3%80%E7%9C%8C%20%E4%BD%90%E8%B3%80%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>411</td>
+    <td>佐賀県</td>
+    <td>佐賀市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.saga.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E4%BD%90%E8%B3%80%E7%9C%8C%20%E4%BD%90%E8%B3%80%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>412</td>
+    <td>佐賀県</td>
+    <td>佐賀市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.saga.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E4%BD%90%E8%B3%80%E7%9C%8C%20%E4%BD%90%E8%B3%80%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>413</td>
+    <td>長崎県</td>
+    <td>長崎市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.nagasaki.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%95%B7%E5%B4%8E%E7%9C%8C%20%E9%95%B7%E5%B4%8E%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>414</td>
+    <td>長崎県</td>
+    <td>長崎市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.nagasaki.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%95%B7%E5%B4%8E%E7%9C%8C%20%E9%95%B7%E5%B4%8E%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>415</td>
+    <td>長崎県</td>
+    <td>長崎市</td>
+    <td><strong>移住促進補助金</strong></td>
+    <td>ユニーク</td>
+    <td>最大50万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.nagasaki.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%95%B7%E5%B4%8E%E7%9C%8C%20%E9%95%B7%E5%B4%8E%E5%B8%82%20%E7%A7%BB%E4%BD%8F%E4%BF%83%E9%80%B2%E8%A3%9C%E5%8A%A9%E9%87%91" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="background: #f0fdf4;">
+    <td>416</td>
+    <td>熊本県</td>
+    <td>熊本市</td>
+    <td><strong>こども医療費助成（ひまわりカード）</strong></td>
+    <td>子育て</td>
+    <td>高校生年代まで・薬局無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kumamoto.jp/kiji00351/index.html" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%86%8A%E6%9C%AC%E7%9C%8C%20%E7%86%8A%E6%9C%AC%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90%EF%BC%88%E3%81%B2%E3%81%BE%E3%82%8F%E3%82%8A%E3%82%AB%E3%83%BC%E3%83%89%EF%BC%89" target="_blank">Google検索</a></td>
+    <td style="color: #22c55e; font-weight: bold; font-size: 11px;">✓ 公式確認済み</td>
+  </tr>
+<tr style="">
+    <td>417</td>
+    <td>熊本県</td>
+    <td>熊本市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.kumamoto.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%86%8A%E6%9C%AC%E7%9C%8C%20%E7%86%8A%E6%9C%AC%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>418</td>
+    <td>熊本県</td>
+    <td>熊本市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kumamoto.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E7%86%8A%E6%9C%AC%E7%9C%8C%20%E7%86%8A%E6%9C%AC%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>419</td>
+    <td>大分県</td>
+    <td>大分市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.oita.oita.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E5%88%86%E7%9C%8C%20%E5%A4%A7%E5%88%86%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>420</td>
+    <td>大分県</td>
+    <td>大分市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.oita.oita.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E5%88%86%E7%9C%8C%20%E5%A4%A7%E5%88%86%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>421</td>
+    <td>大分県</td>
+    <td>大分市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.oita.oita.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%A4%A7%E5%88%86%E7%9C%8C%20%E5%A4%A7%E5%88%86%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>422</td>
+    <td>宮崎県</td>
+    <td>宮崎市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.miyazaki.miyazaki.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%AE%AE%E5%B4%8E%E7%9C%8C%20%E5%AE%AE%E5%B4%8E%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>423</td>
+    <td>宮崎県</td>
+    <td>宮崎市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.miyazaki.miyazaki.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%AE%AE%E5%B4%8E%E7%9C%8C%20%E5%AE%AE%E5%B4%8E%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>424</td>
+    <td>宮崎県</td>
+    <td>宮崎市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.miyazaki.miyazaki.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E5%AE%AE%E5%B4%8E%E7%9C%8C%20%E5%AE%AE%E5%B4%8E%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>425</td>
+    <td>鹿児島県</td>
+    <td>鹿児島市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.kagoshima.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%20%E9%B9%BF%E5%85%90%E5%B3%B6%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>426</td>
+    <td>鹿児島県</td>
+    <td>鹿児島市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.kagoshima.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%20%E9%B9%BF%E5%85%90%E5%B3%B6%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>427</td>
+    <td>鹿児島県</td>
+    <td>鹿児島市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.kagoshima.lg.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%20%E9%B9%BF%E5%85%90%E5%B3%B6%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>428</td>
+    <td>沖縄県</td>
+    <td>那覇市</td>
+    <td><strong>こども医療費助成</strong></td>
+    <td>子育て</td>
+    <td>中学生まで無料</td>
+    <td>hasChildren</td>
+    <td>通年</td>
+    <td><a href="https://www.city.naha.okinawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%B2%96%E7%B8%84%E7%9C%8C%20%E9%82%A3%E8%A6%87%E5%B8%82%20%E3%81%93%E3%81%A9%E3%82%82%E5%8C%BB%E7%99%82%E8%B2%BB%E5%8A%A9%E6%88%90" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>429</td>
+    <td>沖縄県</td>
+    <td>那覇市</td>
+    <td><strong>木造住宅耐震改修補助</strong></td>
+    <td>住まい</td>
+    <td>最大100万円</td>
+    <td>ownsHome</td>
+    <td>令和8年2月28日まで</td>
+    <td><a href="https://www.city.naha.okinawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%B2%96%E7%B8%84%E7%9C%8C%20%E9%82%A3%E8%A6%87%E5%B8%82%20%E6%9C%A8%E9%80%A0%E4%BD%8F%E5%AE%85%E8%80%90%E9%9C%87%E6%94%B9%E4%BF%AE%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+<tr style="">
+    <td>430</td>
+    <td>沖縄県</td>
+    <td>那覇市</td>
+    <td><strong>結婚新生活支援補助</strong></td>
+    <td>生活支援</td>
+    <td>最大30万円</td>
+    <td>all</td>
+    <td>令和8年3月31日まで</td>
+    <td><a href="https://www.city.naha.okinawa.jp/" target="_blank">公式サイト</a></td>
+    <td><a href="https://www.google.com/search?q=%E6%B2%96%E7%B8%84%E7%9C%8C%20%E9%82%A3%E8%A6%87%E5%B8%82%20%E7%B5%90%E5%A9%9A%E6%96%B0%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E8%A3%9C%E5%8A%A9" target="_blank">Google検索</a></td>
+    <td style="color: #f59e0b; font-weight: bold; font-size: 11px;">テンプレート（全国Phase5）</td>
+  </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function filterTable() {
+      const filter = document.getElementById('search').value.toLowerCase();
+      const rows = document.querySelectorAll('#dataTable tbody tr');
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

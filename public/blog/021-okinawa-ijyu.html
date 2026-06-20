@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【沖縄移住】リゾートで働いてお金もゲット！石垣島・名護・那覇の補助金比較｜もらえるお金ナビ</title>
+<meta name="description" content="沖縄県への移住で補助金がもらえる！石垣市・名護市・宜野湾市・豊見城市の移住支援金を徹底比較。観光・農業・IT・医療など仕事の選び方も解説。沖縄移住を夢で終わらせないガイド。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+/* 比較表 */
+.compare-table{width:100%;border-collapse:collapse;font-size:13px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.compare-table th{background:linear-gradient(135deg,#0e7490,#0891b2);color:#fff;padding:11px 14px;text-align:left;}
+.compare-table td{padding:11px 14px;border-bottom:1px solid #e0f2fe;}
+.compare-table tr:nth-child(even) td{background:#f0fdfe;}
+.compare-table .amount{font-weight:900;color:#0e7490;font-size:14px;}
+.compare-table .best{background:linear-gradient(135deg,#ecfdf5,#d1fae5) !important;font-weight:700;}
+
+/* 島別比較カード */
+.island-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:24px 0;}
+.island-card{border-radius:16px;overflow:hidden;border:2px solid #a5f3fc;transition:transform .2s;background:#fff;}
+.island-card:hover{transform:translateY(-3px);}
+.island-thumb{height:80px;display:flex;align-items:center;justify-content:center;font-size:40px;}
+.island-body{padding:16px;}
+.island-name{font-size:16px;font-weight:900;color:#0e7490;margin-bottom:4px;}
+.island-amount{font-size:20px;font-weight:900;color:#059669;margin-bottom:8px;}
+.island-tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;}
+.island-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;}
+.island-desc{font-size:12px;color:#4b5563;line-height:1.7;}
+
+/* 仕事カード */
+.job-card{border-radius:14px;padding:18px;margin-bottom:14px;border:2px solid #a5f3fc;background:linear-gradient(135deg,#ecfeff,#e0f2fe);}
+.job-header{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+.job-emoji{font-size:26px;}
+.job-info{flex:1;}
+.job-title{font-size:15px;font-weight:900;color:#0e7490;}
+.job-sub{font-size:12px;color:#0891b2;}
+.job-body{font-size:13px;color:#374151;line-height:1.8;}
+.job-salary{display:inline-block;background:#0e7490;color:#fff;font-size:12px;font-weight:700;padding:3px 12px;border-radius:20px;margin-top:6px;}
+
+/* 生活費比較 */
+.life-table{width:100%;border-collapse:collapse;font-size:13px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.life-table th{background:linear-gradient(135deg,#0e7490,#06b6d4);color:#fff;padding:11px 14px;text-align:left;}
+.life-table td{padding:11px 14px;border-bottom:1px solid #e0f2fe;}
+.life-table tr:nth-child(even) td{background:#f0fdfe;}
+.life-table .good{font-weight:900;color:#059669;}
+.life-table .bad{color:#dc2626;}
+
+/* 現実チェック */
+.check-item{display:flex;gap:14px;padding:16px;background:#fff8f0;border-radius:12px;margin-bottom:10px;border-left:4px solid #f97316;}
+.check-num{width:30px;height:30px;background:linear-gradient(135deg,#f97316,#ea580c);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;flex-shrink:0;}
+.check-content{flex:1;}
+.check-title{font-weight:700;color:#111827;font-size:14px;margin-bottom:4px;}
+.check-desc{font-size:13px;color:#4b5563;line-height:1.7;}
+
+/* 計算ボックス */
+.calc-box{background:linear-gradient(135deg,#0e7490,#0891b2);border-radius:16px;padding:24px;color:#fff;margin:24px 0;}
+.calc-box h3{font-size:16px;font-weight:900;margin-bottom:16px;color:#fff;}
+.calc-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.2);}
+.calc-row:last-child{border-bottom:none;padding-top:12px;}
+.calc-label{font-size:13px;color:rgba(255,255,255,.9);}
+.calc-val{font-size:15px;font-weight:700;color:#a5f3fc;}
+.calc-total{font-size:24px;font-weight:900;color:#fde047;}
+
+/* サマリー */
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:24px 0;}
+.summary-card{background:linear-gradient(135deg,#ecfeff,#cffafe);border:1px solid #67e8f9;border-radius:12px;padding:16px;text-align:center;}
+.summary-num{font-size:20px;font-weight:900;color:#0e7490;}
+.summary-label{font-size:11px;color:#164e63;margin-top:4px;}
+
+@media(max-width:600px){
+  .island-grid{grid-template-columns:1fr 1fr;}
+  .compare-table{font-size:11px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">✈️ 移住支援・沖縄</span>
+    <h1>【沖縄移住】リゾートで働いて<br>お金もゲット！<br>石垣島・名護・那覇の補助金比較</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🌺 沖縄移住特集</span>
+      <span>⏱ 読了約7分</span>
+      <span>🏝 離島×補助金</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p><strong>沖縄に移住して、海を眺めながら働いて、しかも自治体からお金までもらえる。</strong>夢みたいな話だと思っていたら、実際に石垣市・名護市・宜野湾市などが移住支援金を用意しているのが沖縄の現実です。</p>
+
+<p>ただし「補助金がある」と知っているだけでは足りない。<em>どの市がいくら出してくれて、どんな仕事があって、生活費はどのくらいかかるか</em>を知らないと、後悔する移住になる。今回はその全部を一気にまとめました。</p>
+
+<div class="summary-grid">
+  <div class="summary-card"><div class="summary-num">最大150万円+</div><div class="summary-label">石垣市の移住支援（推計）</div></div>
+  <div class="summary-card"><div class="summary-num">年間平均22℃</div><div class="summary-label">沖縄の平均気温</div></div>
+  <div class="summary-card"><div class="summary-num">東京比+5〜10%</div><div class="summary-label">物価（食料品・光熱費）</div></div>
+  <div class="summary-card"><div class="summary-num">年間1,000時間+</div><div class="summary-label">東京より多い日照時間</div></div>
+</div>
+
+<h2>① 沖縄移住の補助金まとめ（主要市を徹底比較）</h2>
+
+<p>沖縄県内の主要市区の移住支援金と独自補助を比較します。金額・条件は変更される場合があるため、申請前に必ず各市町村の公式サイトでご確認ください。</p>
+
+<table class="compare-table">
+  <thead>
+    <tr>
+      <th>市町村</th>
+      <th>基本支援金（世帯）</th>
+      <th>子ども加算</th>
+      <th>独自上乗せ</th>
+      <th>合計目安</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="best">
+      <td><strong>石垣市</strong></td>
+      <td><strong>100万円</strong></td>
+      <td>+30万円/人</td>
+      <td>離島加算・就農加算</td>
+      <td class="amount">最大150万円+</td>
+    </tr>
+    <tr>
+      <td>名護市</td>
+      <td>100万円</td>
+      <td>+30万円/人</td>
+      <td>IT移住優遇あり</td>
+      <td class="amount">最大130万円+</td>
+    </tr>
+    <tr>
+      <td>宜野湾市</td>
+      <td>100万円</td>
+      <td>+30万円/人</td>
+      <td>空き家改修補助</td>
+      <td class="amount">最大130万円+</td>
+    </tr>
+    <tr>
+      <td>豊見城市</td>
+      <td>100万円</td>
+      <td>+30万円/人</td>
+      <td>子育て支援金</td>
+      <td class="amount">最大130万円+</td>
+    </tr>
+    <tr>
+      <td>那覇市</td>
+      <td>対象外（都市部）</td>
+      <td>—</td>
+      <td>子育て支援のみ</td>
+      <td class="amount">子育て系のみ</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>※那覇市は国の移住支援金（東京23区→地方）の対象外エリアになっている場合が多い。子育て支援・保育無償化など別の補助金は充実している。</p>
+
+<div class="island-grid">
+  <div class="island-card">
+    <div class="island-thumb" style="background:linear-gradient(135deg,#cffafe,#a5f3fc);">🏝</div>
+    <div class="island-body">
+      <div class="island-name">石垣市（石垣島）</div>
+      <div class="island-amount">最大150万円+</div>
+      <div class="island-tags"><span class="island-tag">🌊 離島加算</span><span class="island-tag">🌾 就農支援</span><span class="island-tag">🐠 ダイビング天国</span></div>
+      <div class="island-desc">国内最南端の「リゾート生活」が可能な離島。農業・漁業・観光業の仕事が豊富。就農支援と移住支援の組み合わせが強力。</div>
+    </div>
+  </div>
+  <div class="island-card">
+    <div class="island-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">🌺</div>
+    <div class="island-body">
+      <div class="island-name">名護市（本島北部）</div>
+      <div class="island-amount">最大130万円+</div>
+      <div class="island-tags"><span class="island-tag">💻 IT移住推進</span><span class="island-tag">🐋 慶良間も近い</span></div>
+      <div class="island-desc">沖縄科学技術大学院大学（OIST）がある学術都市。IT企業のサテライトオフィス誘致にも積極的でテレワーク移住者に向いている。</div>
+    </div>
+  </div>
+  <div class="island-card">
+    <div class="island-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">🏙</div>
+    <div class="island-body">
+      <div class="island-name">宜野湾市（本島中部）</div>
+      <div class="island-amount">最大130万円+</div>
+      <div class="island-tags"><span class="island-tag">🚗 利便性◎</span><span class="island-tag">🏠 空き家補助</span></div>
+      <div class="island-desc">那覇市と沖縄市の中間に位置し利便性が高い。スーパー・病院・学校が揃い、子育て世代の移住先として人気。空き家改修補助も活用できる。</div>
+    </div>
+  </div>
+  <div class="island-card">
+    <div class="island-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">🌸</div>
+    <div class="island-body">
+      <div class="island-name">豊見城市（本島南部）</div>
+      <div class="island-amount">最大130万円+</div>
+      <div class="island-tags"><span class="island-tag">👶 子育て支援</span><span class="island-tag">✈ 那覇空港近く</span></div>
+      <div class="island-desc">那覇空港から車で10分という好立地。子育て支援制度が充実しており、家族での移住に向いている。大型ショッピングモールも近い。</div>
+    </div>
+  </div>
+  <div class="island-card">
+    <div class="island-thumb" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">🌆</div>
+    <div class="island-body">
+      <div class="island-name">那覇市（県庁所在地）</div>
+      <div class="island-amount">子育て支援のみ</div>
+      <div class="island-tags"><span class="island-tag">🛍 都市機能充実</span><span class="island-tag">🏥 病院多数</span></div>
+      <div class="island-desc">移住支援金の対象外だが生活利便性は最高。子育て支援・保育無償化などの制度は充実。仕事の選択肢も最多。</div>
+    </div>
+  </div>
+</div>
+
+<h2>② 沖縄の生活費は実際どのくらい？（東京vs沖縄比較）</h2>
+
+<table class="life-table">
+  <thead>
+    <tr>
+      <th>費目</th>
+      <th>東京（2LDK想定）</th>
+      <th>沖縄本島</th>
+      <th>石垣島</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>家賃（2LDK）</td>
+      <td class="bad">18〜25万円</td>
+      <td class="good">6〜10万円</td>
+      <td>7〜12万円</td>
+    </tr>
+    <tr>
+      <td>食費（4人家族/月）</td>
+      <td>6〜8万円</td>
+      <td>6〜7万円（やや高め）</td>
+      <td>7〜9万円（島価格）</td>
+    </tr>
+    <tr>
+      <td>光熱費（月）</td>
+      <td>2〜3万円</td>
+      <td class="bad">2.5〜4万円（冷暖房費）</td>
+      <td class="bad">3〜5万円</td>
+    </tr>
+    <tr>
+      <td>車の維持費</td>
+      <td class="good">0〜1万円（電車主体）</td>
+      <td class="bad">3〜5万円（車必須）</td>
+      <td class="bad">3〜5万円（車必須）</td>
+    </tr>
+    <tr>
+      <td>教育費（公立）</td>
+      <td>月1〜3万円</td>
+      <td class="good">月0.5〜1.5万円</td>
+      <td class="good">月0.5〜1万円</td>
+    </tr>
+    <tr>
+      <td><strong>合計（月次）</strong></td>
+      <td><strong class="bad">28〜41万円</strong></td>
+      <td><strong class="good">18〜28万円</strong></td>
+      <td><strong>20〜31万円</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>沖縄は家賃が大幅に安い一方、<strong>光熱費・車維持費・食料品（島価格）</strong>がかかります。節約できる部分と増える部分が混在するため「トータルで20〜30%削減」が現実的な目安です。</p>
+
+<h2>③ 沖縄で仕事を見つける方法</h2>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<div class="job-card">
+  <div class="job-header">
+    <div class="job-emoji">💻</div>
+    <div class="job-info">
+      <div class="job-title">IT・テレワーク（おすすめ度：最高）</div>
+      <div class="job-sub">名護市・うるま市でサテライトオフィス誘致が盛ん</div>
+    </div>
+  </div>
+  <div class="job-body">東京の会社にリモートで勤務したまま移住する「テレワーク移住」が最も収入面で安定する方法。沖縄本島の主要都市は光回線が整備され、コワーキングスペースも増加。名護市はIT企業誘致に積極的。</div>
+  <span class="job-salary">月収30〜70万円（スキル次第）</span>
+</div>
+
+<div class="job-card">
+  <div class="job-header">
+    <div class="job-emoji">🏨</div>
+    <div class="job-info">
+      <div class="job-title">観光・ホテル業</div>
+      <div class="job-sub">繁忙期は需要が高い・石垣・恩納村エリア</div>
+    </div>
+  </div>
+  <div class="job-body">リゾートホテルや観光施設の求人は年間を通じてある。特に石垣島・恩納村はホテルが集積しており未経験でも採用されやすい。ただし給与は全国平均より低め。</div>
+  <span class="job-salary">月収18〜28万円（経験者はより高い）</span>
+</div>
+
+<div class="job-card">
+  <div class="job-header">
+    <div class="job-emoji">🌾</div>
+    <div class="job-info">
+      <div class="job-title">農業・漁業（就農支援との組み合わせ）</div>
+      <div class="job-sub">石垣市・竹富町で新規就農支援100万円</div>
+    </div>
+  </div>
+  <div class="job-body">石垣島ではサトウキビ・パイナップル・マンゴー農家への新規参入を支援する「農業就農支援」が充実。最大100万円の就農支援と移住支援金を組み合わせると合計250万円以上になるケースも。</div>
+  <span class="job-salary">就農支援金最大100万円＋農業収入</span>
+</div>
+
+<div class="job-card">
+  <div class="job-header">
+    <div class="job-emoji">🏥</div>
+    <div class="job-info">
+      <div class="job-title">医療・介護（常に人材不足）</div>
+      <div class="job-sub">離島医療への従事で特別加算がある場合も</div>
+    </div>
+  </div>
+  <div class="job-body">沖縄全島で医療・介護人材は常に不足気味。特に離島では手当が上乗せされるケースがある。看護師・介護士・医療事務などは沖縄移住後の安定した仕事として選ばれている。</div>
+  <span class="job-salary">月収22〜45万円（資格・職種次第）</span>
+</div>
+
+<h2>④ 石垣島だけのスペシャル！農業・漁業就農支援100万円</h2>
+
+<div class="calc-box">
+  <h3>🌺 石垣島・フル活用試算：夫婦＋子ども1人で農業移住した場合</h3>
+  <div class="calc-row"><span class="calc-label">沖縄県 移住支援金（世帯）</span><span class="calc-val">100万円</span></div>
+  <div class="calc-row"><span class="calc-label">子ども加算（1人）</span><span class="calc-val">30万円</span></div>
+  <div class="calc-row"><span class="calc-label">石垣市 農業新規就農支援</span><span class="calc-val">100万円</span></div>
+  <div class="calc-row"><span class="calc-label">空き家改修補助（石垣市）</span><span class="calc-val">最大100万円</span></div>
+  <div class="calc-row"><span class="calc-label">合計受取見込み</span><span class="calc-total">最大330万円</span></div>
+</div>
+
+<p>石垣島での農業移住は「移住支援金＋就農支援＋空き家補助」の三重取りが可能なケースがあります。マンゴー・サトウキビ・パイナップルなど高単価農作物の栽培で、3〜5年後には安定した農業収入を目指せます。</p>
+
+<h2>⑤ 沖縄移住で後悔しないための5つの現実チェック</h2>
+
+<div class="check-item">
+  <div class="check-num">1</div>
+  <div class="check-content">
+    <div class="check-title">台風のリアルな影響を把握しておく</div>
+    <div class="check-desc">沖縄は毎年複数の台風が直撃します。停電・断水・交通マヒが数日続くこともあり、島（特に石垣島）ではさらに影響が大きい。台風対策グッズの備蓄と家の耐久性確認が必須。</div>
+  </div>
+</div>
+
+<div class="check-item">
+  <div class="check-num">2</div>
+  <div class="check-content">
+    <div class="check-title">車がないと生活できないことを想定する</div>
+    <div class="check-desc">那覇市以外では公共交通がほぼ機能しない。車の維持費（ローン・保険・ガソリン・駐車場）で月3〜5万円かかることを計算に入れておく必要があります。</div>
+  </div>
+</div>
+
+<div class="check-item">
+  <div class="check-num">3</div>
+  <div class="check-content">
+    <div class="check-title">「ちゅらさん感」だけで移住するとギャップに苦しむ</div>
+    <div class="check-desc">観光で来た沖縄と、生活する沖縄は全く別物。ゆいまーる（助け合い）文化は素敵だが、地元コミュニティへの馴染み方には時間がかかることも。必ず事前に現地滞在をしてから判断を。</div>
+  </div>
+</div>
+
+<div class="check-item">
+  <div class="check-num">4</div>
+  <div class="check-content">
+    <div class="check-title">給与水準が全国最低クラスであることを認識する</div>
+    <div class="check-desc">沖縄の最低賃金・平均賃金は全国最低水準。テレワーク移住でなければ、収入は大幅に下がると考えておく必要があります。「生活費-収入」のバランスを事前に試算してください。</div>
+  </div>
+</div>
+
+<div class="check-item">
+  <div class="check-num">5</div>
+  <div class="check-content">
+    <div class="check-title">子どもの進路（高校・大学）を先読みしておく</div>
+    <div class="check-desc">島（特に離島）への移住は、子どもが高校・大学進学の際に本土へ転出する可能性が高い。移住支援金の「5年以内転出で返還」条件と、子どもの将来を照らし合わせて計画しましょう。</div>
+  </div>
+</div>
+
+<div class="info-box"><p>🌺 <strong>沖縄の市町村別補助金は「もらえるお金ナビ」で一覧チェック！</strong>石垣市・名護市・宜野湾市・豊見城市の移住支援金・子育て支援をまとめて比較できます。</p></div>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid">
+<a href="006-ijyu-ranking.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">✈️</div><div class="related-body">全国移住支援金ランキングTOP20</div></a>
+<a href="041-kekkon-combo.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">💒</div><div class="related-body">結婚×移住×引越しの補助金トリプルコンボ</div></a>
+<a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え！もらえるお金大全</div></a>
+<a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？驚き補助金まとめ</div></a>
+</div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に必ず各自治体の公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

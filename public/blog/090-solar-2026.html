@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>太陽光発電の補助金2026年版！初期費用を大幅カットして10年で元を取る方法｜もらえるお金ナビ</title>
+<meta name="description" content="太陽光発電の設置に国・都道府県・市区の3重取り補助が使える！2026年版の補助金額・申請方法・10年間の収支シミュレーションを完全解説。電気代高騰対策にも。">
+<meta name="keywords" content="太陽光発電 補助金 2026,ソーラーパネル 補助,太陽光 設置費用,太陽光 10年 元が取れる,太陽光 売電 収入,省エネ補助金 2026,電気代高騰 対策">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.solar-overview{background:linear-gradient(135deg,#0c4a6e,#0369a1);border-radius:24px;padding:32px;margin:28px 0;color:#fff;border:2px solid #38bdf8;}
+.solar-overview h3{font-size:18px;font-weight:900;margin-bottom:20px;color:#7dd3fc;text-align:center;}
+.solar-layers{display:flex;flex-direction:column;gap:14px;}
+.solar-layer{display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.08);border-radius:16px;padding:16px 20px;}
+.layer-badge{min-width:72px;border-radius:10px;padding:8px 10px;text-align:center;flex-shrink:0;}
+.layer-badge.kuni{background:linear-gradient(135deg,#3b82f6,#1d4ed8);}
+.layer-badge.ken{background:linear-gradient(135deg,#10b981,#059669);}
+.layer-badge.shi{background:linear-gradient(135deg,#f59e0b,#d97706);}
+.layer-badge-label{font-size:10px;font-weight:900;color:rgba(255,255,255,.8);}
+.layer-badge-name{font-size:14px;font-weight:900;color:#fff;}
+.layer-detail{flex:1;}
+.layer-detail h4{font-size:14px;font-weight:900;color:#fff;margin-bottom:4px;}
+.layer-detail p{font-size:12px;color:rgba(255,255,255,.75);line-height:1.7;margin:0;}
+.layer-amount{font-size:22px;font-weight:900;color:#a5f3fc;white-space:nowrap;}
+.solar-total{display:flex;justify-content:flex-end;align-items:center;gap:12px;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);margin-top:10px;}
+.solar-total-label{font-size:16px;font-weight:900;color:rgba(255,255,255,.9);}
+.solar-total-amount{font-size:40px;font-weight:900;color:#34d399;}
+
+.cost-table{width:100%;border-collapse:collapse;border-radius:16px;overflow:hidden;margin:20px 0;font-size:14px;}
+.cost-table thead tr{background:linear-gradient(135deg,#1e3a5f,#1e40af);color:#fff;}
+.cost-table thead th{padding:12px 16px;font-weight:900;text-align:center;}
+.cost-table tbody tr:nth-child(even){background:#eff6ff;}
+.cost-table tbody tr:nth-child(odd){background:#fff;}
+.cost-table tbody td{padding:12px 16px;border-bottom:1px solid #dbeafe;color:#374151;text-align:center;line-height:1.7;}
+.cost-table tbody td:first-child{font-weight:900;color:#1e40af;text-align:left;}
+.cost-table .highlight-row td{background:linear-gradient(135deg,#1e3a5f,#1e40af)!important;color:#fff!important;font-weight:900;font-size:15px;}
+.cost-plus{color:#10b981;font-weight:900;}
+.cost-minus{color:#3b82f6;font-weight:900;}
+
+.sim-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0;}
+.sim-card{background:#fff;border:2px solid #e5e7eb;border-radius:20px;padding:20px;position:relative;overflow:hidden;}
+.sim-card::after{content:'';position:absolute;top:0;left:0;right:0;height:6px;}
+.sim-card.card-3kw::after{background:linear-gradient(90deg,#3b82f6,#60a5fa);}
+.sim-card.card-5kw::after{background:linear-gradient(90deg,#10b981,#34d399);}
+.sim-card.card-7kw::after{background:linear-gradient(90deg,#f59e0b,#fbbf24);}
+.sim-card-title{font-size:16px;font-weight:900;color:#111827;margin-bottom:12px;margin-top:8px;}
+.sim-row{display:flex;justify-content:space-between;font-size:13px;color:#374151;padding:6px 0;border-bottom:1px dashed #e5e7eb;}
+.sim-row:last-of-type{border-bottom:none;}
+.sim-row-label{color:#6b7280;}
+.sim-row-value{font-weight:700;color:#111827;}
+.sim-payback{background:linear-gradient(135deg,#f0fdf4,#d1fae5);border-radius:10px;padding:12px;text-align:center;margin-top:12px;}
+.sim-payback-num{font-size:28px;font-weight:900;color:#059669;}
+.sim-payback-label{font-size:12px;color:#065f46;font-weight:700;}
+
+.step-flow{margin:20px 0;}
+.step-item{display:flex;gap:16px;margin-bottom:4px;position:relative;}
+.step-item:not(:last-child)::after{content:'';position:absolute;left:20px;top:44px;width:2px;height:calc(100% - 28px);background:linear-gradient(180deg,#3b82f6,rgba(59,130,246,.2));}
+.step-circle{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#1e40af);color:#fff;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px;box-shadow:0 4px 12px rgba(59,130,246,.3);}
+.step-content{flex:1;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px 18px;margin-bottom:16px;}
+.step-content h4{font-size:15px;font-weight:900;color:#111827;margin-bottom:6px;}
+.step-content p{font-size:13px;color:#374151;line-height:1.7;margin:0;}
+.step-content .step-tag{display:inline-block;background:#eff6ff;color:#1d4ed8;font-size:11px;font-weight:900;padding:2px 8px;border-radius:6px;margin-bottom:6px;}
+
+.warning-card{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:2px solid #fca5a5;border-radius:20px;padding:24px;margin:20px 0;}
+.warning-card h3{font-size:16px;font-weight:900;color:#dc2626;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.warning-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;}
+.warning-item{background:#fff;border-radius:12px;padding:14px 16px;}
+.warning-item h4{font-size:14px;font-weight:900;color:#b91c1c;margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.warning-item p{font-size:13px;color:#374151;line-height:1.7;margin:0;}
+
+.maker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:16px 0;}
+.maker-card{background:#fff;border:2px solid #dbeafe;border-radius:14px;padding:16px;}
+.maker-card-name{font-size:15px;font-weight:900;color:#1e40af;margin-bottom:4px;}
+.maker-card-feature{font-size:12px;color:#374151;line-height:1.7;}
+.maker-card-tag{display:inline-block;background:#eff6ff;color:#3b82f6;font-size:11px;font-weight:900;padding:2px 8px;border-radius:6px;margin-top:6px;}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner"><a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a><a href="/" class="nav-cta">▶ 無料で補助金を検索</a></div></nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">🌿 省エネ・太陽光</span>
+    <h1>太陽光発電の補助金2026年版！<br>初期費用を大幅カットして<br>10年で元を取る方法</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 省エネ・太陽光</span>
+      <span>⏱ 読了約10分</span>
+      <span>⚡ 3重取りで最大100万円超補助</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「太陽光発電って高くない？」——そう思っている方に朗報です。2026年現在、太陽光発電の設置には<strong>国・都道府県・市区町村の3重取り補助</strong>が使えます。</p>
+<p>電気代の高騰が止まらない今、太陽光発電は「初期投資が高い贅沢品」から<strong>「10年で確実に元が取れる家庭の資産」</strong>に変わっています。補助金をフル活用すれば初期費用を<strong>50〜100万円以上</strong>カットできます。</p>
+<p>設置を迷っている間にも電気代は上がり続けます。今すぐ正確な数字を確認しましょう。</p>
+
+<!-- 目次 -->
+<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:16px;padding:20px 24px;margin:24px 0;">
+  <h3 style="font-size:13px;font-weight:900;color:#1e40af;margin-bottom:12px;">📋 この記事でわかること</h3>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="#overview" style="font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">① 2026年版・補助金の全体像（国・県・市区の3重取り）</a>
+    <a href="#cost" style="font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">② 補助金を使った初期費用の計算（3kW・5kW・7kW別）</a>
+    <a href="#sim" style="font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">③ 10年間の収支シミュレーション</a>
+    <a href="#apply" style="font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">④ 申請方法（5ステップ）</a>
+    <a href="#choice" style="font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">⑤ パネルの選び方と悪質業者の見分け方</a>
+  </div>
+</div>
+
+<!-- h2① -->
+<h2 id="overview">① 2026年版・太陽光発電設置補助金の全体像｜国・県・市区の3重取り</h2>
+
+<p>2026年現在、太陽光発電の補助制度は<strong>3つの層</strong>から構成されています。それぞれを組み合わせることで、初期費用を大幅に圧縮できます。</p>
+
+<div class="solar-overview">
+  <h3>☀️ 太陽光発電 補助金3重取り早見表（2026年）</h3>
+  <div class="solar-layers">
+    <div class="solar-layer">
+      <div class="layer-badge kuni">
+        <div class="layer-badge-label">第1層</div>
+        <div class="layer-badge-name">国</div>
+      </div>
+      <div class="layer-detail">
+        <h4>子育てエコホーム支援事業 / ZEH補助金</h4>
+        <p>子育て世帯・省エネ住宅向け。太陽光パネル設置を含む新築・改修に対応。ZEH認定住宅なら補助額UP。</p>
+      </div>
+      <div class="layer-amount"><strong>最大60万円</strong></div>
+    </div>
+    <div class="solar-layer">
+      <div class="layer-badge ken">
+        <div class="layer-badge-label">第2層</div>
+        <div class="layer-badge-name">都道府県</div>
+      </div>
+      <div class="layer-detail">
+        <h4>再生可能エネルギー普及促進補助金（各都道府県）</h4>
+        <p>東京都・神奈川県・埼玉県など多くの都道府県が独自補助を設置。国の補助金と重複申請OKの場合が多い。</p>
+      </div>
+      <div class="layer-amount"><strong>最大30万円</strong></div>
+    </div>
+    <div class="solar-layer">
+      <div class="layer-badge shi">
+        <div class="layer-badge-label">第3層</div>
+        <div class="layer-badge-name">市区町村</div>
+      </div>
+      <div class="layer-detail">
+        <h4>住宅用太陽光発電設備設置補助金（各市区町村）</h4>
+        <p>1kWあたり1〜5万円など定額補助が多い。蓄電池とのセット設置でさらに上乗せされる自治体も。</p>
+      </div>
+      <div class="layer-amount"><strong>最大30万円</strong></div>
+    </div>
+  </div>
+  <div class="solar-total">
+    <div class="solar-total-label">3重取り合計最大</div>
+    <div class="solar-total-amount">120万円</div>
+  </div>
+</div>
+
+<div style="background:#f0fdf4;border:1px solid #a7f3d0;border-radius:16px;padding:20px 24px;margin:20px 0;">
+  <h3 style="font-size:15px;font-weight:900;color:#065f46;margin-bottom:12px;">🌿 2026年の注目制度：東京都の「太陽光パネル設置義務化」に伴う補助拡充</h3>
+  <p style="font-size:14px;color:#374151;line-height:1.8;margin:0;">東京都では2025年4月から新築住宅への太陽光パネル設置が義務化されました。これに伴い都の補助金も拡充。東京都内の既存住宅でも<strong>1kWあたり最大12万円</strong>の補助が受けられます（2026年時点）。自治体によっては<strong>蓄電池との同時設置で最大200万円超</strong>になるケースも。</p>
+</div>
+
+<!-- h2② -->
+<h2 id="cost">② 補助金を使った初期費用の計算｜3kW・5kW・7kWシステム別</h2>
+
+<p>設置するシステム容量によって費用も補助金額も変わります。一般的な家庭の3〜5人世帯なら<strong>5kWシステム</strong>が最もコスパが高い選択です。</p>
+
+<table class="cost-table">
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>3kWシステム（1〜2人世帯）</th>
+      <th>5kWシステム（3〜4人世帯）</th>
+      <th>7kWシステム（4人以上・電気自動車有）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>設置工事費（税込）</td>
+      <td>約<strong>90〜120万円</strong></td>
+      <td>約<strong>130〜170万円</strong></td>
+      <td>約<strong>180〜230万円</strong></td>
+    </tr>
+    <tr>
+      <td>国の補助金</td>
+      <td class="cost-minus"><strong>▲15〜30万円</strong></td>
+      <td class="cost-minus"><strong>▲30〜60万円</strong></td>
+      <td class="cost-minus"><strong>▲45〜60万円</strong></td>
+    </tr>
+    <tr>
+      <td>都道府県補助金</td>
+      <td class="cost-minus"><strong>▲5〜15万円</strong></td>
+      <td class="cost-minus"><strong>▲10〜20万円</strong></td>
+      <td class="cost-minus"><strong>▲15〜30万円</strong></td>
+    </tr>
+    <tr>
+      <td>市区補助金</td>
+      <td class="cost-minus"><strong>▲5〜10万円</strong></td>
+      <td class="cost-minus"><strong>▲8〜15万円</strong></td>
+      <td class="cost-minus"><strong>▲10〜20万円</strong></td>
+    </tr>
+    <tr class="highlight-row">
+      <td>補助金後の実質負担額</td>
+      <td><strong>約55〜80万円</strong></td>
+      <td><strong>約75〜100万円</strong></td>
+      <td><strong>約110〜145万円</strong></td>
+    </tr>
+    <tr>
+      <td>補助金による削減率</td>
+      <td><span class="cost-plus">約30〜40%OFF</span></td>
+      <td><span class="cost-plus">約35〜45%OFF</span></td>
+      <td><span class="cost-plus">約35〜45%OFF</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-size:12px;color:#6b7280;margin-top:-12px;">※補助金額は国・都道府県・市区の標準的な組み合わせでの概算。居住地・設置条件によって異なります。</p>
+
+<div style="background:#fef9c3;border:2px solid #fde047;border-radius:16px;padding:20px 24px;margin:20px 0;">
+  <h3 style="font-size:15px;font-weight:900;color:#713f12;margin-bottom:10px;">⚡ 蓄電池との同時設置でさらにお得！</h3>
+  <p style="font-size:14px;color:#374151;line-height:1.8;margin:0;">太陽光発電と蓄電池を同時に設置すると、<strong>追加補助金が受けられる自治体が急増中</strong>です。蓄電池単体の補助を合計すると<strong>最大30〜50万円の追加補助</strong>も。夜間・停電時にも自家発電した電力を使えるため、電気代削減効果も最大化できます。</p>
+</div>
+
+<!-- h2③ -->
+<h2 id="sim">③ 10年間の収支シミュレーション｜設置費用・補助金・売電・電気代削減の総計</h2>
+
+<p>太陽光発電は「設置したらどれくらいで元が取れるのか」——10年間のトータル収支を3つのシステム容量で試算しました。電気代は2026年時点の平均単価（28円/kWh）、売電価格は16円/kWh（FIT制度適用）で計算しています。</p>
+
+<div class="sim-grid">
+  <div class="sim-card card-3kw">
+    <div class="sim-card-title">☀️ 3kWシステム（小規模）</div>
+    <div class="sim-row"><span class="sim-row-label">補助金後の初期費用</span><span class="sim-row-value"><strong>約70万円</strong></span></div>
+    <div class="sim-row"><span class="sim-row-label">年間発電量（東京平均）</span><span class="sim-row-value">約3,300kWh</span></div>
+    <div class="sim-row"><span class="sim-row-label">年間売電収入</span><span class="sim-row-value"><strong>+約2.8万円</strong></span></div>
+    <div class="sim-row"><span class="sim-row-label">年間電気代削減</span><span class="sim-row-value"><strong>+約5.5万円</strong></span></div>
+    <div class="sim-row"><span class="sim-row-label">10年間の総収益</span><span class="sim-row-value"><strong>+約83万円</strong></span></div>
+    <div class="sim-payback">
+      <div class="sim-payback-num">約8.5年</div>
+      <div class="sim-payback-label">で元が取れる</div>
+    </div>
+  </div>
+
+  <div class="sim-card card-5kw">
+    <div class="sim-card-title">☀️ 5kWシステム（標準・おすすめ）</div>
+    <div class="sim-row"><span class="sim-row-label">補助金後の初期費用</span><span class="sim-row-value"><strong>約90万円</strong></span></div>
+    <div class="sim-row"><span class="sim-row-label">年間発電量（東京平均）</span><span class="sim-row-value">約5,500kWh</span></div>
+    <div class="sim-row"><span class="sim-row-label">年間売電収入</span><span class="sim-row-value"><strong>+約4.8万円</strong></span></div>
+    <div class="sim-row"><span class="sim-row-label">年間電気代削減</span><span class="sim-row-value"><strong>+約8.5万円</strong></span></div>
+    <div class="sim-row"><span class="sim-row-label">10年間の総収益</span><span class="sim-row-value"><strong>+約133万円</strong></span></div>
+    <div class="sim-payback">
+      <div class="sim-payback-num">約6.8年</div>
+      <div class="sim-payback-label">で元が取れる（最もコスパ優秀）</div>
+    </div>
+  </div>
+
+  <div class="sim-card card-7kw">
+    <div class="sim-card-title">☀️ 7kWシステム（電気自動車有）</div>
+    <div class="sim-row"><span class="sim-row-label">補助金後の初期費用</span><span class="sim-row-value"><strong>約130万円</strong></span></div>
+    <div class="sim-row"><span class="sim-row-label">年間発電量（東京平均）</span><span class="sim-row-value">約7,700kWh</span></div>
+    <div class="sim-row"><span class="sim-row-label">年間売電収入</span><span class="sim-row-value"><strong>+約6.5万円</strong></span></div>
+    <div class="sim-row"><span class="sim-row-label">年間電気代削減</span><span class="sim-row-value"><strong>+約12万円</strong></span></div>
+    <div class="sim-row"><span class="sim-row-label">10年間の総収益</span><span class="sim-row-value"><strong>+約185万円</strong></span></div>
+    <div class="sim-payback">
+      <div class="sim-payback-num">約7.1年</div>
+      <div class="sim-payback-label">で元が取れる（EV充電コストも削減）</div>
+    </div>
+  </div>
+</div>
+
+<p style="font-size:12px;color:#6b7280;margin-top:-8px;">※電気代単価28円/kWh、売電価格16円/kWh、自家消費率50%で試算。電気代の値上がりが続く場合はさらに早期に回収できます。</p>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<!-- h2④ -->
+<h2 id="apply">④ 申請方法｜設置前申請が必須！5ステップで確実に通す</h2>
+
+<p>太陽光発電の補助金で<strong>最も多い失敗が「設置後に申請しようとして却下される」</strong>ケースです。多くの補助金は<strong>設置前の申請・交付決定が必須</strong>です。</p>
+
+<div class="step-flow">
+  <div class="step-item">
+    <div class="step-circle">1</div>
+    <div class="step-content">
+      <div class="step-tag">事前確認</div>
+      <h4>居住地の補助金を調べる</h4>
+      <p>「もらえるお金ナビ」や各自治体の公式ウェブサイトで<strong>国・都道府県・市区の3層すべて</strong>を確認します。申請期間・対象条件・補助額の上限を必ずメモしておきましょう。</p>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-circle">2</div>
+    <div class="step-content">
+      <div class="step-tag">業者選定</div>
+      <h4>補助金対応の施工業者を選ぶ</h4>
+      <p>補助金申請には<strong>一定の設備認定・施工士資格</strong>が必要です。「補助金申請代行に対応しているか」を必ず業者に確認してください。相見積もりは<strong>最低3社</strong>取ることを強く推奨します。</p>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-circle">3</div>
+    <div class="step-content">
+      <div class="step-tag">設置前に必須</div>
+      <h4>補助金申請書を提出・交付決定を受ける</h4>
+      <p><strong>この手順を飛ばすと補助金がもらえません。</strong>申請書・見積書・仕様書などを揃えて窓口または電子申請で提出。交付決定通知書が届くまで工事は開始しないこと。</p>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-circle">4</div>
+    <div class="step-content">
+      <div class="step-tag">工事実施</div>
+      <h4>交付決定後に太陽光パネルを設置</h4>
+      <p>交付決定通知書を受け取ってから工事開始。工事完了後は<strong>完了報告書・領収書・写真</strong>を準備します。工事内容が申請内容と異なると補助が取り消される場合があるため注意。</p>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-circle">5</div>
+    <div class="step-content">
+      <div class="step-tag">完了後</div>
+      <h4>完了報告・補助金を受け取る</h4>
+      <p>完了報告書を提出後、自治体の審査を経て補助金が振り込まれます。振込まで<strong>1〜3ヶ月程度</strong>かかるのが一般的です。FIT（売電）の契約も同時に進めておくとスムーズです。</p>
+    </div>
+  </div>
+</div>
+
+<!-- h2⑤ -->
+<h2 id="choice">⑤ 太陽光パネルの選び方と注意点｜悪質業者・契約トラブルを避ける</h2>
+
+<p>太陽光発電は高額な買い物だからこそ、<strong>悪質業者・不当な契約</strong>に注意が必要です。消費者庁には毎年数千件の太陽光発電関連トラブルが寄せられています。</p>
+
+<h3>🔍 主要メーカーの特徴早見表</h3>
+<div class="maker-grid">
+  <div class="maker-card">
+    <div class="maker-card-name">パナソニック</div>
+    <div class="maker-card-feature">変換効率トップクラス。狭い屋根でも多く発電できる。HIT（ヘテロ接合）技術で高温下でも効率低下しにくい。</div>
+    <div class="maker-card-tag">高効率・国内大手</div>
+  </div>
+  <div class="maker-card">
+    <div class="maker-card-name">京セラ</div>
+    <div class="maker-card-feature">長年の実績と信頼性が高い。コストパフォーマンスが良く、蓄電池との組み合わせ製品も充実。</div>
+    <div class="maker-card-tag">コスパ・信頼性</div>
+  </div>
+  <div class="maker-card">
+    <div class="maker-card-name">シャープ</div>
+    <div class="maker-card-feature">ブラックソーラー（黒いパネル）で外観を損ないにくい。住宅デザインを重視する方に人気。</div>
+    <div class="maker-card-tag">デザイン重視</div>
+  </div>
+  <div class="maker-card">
+    <div class="maker-card-name">長州産業</div>
+    <div class="maker-card-feature">国内生産・価格が比較的リーズナブル。蓄電池との組み合わせでコスパ最強との評価も。</div>
+    <div class="maker-card-tag">価格重視</div>
+  </div>
+</div>
+
+<div class="warning-card">
+  <h3>⚠️ 悪質業者・契約トラブルのサイン</h3>
+  <div class="warning-grid">
+    <div class="warning-item">
+      <h4>🚨 「今日限りの特別価格」</h4>
+      <p>即断を迫る業者は危険。補助金申請には時間がかかるため、「今日決めないと補助金が使えない」はウソです。</p>
+    </div>
+    <div class="warning-item">
+      <h4>🚨 訪問販売の強引な勧誘</h4>
+      <p>突然の訪問販売は特定商取引法の対象。クーリングオフ（8日以内）が可能です。不安な場合は消費者センターへ。</p>
+    </div>
+    <div class="warning-item">
+      <h4>🚨 見積書の内訳が不明確</h4>
+      <p>パネル代・工事費・保証費が分離されていない見積書は要注意。内訳を明示しない業者はNG。</p>
+    </div>
+    <div class="warning-item">
+      <h4>🚨 保証期間・アフターケアの説明がない</h4>
+      <p>パネルの保証は最低10〜25年が標準。施工保証・出力保証・製品保証の3つを書面で確認してください。</p>
+    </div>
+  </div>
+</div>
+
+<div style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:20px;padding:28px;margin:28px 0;text-align:center;">
+  <p style="font-size:14px;color:#1e40af;font-weight:700;margin-bottom:8px;">まずは居住地の補助金を確認してから業者に見積もり依頼しましょう</p>
+  <p style="font-size:13px;color:#374151;line-height:1.8;margin:0;">「補助金でいくら削減できるか」を先に把握した上で業者交渉すると、<strong>値引き交渉でも有利</strong>になります。補助金の有無で<strong>設置判断の基準</strong>も変わります。</p>
+</div>
+
+</div>
+</div>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="003-mado-renovate.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">🪟</div><div class="related-body">窓リノベ補助金で最大200万円</div></a><a href="093-reform-all.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">🔨</div><div class="related-body">リフォーム補助金まとめ2026年版</div></a><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え大全</div></a><a href="046-kyutoki-hojo.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#ecfdf5,#d1fae5);">🛁</div><div class="related-body">給湯器交換で最大15万円補助</div></a></div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

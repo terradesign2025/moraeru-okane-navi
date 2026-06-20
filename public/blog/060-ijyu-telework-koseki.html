@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>テレワーク移住で「通勤費」を国に払ってもらう！移住就業支援の賢い使い方｜もらえるお金ナビ</title>
+<meta name="description" content="テレワーカーが地方に移住するだけで移住支援金100万円がもらえる！テレワーク移住の条件・対象企業・申請方法と、移住後の交通費補助が使える制度を完全解説。">
+<meta name="keywords" content="テレワーク移住,移住就業支援,移住支援金,地方移住 補助金,テレワーカー 補助,移住 100万円">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.hero-badge{background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;display:inline-block;padding:6px 18px;border-radius:20px;font-size:12px;font-weight:900;margin-bottom:12px;}
+.amount-hero{background:linear-gradient(135deg,#0f172a,#1e3a5f);border-radius:20px;padding:28px;margin:24px 0;text-align:center;position:relative;overflow:hidden;}
+.amount-hero::before{content:'✈️';font-size:100px;position:absolute;right:-10px;bottom:-10px;opacity:.1;}
+.amount-hero-label{font-size:13px;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:8px;}
+.amount-hero-main{font-size:clamp(48px,10vw,72px);font-weight:900;color:#38bdf8;line-height:1;}
+.amount-hero-unit{font-size:18px;font-weight:900;color:#fff;margin-top:4px;}
+.amount-hero-sub{font-size:13px;color:rgba(255,255,255,.7);margin-top:12px;line-height:1.8;}
+
+.toc-box{background:#f0f9ff;border:1px solid #bae6fd;border-radius:16px;padding:20px 24px;margin:24px 0;}
+.toc-box h3{font-size:13px;font-weight:900;color:#0c4a6e;margin-bottom:12px;}
+.toc-box ol{margin:0 0 0 20px;}
+.toc-box li{font-size:14px;color:#0369a1;font-weight:700;margin-bottom:8px;}
+.toc-box a{color:#0369a1;}
+
+.condition-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin:16px 0;}
+.condition-card{background:#fff;border:2px solid #bae6fd;border-radius:16px;padding:20px;}
+.condition-card-icon{font-size:36px;margin-bottom:10px;}
+.condition-card-title{font-size:15px;font-weight:900;color:#0c4a6e;margin-bottom:10px;}
+.condition-card-body{font-size:13px;color:#374151;line-height:1.9;}
+.condition-card.ok{border-color:#6ee7b7;}
+.condition-card.ng{border-color:#fca5a5;}
+.condition-card.ok .condition-card-title{color:#065f46;}
+.condition-card.ng .condition-card-title{color:#b91c1c;}
+
+.sim-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.sim-table th{padding:10px 14px;background:#0c4a6e;color:#fff;font-weight:900;text-align:left;}
+.sim-table th.right{text-align:right;}
+.sim-table td{padding:10px 14px;border-bottom:1px solid #e5e7eb;vertical-align:top;}
+.sim-table td.amount{text-align:right;font-weight:900;color:#0369a1;font-size:14px;}
+.sim-table td.total-label{font-weight:900;font-size:14px;color:#111827;}
+.sim-table .total-row td{background:#eff6ff;font-weight:900;}
+.sim-table .total-row td.amount{font-size:18px;color:#0c4a6e;}
+.sim-table tr:nth-child(even) td{background:#f9fafb;}
+
+.city-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:16px 0;}
+.city-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px;}
+.city-card-rank{display:inline-block;background:#0c4a6e;color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:8px;margin-bottom:8px;}
+.city-card-name{font-size:16px;font-weight:900;color:#111827;margin-bottom:8px;}
+.city-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.city-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:8px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;}
+.city-card-body{font-size:12px;color:#4b5563;line-height:1.8;}
+
+.teate-list{display:grid;gap:12px;margin:16px 0;}
+.teate-item{display:flex;gap:14px;background:#fff;border:1px solid #d1fae5;border-radius:14px;padding:16px;align-items:flex-start;}
+.teate-item-emoji{font-size:32px;flex-shrink:0;}
+.teate-item-title{font-size:15px;font-weight:900;color:#065f46;margin-bottom:6px;}
+.teate-item-body{font-size:13px;color:#374151;line-height:1.8;}
+
+.warn-box{background:#fef3c7;border-left:4px solid #f59e0b;border-radius:0 12px 12px 0;padding:16px 20px;margin:20px 0;}
+.warn-box-title{font-size:14px;font-weight:900;color:#92400e;margin-bottom:8px;}
+.warn-box-body{font-size:13px;color:#374151;line-height:1.8;}
+
+.info-box{background:#f0f9ff;border-left:4px solid #0ea5e9;border-radius:0 12px 12px 0;padding:16px 20px;margin:20px 0;}
+.info-box-title{font-size:14px;font-weight:900;color:#0c4a6e;margin-bottom:8px;}
+.info-box-body{font-size:13px;color:#374151;line-height:1.8;}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner"><a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a><a href="/" class="nav-cta">▶ 無料で補助金を検索</a></div></nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">✈️ 移住・テレワーク</span>
+    <h1>テレワーク移住で「通勤費」を<br>国に払ってもらう！<br>移住就業支援の賢い使い方</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 移住・テレワーク</span>
+      <span>⏱ 読了約8分</span>
+      <span>✈️ 移住検討中の方必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「テレワークで仕事はどこでもできるんだけど、移住してもお金はかかるよなあ…」</p>
+<p>そう思ってためらっているあなた、実は<strong>国がお金を出してくれる</strong>って知ってましたか？</p>
+<p>テレワーカーが地方に移住するだけで、単身なら<strong>最大60万円</strong>、子育て世帯なら<strong>最大100万円</strong>もらえる制度があります。しかも移住後の帰省費用や交通費まで補助される自治体も！</p>
+
+<div class="amount-hero">
+  <div class="amount-hero-label">テレワーク移住で受け取れる支援金（子育て世帯・最大）</div>
+  <div class="amount-hero-main">100万円</div>
+  <div class="amount-hero-unit">移住就業支援事業（国＋自治体）</div>
+  <div class="amount-hero-sub">単身者でも最大60万円。申請を知らないと1円ももらえません。<br>条件・申請方法をこの記事で完全解説します。</div>
+</div>
+
+<div class="toc-box">
+  <h3>📋 この記事の目次</h3>
+  <ol>
+    <li><a href="#overview">テレワーク移住と「移住就業支援事業」の関係</a></li>
+    <li><a href="#conditions">対象となるテレワーカーの要件</a></li>
+    <li><a href="#simulation">実際の受取額シミュレーション</a></li>
+    <li><a href="#cities">テレワーク移住に向いている自治体TOP5</a></li>
+    <li><a href="#travel">移住後の帰省交通費補助がある制度まとめ</a></li>
+  </ol>
+</div>
+
+<h2 id="overview">① テレワーク移住と「移住就業支援事業」の関係（テレワーカーも対象になる条件）</h2>
+
+<p>「移住就業支援事業」とは、国（内閣府）と都道府県・市区町村が連携して設けている補助金制度です。地方への移住を促進するのが目的で、もともとは<strong>地方での就職・起業</strong>をする人が対象でした。</p>
+<p>しかし2022年度以降、<strong>テレワーカーも正式に対象</strong>に加わりました。つまり、都市部の会社に勤めながら地方に引っ越すだけで支援金がもらえる時代になったのです。</p>
+
+<div class="info-box">
+  <div class="info-box-title">💡 なぜテレワーカーが対象になったのか？</div>
+  <div class="info-box-body">コロナ禍でテレワークが普及し、「仕事はオンラインで続けながら、住まいだけ地方へ」という移住スタイルが急増。国はこの流れを活用して地方の人口減少を食い止めるため、テレワーク移住を支援金の対象に組み込みました。在籍企業は都市部のままでOKというのが最大のポイントです。</div>
+</div>
+
+<p>支援金の財源は<strong>国が2/3・自治体が1/3</strong>を負担するため、自治体の財政力に関わらず比較的安定した制度になっています。</p>
+<p>一方で、<strong>対象の自治体は限られています。</strong> 都道府県によって参加市町村が異なるため、移住先として希望する自治体が制度に参加しているかどうかの事前確認が必須です。</p>
+
+<h2 id="conditions">② 対象となるテレワーカーの要件（在籍企業・雇用形態・居住地）</h2>
+
+<p>「じゃあテレワーカーなら誰でももらえるの？」という声が聞こえてきそうです。残念ながら<strong>いくつか重要な要件</strong>があります。確認してみましょう。</p>
+
+<div class="condition-cards">
+  <div class="condition-card ok">
+    <div class="condition-card-icon">✅</div>
+    <div class="condition-card-title">在籍企業の所在地</div>
+    <div class="condition-card-body">勤務先企業が「東京23区内」または「東京圏（東京・神奈川・埼玉・千葉）の条件不利地域以外」に所在していること。リモートで都市部の会社に在籍しながら地方に移住するケースが対象。</div>
+  </div>
+  <div class="condition-card ok">
+    <div class="condition-card-icon">✅</div>
+    <div class="condition-card-title">雇用形態・業務形態</div>
+    <div class="condition-card-body">正社員・契約社員・派遣社員など雇用関係があること。テレワーク（リモートワーク）で業務を行っており、移住後も引き続き同じ雇用関係が継続できること。フリーランスは別途「起業」枠での申請が必要。</div>
+  </div>
+  <div class="condition-card ok">
+    <div class="condition-card-icon">✅</div>
+    <div class="condition-card-title">移住後の居住地</div>
+    <div class="condition-card-body">制度に参加している道府県内の対象市町村に実際に転居・住民票を移すこと。移住後5年間は継続居住が基本条件（途中離脱で返還を求められる場合あり）。</div>
+  </div>
+  <div class="condition-card ng">
+    <div class="condition-card-icon">❌</div>
+    <div class="condition-card-title">対象外になるケース</div>
+    <div class="condition-card-body">すでに移住先自治体に住民票がある場合／移住直前の居住地が対象外の地域（一部）／会社が東京圏以外に所在する場合／週3日未満のテレワーク勤務で申請が認められないケースも自治体ごとに異なる。</div>
+  </div>
+</div>
+
+<div class="warn-box">
+  <div class="warn-box-title">⚠️ 注意：自治体ごとに要件が微妙に異なります</div>
+  <div class="warn-box-body">国の基本要件を満たしていても、各都道府県・市町村が独自の追加条件を設けているケースがあります。「週5日フルリモートのみ対象」「在籍1年以上の正社員のみ」など。必ず移住先自治体の担当窓口に問い合わせましょう。</div>
+</div>
+
+<h2 id="simulation">③ テレワーク移住者の実際の受取額シミュレーション（表）</h2>
+
+<p>ここが一番気になるところですよね。実際にいくらもらえるのか、パターン別にシミュレーションしてみました。</p>
+
+<div class="table-wrap">
+  <table class="sim-table">
+    <thead>
+      <tr>
+        <th>移住パターン</th>
+        <th>国・都道府県支援金</th>
+        <th>自治体上乗せ</th>
+        <th class="right">合計（目安）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>単身・テレワーク移住</td>
+        <td>最大<strong>60万円</strong></td>
+        <td>0〜20万円</td>
+        <td class="amount"><strong>最大80万円</strong></td>
+      </tr>
+      <tr>
+        <td>夫婦2人・テレワーク移住</td>
+        <td>最大<strong>60万円</strong></td>
+        <td>10〜30万円</td>
+        <td class="amount"><strong>最大90万円</strong></td>
+      </tr>
+      <tr>
+        <td>子育て世帯（子1人）</td>
+        <td>最大<strong>100万円</strong>（子加算あり）</td>
+        <td>10〜30万円</td>
+        <td class="amount"><strong>最大130万円</strong></td>
+      </tr>
+      <tr>
+        <td>子育て世帯（子2人以上）</td>
+        <td>最大<strong>100万円＋子追加分</strong></td>
+        <td>20〜50万円</td>
+        <td class="amount"><strong>最大160万円＋</strong></td>
+      </tr>
+      <tr>
+        <td>移住＋リフォーム補助併用</td>
+        <td>最大100万円</td>
+        <td>リフォーム補助別途</td>
+        <td class="amount"><strong>200万円超も</strong></td>
+      </tr>
+      <tr class="total-row">
+        <td class="total-label" colspan="3">📌 子育て世帯が最も有利！子1人につき加算あり</td>
+        <td class="amount">子1人＋30万円加算</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>表のとおり、子育て世帯は基本額<strong>100万円</strong>に子どもの人数に応じた加算もあります。さらに自治体独自の上乗せ補助を組み合わせると、<strong>総額150万〜200万円超</strong>になるケースも珍しくありません。</p>
+
+<div class="info-box">
+  <div class="info-box-title">📌 支援金の受け取りタイミング</div>
+  <div class="info-box-body">多くの自治体では、移住後に住民票の移転と申請書類の提出が完了してから<strong>2〜4ヶ月後</strong>に振り込まれます。先にお金がもらえるわけではないので、引越し費用は自己資金で用意する必要があります。</div>
+</div>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2 id="cities">④ テレワーク移住に向いている自治体TOP5（交通・ネット環境・自然環境）</h2>
+
+<p>制度の条件を満たす自治体は全国に多数ありますが、テレワーカーが快適に働ける環境かどうかは別の話です。ここでは<strong>ネット環境・交通アクセス・補助金の手厚さ</strong>の3軸で注目の自治体TOP5をご紹介します。</p>
+
+<div class="city-cards">
+  <div class="city-card">
+    <div class="city-card-rank">🥇 1位</div>
+    <div class="city-card-name">長野県 松本市・安曇野市</div>
+    <div class="city-card-tags">
+      <span class="city-tag">🛤 新幹線アクセス可</span>
+      <span class="city-tag">📶 光回線完備</span>
+      <span class="city-tag">🏔 自然環境◎</span>
+    </div>
+    <div class="city-card-body">東京から特急で約2時間30分。北アルプスの眺望と豊かな自然環境の中でテレワーク移住者が急増中。移住支援金に加え、光回線補助・コワーキングスペース整備も充実。</div>
+  </div>
+  <div class="city-card">
+    <div class="city-card-rank">🥈 2位</div>
+    <div class="city-card-name">岡山県 真庭市・美作市</div>
+    <div class="city-card-tags">
+      <span class="city-tag">🚄 新幹線駅あり</span>
+      <span class="city-tag">💰 上乗せ補助手厚</span>
+      <span class="city-tag">🌿 里山環境</span>
+    </div>
+    <div class="city-card-body">岡山駅から高速バスやレンタカーでアクセス。自治体独自の「テレワーク移住促進補助金」を設けており、国の制度と合わせると高額受給が狙える。空き家バンクも充実。</div>
+  </div>
+  <div class="city-card">
+    <div class="city-card-rank">🥉 3位</div>
+    <div class="city-card-name">宮城県 気仙沼市・登米市</div>
+    <div class="city-card-tags">
+      <span class="city-tag">🚅 仙台経由でアクセス</span>
+      <span class="city-tag">🐟 食環境◎</span>
+      <span class="city-tag">💰 子育て加算大きい</span>
+    </div>
+    <div class="city-card-body">東北新幹線で仙台まで行ければ、そこからのアクセスも良好。海産物などの食が豊か。子育て世帯向けの加算が厚く、教育費補助との組み合わせも狙い目。</div>
+  </div>
+  <div class="city-card">
+    <div class="city-card-rank">4位</div>
+    <div class="city-card-name">石川県 加賀市・小松市</div>
+    <div class="city-card-tags">
+      <span class="city-tag">🚄 北陸新幹線開通</span>
+      <span class="city-tag">📶 5G対応エリア拡大</span>
+      <span class="city-tag">♨️ 温泉文化</span>
+    </div>
+    <div class="city-card-body">2024年北陸新幹線延伸で東京からのアクセスが劇的改善。温泉・食文化・工芸など豊かな地域資源が魅力。ICT環境の整備も積極的で、テレワーク拠点づくりに力を入れている。</div>
+  </div>
+  <div class="city-card">
+    <div class="city-card-rank">5位</div>
+    <div class="city-card-name">高知県 四万十市・土佐清水市</div>
+    <div class="city-card-tags">
+      <span class="city-tag">🌊 自然環境抜群</span>
+      <span class="city-tag">💰 支援額が高水準</span>
+      <span class="city-tag">🌞 温暖な気候</span>
+    </div>
+    <div class="city-card-body">交通アクセスはやや不便だが、支援金額の高さで補える。四万十川や足摺岬など自然環境は国内トップクラス。「少し不便でも豊かな自然の中で生きたい」層に人気が高い。</div>
+  </div>
+</div>
+
+<h2 id="travel">⑤ 移住後の帰省交通費補助がある制度まとめ</h2>
+
+<p>地方に移住すると気になるのが「帰省費用」です。テレワークで仕事を続けるとはいえ、たまには本社に顔を出す必要もある。家族・友人への帰省もある。実はこれを<strong>補助してくれる制度</strong>がいくつか存在します。</p>
+
+<div class="teate-list">
+  <div class="teate-item">
+    <div class="teate-item-emoji">🚅</div>
+    <div>
+      <div class="teate-item-title">ふるさと帰郷支援（自治体独自）</div>
+      <div class="teate-item-body">一部の自治体では移住後の帰省交通費を補助する「ふるさと帰郷支援」を設けています。年2〜4回分の交通費実費（上限あり）を補助するケースが多く、<strong>1回あたり1〜3万円</strong>程度の補助が受けられます。移住先の市区町村に確認してみましょう。</div>
+    </div>
+  </div>
+  <div class="teate-item">
+    <div class="teate-item-emoji">🏢</div>
+    <div>
+      <div class="teate-item-title">会社の交通費・帰省手当</div>
+      <div class="teate-item-body">テレワーク移住者が急増したことで、<strong>月1〜2回の本社出勤交通費を全額支給</strong>する企業も増えています。転居前に会社のテレワーク規定・交通費規定を確認し、必要なら就業規則の見直しを人事に相談しましょう。交通費の実費支給は非課税枠（月15万円）内なら所得税もかかりません。</div>
+    </div>
+  </div>
+  <div class="teate-item">
+    <div class="teate-item-emoji">✈️</div>
+    <div>
+      <div class="teate-item-title">遠距離移住の航空券補助（一部離島・遠隔地）</div>
+      <div class="teate-item-body">沖縄・離島・北海道など遠距離の移住先では、<strong>年間の航空券代の一部補助</strong>を設ける自治体もあります。たとえば沖縄県の一部離島では「島外医療」「帰郷」のための交通費補助制度があります。距離が遠いほど補助額も大きくなる傾向があります。</div>
+    </div>
+  </div>
+  <div class="teate-item">
+    <div class="teate-item-emoji">🚗</div>
+    <div>
+      <div class="teate-item-title">移住後の車購入・維持費補助</div>
+      <div class="teate-item-body">地方では車が必須ですが、移住後の<strong>車購入費補助・EV補助・ガソリン代補助</strong>を設けている自治体があります。これも「移動費の実質補助」と考えることができます。移住先でのEV補助と国のEV補助金を組み合わせると、<strong>最大60万円以上の補助</strong>になるケースも。</div>
+    </div>
+  </div>
+  <div class="teate-item">
+    <div class="teate-item-emoji">📱</div>
+    <div>
+      <div class="teate-item-title">テレワーク通信費補助（光回線・ポケットWi-Fi）</div>
+      <div class="teate-item-body">移住後のテレワーク環境整備として、<strong>光回線工事費・月額通信費の補助</strong>を行う自治体が増えています。工事費補助（上限5〜10万円）＋月額補助（最大3年間・月3,000〜5,000円）という形が多く、通信費の実質的な軽減が期待できます。</div>
+    </div>
+  </div>
+</div>
+
+<div class="warn-box">
+  <div class="warn-box-title">⚠️ 制度は毎年変わります！最新情報を必ず確認</div>
+  <div class="warn-box-body">移住就業支援事業の予算・要件・参加自治体は毎年度変わります。この記事の情報は2026年5月時点のものです。移住を検討する際は、必ず移住先自治体の公式サイトや「移住・交流推進機構（JOIN）」の公式情報をご確認ください。</div>
+</div>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え大全</div></a><a href="088-kakuteishinkoku.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">💳</div><div class="related-body">確定申告で取り戻せるお金</div></a><a href="009-nenkin-midori.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">🏦</div><div class="related-body">緑の封筒を無視すると0円！年金給付金</div></a><a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">驚き補助金まとめポータル</div></a></div></div></div>
+
+</div>
+</div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

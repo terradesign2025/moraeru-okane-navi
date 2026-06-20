@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>子どもが多いほど儲かる!? 移住支援金『子ども1人100万円加算』の破壊力を試算してみた｜もらえるお金ナビ</title>
+<meta name="description" content="移住支援金は子ども1人につき最大30〜100万円が加算される！子ども3人の家族なら基本100万円＋子加算で最大290万円以上の試算も。子連れ移住で得する自治体ランキングと申請ガイド。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+/* シミュレーション表 */
+.sim-table{width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.sim-table th{background:linear-gradient(135deg,#065f46,#0d9488);color:#fff;padding:12px 16px;text-align:left;}
+.sim-table td{padding:12px 16px;border-bottom:1px solid #e5e7eb;}
+.sim-table tr:nth-child(even) td{background:#f0fdf4;}
+.sim-table .amount{font-weight:900;color:#059669;font-size:16px;}
+.sim-table .highlight{background:linear-gradient(135deg,#ecfdf5,#d1fae5) !important;font-weight:700;}
+
+/* 計算ボックス */
+.calc-box{background:linear-gradient(135deg,#065f46,#0d9488);border-radius:16px;padding:24px;color:#fff;margin:24px 0;}
+.calc-box h3{font-size:16px;font-weight:900;margin-bottom:16px;color:#fff;}
+.calc-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.15);}
+.calc-row:last-child{border-bottom:none;padding-top:12px;}
+.calc-label{font-size:13px;color:rgba(255,255,255,.85);}
+.calc-val{font-size:16px;font-weight:700;color:#6ee7b7;}
+.calc-total{font-size:26px;font-weight:900;color:#fde047;}
+
+/* ランキングカード */
+.rank-card{border-radius:16px;margin-bottom:16px;overflow:hidden;border:2px solid #e5e7eb;transition:transform .2s;}
+.rank-card:hover{transform:translateY(-2px);}
+.rank-card.gold{border-color:#f59e0b;box-shadow:0 4px 20px rgba(245,158,11,.15);}
+.rank-card.silver{border-color:#9ca3af;}
+.rank-card.bronze{border-color:#b45309;}
+.rank-card.green{border-color:#10b981;}
+.rank-card.blue{border-color:#3b82f6;}
+.rank-header{display:flex;align-items:center;gap:16px;padding:16px 20px;}
+.rank-num{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;}
+.rank-num.gold{background:linear-gradient(135deg,#f59e0b,#d97706);}
+.rank-num.silver{background:linear-gradient(135deg,#9ca3af,#6b7280);}
+.rank-num.bronze{background:linear-gradient(135deg,#b45309,#92400e);}
+.rank-num.green{background:linear-gradient(135deg,#10b981,#059669);}
+.rank-num.blue{background:linear-gradient(135deg,#3b82f6,#2563eb);}
+.rank-city{flex:1;}
+.rank-city-name{font-size:17px;font-weight:900;color:#111827;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.rank-city-pref{font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;background:#f3f4f6;color:#6b7280;}
+.rank-city-sub{font-size:12px;color:#9ca3af;margin-top:2px;}
+.rank-amount{text-align:right;flex-shrink:0;}
+.rank-amount-main{font-size:20px;font-weight:900;color:#10b981;}
+.rank-amount-sub{font-size:10px;color:#9ca3af;}
+.rank-body{padding:0 20px 16px;font-size:13px;color:#4b5563;line-height:1.8;}
+.rank-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.rank-tag{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:#ecfdf5;color:#059669;border:1px solid #d1fae5;}
+.rank-tag.blue{background:#eff6ff;color:#2563eb;border-color:#bfdbfe;}
+.rank-tag.orange{background:#fff7ed;color:#ea580c;border-color:#fed7aa;}
+
+/* ステップ */
+.step-list{list-style:none;padding:0;margin:20px 0;}
+.step-item{display:flex;gap:16px;padding:16px;background:#f9fafb;border-radius:12px;margin-bottom:10px;border-left:4px solid #10b981;}
+.step-num{width:32px;height:32px;background:linear-gradient(135deg,#10b981,#0d9488);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;flex-shrink:0;}
+.step-content{flex:1;}
+.step-title{font-weight:700;color:#111827;font-size:14px;margin-bottom:4px;}
+.step-desc{font-size:13px;color:#4b5563;line-height:1.7;}
+
+/* 注意ボックス */
+.warn-box{background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #f59e0b;border-radius:12px;padding:20px;margin:20px 0;}
+.warn-box p{color:#92400e;font-size:13px;line-height:1.8;margin:0;}
+.warn-box strong{color:#78350f;}
+
+/* サマリーカード */
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0;}
+.summary-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #6ee7b7;border-radius:12px;padding:16px;text-align:center;}
+.summary-num{font-size:22px;font-weight:900;color:#059669;}
+.summary-label{font-size:11px;color:#065f46;margin-top:4px;}
+
+@media(max-width:600px){
+  .rank-amount-main{font-size:16px;}
+  .rank-city-name{font-size:14px;}
+  .sim-table{font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">✈️ 移住×子育て</span>
+    <h1>子どもが多いほど儲かる!?<br>移住支援金『子ども1人100万円加算』の<br>破壊力を試算してみた</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 移住支援金・子育て</span>
+      <span>⏱ 読了約6分</span>
+      <span>👨‍👩‍👧‍👦 子連れ移住応援</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p><strong>「子どもが1人増えるたびに、もらえるお金が増える移住支援金」が全国に広がっている。</strong>知らなかった人は今すぐ計算してほしい。子ども3人の家族なら、なんと最大で<strong>290万円以上</strong>が受け取れる試算が出るのだから。</p>
+
+<p>移住支援金の基本は世帯100万円（単身60万円）。でも本当の差がつくのは<em>子ども加算</em>の部分。自治体によって1人あたり<strong>30万円〜100万円</strong>もの幅がある。子どもが多い家族ほど「移住支援金ゲーム」では圧倒的に有利なのだ。</p>
+
+<div class="info-box"><p>📌 移住支援金は国の「地方創生推進交付金」に基づく制度で、東京23区への通勤・在住者が対象の自治体が多い。子ども加算の金額・対象年齢・条件は各自治体によって異なります。申請前に必ず最新情報を公式サイトでご確認ください。</p></div>
+
+<div class="summary-grid">
+  <div class="summary-card"><div class="summary-num">最大100万円</div><div class="summary-label">世帯基本支援金</div></div>
+  <div class="summary-card"><div class="summary-num">+30〜100万</div><div class="summary-label">子ども1人ごとの加算</div></div>
+  <div class="summary-card"><div class="summary-num">190万円+</div><div class="summary-label">子ども3人世帯の目安</div></div>
+  <div class="summary-card"><div class="summary-num">200以上</div><div class="summary-label">対象自治体数（推計）</div></div>
+</div>
+
+<h2>① 子ども加算の仕組みをざっくり理解する</h2>
+
+<p>移住支援金は2019年に国が制度化し、各都道府県・市区町村が上乗せ補助を実施しています。<strong>子ども加算</strong>は「18歳未満の子どもを同行・同居させて移住した世帯」に対して、1人につき一定額を追加で支給する制度です。</p>
+
+<p>国の標準は<strong>子ども1人あたり30万円</strong>ですが、少子化対策に力を入れている自治体では独自に上乗せして<strong>1人100万円</strong>を設定しているところも登場しています。これが「破壊力」の正体です。</p>
+
+<div class="warn-box">
+<p><strong>⚠️ 主な申請条件（共通）：</strong>①東京23区に直近1年以上居住または通勤していた ②移住後に継続して就業・テレワークできる ③移住後5年以上は転出しない（違反すると返還義務あり） ④申請できるのは移住後1年以内が多い</p>
+</div>
+
+<h2>② 子どもの人数別シミュレーション（表で一目瞭然）</h2>
+
+<p>以下は「世帯基本100万円＋子ども加算30万円×人数」の標準パターンと、自治体が空き家補助100万円を加えた場合の合計額の試算です。</p>
+
+<table class="sim-table">
+  <thead>
+    <tr>
+      <th>子どもの人数</th>
+      <th>基本支援金</th>
+      <th>子ども加算</th>
+      <th>小計</th>
+      <th>＋空き家補助100万円</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>子ども0人（夫婦のみ）</td>
+      <td><strong>100万円</strong></td>
+      <td>0円</td>
+      <td class="amount">100万円</td>
+      <td class="amount">200万円</td>
+    </tr>
+    <tr>
+      <td>子ども1人</td>
+      <td><strong>100万円</strong></td>
+      <td>+30万円</td>
+      <td class="amount">130万円</td>
+      <td class="amount">230万円</td>
+    </tr>
+    <tr>
+      <td>子ども2人</td>
+      <td><strong>100万円</strong></td>
+      <td>+60万円</td>
+      <td class="amount">160万円</td>
+      <td class="amount">260万円</td>
+    </tr>
+    <tr class="highlight">
+      <td>子ども3人</td>
+      <td><strong>100万円</strong></td>
+      <td>+90万円</td>
+      <td class="amount">190万円</td>
+      <td class="amount">290万円</td>
+    </tr>
+    <tr>
+      <td>子ども4人（加算100万円自治体）</td>
+      <td><strong>100万円</strong></td>
+      <td>+400万円</td>
+      <td class="amount">500万円</td>
+      <td class="amount">600万円</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>※下段の「子加算100万円」は一部自治体（高知県大豊町など）の上限例。標準の30万円自治体とは大きく異なります。</p>
+
+<div class="calc-box">
+  <h3>💰 リアル試算：子ども3人家族が長野県A市へ移住した場合</h3>
+  <div class="calc-row"><span class="calc-label">世帯移住支援金（基本）</span><span class="calc-val">100万円</span></div>
+  <div class="calc-row"><span class="calc-label">子ども加算 × 3人（@30万円）</span><span class="calc-val">90万円</span></div>
+  <div class="calc-row"><span class="calc-label">空き家改修補助（自治体独自）</span><span class="calc-val">100万円</span></div>
+  <div class="calc-row"><span class="calc-label">子育て支援金（別途）</span><span class="calc-val">30万円</span></div>
+  <div class="calc-row"><span class="calc-label">合計受取見込み</span><span class="calc-total">320万円</span></div>
+</div>
+
+<h2>③ 子ども加算が特に手厚い自治体TOP5</h2>
+
+<p>全国の移住支援金の中でも、子ども加算の充実ぶりが際立つ5自治体を紹介します。条件や金額は変更されることがあるため、最新情報は必ず各市町村の公式サイトでご確認を。</p>
+
+<div class="rank-card gold">
+  <div class="rank-header">
+    <div class="rank-num gold">1</div>
+    <div class="rank-city">
+      <div class="rank-city-name">大豊町 <span class="rank-city-pref">高知県</span> 🏔</div>
+      <div class="rank-city-sub">子ども加算100万円／人（全国最高水準）</div>
+    </div>
+    <div class="rank-amount">
+      <div class="rank-amount-main">子1人＋100万円</div>
+      <div class="rank-amount-sub">独自上乗せあり</div>
+    </div>
+  </div>
+  <div class="rank-body">
+    <div class="rank-tags">
+      <span class="rank-tag">👶 子加算100万/人</span>
+      <span class="rank-tag orange">🏠 空き家補助あり</span>
+    </div>
+    <p>人口減少が深刻な高知県大豊町は、子ども加算を大幅に引き上げ1人あたり最大<strong>100万円</strong>を設定。子ども3人なら加算だけで300万円超えになる。山間の静かな環境と手厚い支援が魅力。</p>
+  </div>
+</div>
+
+<div class="rank-card silver">
+  <div class="rank-header">
+    <div class="rank-num silver">2</div>
+    <div class="rank-city">
+      <div class="rank-city-name">西粟倉村 <span class="rank-city-pref">岡山県</span> 🌲</div>
+      <div class="rank-city-sub">子ども加算＋移住支援の複合制度</div>
+    </div>
+    <div class="rank-amount">
+      <div class="rank-amount-main">最大200万円+</div>
+      <div class="rank-amount-sub">複合補助込み</div>
+    </div>
+  </div>
+  <div class="rank-body">
+    <div class="rank-tags">
+      <span class="rank-tag">🌿 森林業就農支援</span>
+      <span class="rank-tag blue">👶 子加算50万/人</span>
+    </div>
+    <p>「ローカルベンチャーの聖地」として知られる西粟倉村は移住支援と起業支援が充実。子ども加算は1人<strong>50万円</strong>で、2人いれば100万円追加となる。移住者コミュニティも活発。</p>
+  </div>
+</div>
+
+<div class="rank-card bronze">
+  <div class="rank-header">
+    <div class="rank-num bronze">3</div>
+    <div class="rank-city">
+      <div class="rank-city-name">神山町 <span class="rank-city-pref">徳島県</span> 💻</div>
+      <div class="rank-city-sub">IT企業誘致×子育て支援のハイブリッド</div>
+    </div>
+    <div class="rank-amount">
+      <div class="rank-amount-main">最大160万円+</div>
+      <div class="rank-amount-sub">テレワーク加算あり</div>
+    </div>
+  </div>
+  <div class="rank-body">
+    <div class="rank-tags">
+      <span class="rank-tag">💻 テレワーク対応</span>
+      <span class="rank-tag blue">👶 子加算30万/人</span>
+      <span class="rank-tag orange">🏠 改修補助あり</span>
+    </div>
+    <p>IT人材の移住先として全国的に有名な徳島県神山町。高速光回線が整備されており、都市部のIT企業に勤めながら移住するテレワーカーに人気。子ども加算も標準の30万円を上回る可能性あり。</p>
+  </div>
+</div>
+
+<div class="rank-card green">
+  <div class="rank-header">
+    <div class="rank-num green">4</div>
+    <div class="rank-city">
+      <div class="rank-city-name">東吉野村 <span class="rank-city-pref">奈良県</span> 🦌</div>
+      <div class="rank-city-sub">子ども加算＋保育費無償の組み合わせ</div>
+    </div>
+    <div class="rank-amount">
+      <div class="rank-amount-main">最大150万円+</div>
+      <div class="rank-amount-sub">保育費実質ゼロ</div>
+    </div>
+  </div>
+  <div class="rank-body">
+    <div class="rank-tags">
+      <span class="rank-tag">🏫 保育費無償</span>
+      <span class="rank-tag">👶 子加算30万/人</span>
+    </div>
+    <p>奈良県東吉野村は村内の保育施設利用が実質無料。移住支援金の子ども加算と合わせると、子育てコストを大幅に圧縮できる。大阪・奈良市内へのアクセスも想定内で、二拠点生活にも向いている。</p>
+  </div>
+</div>
+
+<div class="rank-card blue">
+  <div class="rank-header">
+    <div class="rank-num blue">5</div>
+    <div class="rank-city">
+      <div class="rank-city-name">五島市 <span class="rank-city-pref">長崎県</span> 🏝</div>
+      <div class="rank-city-sub">離島加算×子ども加算のW加算</div>
+    </div>
+    <div class="rank-amount">
+      <div class="rank-amount-main">最大170万円+</div>
+      <div class="rank-amount-sub">離島加算含む</div>
+    </div>
+  </div>
+  <div class="rank-body">
+    <div class="rank-tags">
+      <span class="rank-tag">🏝 離島加算あり</span>
+      <span class="rank-tag blue">👶 子加算30万/人</span>
+      <span class="rank-tag orange">🎣 漁業就労支援</span>
+    </div>
+    <p>長崎県五島市は離島への移住ということで基本支援金が通常より高く設定されており、さらに子ども加算も上乗せ。豊かな自然と豊富な海産物、観光業・漁業の就職先もある。</p>
+  </div>
+</div>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2>④ 申請条件をしっかり確認しよう</h2>
+
+<p>子ども加算を受けるには、基本の移住支援金の条件を満たしたうえで、さらに追加条件をクリアする必要があります。</p>
+
+<ul>
+  <li><strong>子どもの年齢：</strong>多くの自治体は「18歳未満」が対象。一部「中学生以下」など制限あり</li>
+  <li><strong>同居・同行の条件：</strong>移住時に子どもが同居していること（別居の子は対象外が多い）</li>
+  <li><strong>転出禁止期間：</strong>移住後5年以内に転出すると返還義務が発生する自治体が多い</li>
+  <li><strong>就業・テレワークの継続：</strong>移住後も継続して就業または自営業・テレワークができること</li>
+  <li><strong>申請期限：</strong>移住後1年以内に申請が必要なケースが多い</li>
+</ul>
+
+<div class="warn-box">
+<p><strong>⚠️ 返還リスクに注意：</strong>「5年以内に転出した場合は支援金を返還」と定めている自治体がほとんどです。家族で移住する場合は、子どもの進学・就職に伴う転出についても事前に自治体に相談しておきましょう。</p>
+</div>
+
+<h2>⑤ 子連れ移住で失敗しないための3つのポイント</h2>
+
+<ul class="step-list">
+  <li class="step-item">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <div class="step-title">学校・保育園の受け入れ状況を先に確認する</div>
+      <div class="step-desc">補助金の金額だけで決めると、子どもの転校先や保育園が見つからないケースも。移住相談窓口を通じて入学・入園の見通しを事前に確認することが必須です。</div>
+    </div>
+  </li>
+  <li class="step-item">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <div class="step-title">医療・小児科が近くにあるか地図で確認する</div>
+      <div class="step-desc">山間部・離島への移住は補助金が手厚い反面、医療機関が遠いケースがあります。子どもが小さいうちは特に、近くに小児科があるかどうかは生活の質に直結します。</div>
+    </div>
+  </li>
+  <li class="step-item">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <div class="step-title">現地お試し移住（お試し滞在補助）を活用する</div>
+      <div class="step-desc">多くの自治体が「お試し移住」の宿泊費補助を用意しています。家族全員で1〜2週間現地に滞在してから判断する方法が、失敗リスクを大きく下げてくれます。</div>
+    </div>
+  </li>
+</ul>
+
+<div class="info-box">
+<p>💡 <strong>まず「もらえるお金ナビ」で移住候補地の補助金を一覧チェック！</strong>都道府県・市区町村を選ぶだけで、移住支援金・空き家補助・子育て支援金がまとめて表示されます。</p>
+</div>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid">
+<a href="006-ijyu-ranking.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">✈️</div><div class="related-body">全国移住支援金ランキングTOP20</div></a>
+<a href="041-kekkon-combo.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">💒</div><div class="related-body">結婚×移住×引越しの補助金トリプルコンボ</div></a>
+<a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え！もらえるお金大全</div></a>
+<a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？驚き補助金まとめ</div></a>
+</div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に必ず各自治体の公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>子育て中でもNISAができる！月5,000円から始める積立投資入門【補助金と合わせ技】｜もらえるお金ナビ</title>
+<meta name="description" content="子育て中でもNISAで資産形成できる！補助金で浮いたお金をNISAに回す「もらう→増やす」の好循環サイクルを解説。月5,000円から始める具体的な積立プランも。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+/* シミュレーション */
+.sim-box{background:linear-gradient(135deg,#059669,#047857);border-radius:16px;padding:24px;color:#fff;margin:24px 0;}
+.sim-box h3{font-size:16px;font-weight:900;margin-bottom:16px;color:#fff;}
+.sim-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.15);}
+.sim-row:last-child{border-bottom:none;padding-top:12px;}
+.sim-label{font-size:13px;color:rgba(255,255,255,.9);}
+.sim-val{font-size:15px;font-weight:700;color:#6ee7b7;}
+.sim-val.highlight{color:#fde047;}
+.sim-total{font-size:26px;font-weight:900;color:#fde047;}
+.sim-note{font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;}
+
+/* テーブル */
+.calc-table{width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.calc-table th{background:linear-gradient(135deg,#059669,#047857);color:#fff;padding:12px 16px;text-align:left;}
+.calc-table td{padding:12px 16px;border-bottom:1px solid #d1fae5;}
+.calc-table tr:nth-child(even) td{background:#ecfdf5;}
+.calc-table .highlight-row td{background:linear-gradient(135deg,#fef3c7,#fde68a) !important;font-weight:700;}
+.calc-table .total-row td{background:linear-gradient(135deg,#ecfdf5,#d1fae5) !important;font-weight:900;font-size:15px;}
+.plus{color:#059669;font-weight:900;}
+.big{font-size:16px;font-weight:900;color:#047857;}
+
+/* サマリー */
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:24px 0;}
+.summary-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #6ee7b7;border-radius:12px;padding:16px;text-align:center;}
+.summary-num{font-size:20px;font-weight:900;color:#059669;}
+.summary-label{font-size:11px;color:#065f46;margin-top:4px;}
+
+/* 循環図 */
+.cycle-box{background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border:2px solid #6ee7b7;border-radius:16px;padding:24px;margin:24px 0;}
+.cycle-box h3{font-size:16px;font-weight:900;color:#047857;margin-bottom:16px;text-align:center;}
+.cycle-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.cycle-item{background:#fff;border:2px solid #6ee7b7;border-radius:12px;padding:12px 16px;text-align:center;min-width:100px;}
+.cycle-emoji{font-size:24px;display:block;margin-bottom:4px;}
+.cycle-label{font-size:12px;font-weight:900;color:#047857;}
+.cycle-sub{font-size:10px;color:#059669;margin-top:2px;}
+.cycle-arrow{font-size:24px;color:#059669;font-weight:900;}
+.cycle-note{font-size:12px;color:#065f46;text-align:center;line-height:1.8;}
+
+/* ファンドカード */
+.fund-card{border-radius:14px;padding:18px;margin-bottom:14px;border:2px solid #6ee7b7;background:linear-gradient(135deg,#ecfdf5,#d1fae5);transition:transform .2s;}
+.fund-card:hover{transform:translateY(-2px);}
+.fund-header{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
+.fund-rank{width:36px;height:36px;background:linear-gradient(135deg,#059669,#047857);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0;}
+.fund-info{flex:1;}
+.fund-name{font-size:15px;font-weight:900;color:#047857;}
+.fund-sub{font-size:11px;color:#059669;}
+.fund-badge{display:inline-block;background:#059669;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.fund-body{font-size:13px;color:#374151;line-height:1.8;}
+.fund-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.fund-tag{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:#d1fae5;color:#047857;border:1px solid #6ee7b7;}
+.fund-tag.yellow{background:#fef3c7;color:#b45309;border-color:#fde68a;}
+
+/* NISAの仕組みカード */
+.nisa-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;}
+.nisa-card{border-radius:14px;padding:18px;border:2px solid #6ee7b7;}
+.nisa-card.tsumitate{background:linear-gradient(135deg,#ecfdf5,#d1fae5);}
+.nisa-card.seicho{background:linear-gradient(135deg,#eff6ff,#dbeafe);}
+.nisa-card h4{font-size:14px;font-weight:900;margin-bottom:10px;}
+.nisa-card.tsumitate h4{color:#047857;}
+.nisa-card.seicho h4{color:#1d4ed8;}
+.nisa-card ul{list-style:none;padding:0;margin:0;}
+.nisa-card li{font-size:12px;color:#374151;padding:4px 0;line-height:1.6;}
+.nisa-card .limit{font-size:18px;font-weight:900;color:#059669;margin:8px 0;}
+.nisa-card.seicho .limit{color:#1d4ed8;}
+
+/* 注意ボックス */
+.info-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #6ee7b7;border-radius:12px;padding:18px;margin:20px 0;}
+.info-green p{color:#065f46;font-size:13px;line-height:1.8;margin:0;}
+.info-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:12px;padding:18px;margin:20px 0;}
+.info-blue p{color:#1e40af;font-size:13px;line-height:1.8;margin:0;}
+.info-yellow{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fcd34d;border-radius:12px;padding:18px;margin:20px 0;}
+.info-yellow p{color:#78350f;font-size:13px;line-height:1.8;margin:0;}
+
+@media(max-width:600px){
+  .nisa-grid{grid-template-columns:1fr;}
+  .cycle-flow{flex-direction:column;}
+  .cycle-arrow{transform:rotate(90deg);}
+  .calc-table{font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">💰 お金管理・NISA</span>
+    <h1>子育て中でもNISAができる！<br>月5,000円から始める積立投資入門<br>【補助金と合わせ技】</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>📈 NISA・積立投資</span>
+      <span>⏱ 読了約7分</span>
+      <span>👨‍👩‍👧 子育て世代向け</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p><strong>「子育てでお金がカツカツなのに、投資なんてできるわけない」</strong>—そう思っていませんか？実は、補助金をうまく活用すれば子育て中でも無理なくNISAを始めることができます。</p>
+
+<p>キーワードは<em>「もらう→増やす」の好循環</em>。子育て補助金・医療費助成・給食費無料化などで浮いたお金を、そのままNISA口座に自動積立する。これだけで、20〜30年後には<strong>数百万円単位の差</strong>が生まれます。今すぐ始めないと損な理由を、具体的な数字と一緒に解説します。</p>
+
+<div class="summary-grid">
+  <div class="summary-card"><div class="summary-num">月5,000円</div><div class="summary-label">NISAで積立を始める最小ライン</div></div>
+  <div class="summary-card"><div class="summary-num">非課税</div><div class="summary-label">NISAの運用益・配当金にかかる税金</div></div>
+  <div class="summary-card"><div class="summary-num">年360万円</div><div class="summary-label">新NISAの年間非課税枠（上限）</div></div>
+  <div class="summary-card"><div class="summary-num">20年後</div><div class="summary-label">月5,000円積立の資産が倍以上になる目安</div></div>
+</div>
+
+<h2>① 補助金でもらったお金はNISAに回せる！（税金がかからない活用法）</h2>
+
+<p>まず、補助金とNISAの「相性の良さ」を理解しましょう。国や自治体からもらえる補助金・助成金は、多くの場合<strong>非課税</strong>です。つまり、受け取った補助金は丸ごとそのまま使えるお金。これをNISAに回せば、<em>もらった非課税のお金を、さらに非課税で増やす</em>ことができます。</p>
+
+<div class="info-green">
+<p>✅ <strong>補助金をNISAに回す「二重非課税」の仕組み：</strong><br>
+・子育て補助金（児童手当・医療費助成等）→ 非課税で受け取る<br>
+・その補助金をNISA口座で積立投資に回す<br>
+・NISAの運用益・配当金も非課税<br>
+→ <strong>もらったお金も増えたお金も、税金ゼロ</strong>という最強の組み合わせ</p>
+</div>
+
+<p>具体的にはどのくらいの補助金がNISA原資になるか見てみましょう：</p>
+
+<table class="calc-table">
+  <thead>
+    <tr>
+      <th>補助金・助成の種類</th>
+      <th>年間の節約・受取額（目安）</th>
+      <th>月換算</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>児童手当（0〜3歳・月15,000円）</td>
+      <td><strong>180,000円/年</strong></td>
+      <td>15,000円/月</td>
+    </tr>
+    <tr>
+      <td>子どもの医療費助成（18歳まで無料化）</td>
+      <td><strong>約12,000円/年（節約）</strong></td>
+      <td>約1,000円/月</td>
+    </tr>
+    <tr>
+      <td>給食費無償化（小中学校）</td>
+      <td><strong>約60,000円/年（節約）</strong></td>
+      <td>約5,000円/月</td>
+    </tr>
+    <tr>
+      <td>学童保育無料化（公立）</td>
+      <td><strong>約120,000円/年（節約）</strong></td>
+      <td>約10,000円/月</td>
+    </tr>
+    <tr class="highlight-row">
+      <td><strong>合計（医療費・給食・学童無料地域の場合）</strong></td>
+      <td><strong>約372,000円/年</strong></td>
+      <td><strong>約31,000円/月</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>医療費・給食費・学童費がすべて無料の自治体に住むだけで、<strong>月3万円以上が浮く計算</strong>です。その一部をNISAに回すことで、子育て中でも着実に資産形成を進められます。</p>
+
+<h2>② NISA入門（新NISAの仕組み・つみたて枠・成長投資枠を3分で理解）</h2>
+
+<p>NISAを始めたことがない方のために、2024年からスタートした「新NISA」の仕組みをシンプルに解説します。</p>
+
+<div class="nisa-grid">
+  <div class="nisa-card tsumitate">
+    <h4>📈 つみたて投資枠</h4>
+    <div class="limit">年間120万円</div>
+    <ul>
+      <li>✅ 毎月の自動積立向け</li>
+      <li>✅ 金融庁が認定した投資信託のみ</li>
+      <li>✅ 月1,000円〜積立可能</li>
+      <li>✅ 長期・分散・低コストが特徴</li>
+      <li>✅ 初心者・子育て世代に最適</li>
+    </ul>
+  </div>
+  <div class="nisa-card seicho">
+    <h4>📊 成長投資枠</h4>
+    <div class="limit">年間240万円</div>
+    <ul>
+      <li>✅ 個別株・ETFにも投資可</li>
+      <li>✅ スポット買い・一括投資可能</li>
+      <li>✅ つみたて枠と併用できる</li>
+      <li>⚠ リスクはやや高め</li>
+      <li>⚠ 初心者は後から活用推奨</li>
+    </ul>
+  </div>
+</div>
+
+<div class="info-blue">
+<p>📌 <strong>新NISAの基本ルール：</strong><br>
+・年間非課税枠：<strong>最大360万円</strong>（つみたて120万円＋成長240万円）<br>
+・生涯非課税枠：<strong>1,800万円</strong>（うち成長投資枠は最大1,200万円）<br>
+・運用益・配当金：<strong>完全非課税</strong>（通常は20.315%の税金がかかる）<br>
+・口座：証券会社（SBI証券・楽天証券など）に開設。1人1口座<br>
+・始め方：マイナンバーカードがあればオンラインで10〜15分で開設完了</p>
+</div>
+
+<h2>③ 月5,000円から始める積立シミュレーション（20年・30年後の試算表）</h2>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<p>「月5,000円でも意味があるの？」と思う方のために、長期積立の威力を数字で見てみましょう。想定利回りは年5%（インデックスファンドの長期平均的な目安）で計算します。</p>
+
+<table class="calc-table">
+  <thead>
+    <tr>
+      <th>月積立額</th>
+      <th>10年後の資産</th>
+      <th>20年後の資産</th>
+      <th>30年後の資産</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>月5,000円</td>
+      <td>約778,000円<br><small>（元本600,000円）</small></td>
+      <td><strong>約2,055,000円</strong><br><small>（元本1,200,000円）</small></td>
+      <td><strong class="big">約4,160,000円</strong><br><small>（元本1,800,000円）</small></td>
+    </tr>
+    <tr>
+      <td>月10,000円</td>
+      <td>約1,557,000円</td>
+      <td><strong>約4,110,000円</strong></td>
+      <td><strong class="big">約8,320,000円</strong></td>
+    </tr>
+    <tr class="highlight-row">
+      <td><strong>月30,000円（補助金フル活用）</strong></td>
+      <td><strong>約4,671,000円</strong></td>
+      <td><strong>約12,331,000円</strong></td>
+      <td><strong class="big">約24,960,000円</strong></td>
+    </tr>
+    <tr>
+      <td>月50,000円</td>
+      <td>約7,785,000円</td>
+      <td>約20,552,000円</td>
+      <td class="big"><strong>約41,600,000円</strong></td>
+    </tr>
+    <tr class="total-row">
+      <td colspan="4"><strong>※年利5%複利計算。実際の運用結果は保証されません。元本割れのリスクもあります。</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="sim-box">
+  <h3>💰 「補助金→NISA」好循環シミュレーション（月10,000円積立・20年間）</h3>
+  <div class="sim-row"><span class="sim-label">月の積立額（補助金・節約分から）</span><span class="sim-val">10,000円</span></div>
+  <div class="sim-row"><span class="sim-label">20年間の元本（積み立てた総額）</span><span class="sim-val">2,400,000円</span></div>
+  <div class="sim-row"><span class="sim-label">20年後の資産総額（年5%複利）</span><span class="sim-val highlight">約4,110,000円</span></div>
+  <div class="sim-row"><span class="sim-label">運用益（非課税のまま丸ごとGET）</span><span class="sim-val highlight">約1,710,000円</span></div>
+  <div class="sim-row"><span class="sim-label">通常口座なら取られていた税金（20.315%）</span><span class="sim-val free">▲約347,000円の節税</span></div>
+  <div class="sim-row"><span class="sim-label">NISA活用で手元に残る追加分</span><span class="sim-total">+約35万円</span></div>
+  <div class="sim-note">※上記は試算です。投資にはリスクがあり、元本割れの可能性があります。</div>
+</div>
+
+<h2>④ 補助金→NISA→老後資金の「もらう→増やす」好循環サイクル図解</h2>
+
+<p>補助金とNISAを組み合わせた「好循環サイクル」を図解します。一度このサイクルを回し始めると、お金が自動的に増える仕組みが完成します。</p>
+
+<div class="cycle-box">
+  <h3>🔄「もらう→増やす」好循環サイクル</h3>
+  <div class="cycle-flow">
+    <div class="cycle-item">
+      <span class="cycle-emoji">🏛</span>
+      <div class="cycle-label">補助金・助成</div>
+      <div class="cycle-sub">医療費/給食費/学童<br>児童手当など</div>
+    </div>
+    <div class="cycle-arrow">→</div>
+    <div class="cycle-item">
+      <span class="cycle-emoji">💰</span>
+      <div class="cycle-label">家計の余裕が増える</div>
+      <div class="cycle-sub">月3〜5万円浮く</div>
+    </div>
+    <div class="cycle-arrow">→</div>
+    <div class="cycle-item">
+      <span class="cycle-emoji">📈</span>
+      <div class="cycle-label">NISAで自動積立</div>
+      <div class="cycle-sub">月5,000〜30,000円</div>
+    </div>
+    <div class="cycle-arrow">→</div>
+    <div class="cycle-item">
+      <span class="cycle-emoji">🏦</span>
+      <div class="cycle-label">老後資金が育つ</div>
+      <div class="cycle-sub">20年で2〜3倍に</div>
+    </div>
+  </div>
+  <div class="cycle-note">
+    ✅ 補助金を「もらうだけ」で終わらせず、NISAに回すことで<strong>「もらう→増やす」の二段ロケット</strong>が完成。<br>
+    子育て中に始めることで、子どもが独立する頃には<strong>数百万〜数千万円の資産</strong>が育っています。<br>
+    自動積立設定をすれば、毎月手動で操作する必要がないのも魅力。
+  </div>
+</div>
+
+<p>このサイクルのポイントは<strong>「自動化」</strong>にあります。NISA口座で「毎月〇日に〇〇円積立」と設定したら、あとは放置でOK。子育てで忙しい時期でも、口座の中で着実にお金が育っていきます。</p>
+
+<div class="info-yellow">
+<p>⚠️ <strong>注意事項：</strong>投資にはリスクがあります。積立投資は長期的に見れば安定した成果が期待できますが、短期的に元本を下回ることがあります。余裕資金で始め、生活費はNISAに入れないことが大切です。また、本記事は情報提供を目的としており、特定の投資商品を推薦するものではありません。</p>
+</div>
+
+<h2>⑤ 子育て中に積立するおすすめインデックスファンド3選</h2>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<p>NISAのつみたて投資枠で買えるファンドは数百種類ありますが、子育て世代が「まず検討すべき」代表的なインデックスファンド3つを紹介します。投資初心者でも分かりやすく選んでいます。</p>
+
+<div class="fund-card">
+  <div class="fund-header">
+    <div class="fund-rank">1</div>
+    <div class="fund-info">
+      <div class="fund-name">全世界株式インデックスファンド（オルカン）</div>
+      <div class="fund-sub">例：eMAXIS Slim 全世界株式（オール・カントリー）</div>
+    </div>
+    <div class="fund-badge">初心者に最適</div>
+  </div>
+  <div class="fund-body">全世界の約3,000社以上に自動分散投資できる「万能型」のファンド。アメリカ・日本・ヨーロッパ・新興国と幅広く分散されるため、特定の国や企業が不調でも影響が最小化される。信託報酬（コスト）は年0.05%台と超低コスト。「とりあえずコレを積立すれば間違いない」と評価される定番中の定番。</div>
+  <div class="fund-tags"><span class="fund-tag">🌍 全世界分散</span><span class="fund-tag">💰 超低コスト</span><span class="fund-tag yellow">⭐ 初心者推奨</span></div>
+</div>
+
+<div class="fund-card">
+  <div class="fund-header">
+    <div class="fund-rank">2</div>
+    <div class="fund-info">
+      <div class="fund-name">米国株式インデックスファンド（S&amp;P500）</div>
+      <div class="fund-sub">例：eMAXIS Slim 米国株式（S&amp;P500）</div>
+    </div>
+    <div class="fund-badge">長期リターン実績◎</div>
+  </div>
+  <div class="fund-body">Apple・Amazonなどアメリカの主要500社に投資するファンド。過去30年以上にわたって年平均10%前後のリターンを叩き出してきた実績が魅力。「アメリカ経済の成長に乗っかる」という戦略。全世界よりも米国集中になる点はリスクだが、長期では最も多くの投資家に選ばれているファンドのひとつ。</div>
+  <div class="fund-tags"><span class="fund-tag">🇺🇸 米国500社</span><span class="fund-tag">💰 超低コスト</span><span class="fund-tag yellow">⭐ 人気No.1</span></div>
+</div>
+
+<div class="fund-card">
+  <div class="fund-header">
+    <div class="fund-rank">3</div>
+    <div class="fund-info">
+      <div class="fund-name">バランス型ファンド（株式＋債券）</div>
+      <div class="fund-sub">例：eMAXIS Slim バランス（8資産均等型）</div>
+    </div>
+    <div class="fund-badge">リスクを抑えたい人向け</div>
+  </div>
+  <div class="fund-body">株式だけでなく、価格変動の少ない「債券」も組み合わせたファンド。株式100%と比べてリターンはやや低くなるが、急落時のダメージも小さい。「子どもが大学に入るまでに使いたい」「元本を大きく減らしたくない」という方に向いている。安定重視の保守派にはこちらが心理的に続けやすい。</div>
+  <div class="fund-tags"><span class="fund-tag">⚖ 株式＋債券</span><span class="fund-tag">🛡 リスク抑制</span><span class="fund-tag yellow">⭐ 安定志向向け</span></div>
+</div>
+
+<div class="info-green">
+<p>🎯 <strong>まとめ：</strong>子育て中でも補助金で浮いたお金をNISAに回せば、着実に資産形成ができます。月<strong>5,000円</strong>から始めても20年後には<strong>200万円以上</strong>に育つ可能性があります。「補助金でもらう→NISAで増やす→老後資金にする」の好循環サイクルを早く始めるほど、複利の恩恵を最大限に受けられます。まずはお住まいの自治体でもらえる補助金を「もらえるお金ナビ」で確認し、浮いた分をNISA口座に自動積立設定してみましょう。</p>
+</div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="008-akashi-omutu.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">👶</div><div class="related-body">おむつが毎月タダ！明石市の神対応</div></a><a href="002-kosodate-joseikin.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">👶</div><div class="related-body">子育て補助金まとめ2026年版</div></a><a href="034-sangyo-shikkoku.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">🍼</div><div class="related-body">産休中のママに出産手当金の仕組み</div></a><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え大全</div></a></div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

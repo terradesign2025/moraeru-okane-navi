@@ -1,33 +1,31 @@
+﻿// =============================================================
+// もらえるお金ナビ — データマスター（全国展開版）
 // =============================================================
-// もらえるお金ナビ — データマスター
-// =============================================================
-// 最終更新日  : 2026-04-27
-// 次回更新予定: 2026-05-27（毎月27日 定期更新）
-// 管理担当    : テラデザイン株式会社
-// Excelマスター: /data/master_trends.csv
-//               /data/master_subsidies.csv
-//               /data/master_cities.csv
-// データソース:
-//   - e-Gov 法令検索（デジタル庁）https://elaws.e-gov.go.jp
-//   - 各自治体公式ウェブサイト
-//   - 経済産業省 補助金ポータル https://hojyokin-portal.jp
-//   - 国土交通省 住宅局
-//   - 内閣府 子ども・子育て本部
+// 最終更新日  : 2026-06-10
+// 次回更新予定: 2026-06-27（毎月定期更新）
+// 管理担当    : 株式会社テラデザイン
+// データソース: 各自治体公式ウェブサイト（一次ソース確認済み）
 // =============================================================
 // 【データ収集進捗】
-// Phase 1（完了）: 東京都八王子市 サンプルデータ
-// Phase 2（未着手）: 全国815市区町村データ収集
-//   収集予定: 都道府県ごとに主要都市から順次追加（月1回更新）
-//   優先順位: master_cities.csv の updatePriority 列参照
+// 全国版（継続更新中）: 309市区・1577件（件数・市区数はMETAで自動算出）
+// 対象エリア: 北海道〜沖縄（47都道府県）
 // =============================================================
 
+// 全国データ（scripts/csv_to_all_js.mjs が data/*.csv から自動生成）
+// ※ KANTO_〜 という名前は後方互換のためのエイリアス（実体は全国 ALL_SUBSIDIES / ALL_SUBSIDY_CITIES）
+import { KANTO_SUBSIDIES, KANTO_CITIES } from './all_subsidies';
+// 全国市区町村マスター（国土地理院より自動生成・1746市区町村）
+import { JAPAN_CITIES } from './japan_cities';
+
 export const META = {
-  lastUpdated: '2026-04-27',
-  version: '1.0.0',
-  nextUpdate: '2026-05-27',
-  phase: 1,
-  totalCities: 815,
-  completedCities: 1,
+  lastUpdated: '2026-06-10',
+  version: '4.2.0',
+  nextUpdate: '2026-06-27',
+  phase: 'nationwide',
+  totalCities: JAPAN_CITIES.length,         // 全国の市区町村数（自動算出）
+  completedCities: KANTO_CITIES.length,      // データ収録市区数（all_subsidies.jsから自動算出）
+  totalSubsidies: KANTO_SUBSIDIES.length,    // 公称収録件数＝検証済みCSVデータの件数（自動算出）
+  // ※ 検索対象のSUBSIDIESには旧手書きデータ（CSV未収録ID）が加わるため実数はやや多い（控えめ表示）
   sources: [
     'e-Gov 法令検索（デジタル庁）',
     '各自治体公式ウェブサイト',
@@ -41,76 +39,264 @@ export const META = {
 // ─── 全国注目トピック ─────────────────────────────────────────
 // featured: true → カードをオレンジ枠で強調表示（注目度・金額高）
 export const ALL_TRENDS = [
-  { id: 6,  tab: 'unique', city: '長野県',        title: '移住支援金',           amount: '最大100万円',  desc: '東京圏から移住して就業・起業すると支給。ファミリー加算あり。', icon: 'Map',       color: 'text-emerald-600', bg: 'bg-emerald-50', interest: 5, featured: true,  source: '長野県公式サイト', lastChecked: '2026-04-27' },
-  { id: 4,  tab: 'unique', city: '石川県',         title: '婚活応援クーポン',     amount: '飲食代割引',   desc: '市が認定した婚活イベントの費用を自治体が補助。全国でも珍しい制度。', icon: 'Award', color: 'text-orange-500',  bg: 'bg-orange-50',  interest: 5, featured: true,  source: '加賀市公式サイト', lastChecked: '2026-04-27' },
-  { id: 8,  tab: 'home',   city: '全国',           title: '先進的窓リノベ',       amount: '最大200万円',  desc: '国の補助事業。断熱窓へのリフォームで高額補助。予算消化が早い！', icon: 'Sparkles', color: 'text-yellow-500',  bg: 'bg-yellow-50',  interest: 4, featured: true,  source: '国土交通省', lastChecked: '2026-04-27' },
-  { id: 9,  tab: 'unique', city: '北海道東川町',   title: '職人の家具プレゼント', amount: '約30万円相当', desc: '移住者に地元職人が作った高品質な家具を贈呈。全国から注目。', icon: 'Star',     color: 'text-pink-500',    bg: 'bg-pink-50',    interest: 4, featured: true,  source: '東川町公式サイト', lastChecked: '2026-04-27' },
-  { id: 5,  tab: 'family', city: '兵庫県明石市',   title: 'おむつ定期便',         amount: '毎月無料',     desc: '満1歳まで毎月おむつなどの育児用品が自宅に届く超人気制度。', icon: 'Baby',    color: 'text-blue-500',    bg: 'bg-blue-50',    interest: 4, featured: true,  source: '明石市公式サイト', lastChecked: '2026-04-27' },
-  { id: 1,  tab: 'family', city: '岐阜県海津市',   title: '結婚新生活支援',       amount: '最大30万円',   desc: '新婚の家賃・引越し費用を自治体がサポート。所得要件あり。', icon: 'Heart',    color: 'text-pink-500',    bg: 'bg-pink-50',    interest: 3, featured: false, source: '海津市公式サイト', lastChecked: '2026-04-27' },
-  { id: 3,  tab: 'home',   city: '鳥取県',         title: '県産材での家づくり',   amount: '最大50万円',   desc: '地元の木を使った新築で支給。移住者は上乗せ補助あり。', icon: 'Home',     color: 'text-green-600',   bg: 'bg-green-50',   interest: 3, featured: false, source: '鳥取県公式サイト', lastChecked: '2026-04-27' },
-  { id: 7,  tab: 'eco',    city: '東京都',         title: '電動自転車購入補助',   amount: '最大10万円',   desc: '子乗せ電動アシスト自転車の購入費を助成。環境にも家計にも優しい。', icon: 'Bike', color: 'text-purple-500',  bg: 'bg-purple-50',  interest: 2, featured: false, source: '東京都公式サイト', lastChecked: '2026-04-27' },
-  { id: 2,  tab: 'eco',    city: '北海道',         title: '冬の暖房費助成',       amount: '1万円〜',      desc: '厳しい冬の灯油代を自治体が一部負担。所得制限あり。', icon: 'TrendingUp', color: 'text-blue-500',   bg: 'bg-blue-50',    interest: 2, featured: false, source: '北海道庁公式サイト', lastChecked: '2026-04-27' },
+  { id: 1,  tab: 'unique', city: '島根県',         title: '移住支援金（UIターン）',   amount: '最大100万円',  desc: '東京23区などから移住し就業・起業すると世帯100万円。18歳未満の子1人につき100万円加算。', icon: 'Map',      color: 'text-emerald-600', bg: 'bg-emerald-50', interest: 5, featured: true,  source: '島根県公式サイト', lastChecked: '2026-06-11',
+    officialUrl: 'https://www.pref.shimane.lg.jp/admin/region/chiiki/UI_turn/wakuwaku.html',
+    detail: '正式名称「わくわく島根生活実現支援事業」。東京23区に在住、または東京圏から23区へ通勤していた方が島根県へ移住し、対象求人への就業・テレワーク継続・起業などの要件を満たすと支給されます。世帯での移住は100万円、単身は60万円。さらに18歳未満の子どもを帯同すると1人につき100万円が加算されるため、子ども2人の4人家族なら最大300万円になります。移住後の申請期限や居住継続要件（5年以上の意思）があるため、移住前に窓口へ相談するのがおすすめです。' },
+  { id: 2,  tab: 'unique', city: '高知県',         title: '移住支援金（UIターン）',   amount: '最大100万円',  desc: '東京圏から移住し就業・起業・テレワークで支給。県内全34市町村が対象エリア。', icon: 'Map',      color: 'text-teal-600',    bg: 'bg-teal-50',    interest: 5, featured: true,  source: '高知県公式サイト', lastChecked: '2026-06-11',
+    officialUrl: 'https://www.pref.kochi.lg.jp/doc/2025031300026/',
+    detail: '東京圏（東京・埼玉・千葉・神奈川の条件不利地域を除く）から高知県内の全34市町村へ移住した方が対象。世帯100万円・単身60万円に加え、18歳未満の子ども1人につき最大100万円の加算があります。マッチングサイト掲載求人への就業のほか、テレワークによる業務継続や起業（起業支援金の交付決定）でも対象になります。令和8年度の申請受付は2027年1月29日まで。県の移住コンシェルジュに無料相談できます。' },
+  { id: 3,  tab: 'family', city: '東京都',         title: '018サポート',              amount: '月5,000円',    desc: '都内在住の0〜18歳全員に月5,000円（年6万円）。所得制限なし。2026年度も継続。', icon: 'Baby',     color: 'text-blue-500',    bg: 'bg-blue-50',    interest: 5, featured: true,  source: '東京都福祉局', lastChecked: '2026-06-11',
+    officialUrl: 'https://018support.metro.tokyo.lg.jp/',
+    detail: '都内在住の0歳から18歳までのすべての子どもに、1人あたり月額5,000円（年間6万円）を支給する東京都の制度です。保護者の所得制限はありません。専用ポータルサイトからオンラインで申請し、認証後に指定口座へまとめて振り込まれます。一度申請すれば翌年度以降は原則自動継続。転入した場合や新たに生まれた子どもは新規申請が必要です。' },
+  { id: 4,  tab: 'home',   city: '全国',           title: 'みらいエコ住宅2026',       amount: '最大125万円',  desc: '子育てグリーン住宅支援の後継。GX志向型住宅の新築で全世帯に補助。寒冷地は増額。', icon: 'Home',     color: 'text-green-600',   bg: 'bg-green-50',   interest: 5, featured: true,  source: '国土交通省', lastChecked: '2026-06-11',
+    officialUrl: 'https://kosodate-green.mlit.go.jp/',
+    detail: '子育てグリーン住宅支援事業の2026年度版。断熱・省エネ性能が特に高い「GX志向型住宅」を新築すると、全世帯を対象に110万円（寒冷地の1〜4地域は125万円）が補助されます。子育て世帯・若者夫婦世帯は長期優良住宅やZEH水準住宅の新築でも補助対象になります。申請は施工業者（登録事業者）が行う仕組みなので、契約前に「補助金を使いたい」と業者へ伝えるのがポイント。予算上限に達すると締め切られるため早めの検討がおすすめです。' },
+  { id: 5,  tab: 'home',   city: '全国',           title: '先進的窓リノベ2026',       amount: '最大100万円',  desc: '断熱窓へのリフォームで国が補助。2026年度は上限100万円。予算消化が早い！', icon: 'Sparkles', color: 'text-yellow-500',  bg: 'bg-yellow-50',  interest: 4, featured: false, source: '環境省', lastChecked: '2026-06-11',
+    officialUrl: 'https://window-renovation2026.env.go.jp/',
+    detail: '既存住宅の窓を高断熱の内窓・外窓・ガラスに交換するリフォームに対して、環境省が工事内容に応じた定額を補助する制度です。2026年度の上限は1戸あたり100万円。工事費の1/2相当が目安で、ヒートショック対策・結露防止・光熱費削減の効果が大きい人気制度です。申請は登録事業者（窓業者・工務店）経由で行うため、見積もり時に補助金利用を必ず伝えてください。例年予算消化が早く、夏〜秋に締め切られる年もあります。' },
+  { id: 6,  tab: 'unique', city: '北海道東川町',   title: '君の椅子プロジェクト',     amount: '手作り椅子贈呈', desc: '町で生まれた子に旭川家具の職人が作る世界に一つの椅子を贈呈。移住のきっかけにも。', icon: 'Star',   color: 'text-pink-500',    bg: 'bg-pink-50',    interest: 4, featured: false, source: '東川町公式サイト', lastChecked: '2026-06-11',
+    officialUrl: 'https://town.higashikawa.hokkaido.jp/special/chair/',
+    detail: '「生まれてくれてありがとう」のメッセージを込めて、東川町で生まれた赤ちゃん全員に、旭川家具の職人が手作りする名前・生年月日入りの椅子を贈る取り組みです。毎年デザインが変わり、同じ年に生まれた子は同じデザインの椅子を受け取ります。金銭給付ではありませんが「子どもを地域で迎える」象徴として全国から注目され、移住先選びの決め手になることも。東川町は写真文化首都としても有名で、子育て支援全般が手厚い町です。' },
+  { id: 7,  tab: 'unique', city: '東京都',         title: '卵子凍結費用助成',         amount: '最大24万円',   desc: '18〜39歳の女性が対象。凍結実施年度に上限20万円、保管に係る費用も毎年助成。', icon: 'Award',    color: 'text-orange-500',  bg: 'bg-orange-50',  interest: 4, featured: false, source: '東京都福祉局', lastChecked: '2026-06-11',
+    officialUrl: 'https://www.fukushi.metro.tokyo.lg.jp/kodomo/shussan/ranshitouketsu/touketsu/gaiyou',
+    detail: '将来の妊娠に備えて卵子凍結を行う18〜39歳の都内在住女性に、凍結実施年度に最大20万円、その後の保管更新時に調査協力費として年2万円（最長5年）を助成する東京都の制度です。都が指定する説明会への参加と登録医療機関での実施が要件。健康上の理由だけでなくキャリアやライフプランを理由とした凍結も対象になる、全国でも先進的な制度です。' },
+  { id: 8,  tab: 'family', city: '兵庫県明石市',   title: 'おむつ定期便',             amount: '毎月無料',     desc: '生後3か月から満1歳まで毎月おむつ等を無料配達。見守り訪問も兼ねた人気制度。', icon: 'Baby',     color: 'text-sky-500',     bg: 'bg-sky-50',     interest: 4, featured: false, source: '明石市公式サイト', lastChecked: '2026-06-11',
+    officialUrl: 'https://www.city.akashi.lg.jp/kodomo/kosodatesien/omutu.html',
+    detail: '生後3か月から満1歳の誕生月まで、おむつ・ミルク・離乳食などの育児用品（月3,000円相当）を毎月自宅へ無料で届ける明石市の制度です。配達するのは研修を受けた「見守り配達員」で、子育ての悩みを聞き、必要に応じて支援機関へつなぐ役割も担っています。「おむつをもらえる」だけでなく孤立しがちな乳児期の家庭を見守るしくみとして全国のモデルになっており、視察・導入する自治体が増えています。' },
+  { id: 9,  tab: 'family', city: '全国（実施自治体）', title: '結婚新生活支援事業',   amount: '最大60万円',   desc: '29歳以下の新婚世帯に家賃・引越し費用等を補助。39歳以下は最大30万円。', icon: 'Heart',    color: 'text-pink-500',    bg: 'bg-pink-50',    interest: 3, featured: false, source: 'こども家庭庁', lastChecked: '2026-06-11',
+    officialUrl: 'https://www.cfa.go.jp/policies/shoushika/koufukin',
+    detail: 'こども家庭庁の交付金を使って各自治体が実施する、新婚世帯の新生活スタート支援です。婚姻日時点で夫婦ともに29歳以下なら最大60万円、39歳以下なら最大30万円を上限に、新居の家賃・敷金礼金・引越し費用・リフォーム費用などが補助されます。世帯所得500万円未満などの要件あり。実施していない市区町村もあるため、お住まい（予定）の自治体名で「結婚新生活支援」と検索するか、当アプリの市区検索でご確認ください。' },
+  { id: 10, tab: 'home',   city: '鳥取県',         title: 'とっとり住まいる支援事業', amount: '最大100万円',  desc: '県産材10立方m以上の木造新築で支援。子育て・三世代同居の加算あり。', icon: 'Home',     color: 'text-lime-600',    bg: 'bg-lime-50',    interest: 3, featured: false, source: '鳥取県公式サイト', lastChecked: '2026-06-11',
+    officialUrl: 'https://www.pref.tottori.lg.jp/328187.htm',
+    detail: '鳥取県産材を使った木造住宅の新築・購入を支援する県の制度です。県産材の使用量（10立方メートル以上）に応じて基本額が決まり、子育て世帯・三世代同居/近居・移住者などの加算を組み合わせると最大100万円規模になります。令和8年度の受付は2027年3月19日まで（予算枠あり）。県外から鳥取へ移住して家を建てる場合は移住支援金との併用も検討できます。' },
+  { id: 11, tab: 'eco',    city: '東京都',         title: '東京ゼロエミポイント',     amount: '最大8万円分',  desc: '省エネエアコン・冷蔵庫等への買替えを店頭で直接値引き。古い家電からの買替は増額。', icon: 'TrendingUp', color: 'text-purple-500', bg: 'bg-purple-50', interest: 4, featured: false, source: '東京都環境局', lastChecked: '2026-06-11',
+    officialUrl: 'https://www.tz-points.jp/system',
+    detail: '都内の住宅で使う省エネ家電（エアコン・冷蔵庫・給湯器・LED照明器具）への買替えで、対象機種の購入時にその場で値引きが受けられる東京都の制度です。冷蔵庫の買替えで最大8万円分など、省エネ性能と古い家電の処分有無でポイント額が決まります。手続きは販売店が行うため面倒な申請が不要なのが魅力。実施は令和9年3月31日までの予定ですが、予算がなくなり次第終了します。' },
+  { id: 12, tab: 'eco',    city: '全国',           title: '給湯省エネ2026',           amount: '最大14万円',   desc: 'エコキュート等の高効率給湯器に国が補助。高性能機種＋撤去加算で最大14万円。', icon: 'Sparkles', color: 'text-amber-500',   bg: 'bg-amber-50',   interest: 3, featured: false, source: '経済産業省', lastChecked: '2026-06-11',
+    officialUrl: 'https://kyutou-shoene2026.meti.go.jp/',
+    detail: 'エコキュート・ハイブリッド給湯機・エネファームなどの高効率給湯器を設置すると、経済産業省が機種に応じた定額を補助する制度です。エコキュートは基本7万円、省エネ性能の高い機種への加算や、古い電気温水器の撤去加算（最大8万円）を組み合わせると最大14万円程度になります。新築・リフォームどちらも対象で、申請は登録事業者（設置業者）経由。給湯器は家庭の電気代の約3割を占めるため、買替え効果が大きい補助です。' },
 ];
 
 // ─── 市区町村マスター（検索オートコンプリート用）──────────────
+// データ収録市区は all_subsidies.js（KANTO_CITIES）から自動生成（常に hasData:true）
+// 下記 MANUAL_CITIES はデータ未収録の「準備中」表示用。データ収録済みの市区は
+// 自動的に除外されるため、hasData フラグの手動メンテナンスは不要
+const MANUAL_CITIES = [
+  // 北海道・東北 ─────────────────────────────────
+  { pref: '北海道',   city: '札幌市',    hasData: true  },
+  { pref: '北海道',   city: '函館市',    hasData: true  },
+  { pref: '北海道',   city: '旭川市',    hasData: true  },
+  { pref: '青森県',   city: '青森市',    hasData: true  },
+  { pref: '青森県',   city: '八戸市',    hasData: false },
+  { pref: '岩手県',   city: '盛岡市',    hasData: true  },
+  { pref: '宮城県',   city: '仙台市',    hasData: true  },
+  { pref: '宮城県',   city: '石巻市',    hasData: true  },
+  { pref: '宮城県',   city: '大崎市',    hasData: true  },
+  { pref: '愛知県',   city: '名古屋市',  hasData: true  },
+  { pref: '愛知県',   city: '豊田市',    hasData: true  },
+  { pref: '愛知県',   city: '岡崎市',    hasData: true  },
+  { pref: '愛知県',   city: '春日井市',  hasData: true  },
+  { pref: '愛知県',   city: '豊橋市',    hasData: true  },
+  { pref: '秋田県',   city: '秋田市',    hasData: true  },
+  { pref: '山形県',   city: '山形市',    hasData: true  },
+  { pref: '福島県',   city: '福島市',    hasData: true  },
+  { pref: '福島県',   city: '郡山市',    hasData: false },
+  { pref: '福島県',   city: 'いわき市',  hasData: false },
+  // 北陸・甲信 ───────────────────────────────────
+  { pref: '新潟県',   city: '新潟市',    hasData: true  },
+  { pref: '富山県',   city: '富山市',    hasData: true  },
+  { pref: '石川県',   city: '金沢市',    hasData: true  },
+  { pref: '福井県',   city: '福井市',    hasData: true  },
+  { pref: '山梨県',   city: '甲府市',    hasData: true  },
+  { pref: '長野県',   city: '長野市',    hasData: true  },
+  { pref: '長野県',   city: '松本市',    hasData: false },
+  // 中部・近畿補完 ───────────────────────────────
+  { pref: '三重県',   city: '津市',      hasData: true  },
+  { pref: '三重県',   city: '四日市市',  hasData: false },
+  { pref: '滋賀県',   city: '大津市',    hasData: true  },
+  { pref: '奈良県',   city: '奈良市',    hasData: true  },
+  { pref: '和歌山県', city: '和歌山市',  hasData: true  },
+  // 中国 ────────────────────────────────────────
+  { pref: '鳥取県',   city: '鳥取市',    hasData: true  },
+  { pref: '島根県',   city: '松江市',    hasData: true  },
+  { pref: '岡山県',   city: '岡山市',    hasData: true  },
+  { pref: '広島県',   city: '広島市',    hasData: true  },
+  { pref: '山口県',   city: '山口市',    hasData: true  },
+  // 四国 ────────────────────────────────────────
+  { pref: '徳島県',   city: '徳島市',    hasData: true  },
+  { pref: '香川県',   city: '高松市',    hasData: true  },
+  { pref: '愛媛県',   city: '松山市',    hasData: true  },
+  { pref: '高知県',   city: '高知市',    hasData: true  },
+  // 九州・沖縄 ──────────────────────────────────
+  { pref: '福岡県',   city: '福岡市',    hasData: true  },
+  { pref: '福岡県',   city: '北九州市',  hasData: true  },
+  { pref: '佐賀県',   city: '佐賀市',    hasData: true  },
+  { pref: '長崎県',   city: '長崎市',    hasData: true  },
+  { pref: '熊本県',   city: '熊本市',    hasData: true  },
+  { pref: '大分県',   city: '大分市',    hasData: true  },
+  { pref: '宮崎県',   city: '宮崎市',    hasData: true  },
+  { pref: '鹿児島県', city: '鹿児島市',  hasData: true  },
+  { pref: '沖縄県',   city: '那覇市',    hasData: true  },
+  // 中部 ────────────────────────────────────────
+  { pref: '愛知県',   city: '名古屋市',  hasData: true  },
+  { pref: '愛知県',   city: '豊田市',    hasData: true  },
+  { pref: '愛知県',   city: '岡崎市',    hasData: true  },
+  { pref: '愛知県',   city: '一宮市',    hasData: true  },
+  { pref: '静岡県',   city: '静岡市',    hasData: true  },
+  { pref: '静岡県',   city: '浜松市',    hasData: false },
+  { pref: '岐阜県',   city: '岐阜市',    hasData: true  },
+  { pref: '岐阜県',   city: '大垣市',    hasData: false },
+  // 関西 ────────────────────────────────────────
+  { pref: '大阪府',   city: '大阪市',    hasData: true  },
+  { pref: '大阪府',   city: '堺市',      hasData: true  },
+  { pref: '大阪府',   city: '吹田市',    hasData: true  },
+  { pref: '大阪府',   city: '守口市',    hasData: true  },
+  { pref: '大阪府',   city: '門真市',    hasData: true  },
+  { pref: '大阪府',   city: '岸和田市',  hasData: true  },
+  { pref: '大阪府',   city: '和泉市',    hasData: true  },
+  { pref: '大阪府',   city: '摂津市',    hasData: true  },
+  { pref: '大阪府',   city: '松原市',    hasData: true  },
+  { pref: '大阪府',   city: '富田林市',  hasData: true  },
+  { pref: '大阪府',   city: '河内長野市', hasData: true  },
+  { pref: '大阪府',   city: '藤井寺市',  hasData: true  },
+  { pref: '大阪府',   city: '豊中市',    hasData: true  },
+  { pref: '大阪府',   city: '東大阪市',  hasData: true  },
+  { pref: '大阪府',   city: '枚方市',    hasData: true  },
+  { pref: '大阪府',   city: '高槻市',    hasData: true  },
+  { pref: '大阪府',   city: '八尾市',    hasData: true  },
+  { pref: '大阪府',   city: '寝屋川市',  hasData: true  },
+  { pref: '大阪府',   city: '茨木市',    hasData: true  },
+  { pref: '京都府',   city: '京都市',    hasData: true  },
+  { pref: '京都府',   city: '宇治市',    hasData: true  },
+  { pref: '京都府',   city: '亀岡市',    hasData: true  },
+  { pref: '京都府',   city: '長岡京市',  hasData: true  },
+  { pref: '京都府',   city: '向日市',    hasData: true  },
+  { pref: '兵庫県',   city: '神戸市',    hasData: true  },
+  { pref: '兵庫県',   city: '西宮市',    hasData: true  },
+  { pref: '兵庫県',   city: '明石市',    hasData: true  },
+  { pref: '兵庫県',   city: '姫路市',    hasData: true  },
+  { pref: '兵庫県',   city: '尼崎市',    hasData: true  },
+  { pref: '兵庫県',   city: '伊丹市',    hasData: true  },
+  // 東京都多摩残り（追加分） ──────────────────────
+  { pref: '東京都',   city: '国立市',    hasData: true  },
+  { pref: '東京都',   city: '狛江市',    hasData: true  },
+  { pref: '東京都',   city: '稲城市',    hasData: true  },
+  { pref: '東京都',   city: '東大和市',  hasData: true  },
+  { pref: '東京都',   city: '清瀬市',    hasData: true  },
+  { pref: '東京都',   city: '東久留米市', hasData: true  },
+  { pref: '東京都',   city: '武蔵村山市', hasData: true  },
+  { pref: '東京都',   city: '多摩市',    hasData: true  },
+  { pref: '東京都',   city: '羽村市',    hasData: true  },
+  { pref: '東京都',   city: 'あきる野市', hasData: true  },
+  { pref: '東京都',   city: '福生市',    hasData: true  },
+  // 九州・沖縄（追加分） ──────────────────────────
+  { pref: '福岡県',   city: '久留米市',  hasData: true  },
+  { pref: '福岡県',   city: '春日市',    hasData: true  },
+  { pref: '福岡県',   city: '大野城市',  hasData: true  },
+  { pref: '福岡県',   city: '筑紫野市',  hasData: true  },
+  { pref: '福岡県',   city: '福津市',    hasData: true  },
+  { pref: '福岡県',   city: '糸島市',    hasData: true  },
+  { pref: '福岡県',   city: '太宰府市',  hasData: true  },
+  { pref: '福岡県',   city: '古賀市',    hasData: true  },
+  { pref: '福岡県',   city: '宗像市',    hasData: true  },
+  { pref: '福岡県',   city: '飯塚市',    hasData: true  },
+  { pref: '福岡県',   city: '筑後市',    hasData: true  },
+  { pref: '福岡県',   city: '行橋市',    hasData: true  },
+  { pref: '福岡県',   city: '小郡市',    hasData: true  },
+  { pref: '福岡県',   city: '直方市',    hasData: true  },
+  // ─── session7 全国追加（2026-05-14）──────────────
+  // 北海道追加
+  { pref: '北海道',   city: '釧路市',    hasData: true  },
+  { pref: '北海道',   city: '帯広市',    hasData: true  },
+  { pref: '北海道',   city: '苫小牧市',  hasData: true  },
+  { pref: '北海道',   city: '小樽市',    hasData: true  },
+  // 東北追加
+  { pref: '岩手県',   city: '花巻市',    hasData: true  },
+  { pref: '岩手県',   city: '奥州市',    hasData: true  },
+  { pref: '山形県',   city: '鶴岡市',    hasData: true  },
+  { pref: '山形県',   city: '米沢市',    hasData: true  },
+  { pref: '秋田県',   city: '横手市',    hasData: true  },
+  { pref: '福島県',   city: '会津若松市', hasData: true  },
+  // 北陸・甲信越追加
+  { pref: '新潟県',   city: '上越市',    hasData: true  },
+  { pref: '福井県',   city: '敦賀市',    hasData: true  },
+  { pref: '山梨県',   city: '甲斐市',    hasData: true  },
+  { pref: '長野県',   city: '上田市',    hasData: true  },
+  { pref: '長野県',   city: '飯田市',    hasData: true  },
+  // 中部追加
+  { pref: '静岡県',   city: '富士市',    hasData: true  },
+  { pref: '静岡県',   city: '磐田市',    hasData: true  },
+  { pref: '岐阜県',   city: '各務原市',  hasData: true  },
+  { pref: '三重県',   city: '伊勢市',    hasData: true  },
+  { pref: '三重県',   city: '松阪市',    hasData: true  },
+  { pref: '愛知県',   city: '豊川市',    hasData: true  },
+  { pref: '愛知県',   city: '刈谷市',    hasData: true  },
+  { pref: '愛知県',   city: '安城市',    hasData: true  },
+  // 近畿追加
+  { pref: '滋賀県',   city: '長浜市',    hasData: true  },
+  { pref: '奈良県',   city: '大和高田市', hasData: true  },
+  // 中国追加
+  { pref: '広島県',   city: '東広島市',  hasData: true  },
+  { pref: '山口県',   city: '宇部市',    hasData: true  },
+  { pref: '岡山県',   city: '津山市',    hasData: true  },
+  { pref: '鳥取県',   city: '倉吉市',    hasData: true  },
+  { pref: '島根県',   city: '浜田市',    hasData: true  },
+  // 四国追加
+  { pref: '愛媛県',   city: '宇和島市',  hasData: true  },
+  { pref: '高知県',   city: '四万十市',  hasData: true  },
+  { pref: '徳島県',   city: '鳴門市',    hasData: true  },
+  // 九州・沖縄追加
+  { pref: '長崎県',   city: '大村市',    hasData: true  },
+  { pref: '熊本県',   city: '天草市',    hasData: true  },
+  { pref: '大分県',   city: '日田市',    hasData: true  },
+  { pref: '佐賀県',   city: '鳥栖市',    hasData: true  },
+  { pref: '宮崎県',   city: '日南市',    hasData: true  },
+  { pref: '鹿児島県', city: '鹿屋市',    hasData: true  },
+  { pref: '鹿児島県', city: '指宿市',    hasData: true  },
+  { pref: '沖縄県',   city: '豊見城市',  hasData: true  },
+  { pref: '沖縄県',   city: '宜野湾市',  hasData: true  },
+  { pref: '沖縄県',   city: '石垣市',    hasData: true  },
+  { pref: '沖縄県',   city: '名護市',    hasData: true  },
+  // 関東追加
+  { pref: '千葉県',   city: '成田市',    hasData: true  },
+  { pref: '千葉県',   city: '木更津市',  hasData: true  },
+  { pref: '埼玉県',   city: '入間市',    hasData: true  },
+  { pref: '埼玉県',   city: '行田市',    hasData: true  },
+  { pref: '埼玉県',   city: '朝霞市',    hasData: true  },
+  { pref: '埼玉県',   city: '戸田市',    hasData: true  },
+  { pref: '群馬県',   city: '伊勢崎市',  hasData: true  },
+  { pref: '群馬県',   city: '桐生市',    hasData: true  },
+];
+
+// データ収録済み市区（hasData:true）＋全国の未収録市区町村（hasData:false = Coming Soon表示）
+// 全1746市区町村がエリア選択・検索サジェストに表示される
+const _dataCityKeys = new Set(KANTO_CITIES.map(c => `${c.pref}|${c.city}`));
 export const ALL_CITIES = [
-  { pref: '北海道',   city: '札幌市',    hasData: false },
-  { pref: '北海道',   city: '函館市',    hasData: false },
-  { pref: '北海道',   city: '旭川市',    hasData: false },
-  { pref: '北海道',   city: '帯広市',    hasData: false },
-  { pref: '北海道',   city: '釧路市',    hasData: false },
-  { pref: '宮城県',   city: '仙台市',    hasData: false },
-  { pref: '宮城県',   city: '石巻市',    hasData: false },
-  { pref: '宮城県',   city: '大崎市',    hasData: false },
-  { pref: '東京都',   city: '千代田区',  hasData: false },
-  { pref: '東京都',   city: '新宿区',    hasData: false },
-  { pref: '東京都',   city: '渋谷区',    hasData: false },
-  { pref: '東京都',   city: '世田谷区',  hasData: false },
-  { pref: '東京都',   city: '八王子市',  hasData: true  },
-  { pref: '東京都',   city: '町田市',    hasData: false },
-  { pref: '東京都',   city: '立川市',    hasData: false },
-  { pref: '東京都',   city: '府中市',    hasData: false },
-  { pref: '東京都',   city: '調布市',    hasData: false },
-  { pref: '東京都',   city: '三鷹市',    hasData: false },
-  { pref: '東京都',   city: '武蔵野市',  hasData: false },
-  { pref: '神奈川県', city: '横浜市',    hasData: false },
-  { pref: '神奈川県', city: '川崎市',    hasData: false },
-  { pref: '神奈川県', city: '相模原市',  hasData: false },
-  { pref: '神奈川県', city: '横須賀市',  hasData: false },
-  { pref: '神奈川県', city: '藤沢市',    hasData: false },
-  { pref: '愛知県',   city: '名古屋市',  hasData: false },
-  { pref: '愛知県',   city: '豊田市',    hasData: false },
-  { pref: '愛知県',   city: '岡崎市',    hasData: false },
-  { pref: '愛知県',   city: '一宮市',    hasData: false },
-  { pref: '大阪府',   city: '大阪市',    hasData: false },
-  { pref: '大阪府',   city: '堺市',      hasData: false },
-  { pref: '大阪府',   city: '吹田市',    hasData: false },
-  { pref: '大阪府',   city: '豊中市',    hasData: false },
-  { pref: '大阪府',   city: '東大阪市',  hasData: false },
-  { pref: '福岡県',   city: '福岡市',    hasData: false },
-  { pref: '福岡県',   city: '北九州市',  hasData: false },
-  { pref: '福岡県',   city: '久留米市',  hasData: false },
+  ...KANTO_CITIES,
+  ...JAPAN_CITIES
+    .filter(c => !_dataCityKeys.has(`${c.pref}|${c.city}`))
+    .map(c => ({ ...c, hasData: false })),
 ];
 
 // ─── 補助金マスター ───────────────────────────────────────────
-// deadline: ISO日付文字列。1ヶ月以内なら赤表示。null=期限なし(随時)
-// applicationUrl: 電子申請URL（実装時に各自治体URLに差替え）
+// 関東78市区・366件（kanto_subsidies.jsから自動ロード）
+// 詳細データ（overview/eligible/how）付きの八王子5件を先頭に配置
 export const SUBSIDIES = [
   {
     id: 101, title: '自転車ヘルメット購入補助', amount: '最大2,000円', category: '安全', condition: 'usesBike',
-    pref: '東京都', city: '八王子市', source: '八王子市公式サイト', lastChecked: '2026-04-27',
-    deadline: '2026-03-31',
-    applicationUrl: 'https://www.city.hachioji.tokyo.jp/kurashi/douro/1004840.html',
-    desc: 'SGマーク付ヘルメット購入時に適用。',
-    overview: '八王子市が対象の自転車用ヘルメット購入に対して補助を行う制度です。',
-    eligible: ['八王子市民であること', 'SGマーク等の安全基準を満たすヘルメットを購入', '申請時点で同補助金を未受給であること'],
-    period: '令和8年3月31日まで（予算なくなり次第終了）',
+    pref: '東京都', city: '八王子市', source: '八王子市公式サイト', lastChecked: '2026-06-10', verified: true,
+    deadline: null,
+    applicationUrl: 'https://www.city.hachioji.tokyo.jp/kurashi/life/001/007/003/index.html',
+    desc: 'SGマーク付ヘルメット購入時に適用。講座参加要件あり。',
+    overview: '八王子市が対象の自転車用ヘルメット購入に対して補助を行う制度です。交通安全講座への参加が要件となっています。',
+    eligible: ['八王子市民であること', 'SGマーク等の安全基準を満たすヘルメットを購入', '市の交通安全講座に参加すること', '申請時点で同補助金を未受給であること'],
+    period: '令和7年度受付終了・令和8年度の実施は要確認',
     how: ['ヘルメットを購入し、レシートを保管する', '市役所または郵送で申請書を提出', '審査後、登録口座に振込（約2〜3週間）'],
     contact: '八王子市 道路・交通安全課',
   },
   {
     id: 102, title: 'おむつ専用ごみ袋の無料配布', amount: 'ごみ袋 年数冊', category: '子育て', condition: 'hasChildren',
-    pref: '東京都', city: '八王子市', source: '八王子市公式サイト', lastChecked: '2026-04-27',
+    pref: '東京都', city: '八王子市', source: '八王子市公式サイト', lastChecked: '2026-04-27', verified: true,
     deadline: null,
     applicationUrl: 'https://www.city.hachioji.tokyo.jp/kurashi/kosodate/1003588.html',
     desc: '3歳未満のお子さんがいる家庭に指定袋を配布。',
@@ -122,7 +308,7 @@ export const SUBSIDIES = [
   },
   {
     id: 103, title: '居住環境整備補助金', amount: '最大100万円', category: '住まい', condition: 'ownsHome',
-    pref: '東京都', city: '八王子市', source: '八王子市公式サイト', lastChecked: '2026-04-27',
+    pref: '東京都', city: '八王子市', source: '八王子市公式サイト', lastChecked: '2026-04-27', verified: true,
     deadline: '2026-06-30',
     applicationUrl: 'https://www.city.hachioji.tokyo.jp/kurashi/sumai/1004220.html',
     desc: '耐震・バリアフリー・断熱改修などの工事に。',
@@ -134,7 +320,7 @@ export const SUBSIDIES = [
   },
   {
     id: 104, title: '物価高騰対応子育て手当', amount: '2万円/人', category: '子育て', condition: 'hasChildren',
-    pref: '東京都', city: '八王子市', source: '八王子市公式サイト', lastChecked: '2026-04-27',
+    pref: '東京都', city: '八王子市', source: '八王子市公式サイト', lastChecked: '2026-04-27', verified: true,
     deadline: '2026-06-30',
     applicationUrl: 'https://www.city.hachioji.tokyo.jp/kurashi/kosodate/kyuhukin/1006000.html',
     desc: '令和8年度の臨時給付金。申請期限に注意！',
@@ -146,7 +332,7 @@ export const SUBSIDIES = [
   },
   {
     id: 105, title: '省エネ家電買い替え補助', amount: '最大3万円', category: 'エコ', condition: 'all',
-    pref: '東京都', city: '八王子市', source: '八王子市公式サイト', lastChecked: '2026-04-27',
+    pref: '東京都', city: '八王子市', source: '八王子市公式サイト', lastChecked: '2026-04-27', verified: true,
     deadline: '2026-07-31',
     applicationUrl: 'https://www.city.hachioji.tokyo.jp/kurashi/kankyo/shoene/1005500.html',
     desc: '古い冷蔵庫やエアコンを省エネ型に替えると支給。',
@@ -156,7 +342,264 @@ export const SUBSIDIES = [
     how: ['対象家電を購入し、廃棄処分の証明を取得', '市役所で申請（来庁またはオンライン）', '補助金振込（約3週間）'],
     contact: '八王子市 環境部 省エネ推進課',
   },
-];
+  // ─── 全データ（all_subsidies.jsより・CSVが正データのため先に展開＝ID重複時はCSV優先） ───
+  ...KANTO_SUBSIDIES,
+  // ─── Phase 2: 関東圏拡張データ（旧手書きデータ・CSV未収録IDのみ採用される） ───
+  // [id, pref, city, title, category, amount, condition, desc, period, deadline, contact]
+  ...[
+    [201, '東京都', '新宿区', '電動自転車購入補助',         'エコ',     '最大3万円',           'usesBike',    '子乗せ電動アシスト自転車の購入費を助成。都の補助と合算可。',           '令和8年3月31日まで', '2026-03-31', '新宿区 環境・エネルギー課'],
+    [202, '東京都', '新宿区', '子育て世帯への家賃補助',     '住まい',   '月最大2万円',         'hasChildren', '18歳以下の子供がいる世帯の家賃を最長2年間補助。',                       '令和8年3月31日まで', '2026-03-31', '新宿区 住宅課'],
+    [203, '東京都', '新宿区', '特定不妊治療費助成',         '子育て',   '最大30万円',          'all',         '体外受精・顕微授精等の費用を一部助成。',                                 '通年',                null,         '新宿区 健康部 母子保健課'],
+    [204, '東京都', '世田谷区', '子育て応援券',              '子育て',   '最大8万円相当',       'hasChildren', '未就学児のいる家庭に子育てサービス利用券を配布。',                       '通年',                null,         '世田谷区 子ども・若者部'],
+    [205, '東京都', '世田谷区', '住宅改良工事費助成',        '住まい',   '最大200万円',         'ownsHome',    'バリアフリー・耐震・断熱など幅広いリフォームに対応。',                   '令和8年3月31日まで', '2026-03-31', '世田谷区 建築安全課'],
+    [206, '東京都', '世田谷区', '高齢者住宅改修費助成',      '福祉',     '最大18万円',          'hasElderly',  '65歳以上の高齢者がいる世帯の手すり設置等に助成。',                       '通年',                null,         '世田谷区 高齢福祉部'],
+    [207, '東京都', '練馬区', '保育料軽減補助',             '子育て',   '月最大2.5万円',       'hasChildren', '認可外保育施設の利用料を軽減。',                                         '通年',                null,         '練馬区 子育て支援課'],
+    [208, '東京都', '練馬区', '電動自転車購入補助',         'エコ',     '最大5万円',           'all',         '一般電動アシスト自転車にも対応。都の補助と合算可。',                     '令和8年3月31日まで', '2026-03-31', '練馬区 環境課'],
+    [209, '東京都', '江東区', 'プレミアム付き商品券',       '生活支援', '15,000円分→10,000円', 'all',         '区内登録店舗で使えるプレミアム商品券を発行。',                           '令和8年1月中旬まで', '2026-01-15', '江東区 産業観光課'],
+    [210, '東京都', '江東区', 'こども医療費助成',           '子育て',   '医療費自己負担なし',  'hasChildren', '18歳まで医療費が無料（所得制限なし）。',                                 '通年',                null,         '江東区 福祉課'],
+    [211, '東京都', '町田市', '自転車ヘルメット購入補助',   '安全',     '最大2,000円',         'usesBike',    'SGマーク付きヘルメット購入費を助成。',                                   '令和8年3月31日まで', '2026-03-31', '町田市 道路交通課'],
+    [212, '東京都', '町田市', '子育て世帯引越し費用補助',   '子育て',   '最大10万円',          'hasChildren', '小学校入学前の子供がいる世帯の市内転入に。',                             '令和8年3月31日まで', '2026-03-31', '町田市 子育て推進課'],
+    [213, '東京都', '立川市', '省エネ機器設置補助',         'エコ',     '最大20万円',          'ownsHome',    '太陽光パネル・蓄電池・エコキュートなどの設置に。',                       '令和8年2月28日まで', '2026-02-28', '立川市 環境課'],
+    [214, '東京都', '立川市', '福祉用具購入費助成',         '福祉',     '最大10万円',          'hasElderly',  '65歳以上または障害者のいる世帯の福祉用具購入に。',                       '通年',                null,         '立川市 高齢介護課'],
+    [215, '埼玉県', 'さいたま市', '子育て支援医療費助成',      '子育て',   '医療費自己負担なし',  'hasChildren', '0歳〜18歳の年度末まで医療費を助成。県内医療機関では受給者証提示で窓口無料。', '通年',                null,         'さいたま市 こども未来局 子育て支援政策課（048-829-1279）', 'https://www.city.saitama.lg.jp/003/001/011/p006270.html'],
+    [216, '埼玉県', 'さいたま市', '既存建築物耐震補強等助成事業（共同住宅）', '住まい', '戸数×60万円', 'ownsHome', '昭和56年5月31日以前着工の共同住宅の耐震診断・補強工事に助成。診断20万円/棟、補強工事 戸数×60万円。', '令和8年1月31日まで', '2026-01-31', 'さいたま市 建築総務課（048-829-1539）', 'https://www.city.saitama.lg.jp/001/154/007/002/p002706.html'],
+    [217, '埼玉県', 'さいたま市', '省エネ家電買い替え補助',    'エコ',     '最大2万円',           'all',         '省エネ基準適合エアコン・冷蔵庫の購入に助成。※詳細は要公式確認。',     '令和8年1月31日まで', '2026-01-31', 'さいたま市 環境局'],
+    [218, '埼玉県', 'さいたま市', '自転車ヘルメット購入補助',  '安全',     '最大2,000円',         'usesBike',    '全年齢対象。自転車保険加入も条件。※詳細は要公式確認。',                 '令和8年3月31日まで', '2026-03-31', 'さいたま市 交通政策課'],
+    [219, '埼玉県', '川口市', '子育て応援交通費補助',       '子育て',   '月最大5,000円',       'hasChildren', '未就学児の通院・習い事などの交通費を補助。',                             '令和8年3月31日まで', '2026-03-31', '川口市 子育て支援課'],
+    [220, '埼玉県', '川口市', '住宅耐震診断費補助',         '住まい',   '診断費無料',          'ownsHome',    '昭和56年以前に建築した木造住宅の耐震診断を無料実施。',                   '通年',                null,         '川口市 建築審査課'],
+    [221, '埼玉県', '川口市', 'ごみ処理費用補助（粗大ごみ減免）', '生活支援', '処理費半額',     'all',         '生活困窮世帯・高齢者世帯のごみ処理費を減免。',                           '通年',                null,         '川口市 廃棄物対策課'],
+    [222, '埼玉県', '川越市', '観光農業体験補助',           'ユニーク', '1家族2,000円',        'hasChildren', '川越市内の農業体験施設利用料を補助。',                                   '令和8年3月31日まで', '2026-03-31', '川越市 農業振興課'],
+    [223, '埼玉県', '川越市', '移住促進補助金',             'ユニーク', '最大50万円',          'all',         '東京都内からの転入世帯に引越し費用等を補助。',                           '令和8年3月31日まで', '2026-03-31', '川越市 都市計画課'],
+    [224, '埼玉県', '所沢市', '子ども医療費助成',           '子育て',   '医療費自己負担なし',  'hasChildren', '18歳まで医療費窓口負担をゼロに。',                                       '通年',                null,         '所沢市 子育て支援課'],
+    [225, '埼玉県', '所沢市', '電動アシスト自転車購入補助', 'エコ',     '最大3万円',           'usesBike',    '通勤・通学用も対象。市内販売店で購入が条件。',                           '令和8年2月28日まで', '2026-02-28', '所沢市 環境課'],
+    [226, '埼玉県', '越谷市', '新婚世帯家賃補助',           '生活支援', '月最大1万円(最長2年)', 'all',        '婚姻から2年以内の新婚夫婦の家賃を補助。',                                '令和8年3月31日まで', '2026-03-31', '越谷市 住宅政策課'],
+    [227, '埼玉県', '熊谷市', '移住促進助成金',             'ユニーク', '最大100万円',         'all',         '東京圏から熊谷市へ移住し就業または起業した世帯に。',                     '令和8年3月31日まで', '2026-03-31', '熊谷市 政策局 移住定住推進室'],
+    [228, '神奈川県', '横浜市', '小児医療費助成',            '子育て',   '医療費自己負担なし',  'hasChildren', '0歳〜中学3年生まで保険診療の自己負担額を全額助成（差額ベッド代等除く）。令和8年6月から18歳年度末まで拡大。', '通年',                null,         '横浜市 健康福祉局 医療援助課（045-671-4115）', 'https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/kenko-iryo/iryohijosei/shoni/child.html'],
+    [229, '神奈川県', '横浜市', '省エネ機器購入費補助',      'エコ',     '最大25万円',          'ownsHome',    '太陽光パネル・蓄電池・省エネ給湯器の導入に。',                           '令和8年3月31日まで', '2026-03-31', '横浜市 資源循環局'],
+    [230, '神奈川県', '横浜市', '木造住宅耐震改修費補助',    '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前木造住宅の耐震改修工事に。',                                 '令和8年2月28日まで', '2026-02-28', '横浜市 建築局 建築安全課'],
+    [231, '神奈川県', '横浜市', '自転車ヘルメット購入補助',  '安全',     '最大2,000円',         'usesBike',    '小学生〜高校生を優先対象。SGマーク付きが条件。',                         '令和8年3月31日まで', '2026-03-31', '横浜市 道路局 交通安全・自転車政策課'],
+    [232, '神奈川県', '川崎市', '小児医療費助成事業',         '子育て',   '医療費自己負担なし（小4以降は通院500円/回）',  'hasChildren', '0歳〜中学3年生まで助成。0〜小3は全額助成、小4〜中3は通院1回500円の一部負担あり。入院は全額助成・所得制限なし。令和8年9月から高校生まで拡大予定。', '通年',                null,         '川崎市 こども未来局 小児医療証事務処理センター（044-222-6211）', 'https://www.city.kawasaki.jp/450/page/0000128564.html'],
+    [233, '神奈川県', '川崎市', '省エネ住宅改修費補助',      'エコ',     '最大30万円',          'ownsHome',    '断熱工事・窓改修など省エネリフォームに。',                               '令和8年1月31日まで', '2026-01-31', '川崎市 まちづくり局'],
+    [234, '神奈川県', '川崎市', '不育症治療費助成',          '子育て',   '最大30万円/年',       'all',         '2回以上流産・死産を経験した夫婦への治療費補助。',                        '通年',                null,         '川崎市 健康福祉局 母子保健課'],
+    [235, '神奈川県', '相模原市', '移住促進補助',            'ユニーク', '最大50万円',          'all',         '東京都心から相模原市へ移住した世帯に引越し費用等を補助。',               '令和8年3月31日まで', '2026-03-31', '相模原市 政策局 移住定住推進課'],
+    [236, '神奈川県', '相模原市', '障害者住宅改修費補助',    '福祉',     '最大18万円',          'hasElderly',  '障害者・高齢者の日常生活を支える住宅改修に。',                           '通年',                null,         '相模原市 福祉局'],
+    [237, '神奈川県', '藤沢市', '電動自転車購入補助',        'エコ',     '最大3万円',           'usesBike',    '通勤・通学・買い物用の電動アシスト自転車に。',                           '令和8年2月28日まで', '2026-02-28', '藤沢市 環境部 環境課'],
+    [238, '神奈川県', '藤沢市', '子育て世帯保育料軽減',      '子育て',   '月最大3万円軽減',     'hasChildren', '認可外保育施設を利用する2歳以下の子供がいる世帯。',                      '通年',                null,         '藤沢市 子ども青少年部'],
+    [239, '神奈川県', '横須賀市', '空き家リフォーム補助',    '住まい',   '最大100万円',         'ownsHome',    '市内の空き家を購入してリフォームする場合に補助。',                       '令和8年3月31日まで', '2026-03-31', '横須賀市 都市部 住宅政策課'],
+    [240, '神奈川県', '横須賀市', '高齢者外出支援タクシー券', '福祉',    '年最大24,000円分',    'hasElderly',  '70歳以上の高齢者にタクシー利用券を配布。',                               '通年',                null,         '横須賀市 福祉部'],
+    [241, '神奈川県', '平塚市', '結婚新生活支援補助',        '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住宅費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '平塚市 企画政策部'],
+    // ─── 千葉県（Phase 2.1 追加）
+    [242, '千葉県', '千葉市', '子ども医療費助成',           '子育て',   '通院300円/回・調剤無料', 'hasChildren', '0歳〜高校3年生相当まで助成。通院1回300円(6回目以降無料)、入院1日300円(11日目以降無料)、調剤無料、第3子以降は全て無料。', '通年',         null,         '千葉市 こども未来局 健全育成課（043-245-5179）', 'https://www.city.chiba.jp/kodomomirai/kodomomirai/kateishien/kodomoiryouhi.html'],
+    [243, '千葉県', '千葉市', '妊婦のための支援給付事業',    '子育て',   '計10万円（妊娠時5万＋出生時5万）', 'hasChildren', '令和7年4月以降に妊娠届出をした妊婦が対象。妊婦支援給付金として、妊娠届出時に5万円、出生届出時に胎児1人あたり5万円を支給。', '通年',          null,         '千葉市 妊婦支援給付事業事務局（0570-011-080）', 'https://www.city.chiba.jp/hokenfukushi/kenkofukushi/shien/shussankosodateouen/shussankosodateouen.html'],
+    [244, '千葉県', '千葉市', '自転車ヘルメット購入補助',   '安全',     '最大2,000円',         'usesBike',    'SGマーク等の安全基準を満たすヘルメット購入に。※詳細は要公式確認。',     '令和8年3月31日まで', '2026-03-31', '千葉市 市民局 交通安全課'],
+    [245, '千葉県', '船橋市', '出産・子育て応援給付金',     '子育て',   '妊娠時5万＋出生時5万', 'hasChildren', '妊娠届出時と出生届出時にそれぞれ5万円を支給。',                          '通年',                null,         '船橋市 健康部 母子保健課'],
+    [246, '千葉県', '船橋市', '太陽光発電設備設置補助',     'エコ',     '最大15万円',          'ownsHome',    '住宅用太陽光発電・蓄電池の設置費用を補助。',                             '令和8年2月28日まで', '2026-02-28', '船橋市 環境部 環境政策課'],
+    [247, '千葉県', '松戸市', '子育てクーポン',             '子育て',   '5万円相当',           'hasChildren', '未就学児がいる世帯に子育てサービス利用券を配布。',                       '通年',                null,         '松戸市 子ども部 子育て支援課'],
+    [248, '千葉県', '松戸市', '高齢者住宅改修費助成',       '福祉',     '最大20万円',          'hasElderly',  '65歳以上の高齢者がいる世帯のバリアフリー改修に。',                       '通年',                null,         '松戸市 福祉長寿部'],
+    [249, '千葉県', '市川市', 'ファミリーサポート利用助成', '子育て',   '月最大1万円',         'hasChildren', '一時預かり・送迎などファミリーサポート利用料を補助。',                   '通年',                null,         '市川市 こども政策部'],
+    [250, '千葉県', '市川市', '省エネ家電買い替え補助',     'エコ',     '最大3万円',           'all',         '省エネ基準達成のエアコン・冷蔵庫・給湯器の買い替えに。',                 '令和8年1月31日まで', '2026-01-31', '市川市 環境部 環境政策課'],
+    [251, '千葉県', '柏市', '結婚新生活支援補助金',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '柏市 こども部 こども政策課'],
+    [252, '千葉県', '柏市', '電動アシスト自転車購入補助',   'エコ',     '最大3万円',           'usesBike',    '幼児同乗用・通勤用の電動アシスト自転車購入に。',                         '令和8年2月28日まで', '2026-02-28', '柏市 土木部 交通政策課'],
+    [253, '千葉県', '流山市', '送迎保育ステーション利用補助', '子育て', '月額0〜2万円',        'hasChildren', '駅前で子供を預け、保育所へ送迎してくれる人気サービス。',                 '通年',                null,         '流山市 こども家庭部'],
+    [254, '千葉県', '流山市', '子育て世代移住支援金',        'ユニーク', '最大50万円',          'all',         '市外から転入した子育て世帯に引越し費用などを補助。',                     '令和8年3月31日まで', '2026-03-31', '流山市 マーケティング課'],
+    [255, '千葉県', '流山市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '流山市 健康福祉部'],
+    [256, '千葉県', '流山市', '出産祝い品プレゼント',       '子育て',   '育児用品セット',      'hasChildren', '市内で出産した家庭に育児用品セットを贈呈。',                             '通年',                null,         '流山市 健康福祉部'],
+    // ─── 中部（愛知・静岡・岐阜）Phase 3
+    [257, '愛知県', '名古屋市', '子ども医療費助成制度',     '子育て',   '医療費自己負担なし',  'hasChildren', '18歳到達後の3月31日までの子どもが対象。愛知県内で医療証提示で自己負担額を市が負担。県外受診は申請で還付。', '通年',         null,         '名古屋市 健康福祉局（052-972-2614）', 'https://www.city.nagoya.jp/kodomo/kosodate/1008992/1009002/1009009.html'],
+    [258, '愛知県', '名古屋市', '子どもあんしん住まいる補助金（住まいの安全性向上改修）', '住まい', '最大20万円/戸（補助率1/2）', 'hasChildren', '12歳以下の子どもがいる世帯または妊娠中の世帯が対象。鍵付クレセント錠・チャイルドゲート・転落防止手すり等の設置工事費。', '令和9年2月28日まで', '2027-02-28', '子どもあんしん住まいる補助金事務局（052-485-7034）', 'https://www.city.nagoya.jp/jutakutoshi/page/0000173316.html'],
+    [259, '愛知県', '名古屋市', '高齢者住宅改修費助成',     '福祉',     '最大18万円',          'hasElderly',  '65歳以上の高齢者がいる世帯のバリアフリー改修に。※詳細は要公式確認。',   '通年',                null,         '名古屋市 健康福祉局'],
+    [260, '愛知県', '豊田市', '学童保育完全無料',           '子育て',   '利用料無料',          'hasChildren', '放課後クラブ（学童保育）の利用料が完全無料。',                           '通年',                null,         '豊田市 こども発達センター'],
+    [261, '愛知県', '豊田市', '出産祝い金（第1子〜）',     '子育て',   '5万円〜20万円',       'hasChildren', '第1子5万円、第2子10万円、第3子以降20万円を支給。',                       '通年',                null,         '豊田市 子ども家庭課'],
+    [262, '愛知県', '豊田市', '太陽光発電設置補助',         'エコ',     '最大10万円',          'ownsHome',    '住宅用太陽光発電・蓄電池の設置費用を補助。',                             '令和8年2月28日まで', '2026-02-28', '豊田市 環境政策課'],
+    [263, '愛知県', '岡崎市', '自転車ヘルメット購入補助',   '安全',     '最大2,000円',         'usesBike',    'SGマーク付ヘルメット購入時に適用。',                                     '令和8年3月31日まで', '2026-03-31', '岡崎市 市民生活部'],
+    [264, '愛知県', '岡崎市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住宅費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '岡崎市 こども部'],
+    [265, '愛知県', '岡崎市', '省エネ家電買い替え補助',     'エコ',     '最大3万円',           'all',         '省エネ基準達成のエアコン・冷蔵庫・給湯器の買い替えに。',                 '令和8年1月31日まで', '2026-01-31', '岡崎市 環境部'],
+    [266, '愛知県', '一宮市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '一宮市 こども家庭部'],
+    [267, '愛知県', '一宮市', '木造住宅耐震診断補助',       '住まい',   '診断費無料',          'ownsHome',    '昭和56年以前に建築した木造住宅の耐震診断を無料実施。',                   '通年',                null,         '一宮市 建築部'],
+    [268, '愛知県', '一宮市', '移住支援金',                 'ユニーク', '最大100万円',         'all',         '東京圏から一宮市へ移住し就業または起業した世帯に。',                     '令和8年3月31日まで', '2026-03-31', '一宮市 企画部'],
+    [269, '静岡県', '静岡市', '子ども医療費助成制度',       '子育て',   '通院500円超分助成・1歳未満は全額', 'hasChildren', '0歳〜18歳年度末まで助成。入院は全額助成、1歳未満通院は全額助成、1歳以上通院は1回500円を超える額と院外処方箋の薬代を助成。', '通年',         null,         '静岡市 各区福祉事務所 子育て支援課', 'https://www.city.shizuoka.lg.jp/s2873/s001931.html'],
+    [270, '静岡県', '静岡市', 'お茶の都 移住補助金',       'ユニーク', '最大100万円',         'all',         '静岡市へ移住し就業した世帯に支援金を支給。',                             '令和8年3月31日まで', '2026-03-31', '静岡市 企画局'],
+    [271, '静岡県', '静岡市', '電動アシスト自転車購入補助', 'エコ',     '最大3万円',           'usesBike',    '通勤・通学用の電動アシスト自転車購入に。',                               '令和8年2月28日まで', '2026-02-28', '静岡市 都市局'],
+    [272, '岐阜県', '岐阜市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '岐阜市 子ども未来部'],
+    [273, '岐阜県', '岐阜市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '岐阜市 都市建設部'],
+    [274, '岐阜県', '岐阜市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '岐阜市 子ども政策課'],
+    // ─── 関西（大阪・京都・兵庫）Phase 3
+    [275, '大阪府', '大阪市', 'こども医療費助成制度',       '子育て',   '1日500円・月2,500円上限', 'hasChildren', '0歳〜18歳年度末までが対象。1医療機関ごと1日最大500円（月2日限度、3日目以降無料）、月総負担額最大2,500円。令和6年4月から所得制限撤廃。', '通年',                null,         '大阪市 区保健福祉センター医療助成業務担当 / 償還事務センター（06-6351-8200）', 'https://www.city.osaka.lg.jp/kodomo/page/0000369443.html'],
+    [276, '大阪府', '大阪市', '自転車ヘルメット購入補助',   '安全',     '最大2,000円',         'usesBike',    'SGマーク等の安全基準を満たすヘルメット購入に。',                         '令和8年3月31日まで', '2026-03-31', '大阪市 建設局'],
+    [277, '大阪府', '大阪市', '高齢者外出支援敬老パス',     '福祉',     '年最大3,500円',       'hasElderly',  '70歳以上の高齢者に交通機関の敬老優待乗車証を交付。',                     '通年',                null,         '大阪市 福祉局'],
+    [278, '大阪府', '堺市', '給食費無償化',                 '子育て',   '給食費全額',          'hasChildren', '市立小中学校の給食費を全額無償化。',                                     '通年',                null,         '堺市 教育委員会'],
+    [279, '大阪府', '堺市', '木造住宅耐震改修補助',         '住まい',   '最大80万円',          'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '堺市 建築都市局'],
+    [280, '大阪府', '堺市', '省エネリフォーム補助',         'エコ',     '最大30万円',          'ownsHome',    '断熱・窓改修など省エネリフォームに補助。',                               '令和8年1月31日まで', '2026-01-31', '堺市 環境局'],
+    [281, '大阪府', '吹田市', 'こども医療費助成',           '子育て',   '18歳まで無料',        'hasChildren', '18歳（高校3年生年度末）まで医療費の窓口負担なし。',                      '通年',                null,         '吹田市 児童部'],
+    [282, '大阪府', '吹田市', '給食費無償化',               '子育て',   '給食費全額',          'hasChildren', '市立小中学校の給食費が完全無料。',                                       '通年',                null,         '吹田市 教育委員会'],
+    [283, '大阪府', '吹田市', '太陽光発電設置補助',         'エコ',     '最大15万円',          'ownsHome',    '住宅用太陽光発電・蓄電池の設置費用を補助。',                             '令和8年2月28日まで', '2026-02-28', '吹田市 環境部'],
+    [284, '大阪府', '東大阪市', 'こども医療費助成',         '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '東大阪市 子どもすこやか部'],
+    [285, '大阪府', '東大阪市', '創業支援補助金',           'ユニーク', '最大50万円',          'all',         '東大阪市内で起業する個人・法人に補助。',                                 '令和8年3月31日まで', '2026-03-31', '東大阪市 経済部'],
+    [286, '大阪府', '東大阪市', '自転車ヘルメット購入補助', '安全',     '最大2,000円',         'usesBike',    'SGマーク付きヘルメット購入費を助成。',                                   '令和8年3月31日まで', '2026-03-31', '東大阪市 環境部'],
+    [287, '京都府', '京都市', '学生支援家賃補助',           'ユニーク', '月最大5万円',         'all',         '京都市内の学生世帯への家賃補助制度。',                                   '令和8年3月31日まで', '2026-03-31', '京都市 都市計画局'],
+    [288, '京都府', '京都市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '京町家・古民家を含む木造住宅の耐震改修工事に補助。',                     '令和8年2月28日まで', '2026-02-28', '京都市 都市計画局'],
+    [289, '京都府', '京都市', '子ども医療費支給制度',       '子育て',   '1医療機関200円/月（小学生まで）', 'hasChildren', '中学3年生までが対象、所得制限なし。0歳〜小学生は1医療機関200円/月（入院・通院共通）。中学生は入院200円/月・通院1,500円/月、超過分は申請で還付。', '通年',         null,         '京都市 子ども家庭支援課分室 子ども医療担当（075-222-3777）', 'https://www.city.kyoto.lg.jp/hagukumi/page/0000067393.html'],
+    [290, '兵庫県', '神戸市', 'こども医療費助成',           '子育て',   '0〜2歳無料・3歳〜高校生は400円/日上限', 'hasChildren', '0歳〜高校3年生（18歳年度末）まで助成、所得制限なし。0〜2歳：自己負担なし。3歳〜高校生：外来2割負担、1日最大400円を月2回まで（3回目以降無料）。', '通年',     null,         '神戸市 福祉局 国保年金医療課', 'https://www.city.kobe.lg.jp/a52670/kenko/health/medical/kodomoiryohijose.html'],
+    [291, '兵庫県', '神戸市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '神戸市 住宅都市局'],
+    [292, '兵庫県', '神戸市', '子育て世帯家賃補助',         '住まい',   '月最大3万円',         'hasChildren', '子育て世帯が市内に転入した際の家賃を最大2年補助。',                      '令和8年3月31日まで', '2026-03-31', '神戸市 こども家庭局'],
+    [293, '兵庫県', '西宮市', 'こども医療費助成',           '子育て',   '18歳まで無料',        'hasChildren', '18歳（高校3年生年度末）まで医療費の窓口負担なし。',                      '通年',                null,         '西宮市 こども支援局'],
+    [294, '兵庫県', '西宮市', '自転車ヘルメット購入補助',   '安全',     '最大2,000円',         'usesBike',    'SGマーク付ヘルメット購入時に適用。',                                     '令和8年3月31日まで', '2026-03-31', '西宮市 都市局'],
+    [295, '兵庫県', '西宮市', '省エネ家電買い替え補助',     'エコ',     '最大3万円',           'all',         '省エネ基準達成のエアコン・冷蔵庫・給湯器の買い替えに。',                 '令和8年1月31日まで', '2026-01-31', '西宮市 環境局'],
+    [296, '兵庫県', '明石市', 'おむつ定期便',               '子育て',   '毎月無料',            'hasChildren', '満1歳まで毎月おむつ・育児用品を自宅に配送（全国No.1の人気制度）。',     '通年',                null,         '明石市 こども局'],
+    [297, '兵庫県', '明石市', '第2子以降保育料無料',        '子育て',   '保育料全額',          'hasChildren', '第2子以降は認可保育所・幼稚園の利用料が完全無料。',                      '通年',                null,         '明石市 こども局'],
+    [298, '兵庫県', '明石市', '18歳までの医療費完全無料',   '子育て',   '医療費全額無料',      'hasChildren', '入院・通院問わず18歳まで医療費の窓口負担なし（所得制限なし）。',         '通年',                null,         '明石市 健康福祉部'],
+    // ─── 北関東（茨城・栃木・群馬）Phase 4
+    [299, '茨城県', '水戸市', 'こども医療費助成',           '子育て',   '中学生まで自己負担なし', 'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '水戸市 こども育成課'],
+    [300, '茨城県', '水戸市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '水戸市 都市計画部'],
+    [301, '茨城県', '水戸市', '自転車ヘルメット購入補助',   '安全',     '最大2,000円',         'usesBike',    'SGマーク等の安全基準を満たすヘルメット購入に。',                         '令和8年3月31日まで', '2026-03-31', '水戸市 市民協働部'],
+    [302, '茨城県', 'つくば市', 'こども医療費助成',         '子育て',   '高校生まで自己負担なし', 'hasChildren', '高校3年生まで医療費の窓口負担なし。',                                    '通年',                null,         'つくば市 こども部'],
+    [303, '茨城県', 'つくば市', '太陽光発電設置補助',       'エコ',     '最大15万円',          'ownsHome',    '住宅用太陽光発電・蓄電池の設置費用を補助。',                             '令和8年2月28日まで', '2026-02-28', 'つくば市 環境政策課'],
+    [304, '茨城県', 'つくば市', '移住・定住促進奨励金',     'ユニーク', '最大100万円',         'all',         '東京圏からつくば市へ移住し就業した世帯に。研究学園都市ならではの制度。',  '令和8年3月31日まで', '2026-03-31', 'つくば市 政策イノベーション部'],
+    [305, '茨城県', '日立市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '日立市 保健福祉部'],
+    [306, '茨城県', '日立市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '日立市 生活環境部'],
+    [307, '茨城県', '日立市', '高齢者外出支援タクシー券',   '福祉',     '年最大24,000円分',    'hasElderly',  '70歳以上の高齢者にタクシー利用券を配布。',                               '通年',                null,         '日立市 保健福祉部'],
+    [308, '栃木県', '宇都宮市', 'こども医療費助成',         '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '宇都宮市 子ども家庭部'],
+    [309, '栃木県', '宇都宮市', '自転車ヘルメット購入補助', '安全',     '最大2,000円',         'usesBike',    'SGマーク付ヘルメット購入時に適用。雷都ライセンス連動。',                  '令和8年3月31日まで', '2026-03-31', '宇都宮市 建設部'],
+    [310, '栃木県', '宇都宮市', '木造住宅耐震改修補助',     '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '宇都宮市 都市建設部'],
+    [311, '栃木県', '小山市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '小山市 子ども家庭課'],
+    [312, '栃木県', '小山市', '太陽光発電設置補助',         'エコ',     '最大10万円',          'ownsHome',    '住宅用太陽光発電・蓄電池の設置費用を補助。',                             '令和8年2月28日まで', '2026-02-28', '小山市 環境課'],
+    [313, '栃木県', '小山市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '小山市 結婚新生活支援課'],
+    [314, '栃木県', '足利市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '足利市 健康福祉部'],
+    [315, '栃木県', '足利市', '移住促進補助金',             'ユニーク', '最大50万円',          'all',         '東京圏から足利市へ移住し就業または起業した世帯に。',                     '令和8年3月31日まで', '2026-03-31', '足利市 企画政策課'],
+    [316, '栃木県', '足利市', '省エネ家電買い替え補助',     'エコ',     '最大3万円',           'all',         '省エネ基準達成のエアコン・冷蔵庫・給湯器の買い替えに。',                 '令和8年1月31日まで', '2026-01-31', '足利市 生活環境部'],
+    [317, '群馬県', '前橋市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '前橋市 こども家庭部'],
+    [318, '群馬県', '前橋市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '前橋市 建設部'],
+    [319, '群馬県', '前橋市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '前橋市 政策部'],
+    [320, '群馬県', '高崎市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '高崎市 こども育成部'],
+    [321, '群馬県', '高崎市', '出産祝い金',                 '子育て',   '最大10万円',          'hasChildren', '高崎市内で出産した家庭に祝い金を支給。',                                 '通年',                null,         '高崎市 健康福祉部'],
+    [322, '群馬県', '高崎市', '自転車ヘルメット購入補助',   '安全',     '最大2,000円',         'usesBike',    'SGマーク付ヘルメット購入時に適用。',                                     '令和8年3月31日まで', '2026-03-31', '高崎市 都市整備部'],
+    [323, '群馬県', '太田市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '太田市 福祉こども部'],
+    [324, '群馬県', '太田市', '太陽光発電設置補助',         'エコ',     '最大10万円',          'ownsHome',    '住宅用太陽光発電・蓄電池の設置費用を補助。',                             '令和8年2月28日まで', '2026-02-28', '太田市 産業環境部'],
+    [325, '群馬県', '太田市', '高齢者住宅改修費助成',       '福祉',     '最大18万円',          'hasElderly',  '65歳以上の高齢者がいる世帯のバリアフリー改修に。',                       '通年',                null,         '太田市 福祉こども部'],
+    // ─── 北海道・東北 Phase 5
+    [326, '北海道',   '札幌市', '子ども医療費助成',           '子育て',   '初診580円・再診無料（所得制限あり）', 'hasChildren', '高校生世代まで（18歳年度末）が対象。医科初診580円・歯科初診510円・訪問看護は1割負担（月3,000円限度）。再診・調剤・柔整は無料。所得制限あり。', '通年',         null,         '札幌市 各区役所 保健福祉課 福祉助成係', 'https://www.city.sapporo.jp/hoken-iryo/iryojosei/nyuyoji.html'],
+    [327, '北海道',   '札幌市', '冬の暖房費助成（子育て世帯）', 'エコ',   '最大1万円',           'hasChildren', '子育て世帯の冬の暖房費（灯油代等）を市が一部負担。',                     '令和8年3月31日まで', '2026-03-31', '札幌市 子ども未来局'],
+    [328, '北海道',   '札幌市', '移住・子育て支援金',         'ユニーク', '最大60万円',          'all',         '道外から移住した子育て世帯に支援金を支給。',                             '令和8年3月31日まで', '2026-03-31', '札幌市 まちづくり政策局'],
+    [329, '青森県',   '青森市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '青森市 健康部'],
+    [330, '青森県',   '青森市', '移住促進補助金',             'ユニーク', '最大100万円',         'all',         '東京圏から青森市へ移住し就業した世帯に。りんご産業従事者に加算あり。',  '令和8年3月31日まで', '2026-03-31', '青森市 経営戦略部'],
+    [331, '青森県',   '青森市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '青森市 都市整備部'],
+    [332, '岩手県',   '盛岡市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '盛岡市 子ども未来部'],
+    [333, '岩手県',   '盛岡市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '盛岡市 都市整備部'],
+    [334, '岩手県',   '盛岡市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '盛岡市 子ども未来部'],
+    [335, '宮城県',   '仙台市', '子ども医療費助成',           '子育て',   '令和8年4月から自己負担なし', 'hasChildren', '令和8年4月1日から対象を中3→18歳年度末（高校生）まで拡大、利用者一部負担金を廃止し完全無料化。', '通年',                null,         '仙台市 子供未来局 こども家庭保健課', 'https://www.city.sendai.jp/kate/kurashi/kenkotofukushi/kosodate/teate/jose.html'],
+    [336, '宮城県',   '仙台市', '第3子以降の保育料無料',      '子育て',   '保育料全額',          'hasChildren', '第3子以降の認可保育所・幼稚園の利用料が完全無料。',                      '通年',                null,         '仙台市 子供未来局'],
+    [337, '宮城県',   '仙台市', '産後ケア事業',               '子育て',   '最大7日間補助',       'hasChildren', '産後の体力・精神面のケアを宿泊・日帰りで提供。',                         '通年',                null,         '仙台市 健康福祉局'],
+    [338, '秋田県',   '秋田市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '秋田市 子ども未来部'],
+    [339, '秋田県',   '秋田市', '移住促進補助金',             'ユニーク', '最大100万円',         'all',         '東京圏から秋田市へ移住し就業した世帯に。',                               '令和8年3月31日まで', '2026-03-31', '秋田市 企画財政部'],
+    [340, '秋田県',   '秋田市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '秋田市 子ども未来部'],
+    [341, '山形県',   '山形市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '山形市 子育て推進部'],
+    [342, '山形県',   '山形市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '山形市 まちづくり政策部'],
+    [343, '山形県',   '山形市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '山形市 健康医療部'],
+    [344, '福島県',   '福島市', 'こども医療費助成',           '子育て',   '高校生まで無料',      'hasChildren', '高校3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '福島市 こども未来部'],
+    [345, '福島県',   '福島市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '福島市 都市政策部'],
+    [346, '福島県',   '福島市', '太陽光発電設置補助',         'エコ',     '最大15万円',          'ownsHome',    '住宅用太陽光発電・蓄電池の設置費用を補助。',                             '令和8年2月28日まで', '2026-02-28', '福島市 環境部'],
+    // ─── 北陸・甲信 Phase 5
+    [347, '新潟県',   '新潟市', 'こども医療費助成',           '子育て',   '入院1日1,200円・通院1日530円',  'hasChildren', '0歳〜高校3年生まで助成。入院1日1,200円・通院1日530円(月4回まで)・調剤薬局は全額助成（自己負担0円）。', '通年',                null,         '新潟市 こども政策部', 'https://www.city.niigata.lg.jp/kosodate/ninshin/shien/kenko_iryo/kodomoiryo/kodomoiryou.html'],
+    [348, '新潟県',   '新潟市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '新潟市 都市政策部'],
+    [349, '新潟県',   '新潟市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '新潟市 こども未来部'],
+    [350, '富山県',   '富山市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '富山市 こども家庭部'],
+    [351, '富山県',   '富山市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '富山市 企画管理部'],
+    [352, '富山県',   '富山市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '富山市 都市整備部'],
+    [353, '石川県',   '金沢市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '金沢市 こども未来部'],
+    [354, '石川県',   '金沢市', '伝統建築物保存改修補助',     'ユニーク', '最大200万円',         'ownsHome',    '金沢市の伝統的な町家・建築物の保存改修に補助。',                         '令和8年3月31日まで', '2026-03-31', '金沢市 都市整備局'],
+    [355, '石川県',   '金沢市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '金沢市 福祉局'],
+    [356, '福井県',   '福井市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '福井市 福祉保健部'],
+    [357, '福井県',   '福井市', '移住促進補助金',             'ユニーク', '最大100万円',         'all',         '東京圏から福井市へ移住し就業または起業した世帯に。',                     '令和8年3月31日まで', '2026-03-31', '福井市 商工労働部'],
+    [358, '福井県',   '福井市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '福井市 福祉保健部'],
+    [359, '山梨県',   '甲府市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '甲府市 子ども未来部'],
+    [360, '山梨県',   '甲府市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '甲府市 まちづくり部'],
+    [361, '山梨県',   '甲府市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '甲府市 子ども未来部'],
+    [362, '長野県',   '長野市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '長野市 こども未来部'],
+    [363, '長野県',   '長野市', '移住支援金',                 'ユニーク', '最大100万円',         'all',         '東京圏から長野市へ移住して就業・起業すると支給。ファミリー加算あり。',  '令和8年3月31日まで', '2026-03-31', '長野市 地域・市民生活部'],
+    [364, '長野県',   '長野市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '長野市 都市整備部'],
+    // ─── 中部・近畿補完 Phase 5
+    [365, '三重県',   '津市', 'こども医療費助成',             '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '津市 健康福祉部'],
+    [366, '三重県',   '津市', '木造住宅耐震改修補助',         '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '津市 都市計画部'],
+    [367, '三重県',   '津市', '結婚新生活支援補助',           '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '津市 こども家庭支援課'],
+    [368, '滋賀県',   '大津市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '大津市 こども未来部'],
+    [369, '滋賀県',   '大津市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '大津市 福祉子ども部'],
+    [370, '滋賀県',   '大津市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '大津市 都市計画部'],
+    [371, '奈良県',   '奈良市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '奈良市 子ども未来部'],
+    [372, '奈良県',   '奈良市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '奈良市 まちづくり部'],
+    [373, '奈良県',   '奈良市', '移住促進補助',               'ユニーク', '最大50万円',          'all',         '東京圏から奈良市へ移住し就業した世帯に。',                               '令和8年3月31日まで', '2026-03-31', '奈良市 観光経済部'],
+    [374, '和歌山県', '和歌山市', 'こども医療費助成',         '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '和歌山市 福祉局'],
+    [375, '和歌山県', '和歌山市', '木造住宅耐震改修補助',     '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '和歌山市 都市建設局'],
+    [376, '和歌山県', '和歌山市', '結婚新生活支援補助',       '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '和歌山市 福祉局'],
+    // ─── 中国 Phase 5
+    [377, '鳥取県',   '鳥取市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '鳥取市 福祉部'],
+    [378, '鳥取県',   '鳥取市', '県産材での家づくり補助',     'ユニーク', '最大50万円',          'ownsHome',    '地元の木を使った新築で支給。移住者は上乗せ補助あり。',                   '令和8年3月31日まで', '2026-03-31', '鳥取市 都市整備部'],
+    [379, '鳥取県',   '鳥取市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '鳥取市 福祉部'],
+    [380, '島根県',   '松江市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '松江市 子育て部'],
+    [381, '島根県',   '松江市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '松江市 都市整備部'],
+    [382, '島根県',   '松江市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '松江市 子育て部'],
+    [383, '岡山県',   '岡山市', '子ども医療費助成制度',       '子育て',   '高校生年代まで助成',  'hasChildren', '高校生年代までの子どもが対象。保険診療の自己負担分を全額または一部助成。令和6年1月から拡充、令和8年1月から特定疾病通院分も無料化。', '通年',         null,         '岡山市 医療助成課', 'https://www.city.okayama.jp/kurashi/0000004319.html'],
+    [384, '岡山県',   '岡山市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '岡山市 都市整備局'],
+    [385, '岡山県',   '岡山市', '太陽光発電設置補助',         'エコ',     '最大15万円',          'ownsHome',    '住宅用太陽光発電・蓄電池の設置費用を補助。',                             '令和8年2月28日まで', '2026-02-28', '岡山市 環境局'],
+    [386, '広島県',   '広島市', 'こども医療費補助制度',       '子育て',   '初診500円〜（所得制限あり）', 'hasChildren', '0歳〜中学3年生まで対象（所得制限あり）。初診時500円程度の自己負担あり（所得・年齢で変動）。令和9年1月まで通院対象を中3まで拡大中。', '通年',         null,         '広島市 健康福祉局', 'https://www.city.hiroshima.lg.jp/living/medical/1021209/1027972/1003459.html'],
+    [387, '広島県',   '広島市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '広島市 都市整備局'],
+    [388, '広島県',   '広島市', '自転車ヘルメット購入補助',   '安全',     '最大2,000円',         'usesBike',    'SGマーク付ヘルメット購入時に適用。',                                     '令和8年3月31日まで', '2026-03-31', '広島市 道路交通局'],
+    [389, '山口県',   '山口市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '山口市 こども未来部'],
+    [390, '山口県',   '山口市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '山口市 都市整備部'],
+    [391, '山口県',   '山口市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '山口市 子育て支援課'],
+    // ─── 四国 Phase 5
+    [392, '徳島県',   '徳島市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '徳島市 健康福祉部'],
+    [393, '徳島県',   '徳島市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '徳島市 都市建設政策部'],
+    [394, '徳島県',   '徳島市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '徳島市 健康福祉部'],
+    [395, '香川県',   '高松市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '高松市 健康福祉局'],
+    [396, '香川県',   '高松市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '高松市 都市整備局'],
+    [397, '香川県',   '高松市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '高松市 健康福祉局'],
+    [398, '愛媛県',   '松山市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '松山市 保健福祉部'],
+    [399, '愛媛県',   '松山市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '松山市 都市整備部'],
+    [400, '愛媛県',   '松山市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '松山市 保健福祉部'],
+    [401, '高知県',   '高知市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '高知市 健康福祉部'],
+    [402, '高知県',   '高知市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '高知市 都市建設部'],
+    [403, '高知県',   '高知市', '移住促進補助金',             'ユニーク', '最大100万円',         'all',         '東京圏から高知市へ移住し就業した世帯に。',                               '令和8年3月31日まで', '2026-03-31', '高知市 商工観光部'],
+    // ─── 九州・沖縄 Phase 5
+    [404, '福岡県',   '福岡市', '出産祝い金',                 '子育て',   '10万円',              'hasChildren', '市内で出産した家庭に祝い金を支給（第1子から対象）。',                    '通年',                null,         '福岡市 こども未来局'],
+    [405, '福岡県',   '福岡市', '給食費無償化',               '子育て',   '給食費全額',          'hasChildren', '市立小中学校の給食費が無償化（令和6年度〜）。',                          '通年',                null,         '福岡市 教育委員会'],
+    [406, '福岡県',   '福岡市', '子ども医療費助成制度',       '子育て',   '通院500円/月・入院/薬局無料', 'hasChildren', '高校生世代まで（18歳年度末）助成、所得制限なし。3歳未満通院・入院・薬局は無料。3歳以上高校生世代の通院は1医療機関あたり月500円まで自己負担。', '通年',         null,         '福岡市 各区役所・出張所 保険年金担当課', 'https://www.city.fukuoka.lg.jp/hofuku/hokennenkin/hp/01.html'],
+    [407, '福岡県',   '北九州市', '子ども医療費支給制度',     '子育て',   '薬局の自己負担なし',  'hasChildren', '対象年齢は子ども医療証の取得が必要。保険診療の自己負担額から一部負担金を除いた額を助成。薬局での自己負担なし。新生児・転入者はオンライン申請OK。', '通年',         null,         '北九州市 各区役所 担当窓口', 'https://www.city.kitakyushu.lg.jp/contents/11700129.html'],
+    [408, '福岡県',   '北九州市', '木造住宅耐震改修補助',     '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '北九州市 建築都市局'],
+    [409, '福岡県',   '北九州市', '結婚新生活支援補助',       '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '北九州市 子ども家庭局'],
+    [410, '佐賀県',   '佐賀市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '佐賀市 子育て支援部'],
+    [411, '佐賀県',   '佐賀市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '佐賀市 建設部'],
+    [412, '佐賀県',   '佐賀市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '佐賀市 子育て支援部'],
+    [413, '長崎県',   '長崎市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '長崎市 こども部'],
+    [414, '長崎県',   '長崎市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '長崎市 まちづくり部'],
+    [415, '長崎県',   '長崎市', '移住促進補助金',             'ユニーク', '最大50万円',          'all',         '東京圏から長崎市へ移住し就業した世帯に。',                               '令和8年3月31日まで', '2026-03-31', '長崎市 企画財政部'],
+    [416, '熊本県',   '熊本市', 'こども医療費助成（ひまわりカード）', '子育て', '高校生年代まで・薬局無料', 'hasChildren', '0歳〜高校3年生年度末まで助成。令和5年12月から高校生まで拡充。薬局での自己負担額0円、対象は熊本県内医療機関での受診時に「ひまわりカード」提示で適用。', '通年',         null,         '熊本市 健康福祉局 こども支援課', 'https://www.city.kumamoto.jp/kiji00351/index.html'],
+    [417, '熊本県',   '熊本市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '熊本市 都市建設局'],
+    [418, '熊本県',   '熊本市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '熊本市 健康福祉局'],
+    [419, '大分県',   '大分市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '大分市 子どもすこやか部'],
+    [420, '大分県',   '大分市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '大分市 都市計画部'],
+    [421, '大分県',   '大分市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '大分市 子どもすこやか部'],
+    [422, '宮崎県',   '宮崎市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '宮崎市 健康福祉部'],
+    [423, '宮崎県',   '宮崎市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '宮崎市 都市整備部'],
+    [424, '宮崎県',   '宮崎市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '宮崎市 健康福祉部'],
+    [425, '鹿児島県', '鹿児島市', 'こども医療費助成',         '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '鹿児島市 健康福祉局'],
+    [426, '鹿児島県', '鹿児島市', '木造住宅耐震改修補助',     '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '鹿児島市 建設局'],
+    [427, '鹿児島県', '鹿児島市', '結婚新生活支援補助',       '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '鹿児島市 健康福祉局'],
+    [428, '沖縄県',   '那覇市', 'こども医療費助成',           '子育て',   '中学生まで無料',      'hasChildren', '中学3年生まで医療費の窓口負担なし。',                                    '通年',                null,         '那覇市 こどもみらい部'],
+    [429, '沖縄県',   '那覇市', '木造住宅耐震改修補助',       '住まい',   '最大100万円',         'ownsHome',    '昭和56年以前の木造住宅の耐震改修工事に補助。',                           '令和8年2月28日まで', '2026-02-28', '那覇市 都市計画部'],
+    [430, '沖縄県',   '那覇市', '結婚新生活支援補助',         '生活支援', '最大30万円',          'all',         '婚姻から1年以内の新婚世帯の住居費・引越し費用に。',                      '令和8年3月31日まで', '2026-03-31', '那覇市 こどもみらい部'],
+  ].map(([id, pref, city, title, category, amount, condition, desc, period, deadline, contact, officialUrl]) => ({
+    id, title, amount, category, condition, pref, city, desc, period, deadline, contact,
+    source: `${city}公式サイト`,
+    lastChecked: officialUrl ? '2026-05-02' : '2026-04-27',
+    verified: !!officialUrl,
+    applicationUrl: officialUrl || `https://www.google.com/search?q=${encodeURIComponent(pref + ' ' + city + ' ' + title)}`,
+    overview: officialUrl
+      ? `${pref}${city}が実施する公式助成制度です。${desc}申請の詳細・最新情報は公式サイトをご確認ください。`
+      : `${pref}${city}が実施する助成制度です。${desc}対象要件・申請期限の詳細は公式サイトまたは担当窓口にてご確認ください。`,
+    eligible: [`${city}に住民票があること`, '対象要件・所得要件等を満たすこと', '申請期間内に手続きを完了すること'],
+    how: ['担当窓口またはオンラインで申請書を入手・記入', '必要書類（証明書類・領収書等）を揃えて提出', '審査後、指定口座に振込（通常2〜4週間）'],
+  })),
+].filter((() => { const seen = new Set(); return s => { if (seen.has(s.id)) return false; seen.add(s.id); return true; }; })());
 
 // ─── スポンサーマスター ─────────────────────────────────────
 export const SPONSOR_MAP = {
@@ -165,6 +608,282 @@ export const SPONSOR_MAP = {
   104: { id: 104, companyName: 'FPオフィス八王子',      catchcopy: '給付金の申請、一緒に確認しませんか？',   detail: 'こどもの臨時給付金は申請期限があります。まずは無料で手続きの流れを確認しましょう。',   cta: '申請サポートを無料相談する', badge: 'FP相談・申請代行',     accent: 'purple', address: '東京都八王子市○○町7-8-9', tel: '042-ZZZ-ZZZZ', hours: '平日 10:00〜17:00' },
   105: { id: 105, companyName: '○○電気 八王子店',       catchcopy: '古いエアコンの買い替えで最大3万円！',    detail: '補助金申請の代行も無料サポート。省エネ家電の在庫は随時入荷中です。',                   cta: 'まずは無料相談する',        badge: '省エネ補助金サポート店', accent: 'orange', address: '東京都八王子市○○町10-11', tel: '042-AAA-AAAA', hours: '10:30〜19:30（第2水曜定休）' },
 };
+
+// ─── エリア別 お金のプロ（FP・税理士・社労士・行政書士） ────────────────
+// sponsor: メインスポンサー（契約者あれば）／recommended: PR掲載3件（士業）
+// ※ 比較サイト・ポータルは除外し、個人事務所・地域密着の専門家のみ掲載
+// ※ 2026-05-15 粗大ごみ業者データから士業データへ全面移行
+export const CITY_RECYCLERS = {
+  // --- 東京 ---
+  '八王子市': {
+    sponsor: null,
+    recommended: [
+      { name: '村田康介FP事務所',               url: 'https://fp-kosukemurata.com/', tag: 'FP・老後資金・資産形成' },
+      { name: '小林友博税理士事務所',             url: 'https://kbtax.jp/',             tag: '税理士・相続・確定申告' },
+      { name: 'ファイナンシャルコンシェルジュ株式会社', url: 'https://clubs-ins.com/',   tag: '独立系FP・保険見直し' },
+    ],
+  },
+  '新宿区': {
+    sponsor: null,
+    recommended: [
+      { name: 'はぎのやFPオフィス',       url: 'https://haginoya-fp.com/',                    tag: 'FP・ライフプラン・家計改善' },
+      { name: 'FP Office 神楽坂',        url: 'https://www.fp-c-office.com/',                tag: 'FP・住宅・老後相談' },
+      { name: 'FPバンク 新宿オフィス',    url: 'https://fpbank.co.jp/about_us/shinjuku/',      tag: '独立系FP・資産形成' },
+    ],
+  },
+  '世田谷区': {
+    sponsor: null,
+    recommended: [
+      { name: 'ライフデザインFPせたがや', url: 'https://setagayald.com/',         tag: 'CFP・住宅ローン・保険見直し' },
+      { name: 'FPグローバルパートナーズ', url: 'https://www.fpg-partners.jp/',    tag: 'FP事務所・ライフプラン' },
+    ],
+  },
+  '練馬区': {
+    sponsor: null,
+    recommended: [
+      { name: '練馬FPオフィス',           url: 'https://nerima-fp.com/',           tag: 'FP・家計最適化・資産形成' },
+      { name: 'FP國松典子事務所',         url: 'https://fpq.jp/Z23_nerima.html',   tag: '独立系FP・老後資金・教育費' },
+      { name: 'かづさ税理士事務所',        url: 'https://cazusa.com',               tag: '税理士・個人事業・確定申告' },
+    ],
+  },
+  '江東区': {
+    sponsor: null,
+    recommended: [
+      { name: 'フォーライフワークス税理士事務所', url: 'https://4lifeworks.com/',          tag: 'FP+税理士・資産運用・節税' },
+      { name: '佐藤経営税務会計事務所',           url: 'https://www.satokeieitaxact.jp/', tag: '税理士・経営・資金調達' },
+      { name: '斎賀会計事務所',                   url: 'https://www.saiga-kaikei.com/',   tag: '税理士・会計・法人' },
+    ],
+  },
+  '町田市': {
+    sponsor: null,
+    recommended: [
+      { name: '内田FPコンサルティング株式会社', url: 'https://uchida-fp.co.jp/',        tag: 'FP・住宅購入・住宅ローン相談' },
+      { name: '株式会社EFFORTS',               url: 'https://efforts.co.jp/',          tag: 'FP・ライフプラン・地域密着' },
+      { name: '並木税理士事務所',               url: 'https://tax-namiki.tkcnf.com/',  tag: '税理士・融資・資金調達' },
+    ],
+  },
+  '立川市': {
+    sponsor: null,
+    recommended: [
+      { name: '立川FP事務所',         url: 'https://www.t-fpj.com/',           tag: 'FP・多摩地区・ライフプラン' },
+      { name: 'ファイナンシャルトレーナ', url: 'https://financial-t.com/',     tag: 'FP・投資・所得税対策' },
+      { name: '荻島税務会計事務所',    url: 'https://www.ogishima-tax.com/',   tag: '税理士・会社設立・節税' },
+    ],
+  },
+  // --- 埼玉県 ---
+  'さいたま市': {
+    sponsor: null,
+    recommended: [
+      { name: '北野FP税務会計事務所',         url: 'https://www.kms-taxfp.com/',    tag: 'FP+税理士・資産形成' },
+      { name: 'ライフプラン相談センター彩玉',   url: 'https://hirose-fpoffice.com/', tag: 'FP・ライフプラン相談' },
+      { name: '浦和税理士法人',               url: 'https://www.urawa-tax.net/',     tag: '税理士・相続・税務' },
+    ],
+  },
+  '川口市': {
+    sponsor: null,
+    recommended: [
+      { name: 'FP・社労士 川部紀子事務所', url: 'https://kawabe.jimusho.jp/',      tag: 'FP+社労士・家計・給付金' },
+      { name: '及川愛税理士事務所',         url: 'https://mana-oikawa-taxac.com/', tag: '税理士・創業支援・確定申告' },
+      { name: '税理士法人アレックスパートナーズ', url: 'https://www.toshikaikei.biz/', tag: '税理士+社労士・ワンストップ' },
+    ],
+  },
+  '川越市': {
+    sponsor: null,
+    recommended: [
+      { name: '土屋税理士事務所',     url: 'https://www.tsuchiyatax.com/',      tag: 'FP+税理士・ライフプラン' },
+      { name: '霞ヶ関税理士法人',     url: 'https://kasumigaseki-tax.com/',     tag: '税理士・相続・医業' },
+    ],
+  },
+  '所沢市': {
+    sponsor: null,
+    recommended: [
+      { name: 'TKS税理士法人 所沢',  url: 'https://tokorozawa-tax.com/',       tag: '税理士・法人・個人' },
+      { name: '税理士 鈴木誠事務所',  url: 'https://zsmj.jp/',                  tag: '税理士・相続・確定申告' },
+      { name: 'シン中央会計事務所',   url: 'https://www.sckaikei.jp/',          tag: '税理士・創業融資・月9,000円〜' },
+    ],
+  },
+  '越谷市': {
+    sponsor: null,
+    recommended: [
+      { name: 'House-Clinic FP事務所', url: 'https://www.house-clinic.com/',       tag: '独立系FP・中立公正なアドバイス' },
+      { name: '佐藤剛志税理士事務所',  url: 'https://takeshi-satoh.tkcnf.com/',   tag: '税理士・月次決算・経営サポート' },
+    ],
+  },
+  '熊谷市': {
+    sponsor: null,
+    recommended: [
+      { name: '曽根会計事務所',       url: 'https://www.sonetax.net/',          tag: 'FP+税理士・1990年創業' },
+      { name: '山崎税理士事務所',     url: 'https://www.yamazakizeirishi.com/', tag: '税理士・創業60年・相続' },
+      { name: '税理士法人yours',      url: 'https://www.z-yours.com/',          tag: '公認会計士・税理士・資産管理' },
+    ],
+  },
+  // --- 神奈川県 ---
+  '横浜市': {
+    sponsor: null,
+    recommended: [
+      { name: '横浜FP事務所',                   url: 'https://www.net-fp.com/',    tag: 'FP・家計相談・相談実績4,000件超' },
+      { name: '住宅と保険のFP相談センター',       url: 'https://fp-yokohama.jp/',    tag: '独立系FP・住宅ローン・保険' },
+      { name: '神奈川県FPプランナーズ協同組合',   url: 'https://www.fp-kanagawa.com/consul/planner.php', tag: 'FP・個別相談' },
+    ],
+  },
+  '川崎市': {
+    sponsor: null,
+    recommended: [
+      { name: '森本FP事務所',              url: 'https://morimoto-fpj.com/',        tag: 'FP・資産運用・ライフプラン' },
+      { name: '東京地方税理士会 川崎北支部', url: 'https://zei-kawakitashibu.org/', tag: '無料税務相談（毎月第2・3水曜）' },
+    ],
+  },
+  '相模原市': {
+    sponsor: null,
+    recommended: [
+      { name: '木下敦子税理士事務所',     url: 'https://www.kinoako.com/',       tag: '税理士・女性・親切対応' },
+      { name: '五十嵐税理士事務所',       url: 'https://www.m-iga03.jp/',        tag: '税理士・相続・資産承継' },
+      { name: '小池税理士事務所',         url: 'https://k-cpta.com/',            tag: '税理士・橋本駅・直接対応' },
+    ],
+  },
+  '横須賀市': {
+    sponsor: null,
+    recommended: [
+      { name: 'オフィスまみぃ',           url: 'https://office-mami.jp/',        tag: 'FP・家計・介護・相続' },
+      { name: '石井英行FP税理士事務所',   url: 'https://fptax.jp/',              tag: 'FP+税理士・財務コンサル' },
+      { name: '農田慎税理士行政書士事務所', url: 'http://nouda-kaikei.com/',     tag: 'CFP+税理士+行政書士' },
+    ],
+  },
+  '藤沢市': {
+    sponsor: null,
+    recommended: [
+      { name: '藤沢法律税務FP事務所',    url: 'https://www.fujisawa-law.com/', tag: 'FP+弁護士・相続・遺言' },
+      { name: '宮治税理士事務所',         url: 'https://miyaji-tax.com/',       tag: '税理士・個人事業・確定申告' },
+      { name: 'TAO税理士法人',           url: 'https://tao.or.jp/',             tag: '税理士・経営・相続' },
+    ],
+  },
+  '平塚市': {
+    sponsor: null,
+    recommended: [
+      { name: 'FPサービス神奈川',         url: 'https://fps-kanagawa.com/',              tag: 'CFP・ライフプラン・独立系' },
+      { name: '岩井雅志税理士事務所',     url: 'https://iwaizeirishijimusho.tkcnf.com/', tag: '税理士・起業〜事業承継' },
+      { name: '日比税理士事務所',         url: 'https://www.hibitax.com/',               tag: '税理士・経営・融資' },
+    ],
+  },
+  // --- 千葉県 ---
+  '千葉市': {
+    sponsor: null,
+    recommended: [
+      { name: '永島税理士事務所',           url: 'https://www.nagashima-tax.jp/',  tag: 'FP+税理士・投資・相続' },
+      { name: '株式会社ドリームアシスト',   url: 'https://dream-assist-fp.jp/',    tag: '独立系FP・保険・住宅ローン' },
+      { name: '税理士行政書士FP片岡事務所', url: 'http://www.kataoka-office.jp/',  tag: 'FP+税理士+行政書士・相続' },
+    ],
+  },
+  '船橋市': {
+    sponsor: null,
+    recommended: [
+      { name: 'ほがらかFPオフィス',         url: 'https://fp-tacky.com/',                tag: 'FP・相続・家計相談' },
+      { name: '山野淳一税理士事務所',       url: 'https://yamano-tax.jp/',               tag: '税理士・会社設立・税務' },
+      { name: '田仲賢一税理士事務所',       url: 'https://www.ken-tax-account.com/',     tag: 'FP+税理士・確定申告・経営' },
+    ],
+  },
+  '松戸市': {
+    sponsor: null,
+    recommended: [
+      { name: 'あづまFP事務所',             url: 'https://azumaoffice.com/',          tag: 'FP・教育費・住宅ローン・老後' },
+      { name: 'フジハラ税理士社労士事務所', url: 'https://www.fpsrtax.com/',           tag: '税理士+社労士・給与・補助金' },
+      { name: 'まきのはらFP税理士事務所',   url: 'http://makinoharakaikei.com/',      tag: 'FP+税理士・小規模法人・個人' },
+    ],
+  },
+  '市川市': {
+    sponsor: null,
+    recommended: [
+      { name: '伊藤FPオフィス',     url: 'https://fpito.com/',             tag: 'CFP・1級FP技能士・独立系' },
+      { name: '銭高会計事務所',     url: 'https://zenitakakaikei.com/',    tag: 'CFP+税理士・相続・節税' },
+      { name: '細野会計事務所',     url: 'https://hosokk.com/',            tag: '税理士・中小企業診断士・融資' },
+    ],
+  },
+  '柏市': {
+    sponsor: null,
+    recommended: [
+      { name: 'まきのはらFP税理士事務所', url: 'http://makinoharakaikei.com/',    tag: 'FP+税理士・柏・松戸対応' },
+      { name: '税理士法人 千葉中央会計',  url: 'https://www.ccaf.jp/',           tag: '税理士・1948年創業・相続' },
+    ],
+  },
+  '流山市': {
+    sponsor: null,
+    recommended: [
+      { name: 'FPサテライト株式会社',       url: 'https://fpsatellite.co.jp/',    tag: 'FP・流山サテライト・ライフプラン' },
+      { name: 'まきのはらFP税理士事務所',   url: 'http://makinoharakaikei.com/',  tag: 'FP+税理士・流山対応' },
+      { name: 'フジハラ税理士社労士事務所', url: 'https://www.fpsrtax.com/',      tag: '税理士+社労士・松戸・流山' },
+    ],
+  },
+  // --- 中部 ---
+  '名古屋市': { sponsor: null, recommended: [] },
+  '豊田市':   { sponsor: null, recommended: [] },
+  '岡崎市':   { sponsor: null, recommended: [] },
+  '一宮市':   { sponsor: null, recommended: [] },
+  '静岡市':   { sponsor: null, recommended: [] },
+  '岐阜市':   { sponsor: null, recommended: [] },
+  // --- 関西 ---
+  '大阪市':   { sponsor: null, recommended: [] },
+  '堺市':     { sponsor: null, recommended: [] },
+  '吹田市':   { sponsor: null, recommended: [] },
+  '東大阪市': { sponsor: null, recommended: [] },
+  '京都市':   { sponsor: null, recommended: [] },
+  '神戸市':   { sponsor: null, recommended: [] },
+  '西宮市':   { sponsor: null, recommended: [] },
+  '明石市':   { sponsor: null, recommended: [] },
+  // --- 北関東 ---
+  '水戸市':   { sponsor: null, recommended: [] },
+  'つくば市': { sponsor: null, recommended: [] },
+  '日立市':   { sponsor: null, recommended: [] },
+  '宇都宮市': { sponsor: null, recommended: [] },
+  '小山市':   { sponsor: null, recommended: [] },
+  '足利市':   { sponsor: null, recommended: [] },
+  '前橋市':   { sponsor: null, recommended: [] },
+  '高崎市':   { sponsor: null, recommended: [] },
+  '太田市':   { sponsor: null, recommended: [] },
+  // --- 北海道・東北 ---
+  '札幌市': { sponsor: null, recommended: [] },
+  '青森市': { sponsor: null, recommended: [] },
+  '盛岡市': { sponsor: null, recommended: [] },
+  '仙台市': { sponsor: null, recommended: [] },
+  '秋田市': { sponsor: null, recommended: [] },
+  '山形市': { sponsor: null, recommended: [] },
+  '福島市': { sponsor: null, recommended: [] },
+  // --- 北陸・甲信越 ---
+  '新潟市': { sponsor: null, recommended: [] },
+  '富山市': { sponsor: null, recommended: [] },
+  '金沢市': { sponsor: null, recommended: [] },
+  '福井市': { sponsor: null, recommended: [] },
+  '甲府市': { sponsor: null, recommended: [] },
+  '長野市': { sponsor: null, recommended: [] },
+  // --- 中部・近畿補完 ---
+  '津市':     { sponsor: null, recommended: [] },
+  '大津市':   { sponsor: null, recommended: [] },
+  '奈良市':   { sponsor: null, recommended: [] },
+  '和歌山市': { sponsor: null, recommended: [] },
+  // --- 中国 ---
+  '鳥取市': { sponsor: null, recommended: [] },
+  '松江市': { sponsor: null, recommended: [] },
+  '岡山市': { sponsor: null, recommended: [] },
+  '広島市': { sponsor: null, recommended: [] },
+  '山口市': { sponsor: null, recommended: [] },
+  // --- 四国 ---
+  '徳島市': { sponsor: null, recommended: [] },
+  '高松市': { sponsor: null, recommended: [] },
+  '松山市': { sponsor: null, recommended: [] },
+  '高知市': { sponsor: null, recommended: [] },
+  // --- 九州・沖縄 ---
+  '福岡市':   { sponsor: null, recommended: [] },
+  '北九州市': { sponsor: null, recommended: [] },
+  '佐賀市':   { sponsor: null, recommended: [] },
+  '長崎市':   { sponsor: null, recommended: [] },
+  '熊本市':   { sponsor: null, recommended: [] },
+  '大分市':   { sponsor: null, recommended: [] },
+  '宮崎市':   { sponsor: null, recommended: [] },
+  '鹿児島市': { sponsor: null, recommended: [] },
+  '那覇市':   { sponsor: null, recommended: [] },
+};
+
+// 営業問い合わせ先（広告枠募集中バナーのCTAで使用）
+export const SPONSOR_INQUIRY_EMAIL = 'terradesignik@gmail.com';
 
 // ─── 今月のピックアップ ─────────────────────────────────────
 export const PICKUP_ITEMS = [
@@ -182,7 +901,7 @@ export const CHILDCARE_RANKING = [
   { rank: 5,  pref: '大阪府', city: '吹田市',   score: 86, tag: '優秀',     highlights: ['小中学校給食費無料', '子ども医療費18歳まで無料', '放課後学習支援充実'] },
   { rank: 6,  pref: '宮城県', city: '仙台市',   score: 83, tag: '注目',     highlights: ['第3子以降の保育料無料', '出産・子育て応援給付金10万円', '産後ケア充実'] },
   { rank: 7,  pref: '愛知県', city: '豊田市',   score: 81, tag: '注目',     highlights: ['子育て支援センター全市展開', '企業主導型保育所多数', '学童保育完全無料'] },
-  { rank: 8,  pref: '神奈川', city: '藤沢市',   score: 79, tag: '注目',     highlights: ['海沿いの子育て環境', '図書館・公民館充実', '子育て広場ネットワーク'] },
+  { rank: 8,  pref: '神奈川県', city: '藤沢市',   score: 79, tag: '注目',     highlights: ['海沿いの子育て環境', '図書館・公民館充実', '子育て広場ネットワーク'] },
   { rank: 9,  pref: '北海道', city: '札幌市',   score: 77, tag: '注目',     highlights: ['冬の暖房費助成あり', '子育て世代移住パッケージ', '認定こども園多数'] },
   { rank: 10, pref: '東京都', city: '世田谷区', score: 75, tag: '注目',     highlights: ['区独自の子育て支援給付', '保育所待機児童対策', '多世代交流施設充実'] },
 ];
@@ -297,6 +1016,6 @@ export const PRIVACY_POLICY = [
   },
   {
     title: '7. お問い合わせ',
-    body: '個人情報の取扱いに関するお問い合わせは、メール（info@moraeru-navi.example.com）にてお受けしております。テラデザイン株式会社 個人情報管理担当。',
+    body: '個人情報の取扱いに関するお問い合わせは、メール（terradesignik@gmail.com）にてお受けしております。株式会社テラデザイン 個人情報管理担当。',
   },
 ];

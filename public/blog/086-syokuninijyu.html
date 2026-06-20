@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>移住したら職人になれる！伝統工芸後継者支援でもらえるお金と修業生活の全実態｜もらえるお金ナビ</title>
+<meta name="description" content="地方に移住して伝統工芸の後継者になると給付金がもらえる！各地の職人修業支援・伝統工芸後継者育成給付金と、移住支援金100万円との組み合わせで夢の職人生活を実現。">
+<meta name="keywords" content="伝統工芸 後継者,職人 給付金,移住 職人,伝統工芸 修業,移住支援金 職人,漆器 後継者募集">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.shokunin-hero{background:linear-gradient(135deg,#431407,#7c2d12);border-radius:20px;padding:28px;margin:28px 0;text-align:center;}
+.shokunin-hero-label{font-size:12px;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:8px;}
+.shokunin-hero-amount{font-size:clamp(40px,9vw,64px);font-weight:900;color:#fb923c;line-height:1;}
+.shokunin-hero-unit{font-size:18px;font-weight:900;color:#fff;margin-top:4px;}
+.shokunin-hero-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.7;}
+
+.support-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:20px 0;}
+.support-card{background:#fff;border:2px solid #fed7aa;border-radius:14px;padding:20px;}
+.support-card-emoji{font-size:30px;margin-bottom:8px;}
+.support-card-title{font-size:14px;font-weight:900;color:#7c2d12;margin-bottom:6px;}
+.support-card-amount{font-size:22px;font-weight:900;color:#ea580c;margin-bottom:4px;}
+.support-card-desc{font-size:12px;color:#6b7280;line-height:1.7;}
+
+.money-table-wrap{overflow-x:auto;margin:20px 0;}
+.money-table-wrap table{width:100%;border-collapse:collapse;font-size:14px;}
+.money-table-wrap th{background:#7c2d12;color:#fff;padding:10px 14px;text-align:left;font-weight:700;}
+.money-table-wrap td{padding:10px 14px;border-bottom:1px solid #e5e7eb;vertical-align:top;}
+.money-table-wrap tr:nth-child(even) td{background:#fff7ed;}
+.money-table-wrap strong{color:#c2410c;}
+
+.combo-sim{background:linear-gradient(135deg,#431407,#7c2d12);border-radius:20px;padding:24px;margin:24px 0;}
+.combo-sim-title{font-size:18px;font-weight:900;color:#fed7aa;margin-bottom:16px;text-align:center;}
+.combo-sim-items{display:grid;gap:10px;}
+.combo-sim-item{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;}
+.combo-sim-label{font-size:13px;color:rgba(255,255,255,.8);font-weight:700;}
+.combo-sim-value{font-size:18px;font-weight:900;color:#fb923c;}
+.combo-sim-total{display:flex;justify-content:space-between;align-items:center;background:rgba(251,146,60,.2);border-radius:10px;padding:16px;margin-top:10px;border:2px solid #fb923c;}
+.combo-sim-total-label{font-size:14px;font-weight:900;color:#fed7aa;}
+.combo-sim-total-value{font-size:28px;font-weight:900;color:#fbbf24;}
+
+.craft-ranking{margin:20px 0;display:grid;gap:16px;}
+.craft-item{border-radius:16px;padding:20px;border:2px solid;}
+.craft-item.r1{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-color:#f59e0b;}
+.craft-item.r2{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;}
+.craft-item.r3{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;}
+.craft-item.r4{background:linear-gradient(135deg,#fdf4ff,#fae8ff);border-color:#e879f9;}
+.craft-item.r5{background:linear-gradient(135deg,#fff7ed,#fed7aa);border-color:#fb923c;}
+.craft-item-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.craft-item-num{font-size:28px;font-weight:900;min-width:40px;}
+.craft-item.r1 .craft-item-num{color:#d97706;}
+.craft-item.r2 .craft-item-num{color:#059669;}
+.craft-item.r3 .craft-item-num{color:#2563eb;}
+.craft-item.r4 .craft-item-num{color:#a21caf;}
+.craft-item.r5 .craft-item-num{color:#ea580c;}
+.craft-item-emoji{font-size:32px;}
+.craft-item-title{font-size:17px;font-weight:900;color:#111827;}
+.craft-item-body{font-size:13px;color:#4b5563;line-height:1.8;}
+.craft-item-body strong{color:#111827;}
+.craft-item-tag{display:inline-block;font-size:11px;font-weight:900;padding:3px 10px;border-radius:10px;margin-top:8px;}
+.r1 .craft-item-tag{background:#fde68a;color:#78350f;}
+.r2 .craft-item-tag{background:#d1fae5;color:#065f46;}
+.r3 .craft-item-tag{background:#dbeafe;color:#1e40af;}
+.r4 .craft-item-tag{background:#fae8ff;color:#6b21a8;}
+.r5 .craft-item-tag{background:#fed7aa;color:#7c2d12;}
+
+.startup-cards{display:grid;gap:14px;margin:20px 0;}
+.startup-card{display:flex;align-items:flex-start;gap:14px;border:1px solid #e5e7eb;border-radius:14px;padding:16px;background:#fff;}
+.startup-card-emoji{font-size:28px;flex-shrink:0;}
+.startup-card-body{flex:1;}
+.startup-card-title{font-size:15px;font-weight:900;color:#111827;margin-bottom:4px;}
+.startup-card-desc{font-size:13px;color:#4b5563;line-height:1.7;}
+.startup-card-amount{font-size:13px;font-weight:700;color:#ea580c;margin-top:4px;}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner"><a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a><a href="/" class="nav-cta">▶ 無料で補助金を検索</a></div></nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">💼 リスキリング・伝統工芸</span>
+    <h1>移住したら職人になれる！<br>伝統工芸後継者支援で<br>もらえるお金と修業生活の全実態</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 移住・伝統工芸</span>
+      <span>⏱ 読了約9分</span>
+      <span>🏺 職人の世界に興味がある方必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「漆器職人に憧れる…でも食っていけないよな」</p>
+<p>「染物師になりたいけど、修業中の生活費が心配」</p>
+<p>そんな夢を諦めかけているあなたへ、衝撃の事実をお伝えします。</p>
+<p><strong>地方に移住して伝統工芸の後継者になると、給付金がもらえます。</strong> しかも、移住支援金と組み合わせると総額<strong>数百万円規模</strong>の支援を受けられるケースも！</p>
+
+<div class="shokunin-hero">
+  <div class="shokunin-hero-label">移住支援金＋職人修業給付の組み合わせ最大額（世帯の場合）</div>
+  <div class="shokunin-hero-amount">200万円超</div>
+  <div class="shokunin-hero-unit">の支援を受けながら職人修業が可能！</div>
+  <div class="shokunin-hero-sub">移住支援金100万円＋修業給付月額＋道具補助＋住居支援を合算した場合の試算</div>
+</div>
+
+<p>後継者不足に悩む伝統工芸の産地は、移住者に対して「給付金で迎える」戦略を取り始めています。今こそ夢の職人生活が<strong>「お金をもらいながら実現できる」</strong>チャンスなのです。</p>
+
+<h2>① 伝統工芸後継者支援制度とは（国・各都道府県の給付金・月額・期間）</h2>
+
+<p>伝統工芸の後継者支援は、大きく「国の制度」と「自治体独自の制度」の2層構造になっています。</p>
+
+<div class="support-cards">
+  <div class="support-card">
+    <div class="support-card-emoji">🏛️</div>
+    <div class="support-card-title">伝統的工芸品産業振興協会（国）</div>
+    <div class="support-card-amount">月10〜15万円</div>
+    <div class="support-card-desc">経済産業省の外郭団体が運営。「後継者育成事業」として修業期間中の生活費を補助。最長2年間。伝統的工芸品産業振興法の指定品目が対象。</div>
+  </div>
+  <div class="support-card">
+    <div class="support-card-emoji">🗾</div>
+    <div class="support-card-title">都道府県・市区町村の独自制度</div>
+    <div class="support-card-amount">月5〜20万円</div>
+    <div class="support-card-desc">京都・石川・沖縄・岩手などが独自の職人育成給付金を設定。産地によって金額・期間が異なる。住居支援・道具購入補助を加算する自治体も。</div>
+  </div>
+  <div class="support-card">
+    <div class="support-card-emoji">🎓</div>
+    <div class="support-card-title">教育訓練給付金との併用</div>
+    <div class="support-card-amount">最大56万円/年</div>
+    <div class="support-card-desc">工芸系の専門学校・職業訓練校の一部は「専門実践教育訓練」対象。在籍中の学費70%が給付される。職人修業給付と組み合わせ可能。</div>
+  </div>
+  <div class="support-card">
+    <div class="support-card-emoji">🏠</div>
+    <div class="support-card-title">移住者向け家賃補助</div>
+    <div class="support-card-amount">月2〜5万円</div>
+    <div class="support-card-desc">産地の自治体が移住職人向けに家賃を補助するケースも増加。空き家を活用した「職住一体の修業スペース」を無償提供する産地もある。</div>
+  </div>
+</div>
+
+<div class="info-box">
+  <p>📌 <strong>「伝統的工芸品」とは：</strong>経済産業大臣が指定する全国240品目以上の工芸品。西陣織（京都）・南部鉄器（岩手）・輪島塗（石川）・備前焼（岡山）・琉球ガラス（沖縄）など。各産地の組合が後継者募集を行っています。</p>
+</div>
+
+<h2>② 職人修業でもらえるお金の全体像（給付金・住居支援・道具補助の一覧表）</h2>
+
+<p>職人修業中に受け取れるお金を、種類別に一覧で確認しましょう。</p>
+
+<div class="money-table-wrap">
+  <table>
+    <thead>
+      <tr><th>支援の種類</th><th>金額の目安</th><th>期間</th><th>申請先</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>後継者育成給付金（国）</strong></td>
+        <td>月<strong>10〜15万円</strong></td>
+        <td>最長2年間</td>
+        <td>伝統的工芸品産業振興協会</td>
+      </tr>
+      <tr>
+        <td><strong>都道府県独自の職人育成給付</strong></td>
+        <td>月<strong>5〜20万円</strong></td>
+        <td>1〜3年（産地による）</td>
+        <td>各都道府県・市区町村</td>
+      </tr>
+      <tr>
+        <td><strong>家賃補助（移住者向け）</strong></td>
+        <td>月<strong>2〜5万円</strong></td>
+        <td>修業期間中</td>
+        <td>自治体の移住支援担当課</td>
+      </tr>
+      <tr>
+        <td><strong>道具・材料補助</strong></td>
+        <td>初期<strong>10〜50万円</strong></td>
+        <td>一括（修業開始時）</td>
+        <td>産地組合・自治体</td>
+      </tr>
+      <tr>
+        <td><strong>移住支援金（東京圏→地方）</strong></td>
+        <td>単身<strong>60万円</strong>、世帯<strong>100万円</strong></td>
+        <td>一括支給</td>
+        <td>移住先自治体</td>
+      </tr>
+      <tr>
+        <td><strong>教育訓練給付金（該当する場合）</strong></td>
+        <td>受講費の<strong>70%</strong>（年間最大56万円）</td>
+        <td>最長3年</td>
+        <td>ハローワーク</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="highlight-box">
+  <span class="amount">💡 師匠への弟子入りか、職業訓練校かで変わる</span>
+  <p>個人の職人への弟子入りの場合は「都道府県独自制度」「産地組合の給付」が中心。工芸系の専門学校・職業訓練校に通う場合は「教育訓練給付金」が使えるケースも。自分の修業スタイルに合わせて確認を。</p>
+</div>
+
+<h2>③ 移住支援金＋職人修業給付のコンボ計算（総額シミュレーション）</h2>
+
+<p>「実際にいくらもらえるの？」という一番気になる部分を計算してみましょう！</p>
+
+<div class="combo-sim">
+  <div class="combo-sim-title">🧮 モデルケース：東京から石川県輪島市へ移住してウルシ職人を目指す場合（世帯）</div>
+  <div class="combo-sim-items">
+    <div class="combo-sim-item">
+      <div class="combo-sim-label">移住支援金（東京圏→地方・世帯）</div>
+      <div class="combo-sim-value">100万円</div>
+    </div>
+    <div class="combo-sim-item">
+      <div class="combo-sim-label">後継者育成給付金（国・月12万円×24ヶ月）</div>
+      <div class="combo-sim-value">288万円</div>
+    </div>
+    <div class="combo-sim-item">
+      <div class="combo-sim-label">石川県独自の職人育成補助（月5万円×24ヶ月）</div>
+      <div class="combo-sim-value">120万円</div>
+    </div>
+    <div class="combo-sim-item">
+      <div class="combo-sim-label">家賃補助（月3万円×24ヶ月）</div>
+      <div class="combo-sim-value">72万円</div>
+    </div>
+    <div class="combo-sim-item">
+      <div class="combo-sim-label">道具・材料補助（一括）</div>
+      <div class="combo-sim-value">30万円</div>
+    </div>
+  </div>
+  <div class="combo-sim-total">
+    <div class="combo-sim-total-label">2年間の総支援合計（試算）</div>
+    <div class="combo-sim-total-value">約610万円</div>
+  </div>
+</div>
+
+<p>もちろん全制度がすべての産地・すべての人に適用されるわけではありませんが、<strong>うまく組み合わせると数百万円規模の支援が実現可能</strong>です。</p>
+<p>東京での生活費を考えると、地方での修業生活の方が経済的に楽という逆転現象が起きているケースも少なくありません。</p>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2>④ 人気の伝統工芸と後継者募集中の自治体 TOP5（漆器・陶器・木工・染物・刃物）</h2>
+
+<p>「どの職種が狙い目か？」を産地の後継者不足度・給付制度の充実度・移住しやすさで独自にランキングしました！</p>
+
+<div class="craft-ranking">
+  <div class="craft-item r1">
+    <div class="craft-item-header">
+      <div class="craft-item-num">1位</div>
+      <div class="craft-item-emoji">🪵</div>
+      <div class="craft-item-title">漆器（輪島塗・会津塗など）</div>
+    </div>
+    <div class="craft-item-body">
+      後継者不足が最も深刻な分野。石川県輪島市・福島県会津若松市ともに<strong>給付金制度が手厚く</strong>、道具補助・住居支援が充実。修業期間は5〜10年と長いが、独立後の単価は高く安定収入が見込める。輪島市では移住職人向けの「輪島の地で技を継ぐ者募集」プログラムが通年稼働中。
+    </div>
+    <div class="craft-item-tag">後継者不足度：★★★★★　給付制度：★★★★★</div>
+  </div>
+
+  <div class="craft-item r2">
+    <div class="craft-item-header">
+      <div class="craft-item-num">2位</div>
+      <div class="craft-item-emoji">🏺</div>
+      <div class="craft-item-title">陶磁器（備前焼・美濃焼・益子焼など）</div>
+    </div>
+    <div class="craft-item-body">
+      岡山県備前市・岐阜県瑞浪市・栃木県益子町など複数産地が後継者を積極募集中。<strong>観光との相性が良く</strong>、体験工房・オンライン販売で副収入を得ながら修業するモデルも増加。独立した作家として活動する「作家系陶芸家」の道も開けている。
+    </div>
+    <div class="craft-item-tag">後継者不足度：★★★★☆　給付制度：★★★★☆</div>
+  </div>
+
+  <div class="craft-item r3">
+    <div class="craft-item-header">
+      <div class="craft-item-num">3位</div>
+      <div class="craft-item-emoji">🪚</div>
+      <div class="craft-item-title">木工・家具（飛騨の家具・木曽漆器木地など）</div>
+    </div>
+    <div class="craft-item-body">
+      岐阜県高山市・長野県木曽郡など「ものづくりのまち」として知られる産地が充実。<strong>職業訓練校・専門学校コースが整備されており</strong>、教育訓練給付金との組み合わせが効きやすい分野。DIY・インテリアブームで市場も底堅い。
+    </div>
+    <div class="craft-item-tag">後継者不足度：★★★☆☆　給付制度：★★★★☆</div>
+  </div>
+
+  <div class="craft-item r4">
+    <div class="craft-item-header">
+      <div class="craft-item-num">4位</div>
+      <div class="craft-item-emoji">🎨</div>
+      <div class="craft-item-title">染物・織物（西陣織・有松絞り・琉球紅型など）</div>
+    </div>
+    <div class="craft-item-body">
+      京都・愛知・沖縄が三大産地。特に沖縄県は<strong>「琉球染織後継者育成事業」</strong>として月額給付が充実。ファッション・インテリア業界からの転身組が増えており、デザインセンスを活かせる分野として注目を集めている。
+    </div>
+    <div class="craft-item-tag">後継者不足度：★★★★☆　給付制度：★★★☆☆</div>
+  </div>
+
+  <div class="craft-item r5">
+    <div class="craft-item-header">
+      <div class="craft-item-num">5位</div>
+      <div class="craft-item-emoji">🔪</div>
+      <div class="craft-item-title">刃物（関の刃物・土佐刃物など）</div>
+    </div>
+    <div class="craft-item-body">
+      岐阜県関市・高知県土佐市が主産地。<strong>アウトドアブーム・料理人需要で市場が拡大中</strong>。料理好き・アウトドア好きが職人になるケースも増加。修業期間が比較的短く（3〜5年）、物販ECとの相性が抜群で独立後の収入化がしやすい。
+    </div>
+    <div class="craft-item-tag">後継者不足度：★★★☆☆　給付制度：★★★☆☆</div>
+  </div>
+</div>
+
+<h2>⑤ 修業後の独立で使える起業支援補助金</h2>
+
+<p>修業が終わったら独立開業へ。そこでも<strong>国と自治体が強力にサポート</strong>してくれます！</p>
+
+<div class="startup-cards">
+  <div class="startup-card">
+    <div class="startup-card-emoji">🚀</div>
+    <div class="startup-card-body">
+      <div class="startup-card-title">小規模事業者持続化補助金（商工会議所）</div>
+      <div class="startup-card-desc">独立開業した職人の販路開拓・HP制作・展示会出展などの費用を補助。通常枠で<strong>最大50万円</strong>、特別枠で最大200万円。年に複数回公募があり活用しやすい制度。</div>
+      <div class="startup-card-amount">最大 50〜200万円</div>
+    </div>
+  </div>
+  <div class="startup-card">
+    <div class="startup-card-emoji">💡</div>
+    <div class="startup-card-body">
+      <div class="startup-card-title">創業補助金（中小企業基盤整備機構）</div>
+      <div class="startup-card-desc">独立・創業時の設備費・広告費を補助。「文化・クリエイティブ産業」での起業は加点対象になるケースも。伝統工芸での独立も申請実績あり。</div>
+      <div class="startup-card-amount">最大 200万円</div>
+    </div>
+  </div>
+  <div class="startup-card">
+    <div class="startup-card-emoji">🏺</div>
+    <div class="startup-card-body">
+      <div class="startup-card-title">各産地組合の独立支援制度</div>
+      <div class="startup-card-desc">輪島漆器商工業協同組合・瀬戸物組合など産地の組合が独自に「独立工房開設補助」を実施しているケースも。修業先の師匠や組合に相談するのが一番の近道。</div>
+      <div class="startup-card-amount">50〜100万円（産地による）</div>
+    </div>
+  </div>
+  <div class="startup-card">
+    <div class="startup-card-emoji">📦</div>
+    <div class="startup-card-body">
+      <div class="startup-card-title">IT導入補助金（EC・オンライン販売対応）</div>
+      <div class="startup-card-desc">職人がECサイト・POSシステム・SNSマーケティングツールを導入する際の費用を補助。クラフト系職人のネット販売立ち上げに活用しやすい。</div>
+      <div class="startup-card-amount">最大 450万円</div>
+    </div>
+  </div>
+</div>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2>夢の職人生活、補助金で現実にする第一歩</h2>
+
+<p>「職人になりたい」という夢を「お金がないから無理」とあきらめる必要は、もうありません。</p>
+<p>移住支援金・職人修業給付・道具補助・家賃支援・独立補助……<strong>うまく組み合わせれば、修業期間も独立後も、国と自治体が丸ごとサポートしてくれます。</strong></p>
+
+<div class="info-box">
+  <p>📌 <strong>まず最初にやること3ステップ：</strong><br>
+  ① 気になる伝統工芸・産地をピックアップ<br>
+  ② 産地の組合・自治体の移住担当課に問い合わせ<br>
+  ③ 最寄りのハローワークで「教育訓練給付金」の受給資格を確認</p>
+</div>
+
+<p>憧れの職人の世界へ飛び込む準備が、今日から始められます。</p>
+
+<div class="warning-box">
+  <p>⚠️ <strong>本記事の情報は2026年5月時点のものです。</strong>各制度の詳細・対象条件・金額は産地・自治体・年度によって異なります。申請前に必ず各自治体・産地組合・ハローワークの公式情報をご確認ください。</p>
+</div>
+
+</div>
+</div>
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="081-reskilling-56man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">📚</div><div class="related-body">リスキリングで最大56万円もらいながらスキルアップ</div></a><a href="070-chiikiokoshi-kyuyo.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">🗾</div><div class="related-body">地域おこし協力隊で月給をもらいながら移住</div></a><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え大全</div></a><a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">驚き補助金まとめポータル</div></a></div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

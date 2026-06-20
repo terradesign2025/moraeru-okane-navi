@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>バリアフリーリフォームで最大18万円！高齢者がいる家庭が使える補助金完全ガイド｜もらえるお金ナビ</title>
+<meta name="description" content="65歳以上の高齢者や障害者がいる家庭はバリアフリーリフォーム補助金の対象！手すり設置・段差解消・スロープ設置など介護保険との組み合わせで最大18万円の補助を受ける方法。">
+<meta name="keywords" content="バリアフリーリフォーム 補助金,介護保険 住宅改修,手すり設置 補助,段差解消 補助金,高齢者 リフォーム補助,介護保険 住宅改修費 18万円,バリアフリー 申請方法">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.bf-card{border-radius:20px;padding:24px;margin:20px 0;position:relative;overflow:hidden;}
+.bf-card.green{background:linear-gradient(135deg,#f0fdf4,#d1fae5);border:2px solid #6ee7b7;}
+.bf-card.blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;}
+.bf-card.orange{background:linear-gradient(135deg,#fff7ed,#fed7aa);border:2px solid #fb923c;}
+.bf-card.dark{background:linear-gradient(135deg,#0f172a,#1e1b4b);border:2px solid #6366f1;}
+.bf-card-label{font-size:11px;font-weight:900;letter-spacing:.08em;margin-bottom:8px;opacity:.7;}
+.bf-card-headline{font-size:clamp(16px,3vw,21px);font-weight:900;line-height:1.4;margin-bottom:10px;}
+.bf-card.green .bf-card-headline,.bf-card.blue .bf-card-headline,.bf-card.orange .bf-card-headline{color:#111827;}
+.bf-card.dark .bf-card-headline{color:#fff;}
+.bf-amount{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:6px 14px;margin:8px 0 12px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.bf-amount strong{font-size:22px;font-weight:900;color:#059669;}
+.bf-amount span{font-size:12px;color:#6b7280;}
+.bf-body{font-size:14px;color:#374151;line-height:1.8;}
+.bf-body strong{color:#111827;}
+
+/* 工事種類グリッド */
+.work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:18px 0;}
+.work-card{background:#fff;border:2px solid #d1fae5;border-radius:14px;padding:16px;}
+.work-icon{font-size:24px;margin-bottom:8px;}
+.work-title{font-size:13px;font-weight:900;color:#166534;margin-bottom:4px;}
+.work-cost{font-size:12px;color:#374151;margin-bottom:6px;}
+.work-max{font-size:15px;font-weight:900;color:#059669;}
+
+/* 介護保険の仕組み図 */
+.kaigo-flow{background:linear-gradient(135deg,#f0fdf4,#d1fae5);border:2px solid #6ee7b7;border-radius:20px;padding:28px;margin:24px 0;}
+.kaigo-flow h3{font-size:16px;font-weight:900;color:#166534;margin-bottom:18px;}
+.kaigo-row{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.kaigo-label{min-width:100px;background:#166534;color:#fff;font-size:12px;font-weight:900;border-radius:8px;padding:6px 10px;text-align:center;flex-shrink:0;}
+.kaigo-desc{font-size:13px;color:#374151;line-height:1.7;}
+.kaigo-desc strong{color:#166534;}
+.kaigo-arrow{font-size:20px;text-align:center;color:#059669;margin:4px 0;}
+.kaigo-total{background:#fff;border:2px solid #059669;border-radius:12px;padding:14px 18px;text-align:center;margin-top:14px;}
+.kaigo-total-label{font-size:12px;color:#374151;margin-bottom:4px;}
+.kaigo-total-val{font-size:28px;font-weight:900;color:#059669;}
+
+/* 比較表 */
+.compare-table{width:100%;border-collapse:collapse;font-size:13px;margin:18px 0;border-radius:12px;overflow:hidden;}
+.compare-table thead{background:linear-gradient(135deg,#059669,#047857);color:#fff;}
+.compare-table th{padding:12px 14px;text-align:left;font-weight:900;}
+.compare-table td{padding:12px 14px;border-bottom:1px solid #e5e7eb;}
+.compare-table tbody tr:nth-child(odd){background:#f9fafb;}
+.compare-table tbody tr:last-child td{border-bottom:none;}
+.compare-table .amount-cell{font-weight:900;color:#059669;}
+
+/* 手順フロー */
+.bf-flow{display:flex;flex-direction:column;gap:0;margin:20px 0;}
+.bf-step{display:flex;gap:16px;position:relative;padding-bottom:20px;}
+.bf-step:last-child{padding-bottom:0;}
+.bf-step::before{content:'';position:absolute;left:19px;top:40px;bottom:0;width:2px;background:linear-gradient(to bottom,#059669,transparent);}
+.bf-step:last-child::before{display:none;}
+.bf-num{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#059669,#047857);color:#fff;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.bf-content{flex:1;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px;}
+.bf-content h4{font-size:14px;font-weight:900;color:#111827;margin-bottom:6px;}
+.bf-content p{font-size:13px;color:#374151;line-height:1.7;}
+.bf-content .bf-tag{display:inline-block;background:#f0fdf4;color:#166534;font-size:11px;font-weight:900;border-radius:6px;padding:2px 8px;margin-bottom:6px;}
+.bf-content .warn-tag{background:#fef2f2;color:#dc2626;}
+
+/* 合わせ技シミュレーション */
+.combo-sim{background:linear-gradient(135deg,#0f172a,#1e1b4b);border-radius:20px;padding:28px;margin:28px 0;border:2px solid #6366f1;}
+.combo-sim h3{color:#fff;font-size:17px;font-weight:900;margin-bottom:20px;text-align:center;}
+.combo-item{display:flex;align-items:center;gap:14px;padding:12px;border-radius:12px;margin-bottom:10px;}
+.combo-item.c1{background:rgba(5,150,105,.2);}
+.combo-item.c2{background:rgba(37,99,235,.2);}
+.combo-item.c3{background:rgba(245,158,11,.2);}
+.combo-icon{font-size:24px;flex-shrink:0;}
+.combo-info{flex:1;}
+.combo-name{font-size:13px;font-weight:900;color:#fff;margin-bottom:3px;}
+.combo-note{font-size:11px;color:rgba(255,255,255,.6);}
+.combo-val{font-size:18px;font-weight:900;color:#a5f3fc;flex-shrink:0;}
+.combo-divider{height:1px;background:rgba(255,255,255,.15);margin:14px 0;}
+.combo-total{display:flex;justify-content:space-between;align-items:center;padding:16px;background:rgba(255,255,255,.05);border-radius:12px;}
+.combo-total-label{font-size:16px;font-weight:900;color:#fff;}
+.combo-total-val{font-size:36px;font-weight:900;color:#34d399;}
+
+@media(max-width:600px){
+  .work-grid{grid-template-columns:1fr 1fr;}
+  .compare-table{font-size:12px;}
+  .compare-table th,.compare-table td{padding:10px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">🏠 住まい・バリアフリー</span>
+    <h1>バリアフリーリフォームで最大18万円！<br>高齢者がいる家庭が使える<br>補助金完全ガイド</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 住まい・バリアフリー</span>
+      <span>⏱ 読了約8分</span>
+      <span>👴 介護・高齢者世帯向け</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「親が転倒して骨折してしまった…」「階段の上り下りがつらくなってきた」という相談が増えています。</p>
+<p>高齢者のいる家庭なら、バリアフリーリフォームに<strong>最大18万円の補助</strong>が受けられる制度があります。しかも「介護保険の住宅改修費」として、工事費の<strong>9割を公費負担</strong>してもらえる仕組みです。</p>
+<p>さらに自治体によっては<strong>介護保険に上乗せ</strong>して独自の補助金を出しているところも。知らずに全額自己負担でリフォームしている方がまだ多いのが実情です。今すぐ確認しましょう。</p>
+
+<!-- 目次 -->
+<div style="background:#f0fdf4;border:1px solid #a7f3d0;border-radius:16px;padding:20px 24px;margin:24px 0;">
+  <h3 style="font-size:13px;font-weight:900;color:#166534;margin-bottom:12px;">📋 この記事でわかること</h3>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="#what" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#059669;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#166534;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🏠</span>
+      バリアフリーリフォームの対象工事と費用目安
+    </a>
+    <a href="#kaigo" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#059669;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🏥</span>
+      介護保険・住宅改修費給付（最大18万円）の仕組み
+    </a>
+    <a href="#city" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#059669;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#f59e0b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🏙</span>
+      自治体の上乗せ補助（比較表）
+    </a>
+    <a href="#steps" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#059669;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">📋</span>
+      工事前申請が必須な理由と正しい5ステップ
+    </a>
+    <a href="#combo" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#059669;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🧮</span>
+      耐震・断熱補助との合わせ技
+    </a>
+  </div>
+</div>
+
+<!-- h2① -->
+<h2 id="what">🏠 バリアフリーリフォームとは｜対象工事の種類と費用目安</h2>
+
+<div class="bf-card green">
+  <div class="bf-card-label">✅ 要介護・要支援者がいる家庭が対象の制度</div>
+  <div class="bf-card-headline">手すり・段差解消・スロープなど<br>「転倒予防・移動しやすくする」工事が対象</div>
+  <div class="bf-amount"><strong>介護保険で最大18万円</strong><span>自己負担は1割〜3割のみ</span></div>
+</div>
+
+<p>介護保険の住宅改修費として認められる工事は<strong>6種類</strong>に限定されています。ただしこの6種類をうまく組み合わせることで、日常生活の安全性を大きく高めることができます。</p>
+
+<div class="work-grid">
+  <div class="work-card">
+    <div class="work-icon">🤲</div>
+    <div class="work-title">① 手すりの取り付け</div>
+    <div class="work-cost">費用目安：3〜15万円</div>
+    <div class="work-max">廊下・トイレ・浴室・玄関など</div>
+  </div>
+  <div class="work-card">
+    <div class="work-icon">📉</div>
+    <div class="work-title">② 段差の解消</div>
+    <div class="work-cost">費用目安：5〜30万円</div>
+    <div class="work-max">敷居除去・スロープ設置など</div>
+  </div>
+  <div class="work-card">
+    <div class="work-icon">🚶</div>
+    <div class="work-title">③ 床材の変更</div>
+    <div class="work-cost">費用目安：5〜20万円</div>
+    <div class="work-max">滑り止め・ノンスリップシートなど</div>
+  </div>
+  <div class="work-card">
+    <div class="work-icon">🚪</div>
+    <div class="work-title">④ 扉の変更</div>
+    <div class="work-cost">費用目安：10〜30万円</div>
+    <div class="work-max">引き戸・折り戸への交換など</div>
+  </div>
+  <div class="work-card">
+    <div class="work-icon">🚽</div>
+    <div class="work-title">⑤ トイレ・洗面台の変更</div>
+    <div class="work-cost">費用目安：10〜30万円</div>
+    <div class="work-max">和式→洋式、高さ調整など</div>
+  </div>
+  <div class="work-card">
+    <div class="work-icon">🔧</div>
+    <div class="work-title">⑥ 付帯工事</div>
+    <div class="work-cost">費用目安：状況による</div>
+    <div class="work-max">上記工事に伴う床・壁の補修</div>
+  </div>
+</div>
+
+<p>注意点として、介護保険の住宅改修で認められるのは<strong>上記6種類のみ</strong>です。ユニットバスの全面交換や最新設備の導入は対象外になることが多いため、ケアマネジャーに相談しながら計画しましょう。</p>
+
+<!-- h2② -->
+<h2 id="kaigo">🏥 介護保険の住宅改修費給付（最大18万円）の仕組みと申請条件</h2>
+
+<p>介護保険の住宅改修費は、<strong>要介護認定・要支援認定を受けた方</strong>が自宅のバリアフリー改修工事を行う際に、工事費用の<strong>7〜9割が給付</strong>される制度です。</p>
+
+<div class="kaigo-flow">
+  <h3>💡 介護保険住宅改修費の仕組み</h3>
+  <div class="kaigo-row">
+    <div class="kaigo-label">支給限度額</div>
+    <div class="kaigo-desc">工事費用の<strong>上限20万円</strong>が改修費として認められます</div>
+  </div>
+  <div class="kaigo-arrow">↓</div>
+  <div class="kaigo-row">
+    <div class="kaigo-label">給付割合</div>
+    <div class="kaigo-desc">所得に応じて<strong>7割・8割・9割</strong>が公費から給付されます<br>（自己負担は3割・2割・1割）</div>
+  </div>
+  <div class="kaigo-arrow">↓</div>
+  <div class="kaigo-row">
+    <div class="kaigo-label">最大受取額</div>
+    <div class="kaigo-desc">20万円の<strong>9割 = 18万円</strong>が上限の給付額（1割負担の方）</div>
+  </div>
+  <div class="kaigo-total">
+    <div class="kaigo-total-label">1割負担の方の場合：20万円の工事で</div>
+    <div class="kaigo-total-val"><strong>自己負担は2万円のみ！</strong></div>
+  </div>
+</div>
+
+<p>この制度を使うには<strong>要介護1〜5または要支援1〜2の認定</strong>を受けていることが必須条件です。まだ認定を受けていない方は、市区町村の介護保険窓口に要介護認定の申請から始めましょう。</p>
+
+<div class="bf-card blue">
+  <div class="bf-card-label">📌 重要な申請条件</div>
+  <div class="bf-body">
+    <ul style="padding-left:18px;margin:0;line-height:2;">
+      <li>要介護・要支援の認定を受けていること</li>
+      <li>住宅が<strong>住民票と同じ住所</strong>（自宅）であること</li>
+      <li>工事前にケアマネジャーに相談し、<strong>事前申請</strong>を行うこと</li>
+      <li>同一住宅での利用は<strong>原則1回限り</strong>（限度額20万円まで）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- h2③ -->
+<h2 id="city">🏙 自治体の上乗せ補助｜介護保険に追加でもらえるお金の比較表</h2>
+
+<p>介護保険の給付に加えて、<strong>多くの自治体が独自の上乗せ補助</strong>を実施しています。自治体によっては介護保険対象外の工事（浴室全面改修など）にも補助が出るケースがあります。</p>
+
+<table class="compare-table">
+  <thead>
+    <tr>
+      <th>自治体の例</th>
+      <th>補助内容</th>
+      <th>上乗せ上限額</th>
+      <th>主な条件</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>東京都・豊島区</td>
+      <td>介護保険対象工事の上乗せ補助</td>
+      <td class="amount-cell"><strong>最大10万円</strong></td>
+      <td>要介護・要支援認定者</td>
+    </tr>
+    <tr>
+      <td>神奈川県・横浜市</td>
+      <td>高齢者住宅改造費補助</td>
+      <td class="amount-cell"><strong>最大50万円</strong></td>
+      <td>65歳以上・所得制限あり</td>
+    </tr>
+    <tr>
+      <td>埼玉県・さいたま市</td>
+      <td>高齢者等住宅改造費助成</td>
+      <td class="amount-cell"><strong>最大50万円</strong></td>
+      <td>65歳以上・要件あり</td>
+    </tr>
+    <tr>
+      <td>大阪府・大阪市</td>
+      <td>バリアフリー改修補助</td>
+      <td class="amount-cell"><strong>最大50万円</strong></td>
+      <td>65歳以上・低所得世帯優遇</td>
+    </tr>
+    <tr>
+      <td>愛知県・名古屋市</td>
+      <td>在宅障害者(児)住宅改修費助成</td>
+      <td class="amount-cell"><strong>最大30万円</strong></td>
+      <td>障害者手帳所持者含む</td>
+    </tr>
+    <tr>
+      <td>北海道・札幌市</td>
+      <td>高齢者等住宅整備資金融資</td>
+      <td class="amount-cell"><strong>低利融資あり</strong></td>
+      <td>65歳以上・持ち家</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>※上記は代表的な例です。実際の補助額・条件は自治体により異なります。お住まいの市区町村の高齢福祉課・介護保険課にお問い合わせください。</p>
+
+<div class="bf-card orange">
+  <div class="bf-card-label">💡 探し方のコツ</div>
+  <div class="bf-body">
+    「〇〇市 高齢者 住宅改修 補助金」でWeb検索するか、<strong>市区町村の介護保険課・高齢福祉課</strong>に電話で「バリアフリーリフォームに使える補助金はありますか？」と聞くのが最速です。ケアマネジャーに相談するのも有効です。
+  </div>
+</div>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<!-- h2④ -->
+<h2 id="steps">📋 「工事前申請」が必須な理由と正しい手順（5ステップ）</h2>
+
+<p>バリアフリーリフォームで失敗する最大のパターンが<strong>「工事を先に始めてしまって補助金がもらえなかった」</strong>というケースです。介護保険の住宅改修費は<strong>工事開始前の申請・承認が絶対条件</strong>です。</p>
+
+<div class="bf-card" style="background:linear-gradient(135deg,#fef2f2,#fee2e2);border:2px solid #fca5a5;">
+  <div class="bf-card-label">🚨 よくある失敗パターン</div>
+  <div class="bf-body">
+    「業者に勧められてすぐ工事してしまった」→ 事前申請なしでは<strong>補助金が一切出ません。</strong>どんなに対象工事でも順番が違うと全額自己負担になります。
+  </div>
+</div>
+
+<div class="bf-flow">
+  <div class="bf-step">
+    <div class="bf-num">1</div>
+    <div class="bf-content">
+      <span class="bf-tag">STEP 1</span>
+      <h4>ケアマネジャーへの相談</h4>
+      <p>まず担当ケアマネジャーに「住宅改修を検討している」と伝えましょう。ケアマネジャーが<strong>理由書</strong>を作成してくれます（これが申請に必要）。ケアマネがいない場合は地域包括支援センターへ。</p>
+    </div>
+  </div>
+  <div class="bf-step">
+    <div class="bf-num">2</div>
+    <div class="bf-content">
+      <span class="bf-tag">STEP 2</span>
+      <h4>業者の見積もり取得・施工内容の確認</h4>
+      <p>リフォーム業者から<strong>工事費用の見積書・平面図・工事の理由書</strong>を取得。介護保険対象工事かどうかをケアマネジャーと一緒に確認しておくと安心です。</p>
+    </div>
+  </div>
+  <div class="bf-step">
+    <div class="bf-num">3</div>
+    <div class="bf-content">
+      <span class="bf-tag">STEP 3 ← 最重要</span>
+      <h4>市区町村の介護保険窓口へ事前申請</h4>
+      <p>工事開始<strong>前に必ず</strong>申請書・見積書・理由書・現状写真などを提出します。<span class="warn-tag bf-tag">工事前申請が絶対条件</span>承認通知が届くまで工事は始めないでください。</p>
+    </div>
+  </div>
+  <div class="bf-step">
+    <div class="bf-num">4</div>
+    <div class="bf-content">
+      <span class="bf-tag">STEP 4</span>
+      <h4>承認後・工事実施</h4>
+      <p>承認通知が届いてから工事開始。工事中・完了後の<strong>写真撮影</strong>を忘れずに。「着工前・工事中・完成後」の3段階で写真を残しておくと後の申請がスムーズです。</p>
+    </div>
+  </div>
+  <div class="bf-step">
+    <div class="bf-num">5</div>
+    <div class="bf-content">
+      <span class="bf-tag">STEP 5</span>
+      <h4>工事完了後・給付金申請→受取</h4>
+      <p>完了後に<strong>領収書・完成写真・工事費内訳書</strong>を添付して支給申請。審査後、給付金が口座に振り込まれます。通常1〜2ヶ月程度。</p>
+    </div>
+  </div>
+</div>
+
+<!-- h2⑤ -->
+<h2 id="combo">🧮 バリアフリーリフォームと耐震・断熱補助の合わせ技</h2>
+
+<p>バリアフリーリフォームと耐震改修補助・断熱補助は<strong>同時申請が可能</strong>です。「どうせリフォームするなら一度に全部やる」が最もコストパフォーマンスが高い選択です。</p>
+
+<div class="combo-sim">
+  <h3>🧮 合わせ技シミュレーション（旧耐震・高齢者世帯の例）</h3>
+  <div class="combo-item c1">
+    <div class="combo-icon">♿</div>
+    <div class="combo-info">
+      <div class="combo-name">① 介護保険 住宅改修費給付（自己負担1割の場合）</div>
+      <div class="combo-note">手すり・段差解消・扉交換など20万円工事→自己負担2万円</div>
+    </div>
+    <div class="combo-val"><strong>最大18万円</strong></div>
+  </div>
+  <div class="combo-item c2">
+    <div class="combo-icon">🏚</div>
+    <div class="combo-info">
+      <div class="combo-name">② 耐震改修補助金（市区町村）</div>
+      <div class="combo-note">旧耐震基準住宅の耐震改修工事費補助</div>
+    </div>
+    <div class="combo-val"><strong>最大100万円</strong></div>
+  </div>
+  <div class="combo-item c3">
+    <div class="combo-icon">🪟</div>
+    <div class="combo-info">
+      <div class="combo-name">③ 先進的窓リノベ2024（国）</div>
+      <div class="combo-note">窓の断熱改修（内窓設置など）</div>
+    </div>
+    <div class="combo-val"><strong>最大200万円</strong></div>
+  </div>
+  <div class="combo-divider"></div>
+  <div class="combo-total">
+    <div class="combo-total-label">3つ合計で最大</div>
+    <div class="combo-total-val"><strong>318万円</strong></div>
+  </div>
+</div>
+
+<p>もちろん全ての補助金を最大額受け取るには各要件を満たす必要がありますが、<strong>旧耐震基準の住宅に高齢者が暮らしている</strong>ケースは3つ全ての補助対象になる可能性が高いです。</p>
+
+<div class="bf-card green">
+  <div class="bf-card-label">🎯 まず動くべき順番</div>
+  <div class="bf-body">
+    <strong>1. 市区町村へ「耐震診断」の申し込み</strong>（無料〜数千円）<br>
+    <strong>2. ケアマネジャーへ「住宅改修相談」</strong>（並行して）<br>
+    <strong>3. リフォーム業者に「3つの補助金を同時申請したい」と相談</strong><br><br>
+    この3ステップを今月中に動き出すだけで、大きく変わります。
+  </div>
+</div>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<!-- 関連記事 -->
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="093-reform-all.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">🔨</div><div class="related-body">リフォーム補助金まとめ2026年版</div></a><a href="003-mado-renovate.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">🪟</div><div class="related-body">窓リノベ補助金で最大200万円</div></a><a href="009-nenkin-midori.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">🏦</div><div class="related-body">年金生活者支援給付金の落とし穴</div></a><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え大全</div></a></div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

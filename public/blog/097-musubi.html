@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「結婚・出産・子育て」トータルでいくらもらえる？人生の喜びで受け取れるお金計算｜もらえるお金ナビ</title>
+<meta name="description" content="結婚から子育てまでのライフイベントでもらえるお金を合計すると数百万円以上になる！結婚助成金・出産一時金・育休給付・医療費助成・保育料補助の総額を丁寧に計算。">
+<meta name="keywords" content="結婚 補助金,出産一時金,育休給付金,子育て 補助金 総額,出産 もらえるお金,子ども医療費助成">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) --><!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.hero-amount{background:linear-gradient(135deg,#4c1d95,#7c3aed);border-radius:20px;padding:28px;margin:28px 0;text-align:center;}
+.hero-amount-label{font-size:12px;color:rgba(255,255,255,.65);font-weight:700;margin-bottom:8px;}
+.hero-amount-num{font-size:clamp(44px,10vw,68px);font-weight:900;color:#fbbf24;line-height:1.1;}
+.hero-amount-unit{font-size:17px;font-weight:900;color:#fff;margin-top:6px;}
+.hero-amount-sub{font-size:13px;color:rgba(255,255,255,.8);margin-top:12px;line-height:1.7;}
+
+/* ライフイベント表 */
+.life-table{width:100%;border-collapse:collapse;margin:20px 0;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);}
+.life-table thead tr{background:linear-gradient(135deg,#6d28d9,#4c1d95);}
+.life-table thead th{color:#fff;font-size:13px;font-weight:900;padding:14px 16px;text-align:left;}
+.life-table tbody tr{border-bottom:1px solid #ede9fe;}
+.life-table tbody tr:last-child{border-bottom:none;}
+.life-table tbody tr:nth-child(even){background:#faf5ff;}
+.life-table tbody td{padding:14px 16px;font-size:13px;color:#374151;vertical-align:top;}
+.life-table td.event-name{font-weight:900;color:#4c1d95;}
+.life-table td.amount{font-weight:900;color:#dc2626;font-size:15px;}
+.life-table td.notes{color:#6b7280;font-size:12px;}
+.life-table tfoot tr{background:linear-gradient(135deg,#fef3c7,#fde68a);}
+.life-table tfoot td{font-size:14px;font-weight:900;color:#78350f;padding:14px 16px;}
+
+/* シミュレーションカード */
+.sim-box{border-radius:16px;padding:24px;margin:20px 0;}
+.sim-box.child1{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;}
+.sim-box.child3{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;}
+.sim-box-title{font-size:16px;font-weight:900;color:#1e3a5f;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.sim-box.child3 .sim-box-title{color:#065f46;}
+.sim-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #bfdbfe;}
+.sim-box.child3 .sim-item{border-bottom-color:#a7f3d0;}
+.sim-item:last-of-type{border-bottom:none;}
+.sim-item-name{font-size:13px;color:#374151;}
+.sim-item-amount{font-size:15px;font-weight:900;color:#dc2626;}
+.sim-total{background:rgba(255,255,255,.7);border-radius:12px;padding:16px;margin-top:16px;text-align:center;}
+.sim-total-label{font-size:12px;color:#6b7280;margin-bottom:4px;}
+.sim-total-num{font-size:clamp(28px,6vw,42px);font-weight:900;color:#1e3a5f;}
+.sim-box.child3 .sim-total-num{color:#065f46;}
+
+/* 重要給付5選 */
+.top5-cards{display:grid;gap:14px;margin:20px 0;}
+.top5-card{display:flex;gap:16px;border-radius:14px;padding:18px;background:#fff;border:2px solid #e5e7eb;transition:box-shadow .2s;}
+.top5-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.09);}
+.top5-rank{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#4c1d95);color:#fff;font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.top5-body{flex:1;}
+.top5-title{font-size:15px;font-weight:900;color:#111827;margin-bottom:4px;}
+.top5-amount{font-size:13px;font-weight:700;color:#dc2626;margin-bottom:4px;}
+.top5-desc{font-size:12px;color:#4b5563;line-height:1.6;}
+.top5-badge{display:inline-block;font-size:10px;font-weight:900;background:#fef3c7;color:#78350f;border:1px solid #fcd34d;padding:2px 8px;border-radius:10px;margin-left:6px;}
+
+/* その他対象者カード */
+.other-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:20px 0;}
+.other-card{border-radius:14px;padding:18px;border:2px solid;}
+.other-card.single{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:#fcd34d;}
+.other-card.dinks{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;}
+.other-card.solo{background:linear-gradient(135deg,#fff1f2,#ffe4e6);border-color:#fca5a5;}
+.other-card-icon{font-size:28px;margin-bottom:8px;}
+.other-card-title{font-size:14px;font-weight:900;color:#111827;margin-bottom:6px;}
+.other-card-desc{font-size:12px;color:#4b5563;line-height:1.6;}
+.other-card-amount{font-size:13px;font-weight:900;color:#dc2626;margin-top:8px;}
+
+.caution-box{background:#fef9c3;border:2px solid #fde047;border-radius:14px;padding:18px 20px;margin:20px 0;}
+.caution-box-title{font-weight:900;font-size:15px;color:#713f12;margin-bottom:8px;}
+.caution-box p{font-size:13px;color:#713f12;line-height:1.7;margin:0;}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner"><a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a><a href="/" class="nav-cta">▶ 無料で補助金を検索</a></div></nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">👶 子育て・ライフイベント</span>
+    <h1>「結婚・出産・子育て」トータルでいくらもらえる？<br>人生の喜びで受け取れるお金計算</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 子育て・ライフイベント</span>
+      <span>⏱ 読了約10分</span>
+      <span>👶 子ども3人シミュレーションあり</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「結婚して赤ちゃんが生まれる……でも、お金のことが心配」という声をよく聞きます。</p>
+<p>でも実は逆！ライフイベントが重なるほど、国や自治体から<strong>もらえるお金が増えていく</strong>のが日本の制度です。</p>
+
+<div class="hero-amount">
+  <div class="hero-amount-label">子ども1人のケースでもらえるお金の合計（最大試算）</div>
+  <div class="hero-amount-num">約250万円〜</div>
+  <div class="hero-amount-unit">0歳〜18歳の18年間で積み上がる</div>
+  <div class="hero-amount-sub">子ども3人いれば軽く<strong style="color:#fbbf24;">500万円超え</strong>も夢ではない！<br>知っているか知らないかで、老後資金が大きく変わります</div>
+</div>
+
+<p>大事なのは「申請してはじめてもらえる」という前提。何もしなければ0円のまま終わります。この記事を読んで、一つひとつ確実に申請してください！</p>
+
+<h2>① 結婚から子育てまでのライフイベント別もらえるお金一覧</h2>
+
+<p>まずは全体像を把握しましょう。結婚〜子育てで受け取れる主要な制度をまとめました。</p>
+
+<table class="life-table">
+  <thead>
+    <tr>
+      <th>ライフイベント</th>
+      <th>制度名</th>
+      <th>金額（目安）</th>
+      <th>条件・備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="event-name">💍 結婚</td>
+      <td>結婚新生活支援事業</td>
+      <td class="amount">最大60万円</td>
+      <td class="notes">39歳以下・年収500万円未満が目安。実施市区のみ</td>
+    </tr>
+    <tr>
+      <td class="event-name">🤰 妊娠</td>
+      <td>妊婦給付金（出産・子育て応援給付金）</td>
+      <td class="amount">10万円</td>
+      <td class="notes">妊娠届提出で5万円＋出産後5万円。全国共通</td>
+    </tr>
+    <tr>
+      <td class="event-name">👶 出産</td>
+      <td>出産育児一時金</td>
+      <td class="amount">50万円</td>
+      <td class="notes">健康保険から支給。産院に直接支払われることが多い</td>
+    </tr>
+    <tr>
+      <td class="event-name">👶 出産後</td>
+      <td>育児休業給付金（育休給付）</td>
+      <td class="amount">給与の67%×6ヶ月＋50%×残り</td>
+      <td class="notes">雇用保険加入者が対象。パパ育休も可。手取り換算で実質8割近い</td>
+    </tr>
+    <tr>
+      <td class="event-name">👶 産休中</td>
+      <td>社会保険料免除</td>
+      <td class="amount">数十万円相当</td>
+      <td class="notes">産休・育休中は健保・厚生年金が免除。給付金ではないが実質的なプラス</td>
+    </tr>
+    <tr>
+      <td class="event-name">🏥 医療費</td>
+      <td>こども医療費助成</td>
+      <td class="amount">18年間実質無料（市区による）</td>
+      <td class="notes">0〜18歳まで医療費を市区が負担。都市部は完全無料も多い</td>
+    </tr>
+    <tr>
+      <td class="event-name">🏠 保育</td>
+      <td>幼児教育・保育の無償化</td>
+      <td class="amount">月最大3.7万円（3〜5歳）</td>
+      <td class="notes">3〜5歳は保育料が原則無償。0〜2歳は住民税非課税世帯が対象</td>
+    </tr>
+    <tr>
+      <td class="event-name">👦 子育て</td>
+      <td>児童手当</td>
+      <td class="amount">月1〜1.5万円×18年</td>
+      <td class="notes">2024年改正で高校生まで延長。所得制限なし・第3子以降は月3万円</td>
+    </tr>
+    <tr>
+      <td class="event-name">📚 教育</td>
+      <td>高校授業料無償化（就学支援金）</td>
+      <td class="amount">年最大39.6万円</td>
+      <td class="notes">年収約910万円未満の世帯が対象。公立・私立ともに対象</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2">合計（子ども1人・概算最大値）</td>
+      <td class="amount" style="font-size:16px;">約250万円〜</td>
+      <td class="notes">地域・収入・育休取得有無で変動</td>
+    </tr>
+  </tfoot>
+</table>
+
+<p>上記はあくまで主要な制度の一覧です。自治体独自の上乗せ給付（おむつ配布・祝い金・子育て給付金など）を加えると、さらに数十万円上積みできます。</p>
+
+<h2>② 子ども1人の場合の総額シミュレーション（最大値で計算）</h2>
+
+<p>モデルケース：共働き夫婦、会社員、育休を6ヶ月取得、東京都内在住</p>
+
+<div class="sim-box child1">
+  <div class="sim-box-title">👶 子ども1人シミュレーション（0歳〜18歳）</div>
+  <div class="sim-item"><span class="sim-item-name">結婚新生活支援</span><span class="sim-item-amount">最大 <strong>60万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">妊婦給付金（出産・子育て応援）</span><span class="sim-item-amount"><strong>10万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">出産育児一時金</span><span class="sim-item-amount"><strong>50万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">育児休業給付金（6ヶ月・給与30万円想定）</span><span class="sim-item-amount">約 <strong>120万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">社会保険料免除（産休＋育休1年）</span><span class="sim-item-amount">約 <strong>50万円</strong>相当</span></div>
+  <div class="sim-item"><span class="sim-item-name">こども医療費助成（18年間・年1〜2万円相当）</span><span class="sim-item-amount">約 <strong>20万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">幼児教育・保育無償化（2年間）</span><span class="sim-item-amount">約 <strong>89万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">児童手当（0〜18歳）</span><span class="sim-item-amount">約 <strong>234万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">高校授業料就学支援金（3年分）</span><span class="sim-item-amount">最大 <strong>119万円</strong></span></div>
+  <div class="sim-total">
+    <div class="sim-total-label">総合計（概算最大値）</div>
+    <div class="sim-total-num">約 752万円</div>
+    <p style="font-size:12px;color:#6b7280;margin-top:4px;">※条件・地域・取得状況によって大きく異なります</p>
+  </div>
+</div>
+
+<p>驚きましたか？実は<strong>子ども1人で750万円規模</strong>の支援が制度として存在しています。すべて申請した場合の最大値なので、実際の受取額は異なりますが、知っているかどうかで人生の手取りが大きく変わる事実は変わりません。</p>
+
+<h2>③ 子ども3人の場合の総額シミュレーション（合計500万円超えの試算）</h2>
+
+<p>第3子以降は制度の上乗せが多く、総額がぐっと増えます。最近の政策変更で「子育て世帯への手厚さ」が急速に増しています。</p>
+
+<div class="sim-box child3">
+  <div class="sim-box-title">👨‍👩‍👧‍👦 子ども3人シミュレーション（概算）</div>
+  <div class="sim-item"><span class="sim-item-name">出産育児一時金 ×3人分</span><span class="sim-item-amount"><strong>150万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">妊婦給付金 ×3人分</span><span class="sim-item-amount"><strong>30万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">育休給付金 ×3人分</span><span class="sim-item-amount">約 <strong>360万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">児童手当（第3子は月3万円）</span><span class="sim-item-amount">約 <strong>900万円以上</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">保育無償化 ×3人（重複期間あり）</span><span class="sim-item-amount">約 <strong>180万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">就学支援金・高校授業料 ×3人</span><span class="sim-item-amount">最大 <strong>357万円</strong></span></div>
+  <div class="sim-item"><span class="sim-item-name">自治体独自の多子世帯支援</span><span class="sim-item-amount">地域により <strong>数十〜100万円超</strong></span></div>
+  <div class="sim-total">
+    <div class="sim-total-label">3人合計（概算）</div>
+    <div class="sim-total-num">1,977万円〜</div>
+    <p style="font-size:12px;color:#6b7280;margin-top:4px;">※第3子加算・所得要件・地域補助を含む最大試算</p>
+  </div>
+</div>
+
+<p>3人産むと<strong>2,000万円近い支援</strong>が制度上は存在します。「子どもにお金がかかる」のは確かですが、「国がいかに手厚く支援しているか」も同時に理解しておくことが大切です。</p>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2>④ もらい損ねてはいけない最重要給付5選（申請期限あり）</h2>
+
+<p>制度があっても「期限切れ」「申請忘れ」で受け取れなくなるケースが後を絶ちません。特に見落としやすい5つを厳選しました。</p>
+
+<div class="top5-cards">
+  <div class="top5-card">
+    <div class="top5-rank">1</div>
+    <div class="top5-body">
+      <div class="top5-title">出産・子育て応援給付金（妊婦給付金）<span class="top5-badge">⚡ 要即時申請</span></div>
+      <div class="top5-amount">合計 10万円（妊娠届5万円＋出産後5万円）</div>
+      <div class="top5-desc">妊娠届を出した際にアンケートや面談が必要。そのタイミングを逃すと5万円分の申請が遅れることも。<strong>妊娠がわかったらすぐに動く</strong>のが鉄則。</div>
+    </div>
+  </div>
+  <div class="top5-card">
+    <div class="top5-rank">2</div>
+    <div class="top5-body">
+      <div class="top5-title">育児休業給付金<span class="top5-badge">⚡ 2ヶ月ごと申請</span></div>
+      <div class="top5-amount">給与の67〜80%相当（実質手取り換算）</div>
+      <div class="top5-desc">会社が代行することが多いが、パパ育休（産後パパ育休）を取る場合は自分でも確認必須。<strong>育休中は社保免除も自動適用される</strong>が、申請忘れで損するケースあり。</div>
+    </div>
+  </div>
+  <div class="top5-card">
+    <div class="top5-rank">3</div>
+    <div class="top5-body">
+      <div class="top5-title">結婚新生活支援事業<span class="top5-badge">⚡ 市区により締切あり</span></div>
+      <div class="top5-amount">最大 <strong>60万円</strong>（住居費・引越費用補助）</div>
+      <div class="top5-desc">対象年齢（39歳以下）・年収要件・居住実態の証明が必要。<strong>引越し後から申請できる期間が限られている</strong>自治体が多く、入居直後に確認するのがベスト。</div>
+    </div>
+  </div>
+  <div class="top5-card">
+    <div class="top5-rank">4</div>
+    <div class="top5-body">
+      <div class="top5-title">児童手当（2024年制度拡充版）</div>
+      <div class="top5-amount">月1〜3万円 × 18年間（最大 <strong>648万円</strong>）</div>
+      <div class="top5-desc">2024年10月の制度改正で所得制限廃止・高校生まで延長・第3子3万円に。<strong>改正前に申請済みでも改めて確認が必要なケース</strong>がある。出生後に速やかに申請を。</div>
+    </div>
+  </div>
+  <div class="top5-card">
+    <div class="top5-rank">5</div>
+    <div class="top5-body">
+      <div class="top5-title">高等学校就学支援金</div>
+      <div class="top5-amount">年最大 <strong>39.6万円</strong>（私立高校・収入要件あり）</div>
+      <div class="top5-desc">公立高校（年約12万円）と私立高校（年最大約40万円）で金額が異なる。<strong>毎年4月に学校経由で収入確認書類を提出</strong>する必要があるため、手続き忘れに注意。</div>
+    </div>
+  </div>
+</div>
+
+<div class="caution-box">
+  <div class="caution-box-title">⚠️ 特に見落としやすいのは「申請主義」の壁</div>
+  <p>日本の給付制度のほとんどは「申請しないともらえない」仕組みです。役所から「あなたはこの補助金を受け取れますよ」と連絡が来ることはほとんどありません。ライフイベントのたびに「もらえるお金ナビ」でチェックする習慣をつけましょう。</p>
+</div>
+
+<h2>⑤ 独身・DINKS・一人親でも使える制度は？</h2>
+
+<p>「私には関係ない」と思っている方へ。実は結婚・出産がなくても受け取れる制度が多数あります。</p>
+
+<div class="other-cards">
+  <div class="other-card single">
+    <div class="other-card-icon">🙋</div>
+    <div class="other-card-title">独身の方</div>
+    <div class="other-card-desc">住宅購入補助・省エネ改修補助・移住支援金・リスキリング給付金など、ライフイベントに関係なく使える制度が豊富</div>
+    <div class="other-card-amount">最大100万円以上</div>
+  </div>
+  <div class="other-card dinks">
+    <div class="other-card-icon">💑</div>
+    <div class="other-card-title">DINKs（子なし夫婦）</div>
+    <div class="other-card-desc">結婚新生活支援・住宅ローン控除・省エネ住宅補助・夫婦それぞれの医療費控除などを活用できる</div>
+    <div class="other-card-amount">合計数十万円〜</div>
+  </div>
+  <div class="other-card solo">
+    <div class="other-card-icon">👩</div>
+    <div class="other-card-title">一人親（ひとり親）</div>
+    <div class="other-card-desc">児童扶養手当（月最大4.5万円）・ひとり親医療費助成・就業支援給付金など、一人親向けの手厚い制度が多数ある</div>
+    <div class="other-card-amount">月最大 <strong>4.5万円〜</strong></div>
+  </div>
+</div>
+
+<p>どのライフスタイルでも「もらえるお金ナビ」でお住まいの市区を検索すれば、自分に合った補助金が見つかります。結婚・出産は人生の大きな喜び。その喜びを、制度をフル活用することでさらに豊かにしてください。</p>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div>
+</div>
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え！もらえるお金大全</div></a><a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？まとめ</div></a><a href="098-calendar-2026.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">📅</div><div class="related-body">2026年もらえるお金カレンダー</div></a><a href="064-siyakusyo-kakure.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#ecfdf5,#d1fae5);">🏛</div><div class="related-body">市役所の隠れ補助金の見つけ方</div></a></div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

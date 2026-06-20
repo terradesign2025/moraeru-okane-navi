@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>住宅ローン減税と補助金のW取り！賢い住宅購入で「実質負担ゼロ」を狙う方法｜もらえるお金ナビ</title>
+<meta name="description" content="住宅ローン控除（13年間・最大455万円控除）と省エネ補助金・子育てエコホーム支援を組み合わせれば実質負担を大幅圧縮できる！住宅購入前に必ず確認すべき補助金活用術。">
+<meta name="keywords" content="住宅ローン減税 補助金 W取り,住宅ローン控除 13年,子育てエコホーム支援,住宅ローン控除 計算,省エネ住宅 補助金,住宅購入 補助金 一覧,エコホーム 100万円">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.wt-card{border-radius:20px;padding:24px;margin:20px 0;position:relative;overflow:hidden;}
+.wt-card.blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;}
+.wt-card.green{background:linear-gradient(135deg,#f0fdf4,#d1fae5);border:2px solid #6ee7b7;}
+.wt-card.yellow{background:linear-gradient(135deg,#fefce8,#fef3c7);border:2px solid #fcd34d;}
+.wt-card.dark{background:linear-gradient(135deg,#0f172a,#1e1b4b);border:2px solid #6366f1;}
+.wt-card.warn{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:2px solid #fca5a5;}
+.wt-card-label{font-size:11px;font-weight:900;letter-spacing:.08em;margin-bottom:8px;opacity:.7;}
+.wt-card-headline{font-size:clamp(16px,3vw,21px);font-weight:900;line-height:1.4;margin-bottom:10px;}
+.wt-card.blue .wt-card-headline,.wt-card.green .wt-card-headline,.wt-card.yellow .wt-card-headline{color:#111827;}
+.wt-card.dark .wt-card-headline{color:#fff;}
+.wt-amount{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:6px 14px;margin:8px 0 12px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.wt-amount strong{font-size:22px;font-weight:900;color:#2563eb;}
+.wt-amount span{font-size:12px;color:#6b7280;}
+.wt-body{font-size:14px;color:#374151;line-height:1.8;}
+.wt-body strong{color:#111827;}
+
+/* 控除計算表 */
+.calc-box{background:#fff;border:2px solid #bfdbfe;border-radius:16px;padding:24px;margin:20px 0;}
+.calc-box h3{font-size:15px;font-weight:900;color:#1e40af;margin-bottom:16px;}
+.calc-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #e5e7eb;font-size:14px;}
+.calc-row:last-child{border-bottom:none;}
+.calc-label{color:#374151;}
+.calc-val{font-weight:900;color:#2563eb;}
+.calc-total-row{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:12px;padding:14px 16px;margin-top:12px;}
+.calc-total-label{font-size:16px;font-weight:900;color:#1e40af;}
+.calc-total-val{font-size:28px;font-weight:900;color:#2563eb;}
+
+/* 補助金一覧テーブル */
+.subsidy-table{width:100%;border-collapse:collapse;font-size:13px;margin:18px 0;border-radius:12px;overflow:hidden;}
+.subsidy-table thead{background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;}
+.subsidy-table th{padding:12px 14px;text-align:left;font-weight:900;}
+.subsidy-table td{padding:12px 14px;border-bottom:1px solid #e5e7eb;}
+.subsidy-table tbody tr:nth-child(odd){background:#f9fafb;}
+.subsidy-table tbody tr:last-child td{border-bottom:none;}
+.subsidy-table .amount-cell{font-weight:900;color:#2563eb;}
+.subsidy-table .cat-badge{display:inline-block;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:900;}
+.cat-kuni{background:#dbeafe;color:#1e40af;}
+.cat-pref{background:#d1fae5;color:#166534;}
+.cat-city{background:#fef3c7;color:#92400e;}
+
+/* W取りシミュレーション */
+.wsim{background:linear-gradient(135deg,#0f172a,#1e1b4b);border-radius:20px;padding:30px;margin:28px 0;border:2px solid #6366f1;}
+.wsim h3{color:#fff;font-size:17px;font-weight:900;margin-bottom:22px;text-align:center;}
+.wsim-premise{background:rgba(255,255,255,.06);border-radius:12px;padding:16px;margin-bottom:20px;}
+.wsim-premise-title{font-size:12px;font-weight:900;color:rgba(255,255,255,.6);margin-bottom:8px;}
+.wsim-premise-val{font-size:15px;font-weight:900;color:#fff;}
+.wsim-row{display:flex;align-items:flex-start;gap:14px;padding:12px;border-radius:12px;margin-bottom:8px;}
+.wsim-row.r1{background:rgba(37,99,235,.2);}
+.wsim-row.r2{background:rgba(16,185,129,.2);}
+.wsim-row.r3{background:rgba(245,158,11,.2);}
+.wsim-icon{font-size:24px;flex-shrink:0;}
+.wsim-info{flex:1;}
+.wsim-name{font-size:13px;font-weight:900;color:#fff;margin-bottom:3px;}
+.wsim-note{font-size:11px;color:rgba(255,255,255,.6);line-height:1.6;}
+.wsim-val{font-size:16px;font-weight:900;color:#a5f3fc;flex-shrink:0;white-space:nowrap;}
+.wsim-divider{height:1px;background:rgba(255,255,255,.15);margin:16px 0;}
+.wsim-total{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.05);border-radius:12px;padding:18px;}
+.wsim-total-label{font-size:16px;font-weight:900;color:#fff;}
+.wsim-total-val{font-size:36px;font-weight:900;color:#34d399;}
+.wsim-sub{text-align:center;font-size:12px;color:rgba(255,255,255,.5);margin-top:12px;}
+
+/* ポイント3つ */
+.point-list{display:flex;flex-direction:column;gap:14px;margin:18px 0;}
+.point-item{display:flex;gap:16px;background:#fff;border:2px solid #e5e7eb;border-radius:14px;padding:18px;}
+.point-num{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.point-body h4{font-size:14px;font-weight:900;color:#111827;margin-bottom:6px;}
+.point-body p{font-size:13px;color:#374151;line-height:1.7;}
+.point-body p strong{color:#2563eb;}
+
+/* タイムライン */
+.timeline{display:flex;flex-direction:column;gap:0;margin:20px 0;}
+.tl-item{display:flex;gap:16px;position:relative;padding-bottom:18px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{content:'';position:absolute;left:19px;top:40px;bottom:0;width:2px;background:linear-gradient(to bottom,#2563eb,transparent);}
+.tl-item:last-child::before{display:none;}
+.tl-dot{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tl-content{flex:1;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px;}
+.tl-content h4{font-size:14px;font-weight:900;color:#111827;margin-bottom:6px;}
+.tl-content p{font-size:13px;color:#374151;line-height:1.7;}
+.tl-tag{display:inline-block;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:900;margin-bottom:6px;}
+.tl-tag.blue{background:#eff6ff;color:#1e40af;}
+.tl-tag.red{background:#fef2f2;color:#dc2626;}
+
+@media(max-width:600px){
+  .subsidy-table{font-size:12px;}
+  .subsidy-table th,.subsidy-table td{padding:10px 8px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">🏠 住まい・住宅購入</span>
+    <h1>住宅ローン減税と補助金のW取り！<br>賢い住宅購入で<br>「実質負担ゼロ」を狙う方法</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 住まい・住宅購入</span>
+      <span>⏱ 読了約9分</span>
+      <span>🏠 マイホーム検討者必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「家を買うのは一生に一度の大きな買い物…」そう思うなら、使える制度を全部使い尽くして損のない買い方をするべきです。</p>
+<p>住宅ローン控除（減税）だけで<strong>13年間・最大455万円</strong>の税控除が受けられます。さらに子育てエコホーム支援事業や省エネ補助金を組み合わせれば、<strong>初年度の実質負担が驚くほど軽くなる</strong>のが現実。</p>
+<p>「知らなかった」では取り返せない大きなお金の話です。住宅購入前に必ずこの記事を読んでください。</p>
+
+<!-- 目次 -->
+<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:16px;padding:20px 24px;margin:24px 0;">
+  <h3 style="font-size:13px;font-weight:900;color:#1e40af;margin-bottom:12px;">📋 この記事でわかること</h3>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="#genzei" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">📊</span>
+      住宅ローン控除の仕組みと計算例（年末残高×0.7%×13年）
+    </a>
+    <a href="#ecoHome" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🏠</span>
+      子育てエコホーム支援（新築・リフォームで最大100万円）との組み合わせ
+    </a>
+    <a href="#table" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#f59e0b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">📋</span>
+      住宅購入時に使える補助金一覧（国・都道府県・市区）
+    </a>
+    <a href="#wsim" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🧮</span>
+      W取りシミュレーション（4,000万円ローンの13年間節税）
+    </a>
+    <a href="#points" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#dc2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">⚠️</span>
+      失敗しない3つのポイント
+    </a>
+  </div>
+</div>
+
+<!-- h2① -->
+<h2 id="genzei">📊 住宅ローン控除（減税）の仕組み｜年末残高×0.7%×13年の計算例</h2>
+
+<div class="wt-card blue">
+  <div class="wt-card-label">🏛 国税庁・住宅ローン控除制度（2024年現行）</div>
+  <div class="wt-card-headline">年末ローン残高の<strong style="color:#1e40af;">0.7%</strong>が<br><strong style="color:#1e40af;">最大13年間</strong>、毎年所得税から控除される</div>
+  <div class="wt-amount"><strong>最大455万円</strong><span>長期優良住宅の場合の上限（借入限度額5,000万円×13年）</span></div>
+</div>
+
+<p>住宅ローン控除（住宅借入金等特別控除）は、住宅ローンを使ってマイホームを購入・建築・リフォームした場合に、<strong>毎年の所得税（と翌年の住民税の一部）から一定額が差し引かれる</strong>制度です。</p>
+
+<p>控除額の計算式は「<strong>年末時点のローン残高 × 0.7%</strong>」です。1年で受けられる最大控除額は住宅の種類によって異なります。</p>
+
+<div class="calc-box">
+  <h3>📊 住宅ローン控除の計算例（新築省エネ住宅・借入4,000万円の場合）</h3>
+  <div class="calc-row">
+    <span class="calc-label">借入金額</span>
+    <span class="calc-val"><strong>4,000万円</strong></span>
+  </div>
+  <div class="calc-row">
+    <span class="calc-label">控除率</span>
+    <span class="calc-val"><strong>0.7%</strong></span>
+  </div>
+  <div class="calc-row">
+    <span class="calc-label">1年目の控除額（概算）</span>
+    <span class="calc-val"><strong>約28万円</strong></span>
+  </div>
+  <div class="calc-row">
+    <span class="calc-label">13年間の累計（試算）</span>
+    <span class="calc-val"><strong>約320〜350万円</strong>（残高減少を考慮）</span>
+  </div>
+  <div class="calc-total-row">
+    <span class="calc-total-label">長期優良住宅（5,000万円借入）の場合</span>
+    <span class="calc-total-val"><strong>最大455万円</strong></span>
+  </div>
+</div>
+
+<p>控除額は所得税の金額を超えない範囲で適用され、余った分は翌年の住民税から一部控除されます（住民税控除は年間最大9.75万円）。年収400万円台の方でも毎年<strong>20〜25万円前後</strong>の税金還付を受けられるケースが多いです。</p>
+
+<div class="wt-card yellow">
+  <div class="wt-card-label">⚠️ 住宅の種類による借入限度額の違い</div>
+  <div class="wt-body">
+    <ul style="padding-left:18px;margin:0;line-height:2.2;">
+      <li><strong>長期優良住宅・低炭素住宅：5,000万円</strong>（最大455万円控除）</li>
+      <li><strong>ZEH水準省エネ住宅：4,500万円</strong></li>
+      <li><strong>省エネ基準適合住宅：4,000万円</strong></li>
+      <li><strong>一般住宅：3,000万円</strong>（2025年以降の新築は対象外になる場合も）</li>
+    </ul>
+    省エネ性能が高い住宅ほど控除額の上限が大きくなります。新築を検討中なら<strong>省エネ住宅一択</strong>と言っても過言ではありません。
+  </div>
+</div>
+
+<!-- h2② -->
+<h2 id="ecoHome">🏠 子育てエコホーム支援事業（新築・リフォームで最大100万円）との組み合わせ計算</h2>
+
+<p>住宅ローン控除と同時に申請できる国の補助金が「子育てエコホーム支援事業」です。<strong>39歳以下の若年夫婦</strong>または<strong>18歳未満の子どもがいる家庭</strong>が省エネ住宅を建てたり購入したりする場合に補助が受けられます。</p>
+
+<div class="wt-card green">
+  <div class="wt-card-label">✅ 子育てエコホーム支援事業の概要</div>
+  <div class="wt-card-headline">新築：長期優良住宅で<strong style="color:#166534;">最大100万円</strong><br>リフォーム：省エネ改修で<strong style="color:#166534;">最大60万円</strong></div>
+</div>
+
+<div class="calc-box">
+  <h3>💡 W取り計算（住宅ローン控除 + 子育てエコホーム支援の場合）</h3>
+  <div class="calc-row">
+    <span class="calc-label">子育てエコホーム支援（新築・長期優良）</span>
+    <span class="calc-val"><strong>+100万円</strong></span>
+  </div>
+  <div class="calc-row">
+    <span class="calc-label">住宅ローン控除1年目（4,000万円借入・概算）</span>
+    <span class="calc-val"><strong>+約28万円</strong></span>
+  </div>
+  <div class="calc-row">
+    <span class="calc-label">住宅ローン控除13年間累計（概算）</span>
+    <span class="calc-val"><strong>+約330万円</strong></span>
+  </div>
+  <div class="calc-total-row">
+    <span class="calc-total-label">初年度だけで合計</span>
+    <span class="calc-total-val"><strong>約128万円</strong> の恩恵</span>
+  </div>
+</div>
+
+<p>子育てエコホーム支援事業は<strong>国土交通省が管轄し、登録業者（ハウスメーカー・工務店）を通じて申請</strong>します。「使いたい」と思ったら住宅会社に「子育てエコホームの登録業者ですか？」と必ず確認してください。未登録業者では申請できません。</p>
+
+<!-- h2③ -->
+<h2 id="table">📋 住宅購入時に使える補助金一覧｜国・都道府県・市区の早見表</h2>
+
+<p>住宅購入時に使える補助金は国だけではありません。都道府県・市区町村レベルでも<strong>独自の補助金</strong>が設けられており、うまく組み合わせると国の補助に上乗せして受け取れます。</p>
+
+<table class="subsidy-table">
+  <thead>
+    <tr>
+      <th>補助金名</th>
+      <th>主管</th>
+      <th>最大額</th>
+      <th>主な対象</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>子育てエコホーム支援事業</td>
+      <td><span class="cat-badge cat-kuni">国</span></td>
+      <td class="amount-cell"><strong>100万円</strong></td>
+      <td>39歳以下夫婦・子あり世帯の省エネ新築</td>
+    </tr>
+    <tr>
+      <td>ZEH補助金（ゼロエネルギーハウス）</td>
+      <td><span class="cat-badge cat-kuni">国</span></td>
+      <td class="amount-cell"><strong>55〜140万円</strong></td>
+      <td>ZEH基準の新築住宅</td>
+    </tr>
+    <tr>
+      <td>長期優良住宅化リフォーム推進事業</td>
+      <td><span class="cat-badge cat-kuni">国</span></td>
+      <td class="amount-cell"><strong>250万円</strong></td>
+      <td>既存住宅を長期優良住宅に改修</td>
+    </tr>
+    <tr>
+      <td>先進的窓リノベ2024</td>
+      <td><span class="cat-badge cat-kuni">国</span></td>
+      <td class="amount-cell"><strong>200万円</strong></td>
+      <td>窓断熱改修（購入後リフォーム時に利用）</td>
+    </tr>
+    <tr>
+      <td>都道府県の移住促進補助金</td>
+      <td><span class="cat-badge cat-pref">都道府県</span></td>
+      <td class="amount-cell"><strong>最大100万円</strong></td>
+      <td>地方移住・空き家購入者（県による）</td>
+    </tr>
+    <tr>
+      <td>市区独自の住宅取得補助金</td>
+      <td><span class="cat-badge cat-city">市区町村</span></td>
+      <td class="amount-cell"><strong>最大50万円</strong></td>
+      <td>定住促進・若者・子育て世帯（市による）</td>
+    </tr>
+    <tr>
+      <td>すまい給付金（2021年終了・参考）</td>
+      <td><span class="cat-badge cat-kuni">国</span></td>
+      <td class="amount-cell">終了済</td>
+      <td>2021年末入居分まで。後継が各種補助金</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>市区町村独自の住宅取得補助は、特に<strong>人口減少に悩む地方都市が手厚い</strong>傾向があります。「〇〇市 住宅取得 補助金」で検索するか、移住を考えている自治体の役所に直接問い合わせてみましょう。</p>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<!-- h2④ -->
+<h2 id="wsim">🧮 W取りシミュレーション｜4,000万円ローン購入の場合の13年間の節税効果</h2>
+
+<p>実際に4,000万円の住宅ローンを組んで省エネ住宅を購入した場合、住宅ローン控除と子育てエコホーム支援を組み合わせるとどうなるか、試算してみましょう。</p>
+
+<div class="wsim">
+  <h3>🧮 4,000万円ローン×省エネ新築のW取りシミュレーション</h3>
+  <div class="wsim-premise">
+    <div class="wsim-premise-title">前提条件</div>
+    <div class="wsim-premise-val">借入：4,000万円 / 金利：1.5% / 35年返済 / 省エネ基準適合住宅 / 39歳以下の子育て世帯</div>
+  </div>
+  <div class="wsim-row r1">
+    <div class="wsim-icon">🏦</div>
+    <div class="wsim-info">
+      <div class="wsim-name">① 住宅ローン控除（13年間累計）</div>
+      <div class="wsim-note">年末残高×0.7%×13年。残高の減少を考慮した試算値</div>
+    </div>
+    <div class="wsim-val"><strong>約320万円</strong></div>
+  </div>
+  <div class="wsim-row r2">
+    <div class="wsim-icon">🏠</div>
+    <div class="wsim-info">
+      <div class="wsim-name">② 子育てエコホーム支援事業（一時金）</div>
+      <div class="wsim-note">省エネ基準適合住宅・子育て世帯の場合</div>
+    </div>
+    <div class="wsim-val"><strong>80万円</strong></div>
+  </div>
+  <div class="wsim-row r3">
+    <div class="wsim-icon">🏙</div>
+    <div class="wsim-info">
+      <div class="wsim-name">③ 市区独自の住宅取得補助（例）</div>
+      <div class="wsim-note">自治体によって異なる。若者・子育て世帯向け補助の一例</div>
+    </div>
+    <div class="wsim-val"><strong>最大50万円</strong></div>
+  </div>
+  <div class="wsim-divider"></div>
+  <div class="wsim-total">
+    <div class="wsim-total-label">13年間の総節税・補助合計（最大）</div>
+    <div class="wsim-total-val"><strong>約450万円</strong></div>
+  </div>
+  <div class="wsim-sub">※あくまで試算です。実際の控除額は年収・所得税額・ローン残高によって変わります。税理士・FPへのご相談を推奨します。</div>
+</div>
+
+<p>4,000万円のローンで家を買っても、うまく制度を活用すれば<strong>13年間で400万円以上の還付・給付</strong>が受けられる計算になります。これは毎月の家計にすると月<strong>約2.5万円分</strong>の節約効果です。</p>
+
+<div class="wt-card blue">
+  <div class="wt-card-label">📌 住宅ローン控除の手続きはどうやる？</div>
+  <div class="wt-body">
+    <strong>初年度：確定申告（税務署またはe-Tax）が必要。</strong><br>
+    2年目以降は会社員であれば年末調整で自動的に控除されます。初年度に申告を忘れると1年分丸ごと損をするので、購入翌年の2〜3月の確定申告期間を逃さないようにしましょう。
+  </div>
+</div>
+
+<!-- h2⑤ -->
+<h2 id="points">⚠️ 住宅購入の補助金で失敗しない3つのポイント｜入居時期・申請タイミング・対象製品</h2>
+
+<p>住宅購入の補助金は「知っているだけ」では不十分。<strong>タイミングと手順を間違えると全額自己負担</strong>になります。絶対に押さえておくべき3つのポイントを確認しましょう。</p>
+
+<div class="point-list">
+  <div class="point-item">
+    <div class="point-num">1</div>
+    <div class="point-body">
+      <h4>入居時期：補助金には「入居期限」がある</h4>
+      <p>子育てエコホーム支援事業など多くの補助金は<strong>「〇年〇月末日までに入居すること」</strong>という期限があります。予算が無くなり次第締め切りになる補助金もあるため、「まだ余裕がある」と思って後回しにすると、締め切り後に入居して補助金対象外になることがあります。着工前に必ず受付状況を確認してください。</p>
+    </div>
+  </div>
+  <div class="point-item">
+    <div class="point-num">2</div>
+    <div class="point-body">
+      <h4>申請タイミング：工事・契約前の申請が多い</h4>
+      <p>補助金の多くは<strong>「契約または工事着工前」に申請・予約</strong>することが条件です。「建て終わってから申請しよう」では遅い。住宅会社と契約する段階で「この補助金も使いますよね？」と確認するのが正しい順序です。特に子育てエコホーム支援は登録業者が代行申請するため、業者選びの段階から意識しておくことが重要です。</p>
+    </div>
+  </div>
+  <div class="point-item">
+    <div class="point-num">3</div>
+    <div class="point-body">
+      <h4>対象製品：補助金ごとに「対象リスト」がある</h4>
+      <p>住宅ローン控除の適用には省エネ基準を満たす住宅であることが必要で、<strong>どんな家でも自動的に対象になるわけではありません。</strong>ZEH補助金なら「ZEH基準」の仕様確認が必須です。補助金を想定したプランで家を設計してもらい、<strong>対象要件を満たしているか住宅会社に書面で確認</strong>しておくと安心です。</p>
+    </div>
+  </div>
+</div>
+
+<div class="wt-card warn">
+  <div class="wt-card-label">🚨 よくある失敗パターン</div>
+  <div class="wt-body">
+    <ul style="padding-left:18px;margin:0;line-height:2.2;">
+      <li>工事完了後に子育てエコホーム支援の存在を知って手遅れに</li>
+      <li>登録業者でない工務店を選んでしまって補助金対象外に</li>
+      <li>省エネ基準非適合の住宅を建てて住宅ローン控除の上限が下がる</li>
+      <li>確定申告を1年目に忘れて控除を1年分丸ごと損</li>
+    </ul>
+  </div>
+</div>
+
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-dot">今</div>
+    <div class="tl-content">
+      <span class="tl-tag blue">まず動く</span>
+      <h4>補助金の対象要件・受付状況を確認</h4>
+      <p>「もらえるお金ナビ」で地域の補助金を検索。国の補助金は予算枠の確認も忘れずに。</p>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot">契</div>
+    <div class="tl-content">
+      <span class="tl-tag blue">契約前</span>
+      <h4>登録業者か確認・補助金申請を業者に依頼</h4>
+      <p>「子育てエコホームに対応していますか？」「ZEH仕様にできますか？」を確認してから契約。</p>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot">着</div>
+    <div class="tl-content">
+      <span class="tl-tag red">着工前</span>
+      <h4>補助金の事前申請完了を確認してから着工</h4>
+      <p>補助金の交付決定通知が来てから着工するのが理想。業者に確認を。</p>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot">入</div>
+    <div class="tl-content">
+      <span class="tl-tag blue">入居翌年</span>
+      <h4>確定申告で住宅ローン控除の初年度申告</h4>
+      <p>2〜3月の確定申告期間に税務署またはe-Taxで申告。翌年からは年末調整で自動適用。</p>
+    </div>
+  </div>
+</div>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<!-- 関連記事 -->
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="093-reform-all.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">🔨</div><div class="related-body">リフォーム補助金まとめ2026年版</div></a><a href="003-mado-renovate.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">🪟</div><div class="related-body">窓リノベ補助金で最大200万円</div></a><a href="009-nenkin-midori.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">🏦</div><div class="related-body">年金生活者支援給付金の落とし穴</div></a><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え大全</div></a></div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

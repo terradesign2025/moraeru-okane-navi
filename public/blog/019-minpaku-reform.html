@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>空き家を民泊にして副業収入！自治体の『空き家改修補助』で初期費用を大幅カット｜もらえるお金ナビ</title>
+<meta name="description" content="空き家を購入・改修して民泊やシェアハウスにすれば副業収入が得られる！空き家改修補助金（最大100〜200万円）と民泊収入の組み合わせで利回り計算。全国の使える制度まとめ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+/* ビジネスモデル計算 */
+.business-model{background:linear-gradient(135deg,#1e3a5f,#1e40af);border-radius:16px;padding:24px;color:#fff;margin:24px 0;}
+.business-model h3{font-size:16px;font-weight:900;margin-bottom:16px;color:#fff;}
+.bm-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.15);}
+.bm-row:last-child{border-bottom:none;padding-top:12px;}
+.bm-label{font-size:13px;color:rgba(255,255,255,.9);}
+.bm-val{font-size:15px;font-weight:700;color:#93c5fd;}
+.bm-val.red{color:#fca5a5;}
+.bm-val.green{color:#6ee7b7;}
+.bm-total{font-size:22px;font-weight:900;color:#fde047;}
+.bm-note{font-size:11px;color:rgba(255,255,255,.6);margin-top:4px;}
+
+/* 収入シミュレーション */
+.income-table{width:100%;border-collapse:collapse;font-size:13px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.income-table th{background:linear-gradient(135deg,#1e40af,#1d4ed8);color:#fff;padding:10px 14px;text-align:left;}
+.income-table td{padding:10px 14px;border-bottom:1px solid #e5e7eb;}
+.income-table tr:nth-child(even) td{background:#eff6ff;}
+.income-table .profit{font-weight:900;color:#1d4ed8;font-size:14px;}
+.income-table .highlight-row td{background:linear-gradient(135deg,#dbeafe,#bfdbfe) !important;font-weight:700;}
+
+/* 手順カード */
+.step-list{list-style:none;padding:0;margin:20px 0;}
+.step-item{display:flex;gap:16px;padding:16px;background:#eff6ff;border-radius:12px;margin-bottom:10px;border-left:4px solid #2563eb;}
+.step-num{width:32px;height:32px;background:linear-gradient(135deg,#2563eb,#1d4ed8);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;flex-shrink:0;}
+.step-content{flex:1;}
+.step-title{font-weight:700;color:#111827;font-size:14px;margin-bottom:4px;}
+.step-desc{font-size:13px;color:#4b5563;line-height:1.7;}
+
+/* 自治体カード */
+.city-card{border-radius:14px;padding:18px;margin-bottom:14px;border:2px solid #dbeafe;background:linear-gradient(135deg,#f0f9ff,#eff6ff);}
+.city-header{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.city-emoji{font-size:24px;}
+.city-info{flex:1;}
+.city-name{font-size:15px;font-weight:900;color:#1e40af;}
+.city-pref{font-size:11px;color:#3b82f6;}
+.city-amount{font-size:18px;font-weight:900;color:#1d4ed8;}
+.city-body{font-size:13px;color:#374151;line-height:1.8;}
+.city-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.city-tag{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:#dbeafe;color:#1d4ed8;border:1px solid #bfdbfe;}
+
+/* 注意事項カード */
+.warn-card{border-radius:14px;padding:18px;margin-bottom:12px;border-left:4px solid #f59e0b;background:linear-gradient(135deg,#fffbeb,#fef3c7);}
+.warn-card-title{font-size:14px;font-weight:900;color:#92400e;margin-bottom:8px;}
+.warn-card-body{font-size:13px;color:#78350f;line-height:1.8;}
+
+/* サマリー */
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0;}
+.summary-card{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border:1px solid #93c5fd;border-radius:12px;padding:16px;text-align:center;}
+.summary-num{font-size:20px;font-weight:900;color:#1d4ed8;}
+.summary-label{font-size:11px;color:#1e3a8a;margin-top:4px;}
+
+@media(max-width:600px){
+  .income-table{font-size:11px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">🏠 空き家活用・副業</span>
+    <h1>空き家を民泊にして副業収入！<br>自治体の『空き家改修補助』で<br>初期費用を大幅カット</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏠 空き家活用</span>
+      <span>⏱ 読了約6分</span>
+      <span>💼 副業・投資活用</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p><strong>空き家を安く買って、補助金で改修して、民泊にして毎月お金が入ってくる。</strong>しかも改修費用の最大200万円を自治体が補助してくれる。フルで活用すれば初期費用の大半を回収できる可能性がある、これが「空き家活用ビジネス」の全貌だ。</p>
+
+<p>全国に約900万戸あると言われる空き家。自治体はこれを解消するために補助金を出しているわけだが、<em>うまく使えばあなたの副業収入にもなる</em>というのが今回の話です。</p>
+
+<div class="info-box"><p>📌 空き家改修補助金は自治体によって対象・金額・条件が大きく異なります。民泊開業には「住宅宿泊事業法」に基づく届出が必要です。本記事は情報提供が目的であり、投資・事業の成否を保証するものではありません。</p></div>
+
+<div class="summary-grid">
+  <div class="summary-card"><div class="summary-num">最大200万円</div><div class="summary-label">空き家改修補助金の上限（自治体別）</div></div>
+  <div class="summary-card"><div class="summary-num">月10〜30万</div><div class="summary-label">民泊運営の収入目安</div></div>
+  <div class="summary-card"><div class="summary-num">最短3〜5年</div><div class="summary-label">投資回収期間の目安</div></div>
+  <div class="summary-card"><div class="summary-num">約900万戸</div><div class="summary-label">全国の空き家数（推計）</div></div>
+</div>
+
+<h2>① 空き家改修補助金の概要（国・自治体で最大200万円）</h2>
+
+<p>空き家改修補助金には大きく2つのルートがあります。</p>
+
+<ul>
+  <li><strong>国土交通省の空き家対策総合支援事業：</strong>市区町村が実施する空き家改修事業への国の補助。自治体を通じて申請し、改修費の<strong>1/2〜2/3・上限100〜200万円</strong>程度が補助される</li>
+  <li><strong>自治体独自の補助金：</strong>移住者向け・観光振興向けなど目的を絞った補助金。民泊・シェアハウスへの転用を明示している自治体も増加</li>
+</ul>
+
+<p>2つを組み合わせると最大で<strong>200万円以上</strong>の補助を受けられるケースもあります。ポイントは<em>「民泊・シェアハウス等への活用」を目的として申請できるかどうか</em>を事前に確認すること。</p>
+
+<h2>② 民泊収入×補助金のビジネスモデル（実数シミュレーション）</h2>
+
+<div class="business-model">
+  <h3>📊 ビジネスモデル試算：古民家を民泊に改修したケース</h3>
+  <div class="bm-row"><span class="bm-label">空き家物件購入費（地方・古民家）</span><span class="bm-val red">▼500万円</span></div>
+  <div class="bm-row"><span class="bm-label">改修工事費（水回り・内装・消防設備）</span><span class="bm-val red">▼300万円</span></div>
+  <div class="bm-row"><span class="bm-label">空き家改修補助金（自治体）</span><span class="bm-val green">▲200万円</span></div>
+  <div class="bm-row"><span class="bm-label">実質初期費用</span><span class="bm-total">600万円</span></div>
+  <div class="bm-note">※補助金適用後の実負担額。月収支は次の表を参照</div>
+</div>
+
+<table class="income-table">
+  <thead>
+    <tr>
+      <th>稼働率</th>
+      <th>月間宿泊数（目安）</th>
+      <th>1泊単価</th>
+      <th>月収入</th>
+      <th>投資回収（目安）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>30%（低調期）</td>
+      <td>9泊/月</td>
+      <td>12,000円</td>
+      <td class="profit">約10万円</td>
+      <td>5〜7年</td>
+    </tr>
+    <tr>
+      <td>50%（標準）</td>
+      <td>15泊/月</td>
+      <td>15,000円</td>
+      <td class="profit">約22万円</td>
+      <td>3〜4年</td>
+    </tr>
+    <tr class="highlight-row">
+      <td>70%（好調期）</td>
+      <td>21泊/月</td>
+      <td>18,000円</td>
+      <td class="profit">約38万円</td>
+      <td>2〜3年</td>
+    </tr>
+    <tr>
+      <td>繁忙期ピーク</td>
+      <td>25泊/月</td>
+      <td>25,000円</td>
+      <td class="profit">約60万円</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>稼働率50%・単価15,000円でも月収<strong>22万円</strong>。年間264万円の収入になる計算で、初期費用600万円の回収は<strong>3〜4年</strong>で可能という試算です。観光地に近い立地ならさらに上回ります。</p>
+
+<h2>③ 民泊開業に必要な許可と手順（住宅宿泊事業法ベース）</h2>
+
+<ul class="step-list">
+  <li class="step-item">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <div class="step-title">物件の立地・用途地域を確認する</div>
+      <div class="step-desc">民泊は用途地域によって営業できる日数（年間180日以内）や制限が異なります。市区町村の窓口や都市計画図で確認。「旅館業法（簡易宿所）」として届出するかも選択肢のひとつ。</div>
+    </div>
+  </li>
+  <li class="step-item">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <div class="step-title">補助金の申請（改修工事着工前に必ず申請）</div>
+      <div class="step-desc">補助金は原則「着工前」に申請が必要。工事を始めてから申請しても受け付けてもらえないケースがほとんど。先に役所窓口に相談してから動くことが大前提。</div>
+    </div>
+  </li>
+  <li class="step-item">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <div class="step-title">消防設備・安全基準を整備する</div>
+      <div class="step-desc">民泊開業には自動火災報知器・誘導灯・消火器の設置が義務。消防署への事前相談が必要で、設備費用は補助対象になる場合あり。</div>
+    </div>
+  </li>
+  <li class="step-item">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <div class="step-title">都道府県知事への届出（住宅宿泊事業法）</div>
+      <div class="step-desc">住宅宿泊事業法に基づく届出は都道府県のオンラインシステムで可能。届出番号の取得後にOTA（Airbnbなど）への掲載ができます。</div>
+    </div>
+  </li>
+  <li class="step-item">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <div class="step-title">OTA登録・価格設定・清掃体制を整える</div>
+      <div class="step-desc">Airbnb・じゃらん・楽天トラベル等に登録。清掃は業者に委託するか、近隣の協力者と組む。民泊管理代行会社を利用する方法も。</div>
+    </div>
+  </li>
+</ul>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2>④ 補助金がある「民泊向き空き家」の自治体5選</h2>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">⛩</div>
+    <div class="city-info">
+      <div class="city-name">京都市（山科区・右京区の周辺）</div>
+      <div class="city-pref">京都府</div>
+    </div>
+    <div class="city-amount">最大200万円</div>
+  </div>
+  <div class="city-body">観光客が絶えない京都では、空き家の活用・民泊化に補助金が出るケースがある。インバウンド需要も高く稼働率が上がりやすい。ただし条例による規制が厳しいエリアも存在するため、立地確認が必須。</div>
+  <div class="city-tags"><span class="city-tag">🏯 観光需要◎</span><span class="city-tag">🌸 インバウンド多数</span><span class="city-tag">⚠ 条例確認必須</span></div>
+</div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🏔</div>
+    <div class="city-info">
+      <div class="city-name">長野県 白馬村・大町市</div>
+      <div class="city-pref">長野県</div>
+    </div>
+    <div class="city-amount">最大150万円</div>
+  </div>
+  <div class="city-body">スキーリゾートとして外国人観光客に人気が高く、民泊の稼働率は冬季を中心に高い。空き家改修補助の申請実績も多く、移住支援金と組み合わせることが可能。</div>
+  <div class="city-tags"><span class="city-tag">⛷ スキーリゾート</span><span class="city-tag">🌏 訪日客多数</span></div>
+</div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🌊</div>
+    <div class="city-info">
+      <div class="city-name">鎌倉市・逗子市</div>
+      <div class="city-pref">神奈川県</div>
+    </div>
+    <div class="city-amount">最大100万円</div>
+  </div>
+  <div class="city-body">首都圏近郊の人気観光地。年間を通じて観光需要があり、週末稼働だけでも月収10〜20万円を見込めるエリア。空き家改修補助の対象になるかどうかは物件ごとに要確認。</div>
+  <div class="city-tags"><span class="city-tag">🏖 海×古都</span><span class="city-tag">🚃 都心からアクセス良好</span></div>
+</div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🏝</div>
+    <div class="city-info">
+      <div class="city-name">石垣市・竹富町</div>
+      <div class="city-pref">沖縄県</div>
+    </div>
+    <div class="city-amount">最大200万円+</div>
+  </div>
+  <div class="city-body">国内最高水準の観光地として年間を通じてインバウンド・国内観光客が来訪。空き家改修補助に加えて移住支援金も活用可能。離島ならではのプレミアム感で高単価設定ができる。</div>
+  <div class="city-tags"><span class="city-tag">🌺 離島プレミアム</span><span class="city-tag">✈ LCC路線あり</span></div>
+</div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🎌</div>
+    <div class="city-info">
+      <div class="city-name">飛騨市・高山市</div>
+      <div class="city-pref">岐阜県</div>
+    </div>
+    <div class="city-amount">最大150万円</div>
+  </div>
+  <div class="city-body">「日本のアルプス」として外国人に大人気の高山・飛騨エリア。古民家の民泊は文化体験型として高単価で受け入れられやすく、空き家改修補助も手厚い。</div>
+  <div class="city-tags"><span class="city-tag">🏔 古民家文化</span><span class="city-tag">🌏 インバウンド人気</span></div>
+</div>
+
+<h2>⑤ 注意点：近隣・消防・保険は必ず対策を</h2>
+
+<div class="warn-card">
+  <div class="warn-card-title">⚠️ 近隣住民への配慮</div>
+  <div class="warn-card-body">民泊トラブルの多くは騒音・ゴミ出しなど近隣との摩擦。開業前に挨拶回りをし、深夜のルール（22時以降は静粛）を徹底するハウスルールの設定が必須。住宅地での開業は特に慎重に。</div>
+</div>
+
+<div class="warn-card">
+  <div class="warn-card-title">⚠️ 消防設備の設置は開業前に完了</div>
+  <div class="warn-card-body">自動火災報知器・消火器・誘導灯は法的義務。消防署の事前相談なしに開業すると営業停止になるリスクがあります。費用は20〜50万円程度。補助金の対象になる場合あり。</div>
+</div>
+
+<div class="warn-card">
+  <div class="warn-card-title">⚠️ 民泊保険への加入が必須</div>
+  <div class="warn-card-body">宿泊客の怪我・盗難・器物破損などのリスクに備えた民泊向け保険に加入すること。Airbnbには「ホスト保証プログラム」があるが、それだけでは不十分なケースもある。</div>
+</div>
+
+<div class="info-box"><p>🏠 <strong>空き家改修補助金は「もらえるお金ナビ」で自治体別に検索できます！</strong>移住候補地の補助金を一覧で比較して、民泊ビジネスの最適な立地選びにお役立てください。</p></div>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid">
+<a href="006-ijyu-ranking.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">✈️</div><div class="related-body">全国移住支援金ランキングTOP20</div></a>
+<a href="041-kekkon-combo.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">💒</div><div class="related-body">結婚×移住×引越しの補助金トリプルコンボ</div></a>
+<a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え！もらえるお金大全</div></a>
+<a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？驚き補助金まとめ</div></a>
+</div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に必ず各自治体の公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

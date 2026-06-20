@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知らないと損！確定申告で取り戻せるお金まとめ【医療費控除・住宅ローン・ふるさと納税】｜もらえるお金ナビ</title>
+<meta name="description" content="会社員でも確定申告で数万円〜数十万円が戻ってくる！医療費控除・住宅ローン控除・ふるさと納税・雑損控除など「取り戻せるお金」を網羅解説。">
+<meta name="keywords" content="確定申告 会社員,医療費控除,住宅ローン控除,ふるさと納税,e-Tax,取り戻せるお金">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) --><!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.tax-hero{background:linear-gradient(135deg,#1e3a5f,#1e40af);border-radius:20px;padding:28px;margin:28px 0;text-align:center;}
+.tax-hero-label{font-size:12px;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:8px;}
+.tax-hero-amount{font-size:clamp(44px,10vw,68px);font-weight:900;color:#60a5fa;line-height:1;}
+.tax-hero-unit{font-size:18px;font-weight:900;color:#fff;margin-top:4px;}
+.tax-hero-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.7;}
+
+.case-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:20px 0;}
+.case-card{border-radius:14px;padding:18px;border:2px solid;}
+.case-card.c1{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;}
+.case-card.c2{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#86efac;}
+.case-card.c3{background:linear-gradient(135deg,#fdf4ff,#fae8ff);border-color:#d8b4fe;}
+.case-card.c4{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:#fcd34d;}
+.case-card.c5{background:linear-gradient(135deg,#fff1f2,#ffe4e6);border-color:#fca5a5;}
+.case-card-num{font-size:28px;font-weight:900;margin-bottom:6px;}
+.case-card-title{font-size:14px;font-weight:900;color:#111827;margin-bottom:6px;}
+.case-card-desc{font-size:12px;color:#4b5563;line-height:1.6;}
+
+.sim-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}
+.sim-table th{background:#1e40af;color:#fff;padding:10px 14px;text-align:center;font-weight:700;}
+.sim-table td{padding:10px 14px;text-align:center;border-bottom:1px solid #e5e7eb;}
+.sim-table tr:nth-child(even) td{background:#f0f9ff;}
+.sim-table td:first-child{font-weight:700;color:#1e40af;text-align:left;}
+.sim-table td strong{color:#059669;font-size:15px;}
+
+.furusato-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;}
+.furusato-table th{background:#059669;color:#fff;padding:10px 14px;font-weight:700;}
+.furusato-table td{padding:10px 14px;border-bottom:1px solid #e5e7eb;}
+.furusato-table tr:nth-child(even) td{background:#f0fdf4;}
+.furusato-table td strong{color:#059669;}
+
+.etax-steps{margin:20px 0;}
+.etax-step{display:flex;gap:16px;position:relative;margin-bottom:0;}
+.etax-step:not(:last-child)::after{content:'';position:absolute;left:19px;top:40px;bottom:0;width:2px;background:#93c5fd;}
+.etax-step-num{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.etax-step-body{padding-bottom:28px;}
+.etax-step-title{font-weight:900;font-size:15px;color:#111827;margin-bottom:4px;}
+.etax-step-desc{font-size:13px;color:#4b5563;line-height:1.7;}
+.etax-step-desc strong{color:#1d4ed8;}
+
+.warning-box{background:#fef9c3;border:2px solid #fde047;border-radius:14px;padding:18px 20px;margin:20px 0;}
+.warning-box-title{font-weight:900;font-size:15px;color:#713f12;margin-bottom:8px;}
+.warning-box p{font-size:13px;color:#713f12;line-height:1.7;margin:0;}
+
+.highlight-box{background:linear-gradient(135deg,#1e40af,#1e3a5f);border-radius:16px;padding:22px;margin:20px 0;text-align:center;}
+.highlight-box-label{font-size:12px;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:6px;}
+.highlight-box-value{font-size:clamp(28px,6vw,42px);font-weight:900;color:#fbbf24;line-height:1;}
+.highlight-box-sub{font-size:13px;color:rgba(255,255,255,.8);margin-top:8px;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner"><a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a><a href="/" class="nav-cta">▶ 無料で補助金を検索</a></div></nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">💳 お金管理・節税</span>
+    <h1>知らないと損！確定申告で<br>取り戻せるお金まとめ<br>【医療費控除・住宅ローン・ふるさと納税】</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 節税・確定申告</span>
+      <span>⏱ 読了約8分</span>
+      <span>💡 会社員の方必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「確定申告って、フリーランスや個人事業主がやるものでしょ？」</p>
+<p>そう思っているあなた、毎年数万円〜数十万円を捨てているかもしれません。</p>
+
+<div class="tax-hero">
+  <div class="tax-hero-label">確定申告で取り戻せる税金の目安</div>
+  <div class="tax-hero-amount">数万〜数十万円</div>
+  <div class="tax-hero-unit">が毎年還ってくる可能性あり</div>
+  <div class="tax-hero-sub">医療費・住宅ローン・ふるさと納税・災害損失…<br>申告しないと、払いすぎた税金はそのまま国のもの</div>
+</div>
+
+<p>会社員は年末調整で税金の精算が完了しているように見えますが、それは「基本的なもの」だけです。医療費が多かった年、マイホームを購入した年、災害にあった年——こういうタイミングで<strong>確定申告をするだけで数万円単位で税金が戻ってくる</strong>のです。</p>
+<p>今回は「会社員が確定申告で取り戻せるお金」を徹底的に解説します！</p>
+
+<h2>① 会社員でも確定申告が必要な5つのケース</h2>
+
+<p>以下のどれかに当てはまるなら、確定申告をするだけで税金が返ってきます。</p>
+
+<div class="case-cards">
+  <div class="case-card c1">
+    <div class="case-card-num">🏥</div>
+    <div class="case-card-title">医療費が年10万円超</div>
+    <div class="case-card-desc">本人・家族の医療費合計が10万円を超えた場合、超えた分の一部が戻ってくる</div>
+  </div>
+  <div class="case-card c2">
+    <div class="case-card-num">🏠</div>
+    <div class="case-card-title">住宅を購入・リフォーム</div>
+    <div class="case-card-desc">初年度は年末調整できないため確定申告必須。年末ローン残高の0.7%が最長13年間戻る</div>
+  </div>
+  <div class="case-card c3">
+    <div class="case-card-num">💼</div>
+    <div class="case-card-title">副業収入が20万円超</div>
+    <div class="case-card-desc">副業の所得が年間20万円を超えたら申告義務あり。経費を計上すれば節税にもなる</div>
+  </div>
+  <div class="case-card c4">
+    <div class="case-card-num">🎁</div>
+    <div class="case-card-title">ふるさと納税が6自治体以上</div>
+    <div class="case-card-desc">ワンストップ特例は5自治体まで。6カ所以上に寄付したら確定申告で処理が必要</div>
+  </div>
+  <div class="case-card c5">
+    <div class="case-card-num">🌪</div>
+    <div class="case-card-title">災害・盗難の損失</div>
+    <div class="case-card-desc">台風・火災・盗難などで財産が損失した場合、「雑損控除」で税金が大幅に減らせる</div>
+  </div>
+</div>
+
+<p>「どれも今年は関係ないかな」という年でも、医療費の積み上げや災害損失は突然やってきます。毎年「自分は対象かどうか」を5秒チェックする習慣をつけるだけで、取り戻せるお金が増えていきます。</p>
+
+<h2>② 医療費控除でいくら戻る？計算式と実例</h2>
+
+<p>「医療費が年10万円を超えたとき」に使えるのが医療費控除です。控除額は<strong>「医療費合計 − 10万円（または所得の5%）」</strong>で計算されます。</p>
+<p>ポイントは「還付額＝控除額 × 所得税率」という点。年収が高いほど、戻ってくる金額が大きくなります。</p>
+
+<table class="sim-table">
+  <thead>
+    <tr>
+      <th>年収</th>
+      <th>所得税率目安</th>
+      <th>医療費合計15万円の場合<br>（控除額5万円）</th>
+      <th>医療費合計20万円の場合<br>（控除額10万円）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>300万円</td>
+      <td>10%</td>
+      <td><strong>約5,000円</strong></td>
+      <td><strong>約10,000円</strong></td>
+    </tr>
+    <tr>
+      <td>400万円</td>
+      <td>20%</td>
+      <td><strong>約10,000円</strong></td>
+      <td><strong>約20,000円</strong></td>
+    </tr>
+    <tr>
+      <td>600万円</td>
+      <td>20%</td>
+      <td><strong>約10,000円</strong></td>
+      <td><strong>約20,000円</strong></td>
+    </tr>
+    <tr>
+      <td>800万円</td>
+      <td>23%</td>
+      <td><strong>約11,500円</strong></td>
+      <td><strong>約23,000円</strong></td>
+    </tr>
+    <tr>
+      <td>1,000万円超</td>
+      <td>33%</td>
+      <td><strong>約16,500円</strong></td>
+      <td><strong>約33,000円</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>さらに<strong>市販薬・通院交通費・介護サービス費</strong>も対象になります（セルフメディケーション税制を選択した場合は別計算）。家族全員分をまとめてレシートを保管しておくだけで、知らぬ間に10万円のボーダーを超えることも珍しくありません。</p>
+
+<h2>③ ふるさと納税の「ワンストップ特例」と確定申告の違い</h2>
+
+<p>ふるさと納税には2つの手続き方法があります。どちらが自分に合っているかを確認しておきましょう。</p>
+
+<table class="furusato-table">
+  <thead>
+    <tr>
+      <th>比較項目</th>
+      <th>ワンストップ特例</th>
+      <th>確定申告</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>申告先</td>
+      <td>各自治体に申請書を郵送</td>
+      <td>税務署 or e-Tax</td>
+    </tr>
+    <tr>
+      <td>対象者</td>
+      <td>確定申告が不要な会社員</td>
+      <td>誰でも可</td>
+    </tr>
+    <tr>
+      <td>寄付先の数</td>
+      <td><strong>5自治体まで</strong></td>
+      <td>制限なし</td>
+    </tr>
+    <tr>
+      <td>締切</td>
+      <td>翌年1月10日必着</td>
+      <td>翌年3月15日</td>
+    </tr>
+    <tr>
+      <td>控除の反映先</td>
+      <td>住民税から全額控除</td>
+      <td>所得税＋住民税</td>
+    </tr>
+    <tr>
+      <td>手間</td>
+      <td>自治体ごとに申請書記入</td>
+      <td>寄付金受領証をまとめて提出</td>
+    </tr>
+    <tr>
+      <td>おすすめシーン</td>
+      <td>5自治体以内・副業なし</td>
+      <td><strong>6自治体以上・医療費控除も同時申請</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>医療費控除と同時にふるさと納税も申告する場合は、<strong>まとめて確定申告した方が手間がかかりません</strong>。ワンストップ特例の申請書を出していても、確定申告をすれば自動的に無効となり確定申告の方が優先されます。</p>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2>④ 住宅ローン控除で最長13年間・毎年数十万円が戻る</h2>
+
+<p>マイホームを購入した方に見逃せないのが<strong>住宅ローン控除（住宅借入金等特別控除）</strong>です。年末時点のローン残高の<strong>0.7%</strong>が最長13年間にわたって所得税から直接差し引かれます。</p>
+
+<div class="highlight-box">
+  <div class="highlight-box-label">住宅ローン残高4,000万円の場合の年間控除額</div>
+  <div class="highlight-box-value">最大 28万円 / 年</div>
+  <div class="highlight-box-sub">（4,000万円 × 0.7% = 28万円）<br>13年間フル活用すれば最大364万円の恩恵！</div>
+</div>
+
+<p>重要なのは<strong>初年度は必ず確定申告が必要</strong>という点。2年目以降は年末調整で処理できますが、1年目を申告し忘れると1年分を丸ごと損することになります。住宅購入後の初年度は必ず確定申告をしてください。</p>
+<p>なお、省エネ住宅・ZEH住宅・長期優良住宅などは控除限度額が上乗せされるケースもあります。建築業者か税務署に確認してみましょう。</p>
+
+<h2>⑤ スマホで5分！e-Taxでの申告手順</h2>
+
+<p>「確定申告が難しそう」という印象は、もう過去のもの。スマートフォンとマイナンバーカードがあれば、自宅で完結します。</p>
+
+<div class="etax-steps">
+  <div class="etax-step">
+    <div class="etax-step-num">1</div>
+    <div class="etax-step-body">
+      <div class="etax-step-title">国税庁「確定申告書等作成コーナー」にアクセス</div>
+      <div class="etax-step-desc">スマホブラウザまたは専用アプリから。<strong>マイナンバーカード＋スマートフォンのカード読み取り機能</strong>でログイン</div>
+    </div>
+  </div>
+  <div class="etax-step">
+    <div class="etax-step-num">2</div>
+    <div class="etax-step-body">
+      <div class="etax-step-title">源泉徴収票を読み込む</div>
+      <div class="etax-step-desc">会社から受け取った源泉徴収票のQRコードを読み込むか、手入力。<strong>年収・所得税額が自動計算</strong>されます</div>
+    </div>
+  </div>
+  <div class="etax-step">
+    <div class="etax-step-num">3</div>
+    <div class="etax-step-body">
+      <div class="etax-step-title">控除の種類を選択・金額を入力</div>
+      <div class="etax-step-desc">医療費・住宅ローン・ふるさと納税など、該当する控除にチェックを入れて金額を入力。<strong>自動で還付額が計算</strong>されます</div>
+    </div>
+  </div>
+  <div class="etax-step">
+    <div class="etax-step-num">4</div>
+    <div class="etax-step-body">
+      <div class="etax-step-title">内容を確認して送信</div>
+      <div class="etax-step-desc">画面の指示に従って確認・マイナンバーカードで電子署名し、<strong>e-Taxで送信完了</strong>（印刷・郵送不要）</div>
+    </div>
+  </div>
+  <div class="etax-step">
+    <div class="etax-step-num">5</div>
+    <div class="etax-step-body">
+      <div class="etax-step-title">還付金が指定口座に振り込まれる</div>
+      <div class="etax-step-desc">e-Tax提出なら<strong>約1〜3週間で振り込み</strong>（書面提出は1〜2ヶ月）。申告後はステータスを確認できます</div>
+    </div>
+  </div>
+</div>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2 style="margin-top:32px;">年収×医療費シミュレーション表</h2>
+
+<p>自分の年収と医療費を当てはめて、どのくらいが戻ってくるかを確認しましょう。</p>
+
+<table class="sim-table">
+  <thead>
+    <tr>
+      <th>年収</th>
+      <th>医療費12万円<br>（控除2万円）</th>
+      <th>医療費15万円<br>（控除5万円）</th>
+      <th>医療費20万円<br>（控除10万円）</th>
+      <th>医療費30万円<br>（控除20万円）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>300万円（税率10%）</td>
+      <td><strong>約2,000円</strong></td>
+      <td><strong>約5,000円</strong></td>
+      <td><strong>約10,000円</strong></td>
+      <td><strong>約20,000円</strong></td>
+    </tr>
+    <tr>
+      <td>400万円（税率20%）</td>
+      <td><strong>約4,000円</strong></td>
+      <td><strong>約10,000円</strong></td>
+      <td><strong>約20,000円</strong></td>
+      <td><strong>約40,000円</strong></td>
+    </tr>
+    <tr>
+      <td>600万円（税率20%）</td>
+      <td><strong>約4,000円</strong></td>
+      <td><strong>約10,000円</strong></td>
+      <td><strong>約20,000円</strong></td>
+      <td><strong>約40,000円</strong></td>
+    </tr>
+    <tr>
+      <td>800万円（税率23%）</td>
+      <td><strong>約4,600円</strong></td>
+      <td><strong>約11,500円</strong></td>
+      <td><strong>約23,000円</strong></td>
+      <td><strong>約46,000円</strong></td>
+    </tr>
+    <tr>
+      <td>1,000万円超（税率33%）</td>
+      <td><strong>約6,600円</strong></td>
+      <td><strong>約16,500円</strong></td>
+      <td><strong>約33,000円</strong></td>
+      <td><strong>約66,000円</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-size:12px;color:#6b7280;">※還付金は住民税の減額も加わると上記より多くなる場合があります。上記はあくまで所得税の還付額の目安です。</p>
+
+<div class="warning-box">
+  <div class="warning-box-title">⚠️ 申告期限と注意点</div>
+  <p>確定申告の期限は<strong>毎年3月15日</strong>（還付申告は5年間さかのぼれます）。申告書類は2月16日から受付開始。医療費の領収書・レシートは1年間保管してください。e-Taxなら24時間受付可能で、期限直前でも自宅から申請できます。</p>
+</div>
+
+</div>
+</div>
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid">
+<a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え！もらえるお金大全</div></a>
+<a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？驚き補助金まとめ</div></a>
+<a href="041-kekkon-combo.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">💒</div><div class="related-body">結婚×移住×引越しの補助金トリプルコンボ</div></a>
+<a href="081-reskilling-56man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">📚</div><div class="related-body">リスキリングで最大56万円もらいながらスキルアップ</div></a>
+</div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。制度は変更される場合があります。申請前に必ず各自治体の公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

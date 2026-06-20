@@ -1,0 +1,5 @@
+CSV総市区: 279
+ALL_CITIES登録済: 278
+未登録: 1
+
+千葉県 千葉市  (phase2_seirei_cities.csv)

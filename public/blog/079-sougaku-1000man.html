@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>この補助金を全部使ったら総額1,000万円超え!? 最強の『もらえるお金』大全【完全版】｜もらえるお金ナビ</title>
+<meta name="description" content="移住・子育て・結婚・リフォーム・リスキリング…全補助金を最大活用したら人生で1,000万円以上もらえる計算に！もらえるお金の全体マップを一挙公開。">
+<meta name="keywords" content="補助金 まとめ,もらえるお金 一覧,1000万円 補助金,ライフステージ 給付金,補助金 全種類,もらえるお金ナビ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.shock-hero{background:linear-gradient(135deg,#064e3b,#065f46);border-radius:20px;padding:28px;margin:28px 0;text-align:center;position:relative;overflow:hidden;}
+.shock-hero::before{content:'💰';font-size:120px;position:absolute;right:-20px;bottom:-20px;opacity:.1;}
+.shock-hero-label{font-size:13px;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:8px;}
+.shock-hero-amount{font-size:clamp(52px,12vw,80px);font-weight:900;color:#34d399;line-height:1;}
+.shock-hero-unit{font-size:20px;font-weight:900;color:#fff;margin-top:4px;}
+.shock-hero-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.8;}
+
+.lifestage-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.lifestage-table th{padding:11px 14px;text-align:left;font-weight:900;}
+.lifestage-table th.col-stage{background:#1e293b;color:#fff;width:120px;}
+.lifestage-table th.col-item{background:#1e293b;color:#fff;}
+.lifestage-table th.col-amount{background:#1e293b;color:#fff;width:110px;text-align:right;}
+.lifestage-table td{padding:10px 14px;border-bottom:1px solid #e5e7eb;vertical-align:top;}
+.lifestage-table td.amount-cell{text-align:right;font-weight:900;color:#059669;font-size:14px;}
+.lifestage-table .stage-label{display:inline-block;font-size:10px;font-weight:900;padding:3px 8px;border-radius:6px;color:#fff;margin-bottom:4px;}
+.ls-baby{background:#ec4899;}
+.ls-school{background:#3b82f6;}
+.ls-adult{background:#10b981;}
+.ls-work{background:#8b5cf6;}
+.ls-home{background:#f59e0b;}
+.ls-old{background:#6b7280;}
+.lifestage-table .stage-title{font-weight:700;font-size:13px;color:#111827;}
+.lifestage-table tr:nth-child(even) td{background:#f9fafb;}
+
+.calc-box{background:linear-gradient(135deg,#0f172a,#1e1b4b);border-radius:20px;padding:28px;margin:24px 0;}
+.calc-box-title{color:#f59e0b;font-size:16px;font-weight:900;margin-bottom:20px;text-align:center;}
+.calc-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.calc-row:last-of-type{border-bottom:none;}
+.calc-label{color:rgba(255,255,255,.8);font-size:14px;}
+.calc-label .emoji{margin-right:6px;}
+.calc-value{color:#34d399;font-weight:900;font-size:16px;}
+.calc-total-row{margin-top:16px;padding:16px 0 0;border-top:2px solid #10b981;display:flex;justify-content:space-between;align-items:center;}
+.calc-total-label{color:#fff;font-size:16px;font-weight:900;}
+.calc-total-value{font-size:clamp(28px,6vw,44px);font-weight:900;color:#fbbf24;line-height:1;}
+
+.roadmap{display:grid;gap:0;margin:20px 0;}
+.roadmap-item{display:flex;gap:0;position:relative;}
+.roadmap-age{width:80px;min-width:80px;text-align:center;padding:16px 8px;position:relative;}
+.roadmap-age::after{content:'';position:absolute;top:50%;left:50%;transform:translateX(-50%);width:2px;height:50%;background:#e5e7eb;}
+.roadmap-item:last-child .roadmap-age::after{display:none;}
+.roadmap-age-num{width:48px;height:48px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#fff;position:relative;z-index:1;}
+.age-0-20{background:linear-gradient(135deg,#ec4899,#be185d);}
+.age-20-30{background:linear-gradient(135deg,#3b82f6,#1d4ed8);}
+.age-30-40{background:linear-gradient(135deg,#10b981,#059669);}
+.age-40-50{background:linear-gradient(135deg,#8b5cf6,#6d28d9);}
+.age-50-60{background:linear-gradient(135deg,#f59e0b,#d97706);}
+.age-60plus{background:linear-gradient(135deg,#6b7280,#4b5563);}
+.roadmap-body{flex:1;background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin:8px 0 8px 12px;}
+.roadmap-body-title{font-weight:900;font-size:14px;color:#111827;margin-bottom:8px;}
+.roadmap-body-items{display:flex;flex-wrap:wrap;gap:6px;}
+.roadmap-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:8px;background:#ecfdf5;color:#065f46;border:1px solid #6ee7b7;}
+.roadmap-amount{font-size:12px;font-weight:700;color:#059669;margin-top:6px;}
+
+.fail-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin:16px 0;}
+.fail-card{background:#fff;border:2px solid #fca5a5;border-radius:14px;padding:18px;}
+.fail-card-icon{font-size:32px;margin-bottom:8px;}
+.fail-card-title{font-size:15px;font-weight:900;color:#b91c1c;margin-bottom:8px;}
+.fail-card-body{font-size:13px;color:#374151;line-height:1.8;}
+
+.how-to-use{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:16px 0;}
+.how-item{background:#fff;border:1px solid #d1fae5;border-radius:14px;padding:16px;text-align:center;}
+.how-item-emoji{font-size:32px;margin-bottom:8px;}
+.how-item-title{font-size:14px;font-weight:900;color:#111827;margin-bottom:6px;}
+.how-item-body{font-size:12px;color:#4b5563;line-height:1.7;}
+
+.toc-box{background:#f9fafb;border:1px solid #e5e7eb;border-radius:16px;padding:20px 24px;margin:24px 0;}
+.toc-box h3{font-size:13px;font-weight:900;color:#111827;margin-bottom:12px;}
+.toc-box ol{margin:0 0 0 20px;}
+.toc-box li{font-size:14px;color:#2563eb;font-weight:700;margin-bottom:8px;}
+.toc-box a{color:#2563eb;}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner"><a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a><a href="/" class="nav-cta">▶ 無料で補助金を検索</a></div></nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">💰 まとめ・大全</span>
+    <h1>この補助金を全部使ったら<br>総額1,000万円超え!?<br>最強の『もらえるお金』大全【完全版】</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 まとめ・大全</span>
+      <span>⏱ 読了約10分</span>
+      <span>💰 全世代必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「補助金や給付金を人生で全部使うといくらになるの？」</p>
+<p>そんな疑問を持ったことはありませんか？</p>
+<p>実は…試算してみると<strong>衝撃の結果</strong>になりました。誕生から老後まで、使える補助金をすべて積み上げると<strong>総額1,000万円を超える可能性がある</strong>のです！</p>
+
+<div class="shock-hero">
+  <div class="shock-hero-label">ライフステージ全補助金の最大積み上げ額（試算）</div>
+  <div class="shock-hero-amount">1,000万円+</div>
+  <div class="shock-hero-unit">人生で使える補助金の合計</div>
+  <div class="shock-hero-sub">これは「理論的な最大値」ですが、半分でも500万円。<br>知っているかどうかで、人生の豊かさが大きく変わります。</div>
+</div>
+
+<div class="toc-box">
+  <h3>📋 この記事の目次</h3>
+  <ol>
+    <li><a href="#lifestage">ライフステージ別「もらえるお金」一覧</a></li>
+    <li><a href="#simulation">「1,000万円計算」シミュレーション</a></li>
+    <li><a href="#roadmap">最短で多くもらうためのロードマップ</a></li>
+    <li><a href="#fail">補助金を使い損ねる人の3つの共通点</a></li>
+    <li><a href="#howtouse">もらえるお金ナビの活用法</a></li>
+  </ol>
+</div>
+
+<h2 id="lifestage">① ライフステージ別「もらえるお金」一覧</h2>
+
+<p>補助金・給付金は「一生のどこかで一度もらえる」ものではなく、<strong>人生のさまざまなタイミングに分散して存在しています。</strong> 以下の表で全体像を把握しましょう。</p>
+
+<div class="table-wrap">
+  <table class="lifestage-table">
+    <thead>
+      <tr>
+        <th class="col-stage">ステージ</th>
+        <th class="col-item">主な補助金・給付金</th>
+        <th class="col-amount">最大金額（目安）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <span class="stage-label ls-baby">誕生〜乳幼児</span>
+          <div class="stage-title">出産・乳幼児</div>
+        </td>
+        <td>
+          出産・子育て応援交付金（10万円）・出産育児一時金（50万円）・おむつ補助（自治体）・18歳まで医療費無料（自治体）・児童手当（月1万〜3万円）
+        </td>
+        <td class="amount-cell"><strong>累計200万円+</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="stage-label ls-school">小学〜高校</span>
+          <div class="stage-title">子育て・学齢期</div>
+        </td>
+        <td>
+          就学援助（給食費・教材費）・高校授業料無償化（国・都道府県）・習い事補助（自治体）・ひとり親家庭への各種給付
+        </td>
+        <td class="amount-cell"><strong>累計100万円+</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="stage-label ls-adult">結婚・移住</span>
+          <div class="stage-title">結婚・新生活</div>
+        </td>
+        <td>
+          <a href="041-kekkon-combo.html">結婚新生活支援（最大60万円）</a>・<a href="006-ijyu-ranking.html">移住支援金（最大100万円+子加算）</a>・空き家補助（最大100万円）
+        </td>
+        <td class="amount-cell"><strong>最大350万円</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="stage-label ls-home">住まい</span>
+          <div class="stage-title">住宅・リフォーム</div>
+        </td>
+        <td>
+          <a href="003-mado-renovate.html">窓・断熱リフォーム補助（最大200万円）</a>・太陽光発電補助（最大50万円）・ZEH補助・省エネ家電補助
+        </td>
+        <td class="amount-cell"><strong>最大300万円</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="stage-label ls-work">キャリア</span>
+          <div class="stage-title">スキルアップ・転職</div>
+        </td>
+        <td>
+          <a href="081-reskilling-56man.html">教育訓練給付金（最大168万円/3年）</a>・ハローワーク職業訓練（受講費無料）・失業給付（最大330日分）
+        </td>
+        <td class="amount-cell"><strong>最大200万円</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="stage-label ls-old">老後</span>
+          <div class="stage-title">シニア・老後</div>
+        </td>
+        <td>
+          <a href="009-nenkin-midori.html">年金生活者支援給付金（月最大6,638円）</a>・介護保険サービス（1〜3割負担）・高額療養費制度・後期高齢者医療費補助
+        </td>
+        <td class="amount-cell"><strong>累計100万円+</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>驚くことに、<strong>人生の主要なタイミングすべてに「もらえるお金」が存在しています。</strong> ライフイベントが起きるたびに「補助金はないか？」と確認する習慣をつけるだけで、生涯受給額は大きく変わります。</p>
+
+<h2 id="simulation">② 「1,000万円計算」シミュレーション</h2>
+
+<p>実際に各カテゴリの最大金額を積み上げると、どうなるでしょうか？</p>
+
+<div class="calc-box">
+  <div class="calc-box-title">💰 人生の補助金・給付金 最大積み上げ計算</div>
+
+  <div class="calc-row">
+    <div class="calc-label"><span class="emoji">👶</span> 出産〜乳幼児（出産一時金・交付金・おむつ・医療費無料）</div>
+    <div class="calc-value">約200万円</div>
+  </div>
+  <div class="calc-row">
+    <div class="calc-label"><span class="emoji">🏫</span> 学齢期（就学援助・高校無償化・習い事補助）</div>
+    <div class="calc-value">約100万円</div>
+  </div>
+  <div class="calc-row">
+    <div class="calc-label"><span class="emoji">💒</span> <a href="041-kekkon-combo.html" style="color:#34d399;">結婚・移住（結婚支援+移住支援+空き家補助）</a></div>
+    <div class="calc-value">最大350万円</div>
+  </div>
+  <div class="calc-row">
+    <div class="calc-label"><span class="emoji">🏠</span> <a href="003-mado-renovate.html" style="color:#34d399;">住まいリフォーム（断熱・太陽光・省エネ）</a></div>
+    <div class="calc-value">最大300万円</div>
+  </div>
+  <div class="calc-row">
+    <div class="calc-label"><span class="emoji">💼</span> <a href="081-reskilling-56man.html" style="color:#34d399;">リスキリング（教育訓練給付金3年分）</a></div>
+    <div class="calc-value">最大168万円</div>
+  </div>
+  <div class="calc-row">
+    <div class="calc-label"><span class="emoji">🏦</span> <a href="009-nenkin-midori.html" style="color:#34d399;">老後（年金給付金・高額療養費・介護）</a></div>
+    <div class="calc-value">累計100万円+</div>
+  </div>
+
+  <div class="calc-total-row">
+    <div class="calc-total-label">合計（概算・最大値）</div>
+    <div class="calc-total-value">1,218万円+</div>
+  </div>
+</div>
+
+<p>はっきり言います。<strong>これは「理論的な最大値」ですが、半分でも609万円。</strong> 知っているかどうか、申請するかしないかだけで、人生の経済的な豊かさがこれだけ違ってくるのです。</p>
+
+<div class="highlight-box">
+  <span class="amount">💡 現実的な目標ライン</span>
+  <p>「全部は難しいけど、いくつか組み合わせて200〜400万円得をする」というのが現実的な目標です。それでも知らないよりは遥かに豊かな人生になります！</p>
+</div>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2 id="roadmap">③ 最短で多くもらうためのロードマップ（年齢別アクションプラン）</h2>
+
+<p>「知っているだけ」では意味がありません。実際に受け取るには、<strong>タイミングを逃さず行動すること</strong>が大切です。年代別の行動指針をまとめました。</p>
+
+<div class="roadmap">
+  <div class="roadmap-item">
+    <div class="roadmap-age">
+      <div class="roadmap-age-num age-0-20">0〜<br>20代</div>
+    </div>
+    <div class="roadmap-body">
+      <div class="roadmap-body-title">誕生〜学生・社会人デビュー期</div>
+      <div class="roadmap-body-items">
+        <span class="roadmap-tag">出産・子育て応援交付金</span>
+        <span class="roadmap-tag">おむつ補助</span>
+        <span class="roadmap-tag">医療費無料</span>
+        <span class="roadmap-tag">高校無償化</span>
+        <span class="roadmap-tag">奨学金</span>
+      </div>
+      <div class="roadmap-amount">親が申請 → 子の恩恵 〜累計200万円+</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-age">
+      <div class="roadmap-age-num age-20-30">20〜<br>30代</div>
+    </div>
+    <div class="roadmap-body">
+      <div class="roadmap-body-title">結婚・移住・キャリア構築期</div>
+      <div class="roadmap-body-items">
+        <span class="roadmap-tag">結婚新生活支援</span>
+        <span class="roadmap-tag">移住支援金</span>
+        <span class="roadmap-tag">子育て給付</span>
+        <span class="roadmap-tag">教育訓練給付</span>
+        <span class="roadmap-tag">育休給付金</span>
+      </div>
+      <div class="roadmap-amount">最も補助金が集中するゴールデン期 → 最大500万円以上</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-age">
+      <div class="roadmap-age-num age-30-40">30〜<br>40代</div>
+    </div>
+    <div class="roadmap-body">
+      <div class="roadmap-body-title">住まい・リフォーム・子育て全力期</div>
+      <div class="roadmap-body-items">
+        <span class="roadmap-tag">リフォーム補助</span>
+        <span class="roadmap-tag">断熱改修</span>
+        <span class="roadmap-tag">太陽光補助</span>
+        <span class="roadmap-tag">学齢期給付</span>
+        <span class="roadmap-tag">ふるさと納税</span>
+      </div>
+      <div class="roadmap-amount">住まいで大型補助 → 最大300万円</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-age">
+      <div class="roadmap-age-num age-40-50">40〜<br>50代</div>
+    </div>
+    <div class="roadmap-body">
+      <div class="roadmap-body-title">リスキリング・キャリア転換期</div>
+      <div class="roadmap-body-items">
+        <span class="roadmap-tag">教育訓練給付金</span>
+        <span class="roadmap-tag">デジタルスキル補助</span>
+        <span class="roadmap-tag">転職支援</span>
+        <span class="roadmap-tag">省エネ家電補助</span>
+      </div>
+      <div class="roadmap-amount">スキルアップで収入も給付も↑ → 最大200万円</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-age">
+      <div class="roadmap-age-num age-50-60">50〜<br>60代</div>
+    </div>
+    <div class="roadmap-body">
+      <div class="roadmap-body-title">老後準備・シニア移行期</div>
+      <div class="roadmap-body-items">
+        <span class="roadmap-tag">高額療養費</span>
+        <span class="roadmap-tag">介護予防給付</span>
+        <span class="roadmap-tag">シニア向け職業訓練</span>
+        <span class="roadmap-tag">ふるさと納税</span>
+      </div>
+      <div class="roadmap-amount">高額療養費の活用で医療費を大幅削減</div>
+    </div>
+  </div>
+
+  <div class="roadmap-item">
+    <div class="roadmap-age">
+      <div class="roadmap-age-num age-60plus">60代<br>以降</div>
+    </div>
+    <div class="roadmap-body">
+      <div class="roadmap-body-title">年金・介護・医療給付を受ける老後期</div>
+      <div class="roadmap-body-items">
+        <span class="roadmap-tag">年金生活者支援給付金</span>
+        <span class="roadmap-tag">介護保険</span>
+        <span class="roadmap-tag">後期高齢者医療</span>
+        <span class="roadmap-tag">緑の封筒を開封！</span>
+      </div>
+      <div class="roadmap-amount">申請忘れに要注意！ 累計100万円以上の差が出る</div>
+    </div>
+  </div>
+</div>
+
+<h2 id="fail">④ 補助金を使い損ねる人の3つの共通点（失敗パターン）</h2>
+
+<p>残念ながら、もらえるはずの補助金を受け取れずに終わってしまう人が大勢います。その共通パターンを分析しました。</p>
+
+<div class="fail-cards">
+  <div class="fail-card">
+    <div class="fail-card-icon">😴</div>
+    <div class="fail-card-title">「知らなかった」で終わる</div>
+    <div class="fail-card-body">「そんな制度があったなんて知らなかった」が最大の失敗。補助金は申請しなければ1円ももらえません。定期的に情報収集する習慣が必要です。</div>
+  </div>
+  <div class="fail-card">
+    <div class="fail-card-icon">⏰</div>
+    <div class="fail-card-title">期限を過ぎてから気づく</div>
+    <div class="fail-card-body">結婚から1年・引越し後〇ヶ月以内・工事着工前…補助金には必ず期限があります。「後で調べよう」は最も危険な先延ばし。ライフイベント前に必ず確認！</div>
+  </div>
+  <div class="fail-card">
+    <div class="fail-card-icon">😰</div>
+    <div class="fail-card-title">「難しそう」で諦める</div>
+    <div class="fail-card-body">書類が多そう・窓口が遠い…でもほとんどの補助金は、1〜2枚の書類と領収書を提出するだけ。「難しそう」という思い込みが数十万円の損につながっています。</div>
+  </div>
+</div>
+
+<div class="info-box">
+  <p>💡 <strong>解決策：</strong>「もらえるお金ナビ」を使えば、お住まいの市区で使える補助金を一覧で確認できます。気になる制度を見つけたらまず窓口に問い合わせましょう。電話1本で申請方法を教えてもらえます！</p>
+</div>
+
+<h2 id="howtouse">⑤ もらえるお金ナビの活用法（検索ガイド）</h2>
+
+<p>「もらえるお金ナビ」は、全国の補助金・給付金情報を一括で検索できるサービスです。効果的な使い方を紹介します。</p>
+
+<div class="how-to-use">
+  <div class="how-item">
+    <div class="how-item-emoji">🔍</div>
+    <div class="how-item-title">① 住んでいる市区で検索</div>
+    <div class="how-item-body">まずお住まいの市区を選択。使える補助金が一覧で表示されます。</div>
+  </div>
+  <div class="how-item">
+    <div class="how-item-emoji">📋</div>
+    <div class="how-item-title">② カテゴリで絞り込む</div>
+    <div class="how-item-body">子育て・住宅・移住など、今のライフステージに合わせてカテゴリを選択。</div>
+  </div>
+  <div class="how-item">
+    <div class="how-item-emoji">📝</div>
+    <div class="how-item-title">③ 対象条件を確認</div>
+    <div class="how-item-body">各補助金の対象条件・申請期限・申請先を確認して手続きへ。</div>
+  </div>
+  <div class="how-item">
+    <div class="how-item-emoji">📞</div>
+    <div class="how-item-title">④ 窓口に問い合わせ</div>
+    <div class="how-item-body">記載の問合せ先（役所・担当課）に電話して、詳細と書類を確認。</div>
+  </div>
+</div>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2>まとめ：知っているだけで人生は変わる</h2>
+
+<p>この記事で紹介した補助金・給付金を改めて整理すると：</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>ライフステージ</th><th>代表的な制度</th><th>詳細記事</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>結婚・移住</td>
+        <td>トリプルコンボで最大350万円</td>
+        <td><a href="041-kekkon-combo.html">→ 記事を読む</a></td>
+      </tr>
+      <tr>
+        <td>子育て</td>
+        <td>裏給付金5選で年間20〜30万円</td>
+        <td><a href="068-mamotomo-naisho.html">→ 記事を読む</a></td>
+      </tr>
+      <tr>
+        <td>ペット</td>
+        <td>去勢補助・マイクロチップ補助</td>
+        <td><a href="062-nyanko-ibaraki.html">→ 記事を読む</a></td>
+      </tr>
+      <tr>
+        <td>リスキリング</td>
+        <td>教育訓練給付金で最大168万円</td>
+        <td><a href="081-reskilling-56man.html">→ 記事を読む</a></td>
+      </tr>
+      <tr>
+        <td>移住支援</td>
+        <td>移住支援金ランキングTOP20</td>
+        <td><a href="006-ijyu-ranking.html">→ 記事を読む</a></td>
+      </tr>
+      <tr>
+        <td>老後年金</td>
+        <td>緑の封筒で年間最大72,000円</td>
+        <td><a href="009-nenkin-midori.html">→ 記事を読む</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>「1,000万円全部もらう」は最大値の話ですが、<strong>正しく知って、正しく申請すれば、人生で200〜400万円以上の差が生まれることは珍しくありません。</strong></p>
+
+<p>補助金は申請した人だけのものです。今すぐ「もらえるお金ナビ」でお住まいの市区の補助金を確認してみてください！</p>
+
+<div class="warning-box">
+  <p>⚠️ <strong>免責事項：</strong>本記事の金額はあくまで概算・最大値の試算です。実際の受給額は各自治体・制度・所得水準・申請タイミングにより大きく異なります。申請前に必ず各自治体の公式情報をご確認ください。</p>
+</div>
+
+</div>
+</div>
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid">
+<a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？驚き補助金まとめ</div></a>
+<a href="006-ijyu-ranking.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">✈️</div><div class="related-body">全国移住支援金ランキングTOP20</div></a>
+<a href="008-akashi-omutu.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">👶</div><div class="related-body">おむつが毎月タダ！明石市の神対応</div></a>
+<a href="009-nenkin-midori.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#ecfdf5,#d1fae5);">🏦</div><div class="related-body">【罠】緑の封筒を無視すると0円！年金給付金</div></a>
+</div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。制度は変更される場合があります。申請前に必ず各自治体の公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

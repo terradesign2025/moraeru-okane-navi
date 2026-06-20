@@ -1,0 +1,97 @@
+id,prefecture,city,title,category,amount,condition,desc,period,contact,applicationUrl,verified,lastChecked
+101,東京都,八王子市,自転車ヘルメット購入補助,安全,最大2000円,usesBike,SGマーク付ヘルメット購入時に適用（交通安全講座参加要件あり）,令和7年度受付終了・令和8年度要確認,八王子市 道路・交通安全課,https://www.city.hachioji.tokyo.jp/kurashi/life/001/007/003/index.html,TRUE,2026-06-10
+102,東京都,八王子市,おむつ専用ごみ袋の無料配布,子育て,ごみ袋 年数冊,hasChildren,3歳未満の子供がいる家庭に指定袋を配布,通年（3歳まで毎年申請）,八王子市 子育て支援課,https://www.city.hachioji.tokyo.jp/kurashi/kosodate/1003588.html,TRUE,2026-04-27
+103,東京都,八王子市,居住環境整備補助金,住まい,最大100万円,ownsHome,耐震・バリアフリー・断熱改修などの工事に,令和8年2月28日まで,八王子市 建築指導課,https://www.city.hachioji.tokyo.jp/,TRUE,2026-04-27
+104,東京都,八王子市,物価高騰対応子育て手当,子育て,2万円/人,hasChildren,18歳以下の子供1人につき2万円を支給する臨時給付金,令和8年6月30日まで,八王子市 子ども家庭部 給付金係,https://www.city.hachioji.tokyo.jp/,TRUE,2026-04-27
+105,東京都,八王子市,省エネ家電買い替え補助,エコ,最大3万円,all,古い冷蔵庫やエアコンを省エネ型に替えると支給,令和8年7月31日まで,八王子市 環境部 省エネ推進課,https://www.city.hachioji.tokyo.jp/,TRUE,2026-04-27
+202,東京都,新宿区,民間賃貸住宅家賃助成,住まい,月3万円・最長5年,hasChildren,義務教育修了前の子供がいる世帯対象。年1回10月の2週間募集（抽選）。所得520万円以下,令和7年度は10月15日終了・年1回募集,新宿区 都市計画部 住宅課 居住支援係（03-5273-3567）,https://www.city.shinjuku.lg.jp/seikatsu/file07_02_00001.html,TRUE,2026-05-07
+203,東京都,新宿区,東京都特定不妊治療費（先進医療）助成,子育て,先進医療実費の一部,all,保険診療と併用する先進医療部分の助成。実施主体は東京都,通年,東京都福祉局,https://fukushihoken.metro.tokyo.lg.jp/kodomo/kosodate/josei/funin-senshiniryou/index.html,TRUE,2026-05-07
+204,東京都,世田谷区,せたがや子育て利用券,子育て,1万円相当,hasChildren,ネウボラ面接受診で交付・2歳の誕生日まで利用可能,通年,世田谷保健所 健康推進課（03-5432-2446）,https://www.city.setagaya.lg.jp/02244/1188.html,TRUE,2026-05-07
+206,東京都,世田谷区,高齢者住宅改修費助成,福祉,予防改修最大20万円・設備改修最大37.9万円,hasElderly,65歳以上で要介護未認定（予防改修）・着工前の事前相談必須,通年,世田谷区 高齢福祉課（03-5432-2407）,https://www.city.setagaya.lg.jp/02082/2405.html,TRUE,2026-05-07
+207,東京都,練馬区,認可外保育施設保育料補助金,子育て,月最大8万円,hasChildren,認可外保育施設を月160時間以上利用・0-2歳課税世帯の上限。令和7年9月改定,通年（年度更新）,練馬区 保育課 保育サービス推進係（03-5984-1622）,https://www.city.nerima.tokyo.jp/kosodatekyoiku/kodomo/shinshien/youhomusyou/mushoka_ninkagai.html,TRUE,2026-05-07
+209,東京都,江東区,こうとう商店街DEお買い物券+2026,生活支援,額面12000円を10000円で購入,all,プレミアム率20%・1人3セットまで（応募抽選）,応募 令和8年5/1-5/22・使用 7/1-12/31,江東区 経済課 商業振興係,https://www.city.koto.lg.jp/102030/shohinken_plus.html,TRUE,2026-05-07
+210,東京都,江東区,子ども医療費助成（マル乳/マル子/マル青）,子育て,医療費自己負担なし,hasChildren,18歳到達後最初の3月31日まで（高校生年代含む）・所得制限なし,通年,江東区 こども家庭支援課 給付係（03-3647-4754）,https://www.city.koto.lg.jp/281011/kodomo/kosodate/teate/5844.html,TRUE,2026-05-07
+211,東京都,町田市,自転車用ヘルメット購入費補助事業,安全,最大2000円,usesBike,町田市在住で安全基準認証ヘルメット購入者・3000件先着,2025年度終了。2026年度継続有無は未告知,町田市 市民生活安全課（042-724-4003）,https://www.city.machida.tokyo.jp/kurashi/sumai/kotsu/anzen/helmet.html,TRUE,2026-05-07
+214,東京都,立川市,福祉用具購入費の支給（介護保険）,福祉,年間限度10万円のうち7-9割支給,hasElderly,要介護・要支援認定者が対象（年齢ではなく認定要件）,年度区切り（4月-翌年3月）,立川市 介護保険課 介護給付係（042-528-4370）,https://www.city.tachikawa.lg.jp/kaigohoken/syoukan/hukushiyougu.html,TRUE,2026-05-07
+215,埼玉県,さいたま市,子育て支援医療費助成,子育て,医療費自己負担なし,hasChildren,18歳まで医療費が無料,通年,さいたま市 子育て支援政策課（048-829-1279）,https://www.city.saitama.lg.jp/,TRUE,2026-05-07
+216,埼玉県,さいたま市,既存建築物耐震補強等助成事業,住まい,戸数×60万円,ownsHome,昭和56年5月31日以前着工の戸建で耐震診断不適合,令和8年4月1日-令和9年1月31日,さいたま市 建築総務課（048-829-1539）,https://www.city.saitama.lg.jp/001/154/007/002/p022061.html,TRUE,2026-05-07
+218,埼玉県,さいたま市,自転車安全利用講習参加者ヘルメット購入費補助,安全,最大2000円,usesBike,満65歳以上の市内在住者・講習参加・市内店舗で新品購入,令和7年度購入分対象,さいたま市 市民生活安全課 交通安全係（048-829-1219）,https://www.city.saitama.lg.jp/001/010/018/006/p121045.html,TRUE,2026-05-07
+220,埼玉県,川口市,既存建築物耐震診断補助金（戸建住宅）,住まい,診断費の2/3・上限6.5万円,ownsHome,平成12年5月31日以前建築の戸建/共同/長屋・延床1/2以上居住用,通年募集・申請年度1月31日まで実績報告,川口市 建築安全課 建築指導第1係（048-242-6344）,https://www.city.kawaguchi.lg.jp/soshiki/01130/060/2/2236.html,TRUE,2026-05-07
+221,埼玉県,川口市,粗大ごみ処理手数料の減免,生活支援,個別相談（半額の明記なし）,all,生活困窮世帯・高齢者世帯等の個別相談対応,通年,川口市 収集業務課（048-251-1174）,https://www.city.kawaguchi.lg.jp/soshiki/01100/060/1/1/13398.html,TRUE,2026-05-07
+224,埼玉県,所沢市,子ども医療費助成,子育て,医療費自己負担なし,hasChildren,0-18歳到達年度末まで（令和6年10月から拡大）・所得制限なし,通年（出生・転入後15日以内に登録）,所沢市 こども支援課（04-2998-9124）,https://www.city.tokorozawa.saitama.jp/kosodatekyouiku/kosodate/kodomonoteate/iryohijyosei/kodomoiryojoseihoho.html,TRUE,2026-05-07
+226,埼玉県,越谷市,結婚新生活支援事業,生活支援,最大60万円,all,婚姻39歳以下・世帯所得500万円未満（一般要件）・新生活初期費用補助。詳細は市へ要確認,要確認,越谷市 子ども福祉課（推定 048-963-9166）,https://www.city.koshigaya.saitama.jp/,FALSE,2026-06-10
+227,埼玉県,熊谷市,埼玉県移住支援金（熊谷市対象）,ユニーク,単身60万円/世帯100万円,all,東京23区在住・通勤者が県内対象企業へ就業または起業（県事業）,要確認,埼玉県（熊谷市は対象市の一つ）,https://www.city.kumagaya.lg.jp/,FALSE,2026-05-07
+301,神奈川県,横浜市,小児医療費助成,子育て,医療費自己負担なし,hasChildren,令和8年6月から18歳年度末まで拡大予定（現在は中学3年まで）・所得制限なし,通年（恒常制度）,横浜市 こども青少年局こども家庭課,https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/kenko-iryo/iryohijosei/shoni/child.html,TRUE,2026-05-07
+302,神奈川県,横浜市,横浜グリーンエネルギーパートナーシップ事業,エコ,太陽光最大6万円・蓄電池12万円,ownsHome,市民・設置前申請必須,令和8年度詳細未公表,横浜市 脱炭素ライフスタイル推進課（045-671-2661）,https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/ondanka/hojo-sien/YGrEP.html,TRUE,2026-05-07
+303,神奈川県,横浜市,木造住宅耐震改修補助事業,住まい,上限115万円（非課税世帯155万円）,ownsHome,昭和56年5月末日以前着工・2階建以下木造個人住宅・診断結果1.0未満,通年（年度予算枠内）,横浜市 建築局建築防災課,https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/bosai/taishin/hojokinshienseido/mokutai/mokukaishu/mokukaishu.html,TRUE,2026-05-07
+306,神奈川県,川崎市,かながわ子育て応援パスポート,子育て,協力店舗の割引・特典,hasChildren,神奈川県事業（川崎市は対象）・妊娠中・子供のいる家庭,通年,神奈川県子ども家庭課,https://www.pref.kanagawa.jp/docs/sy8/cnt/f360784/,TRUE,2026-05-07
+307,神奈川県,川崎市,川崎市不育症検査費用助成事業,子育て,1回最大6万円（検査費の7割）,all,市内住民登録・既往流死産2回以上,検査結果通知日から30日以内,川崎市 児童家庭支援・虐待対策室 母子保健担当,https://www.city.kawasaki.jp/450/page/0000127099.html,TRUE,2026-05-07
+310,神奈川県,相模原市,結婚新生活・移住定住支援事業（引越費用補助）,生活支援,最大15万円,all,婚姻時に夫婦とも40歳未満・世帯所得500万円未満,令和7年6月-令和8年3月（先着）,相模原市 住宅課（042-769-9817）,https://www.city.sagamihara.kanagawa.jp/kurashi/1026489/sumai/1026513/1030229.html,TRUE,2026-05-07
+311,神奈川県,相模原市,住宅設備改善費の助成（障害者向け）,福祉,既存住宅改善80万円・リフト100万円・環境制御60万円,hasElderly,身体障害者手帳1-2級等の障害者向け,通年（工事前申請必須）,相模原市 高齢・障害者相談課,https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026641/shogai/1006484.html,TRUE,2026-05-07
+312,神奈川県,横須賀市,2世帯住宅リフォーム補助金,住まい,最大30万円,ownsHome,市内親世帯と同居・近居のためのリフォーム（中古戸建購入も近居なら可）・先着10件,申請年度内（令和8年3月31日まで）,横須賀市 まちなみ景観課（046-822-8077）,https://www.city.yokosuka.kanagawa.jp/4821/tokei/2setai/2setai.html,TRUE,2026-05-07
+316,神奈川県,藤沢市,藤沢型認定保育施設保育料補助金,子育て,月最大15000円,hasChildren,藤沢市在住・年度初日0-2歳・保育を必要とする事由・月64時間以上利用,通年（年2回証明書類提出）,藤沢市 保育課（0466-50-3526）,https://www.city.fujisawa.kanagawa.jp/hoiku/kenko/kosodate/hoikuen/hoikuryojose.html,TRUE,2026-05-07
+317,神奈川県,平塚市,平塚市結婚新生活支援事業補助金,生活支援,29歳以下60万円/39歳以下30万円,all,婚姻日時点夫婦とも39歳以下・夫婦合算所得500万円未満,申請年度内（先着）,平塚市（要確認・福祉部門）,https://www.city.hiratsuka.kanagawa.jp/todokede/kekkon.html,TRUE,2026-05-07
+401,東京都,世田谷区,妊婦のための支援給付（妊婦給付金）,子育て,妊婦1人5万円,hasChildren,区内住民登録のある妊産婦,妊娠確認日から2年間,世田谷区妊婦給付事務局（03-6705-0258）,https://www.city.setagaya.lg.jp/02244/20413.html,TRUE,2026-05-07
+402,東京都,世田谷区,物価高対応子育て応援手当,子育て,児童1人3万円,hasChildren,0-18歳児童を養育する世帯（国2万＋区上乗せ1万）,要確認,世田谷区 子ども育成推進課,https://www.city.setagaya.lg.jp/02413/29588.html,TRUE,2026-05-07
+403,東京都,世田谷区,エコ住宅補助金（令和8年度）,エコ,最大20万円,ownsHome,区内既存住宅の窓・ドア・浴槽・屋根の断熱改修,前期 令和8年8月31日工事完了,世田谷区 気候危機対策課（03-5539-3242）,https://www.city.setagaya.lg.jp/02240/31250.html,TRUE,2026-05-07
+404,東京都,世田谷区,ずっと、世田谷。定住応援事業,住まい,30万円＋せたがやPay10万Pt,hasChildren,未就学児養育世帯または39歳以下夫婦で区内住宅取得,要確認,世田谷区 居住支援課,https://www.city.setagaya.lg.jp/03665/24196.html,TRUE,2026-05-07
+405,東京都,世田谷区,木造住宅耐震化支援事業,住まい,診断士無料派遣＋改修工事費補助,ownsHome,昭和56年5月31日以前着工の木造個人住宅,年度毎の受付締切,世田谷区 防災街づくり課（03-6432-7177）,https://www.city.setagaya.lg.jp/02067/3893.html,TRUE,2026-05-07
+406,東京都,練馬区,自転車ヘルメット購入費助成,安全,1個2000円,all,区内在住・年齢制限なし・一人1個・助成対象店購入,令和8年4月1日-令和9年3月31日（在庫終了次第）,練馬区 交通安全課 安全対策係（03-5984-1309）,https://www.city.nerima.tokyo.jp/kurashi/sumai/index/helmet.html,TRUE,2026-05-07
+407,東京都,練馬区,第3子誕生祝金,子育て,第3子以降1人10万円,hasChildren,保護者・児童とも出生1年以上前から練馬区在住,出生日から1年以内,練馬区 子育て支援課 児童手当係,https://www.city.nerima.tokyo.jp/kosodatekyoiku/shussan/iwaikin.html,TRUE,2026-05-07
+408,東京都,練馬区,高齢者聞こえのコミュニケーション支援（補聴器助成）,福祉,上限7.2万円（非課税）/3.6万円（課税）,hasElderly,65歳以上・両耳40-70dB・医師意見書,通年,練馬区 高齢者支援課（03-5984-4597）,https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/nichijo/20210419134246065.html,TRUE,2026-05-07
+409,東京都,練馬区,カーボンニュートラル化設備設置補助金,エコ,設備別（要確認）,ownsHome,区内既存住宅に省エネ・再エネ設備設置,令和8年度内（予算上限まで）,練馬区 環境エネルギー課（03-5984-4706）,https://www.city.nerima.tokyo.jp/kurashi/shigoto/kankyo/hojo.html,TRUE,2026-05-07
+410,東京都,練馬区,木造住宅耐震改修工事助成,住まい,改修工事最大130万円・総合支援170万円・低所得等で最大240万円,ownsHome,昭和56年5月以前着工or昭56年6月-平12年5月の木造,年度内,練馬区 防災まちづくり課（03-5984-1938）,https://www.city.nerima.tokyo.jp/kurashi/sumai/takuchi/taishin/kodate.html,TRUE,2026-05-07
+411,東京都,江東区,高齢者補聴器購入費助成,福祉,上限72450円,hasElderly,区内在住65歳以上・医師の必要性証明・5年経過で再支給可,通年,江東区 長寿応援課（区役所3階4番）,https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6597.html,TRUE,2026-05-07
+412,東京都,江東区,江東区ZEH・東京ゼロエミ住宅助成,エコ,一律30万円,ownsHome,区内ZEHまたは東京ゼロエミ戸建を所有・居住,令和8年4月1日-令和9年3月31日,江東区 温暖化対策課 環境調整係,https://www.city.koto.lg.jp/380201/machizukuri/kankyo/sedo/zeh_zeroemi.html,TRUE,2026-05-07
+413,東京都,江東区,個人住宅用 地球温暖化防止設備導入助成,エコ,設備別（要確認）,ownsHome,区内に住宅を所有または取得する個人,令和8年4月1日-令和9年3月15日（着工前申請）,江東区 温暖化対策課（03-3647-6124）,https://www.city.koto.lg.jp/380201/machizukuri/kankyo/sedo/30jyosei.html,TRUE,2026-05-07
+414,東京都,江東区,出産・子育て応援給付金,子育て,計10万円相当（出産5万＋子育て5万）,hasChildren,区内在住の妊婦・新生児養育者・ゆりかご面接受診,通年,江東区 保健予防課,https://www.city.koto.lg.jp/260501/kodomo/ninshinshussan/ninshin/97552.html,TRUE,2026-05-07
+415,東京都,町田市,住まいの防犯対策補助金,安全,購入額の1/2（上限1万円）,all,市内住民登録世帯・過去受給者除く,令和8年5月1日-令和8年12月25日,町田市 市民生活安全課（042-724-4003）,https://www.city.machida.tokyo.jp/kurashi/bouhan/bouhan/sumai-bohan-hojo.html,TRUE,2026-05-07
+416,東京都,町田市,高齢者補聴器購入助成,福祉,最大3万円,hasElderly,市内65歳以上・市民税非課税・両耳40-70dB・身障手帳対象外・過去5年未受給,2027年2月上旬頃まで,町田市 高齢者支援課（042-724-2141）,https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/hocyouki.html,TRUE,2026-05-07
+417,東京都,町田市,在宅高齢者紙おむつ支給事業,福祉,年最大28000円相当（4回×7000円相当）,hasElderly,市内在宅65歳以上・要介護4or5・住民税非課税世帯,通年（6/9/12/3月配付）,町田市 高齢者支援課,https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/kamiomutushikyu.html,TRUE,2026-05-07
+418,東京都,町田市,エネファーム設置奨励金,エコ,35000円（一律）,ownsHome,2025/4-2026/3に市内住宅へ家庭用燃料電池設置,2025年度受付終了。2026年度継続見込み,町田市 環境政策課（042-724-4386）,https://www.city.machida.tokyo.jp/kurashi/kankyo/kankyo/setudenshoene/kunitokyoto.html,TRUE,2026-05-07
+419,東京都,立川市,補聴器購入費助成,福祉,最大4万円,hasElderly,18歳以上・中等度難聴・前年所得210万円未満,通年,立川市 高齢政策課 業務係（042-528-4794）,https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1021649.html,TRUE,2026-05-07
+420,東京都,立川市,高齢者自立支援住宅改修給付事業,住まい,最大37.9万円（浴槽取替）/生活の質確保20万円,hasElderly,65歳以上・要介護認定者・所得制限あり,通年（事前申請必須）,立川市 高齢政策課（042-528-4794）,https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1003512.html,TRUE,2026-05-07
+421,東京都,立川市,既存住宅断熱改修費補助金,エコ,最大5万円（工事費1/2）,ownsHome,市内戸建/併用/集合住宅・市内事業者発注,令和9年2月28日工事完了まで,立川市 環境政策課（042-528-4341）,https://www.city.tachikawa.lg.jp/kurashi/seikatsu/1001871/1024675.html,TRUE,2026-05-07
+422,東京都,立川市,木造住宅耐震診断助成,安全,最大10万円（費用の1/2）,ownsHome,昭和56年5月以前建築の木造住宅所有者・市税完納,通年,立川市 住宅課 住宅対策係（042-528-4384）,https://www.city.tachikawa.lg.jp/kurashi/sumai/1002092/1002114.html,TRUE,2026-05-07
+423,東京都,立川市,たちかわ版・出産応援育児パッケージ,子育て,Suica2万円分（出産後）,hasChildren,市内在住の出産世帯・令和7年4月以降出産対象,通年（出産時申請）,立川市 健康推進課 母子保健係（042-527-3234）,https://www.city.tachikawa.lg.jp/kenkosuishin/kosodate/syussan/20220801.html,TRUE,2026-05-07
+424,埼玉県,さいたま市,介護予防高齢者住環境改善支援事業,福祉,上限15万円,hasElderly,要支援・要介護未認定の市保険者・基本チェックリスト該当者,通年（着工前に交付決定）,さいたま市 各区高齢介護課,https://www.city.saitama.lg.jp/007/007/007/p018981.html,TRUE,2026-05-07
+425,埼玉県,さいたま市,省エネ・断熱住宅普及促進補助金（令和8年度）,エコ,ZEH/高効率給湯機/断熱改修区分,ownsHome,市内住民票・自己居住住宅・市税滞納なし,令和8年4月1日-令和9年3月1日,さいたま市 住宅政策課（048-829-1520）,https://www.city.saitama.lg.jp/001/009/015/010/002/p119491.html,TRUE,2026-05-07
+426,埼玉県,さいたま市,多子世帯子育て応援金,子育て,児童1人5万円,hasChildren,第3子以降が出生から6か月以内,出生から6か月以内,さいたま市 子育て支援政策課,https://www.city.saitama.lg.jp/003/001/004/p096762.html,TRUE,2026-05-07
+427,埼玉県,川口市,赤ちゃんにっこり応援金,子育て,乳児1人1回1万円,hasChildren,出生時に乳児・保護者ともに川口市民・1歳前日まで,1歳の誕生日前日まで,川口市 子育て支援課手当係（048-258-1113）,https://www.city.kawaguchi.lg.jp/soshiki/01080/020/5/2/37314.html,TRUE,2026-05-07
+428,埼玉県,川口市,結婚新生活支援補助金（令和7年度）,生活支援,上限10万円,all,夫妻39歳以下・所得合算500万円未満・R7.1.1-R8.3.31婚姻,令和8年3月31日15時,川口市 青少年対策室（048-258-1115）,https://www.city.kawaguchi.lg.jp/soshiki/01080/060/kekkonnsinnseikatu/48680.html,TRUE,2026-05-07
+429,埼玉県,川口市,川口市住宅リフォーム補助金（令和8年度）,住まい,工事費の5%・上限10万円,ownsHome,市内戸建/集合・新耐震基準・市税滞納なし・税込20万円以上,令和8年4月16日-8月5日（先着）,川口市 住宅政策課（048-242-6326）,https://www.city.kawaguchi.lg.jp/soshiki/01130/040/2_2/48993.html,TRUE,2026-05-07
+430,埼玉県,川口市,高齢者補聴器購入費補助事業（令和8年度）,福祉,上限2万円（1人1回）,hasElderly,65歳以上・市民税非課税or生活保護・中等度難聴,令和8年4月1日-令和9年3月31日,川口市 長寿支援課（048-252-0261）,https://www.city.kawaguchi.lg.jp/soshiki/01070/040/4/44600.html,TRUE,2026-05-07
+431,埼玉県,川口市,地球温暖化対策活動支援金（蓄電池）,エコ,蓄電池上限16万円・太陽光10万円,ownsHome,市内住宅へ設置・引渡R7.3.1-R8.2.28,令和8年5月11日-令和9年3月15日,川口市 環境総務課（048-228-5320）,https://www.city.kawaguchi.lg.jp/soshiki/01100/010/2/1/34410.html,TRUE,2026-05-07
+432,埼玉県,川越市,川越市子育てファミリー応援給付金,子育て,対象乳児1人1万円,hasChildren,令和5年4月-令和10年3月生の1歳未満児の保護者で市内同居,対象乳児の1歳の誕生日前日まで,川越市 こども政策課（049-224-6278）,https://www.city.kawagoe.saitama.jp/kosodate/jyosei/1004141/1004149.html,TRUE,2026-05-07
+433,埼玉県,川越市,高齢者補聴器購入費補助事業,福祉,上限3万円,hasElderly,市内在住満65歳以上・両耳中等度難聴・障害者手帳対象外,令和8年度は要確認,川越市 高齢者いきがい課（049-224-5809）,https://www.city.kawagoe.saitama.jp/kenko/fukushi/1006679/1006705/1013885.html,TRUE,2026-05-07
+434,埼玉県,川越市,川越市住宅改修補助金（令和8年度）,住まい,工事費税抜の5%・上限5万円,ownsHome,市内在住・市内施工業者・税抜20万円以上のリフォーム,中期 令和8年7/1-7/8・後期 11/5-11/12,川越市 産業振興課（049-224-5934）,https://www.city.kawagoe.saitama.jp/kurashi/jyutaku/1003030.html,TRUE,2026-05-07
+435,埼玉県,川越市,住宅用脱炭素化設備等導入奨励金,エコ,区分A 1万-3万円・区分B（ZEH）15万円,ownsHome,市内居住・対象期間内に工事完了・市税滞納なし,令和8年1月30日終了。次年度要確認,川越市 環境政策課（049-224-5866）,https://www.city.kawagoe.saitama.jp/kurashi/kankyo/1002642/1002702/1018885.html,TRUE,2026-05-07
+436,埼玉県,所沢市,スマートハウス化推進補助金,エコ,太陽光15万・蓄電池24万・EV/V2H各5万,ownsHome,市内自宅に太陽光・蓄電池・EV充電設備等を設置,令和8年6月-令和9年3月19日（4期受付）,所沢市 マチごとエコタウン推進課（04-2998-9133）,https://www.city.tokorozawa.saitama.jp/kurashi/seikatukankyo/kankyo/ekojyosei/sumatohausu.html,TRUE,2026-05-07
+437,埼玉県,所沢市,我が家の耐震改修補助事業,住まい,要確認,ownsHome,旧耐震基準住宅の耐震改修,要確認,所沢市 住宅政策課（04-2998-9216）,https://www.city.tokorozawa.saitama.jp/kurashi/jutaku/jyuutakuseisaku/taisinkankei/taishinkaisyu_hojo.html,TRUE,2026-05-07
+438,埼玉県,所沢市,我が家の耐震診断補助事業,住まい,要確認,ownsHome,昭和56年以前住宅の耐震診断,要確認,所沢市 住宅政策課（04-2998-9216）,https://www.city.tokorozawa.saitama.jp/kurashi/jutaku/tatemono/juutaku/taishin/taishinshindan_hojo.html,TRUE,2026-05-07
+439,埼玉県,所沢市,ひとり親家庭等医療費助成,子育て,保険診療自己負担分助成,hasChildren,ひとり親家庭の親子,通年,所沢市 こども支援課（04-2998-9124）,https://www.city.tokorozawa.saitama.jp/kosodatekyouiku/kosodate/kodomonoteate/index.html,TRUE,2026-05-07
+440,埼玉県,所沢市,軽度・中等度難聴児補聴器購入費助成,福祉,要確認,hasChildren,身障手帳非該当の難聴児,通年（要確認）,所沢市 障害福祉課,https://www.city.tokorozawa.saitama.jp/aboutweb/kantanarekore/hojyo.html,TRUE,2026-05-07
+441,埼玉県,越谷市,こども医療費支給制度,子育て,医療費自己負担なし,hasChildren,18歳年度末まで,通年（条件該当日翌日から15日以内）,越谷市 子ども福祉課（048-963-9166）,https://www.city.koshigaya.saitama.jp/kurashi_shisei/kosodate/teate/kodomoiryo.html,TRUE,2026-05-07
+442,埼玉県,越谷市,越谷市住宅・店舗改修促進補助金（令和8年度第1期）,住まい,対象経費の20%・上限10万円,ownsHome,市内業者利用・20万円以上改修工事,令和8年6月1日-6月15日,越谷市（建築・住宅関連部署）,https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/sumai/sien/kaisyusokusin2026-1.html,TRUE,2026-05-07
+443,埼玉県,熊谷市,大好き熊谷！新幹線らく賃通勤補助金（令和8年度）,生活支援,月最大2万円,all,30歳未満・新卒3年以内・7年以上居住意思,令和8年4月1日-令和9年3月31日,熊谷市 企画課（048-524-1115）,https://www.city.kumagaya.lg.jp/about/soshiki/sogo/kikaku/oshirase/daisuki_sinkansen.html,TRUE,2026-05-07
+444,埼玉県,熊谷市,三世代ふれあい家族住宅取得等応援事業,住まい,上限25万円（クマPAY）/20万円（市外）,hasChildren,三世代同居/近居1.2km以内・住宅取得・増改築,令和8年4月1日募集開始・登記/契約日翌日から1年以内,熊谷市 長寿いきがい課（048-524-1398）,https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/shien/sansedaidoukyohozyo.html,TRUE,2026-05-07
+445,埼玉県,熊谷市,こども医療費の助成,子育て,医療費自己負担なし,hasChildren,18歳年度末まで,通年（出生・転入翌日から15日以内）,熊谷市 こども課,https://www.city.kumagaya.lg.jp/kosodate/teate/kodomoiryouhi.html,TRUE,2026-05-07
+501,神奈川県,横浜市,妊婦のための支援給付金,子育て,計10万円（妊娠5万＋出生後5万）,hasChildren,妊娠届提出・出生児養育者,通年,横浜市 こども青少年局,https://www.city.yokohama.lg.jp/kosodate-kyoiku/oyakokenko/teate/syussankosodateouen.html,TRUE,2026-05-07
+502,神奈川県,横浜市,ブロック塀等改善事業,安全,除却・新設工事費の一部補助,ownsHome,道路面の危険ブロック塀,年度内（事前相談2月末まで）,横浜市 建築局建築防災課,https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/bosai/blockbei/blockbei.html,TRUE,2026-05-07
+503,神奈川県,横浜市,介護保険住宅改修費,福祉,上限20万円の9割（最大18万円）,hasElderly,要支援・要介護者の手すり等改修,通年,横浜市 健康福祉局介護保険課,https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigo-hoken/kaishuhi/juukai.html,TRUE,2026-05-07
+504,神奈川県,横浜市,住環境整備事業（バリアフリー助成）,福祉,住宅改造費の一部助成,hasElderly,高齢者・障害者の自宅バリアフリー改造,通年,横浜市 健康福祉局,https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/fukushi/annai/jutaku/jutaku-josei/josei.html,TRUE,2026-05-07
+505,神奈川県,横浜市,不育症検査費助成事業,子育て,先進医療不育症検査費の一部,all,2回以上流産経験者,通年,横浜市 こども青少年局,https://www.city.yokohama.lg.jp/kosodate-kyoiku/oyakokenko/teate/fuikukensajyosei.html,TRUE,2026-05-07
+506,神奈川県,川崎市,物価高対応子育て応援手当,子育て,児童1人2万円,hasChildren,0歳-高校生年代の児童手当対象児を養育,令和8年3月31日（やむを得ない場合6月30日）,川崎市 児童家庭支援・虐待対策室,https://www.city.kawasaki.jp/450/page/0000182550.html,TRUE,2026-05-07
+507,神奈川県,川崎市,高齢者住宅改造費助成事業,福祉,最大100万円,hasElderly,65歳以上で要支援以上認定・所得により自己負担あり,通年（着工前申請必須）,川崎市 高齢者在宅サービス課,https://www.city.kawasaki.jp/350/page/0000022587.html,TRUE,2026-05-07
+508,神奈川県,川崎市,太陽光発電設備等設置費補助金,エコ,太陽光最大28万円・蓄電池最大70万円,ownsHome,市内居住者・居住予定者,令和8年度は要確認,川崎市 脱炭素戦略推進室（044-200-2178）,https://www.city.kawasaki.jp/300/page/0000174288.html,TRUE,2026-05-07
+509,神奈川県,相模原市,子育て世帯等中古住宅購入・改修費補助事業,住まい,購入最大100万円・親同居改修最大60万円,hasChildren,39歳以下の妊婦・夫婦または18歳以下の子をもつ親,令和8年4月1日-令和9年2月26日,相模原市 住宅課,https://www.city.sagamihara.kanagawa.jp/kurashi/1026489/sumai/1026513/1025296.html,TRUE,2026-05-07
+510,神奈川県,相模原市,自転車用ヘルメット購入費補助,安全,最大3000円/1人1個,usesBike,市内在住者・安全規格適合品購入,令和8年度は要確認,相模原市 市民安全課,https://www.city.sagamihara.kanagawa.jp/kurashi/1026529/bouhan/1026622/1030242.html,TRUE,2026-05-07
+511,神奈川県,横須賀市,子育てファミリー等応援住宅バンク補助金,住まい,最大50万円（物件購入＋リフォーム・解体費）,ownsHome,空き家バンク掲載物件購入＋子育て世代,通年（バンク掲載物件対象）,横須賀市 まちなみ景観課（046-822-8077）,https://www.city.yokosuka.kanagawa.jp/4821/tokei/danti/kosodatebank.html,TRUE,2026-05-07
+512,神奈川県,横須賀市,自己所有型 太陽光発電設備・蓄電池補助,エコ,よこすかエコポイント制度,ownsHome,市内自宅に設置,令和7年5月1日-令和8年3月13日,横須賀市 環境企画課,https://www.city.yokosuka.kanagawa.jp/0830/ecohojo.html,TRUE,2026-05-07
+513,神奈川県,横須賀市,はつらつシニアパス,福祉,6ヶ月有効バス乗り放題パス,hasElderly,70歳以上市民,通年,横須賀市 高齢福祉課,https://www.city.yokosuka.kanagawa.jp/2640/ikigai/siniapasu20150309.html,TRUE,2026-05-07
+514,神奈川県,藤沢市,物価高対応子育て応援手当,子育て,児童1人2万円,hasChildren,0-18歳の児童手当受給者等,原則申請不要,藤沢市 子育て給付課（0466-50-3580）,https://www.city.fujisawa.kanagawa.jp/kosodate/shise/ouen.html,TRUE,2026-05-07
+515,神奈川県,藤沢市,幼児教育施設保育料補助金,子育て,施設に応じた月額補助,hasChildren,市基準を満たす幼児教育施設利用児,通年,藤沢市 保育課,http://www.city.fujisawa.kanagawa.jp/hoiku/kenko/kosodate/yochien/youji-kyouiku_hoikuryou.html,TRUE,2026-05-07
+516,神奈川県,藤沢市,妊婦のための支援給付,子育て,要確認（妊娠期・出産期に現金給付）,hasChildren,妊婦・出産者,通年（面談時案内）,藤沢市 子育て給付課,https://www.city.fujisawa.kanagawa.jp/oyako/syussankosodate.html,TRUE,2026-05-07
+517,神奈川県,平塚市,平塚市太陽光発電設備導入補助金,エコ,5万円/kW・上限20万円＋蓄電池5万,ownsHome,市内自宅に設置・建売購入も可,令和8年4月1日-令和9年3月31日,平塚市 環境政策課（0463-21-9762）,https://www.city.hiratsuka.kanagawa.jp/kankyo/page67_00127.html,TRUE,2026-05-07
+518,神奈川県,平塚市,ブロック塀等倒壊予防策補助金,安全,14300円/m²上限,ownsHome,一戸建ての所有者・危険度大判定,通年（予算範囲内）,平塚市 建築指導課（0463-21-9731）,https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_01930.html,TRUE,2026-05-07
+519,神奈川県,平塚市,ゼロエネルギーハウス（ZEH）導入補助金,エコ,要確認,ownsHome,市内自宅をZEH化,令和8年度受付（要確認）,平塚市 環境政策課,https://www.city.hiratsuka.kanagawa.jp/kankyo/page67_00041.html,TRUE,2026-05-07

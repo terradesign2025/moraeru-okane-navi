@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>もらえるお金ナビ｜補助金・助成金を無料で簡単検索【全国321市区対応】</title>
+<meta name="description" content="子育て・移住・リフォーム・省エネ…あなたが知らないだけでもらえるお金がある。全国321市区・1,637件の補助金・助成金を無料検索。移住支援金は最大100万円以上！">
+<meta name="keywords" content="補助金,助成金,移住支援金,子育て補助金,もらえるお金,補助金検索,無料">
+<!-- TODO: 本番ドメイン確定後にcanonical・og:url・og:imageのURLを差し替え -->
+<link rel="canonical" href="https://moraeru-okane-navi.vercel.app/lp.html">
+<meta property="og:title" content="もらえるお金ナビ｜見逃してませんか？あなたのもらえるお金">
+<meta property="og:description" content="全国321市区・1,637件の補助金・助成金を無料検索。移住支援で最大100万円、子育て支援・リフォーム補助まで。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://moraeru-okane-navi.vercel.app/lp.html">
+<meta property="og:image" content="https://moraeru-okane-navi.vercel.app/images/illustrations/ogp-share-card.png">
+<meta property="og:site_name" content="もらえるお金ナビ">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="もらえるお金ナビ｜見逃してませんか？あなたのもらえるお金">
+<meta name="twitter:description" content="全国321市区・1,637件の補助金・助成金を無料検索。登録不要・完全無料。">
+<meta name="twitter:image" content="https://moraeru-okane-navi.vercel.app/images/illustrations/ogp-share-card.png">
+
+<!-- 構造化データ: WebApplication + Organization（AIO対応） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://moraeru-okane-navi.vercel.app/#webapp",
+      "name": "もらえるお金ナビ",
+      "url": "https://moraeru-okane-navi.vercel.app/",
+      "description": "全国321市区・1,637件の補助金・助成金を無料で検索できるWebアプリ。子育て・住まい・移住支援金・省エネなど、お住まいの市区町村を選ぶだけで対象の制度がわかります。",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "ja",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "publisher": { "@id": "https://moraeru-okane-navi.vercel.app/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://moraeru-okane-navi.vercel.app/#organization",
+      "name": "株式会社テラデザイン",
+      "url": "https://moraeru-okane-navi.vercel.app/",
+      "email": "terradesignik@gmail.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "terradesignik@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": "Japanese"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- 構造化データ: FAQPage（AIO対応・本文FAQセクションと同内容） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "もらえるお金ナビは本当に無料ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、完全無料・登録不要でご利用いただけます。運営費用は地域スポンサー企業様の広告掲載料でまかなう仕組みのため、利用者の方に料金をいただくことはありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "掲載されている情報は正確ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "各自治体の公式サイトを一次情報として確認のうえ掲載し、確認日の表示にも努めています。ただし、制度は年度途中で変更・終了する場合がありますので、申請前に必ず各自治体の公式サイトで最新情報をご確認いただくようお願いいたします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "個人情報の登録は必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ、必要ありません。お住まいの市区町村と当てはまる条件を選ぶだけで検索でき、氏名やメールアドレスなどの入力は不要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どんな補助金・助成金が見つかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "子育て支援、住まい・リフォーム、移住支援金（最大100万円超）、結婚・新生活、省エネ・エコ、高齢者福祉、自転車ヘルメット購入補助など、暮らしに身近な制度を全国321市区・1,637件掲載しています（毎月更新）。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "自分の住んでいる市区がない場合はどうすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "現在は全国321市区に対応しており、毎月新しい市区のデータを追加しています。お住まいの市区が未対応の場合も順次拡充を予定しておりますので、時間をおいて再度ご確認いただけますと幸いです。"
+      }
+    }
+  ]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Google tag (gtag.js) ※ G-XXXXXXXXXXをあなたの計測IDに置き換えてください -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script> -->
+
+<style>
+:root{--green:#10b981;--dark-green:#059669;--teal:#0d9488;--blue:#3b82f6;--orange:#f97316;--gray-50:#fafafa;--gray-100:#f5f5f5;--gray-200:#f0f0f0;--gray-300:#d4d4d4;--gray-400:#9ca3af;--gray-600:#525252;--gray-800:#262626;--gray-900:#111111;--shadow-sm:0 1px 3px rgba(0,0,0,.06),0 4px 20px rgba(0,0,0,.06);--shadow-hover:0 12px 40px rgba(0,0,0,.12);--radius:12px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Noto Sans JP",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--gray-900);background:#fff;line-height:1.7;letter-spacing:0;}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+.container{max-width:1100px;margin:0 auto;padding:0 20px;}
+nav{background:#fff;border-bottom:1px solid #f0f0f0;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,.06);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:17px;color:var(--gray-900);}
+.logo-icon{width:34px;height:34px;background:#ecfdf5;color:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--green);color:#fff;font-weight:800;font-size:13px;padding:9px 18px;border-radius:999px;transition:background .2s,transform .2s;}
+.nav-cta:hover{background:var(--dark-green);transform:translateY(-1px);}
+.hero{background:linear-gradient(135deg,#064e3b 0%,#0d9488 58%,#0f766e 100%);padding:82px 20px 96px;text-align:center;position:relative;overflow:hidden;}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);color:#fff;font-size:12px;font-weight:800;padding:6px 14px;border-radius:999px;margin-bottom:20px;border:1px solid rgba(255,255,255,.22);}
+.hero h1{font-size:clamp(28px,5vw,50px);font-weight:900;color:#fff;line-height:1.25;margin-bottom:16px;}
+.hero h1 span{color:#d1fae5;}
+.hero p{font-size:16px;color:rgba(255,255,255,.88);margin-bottom:34px;line-height:1.9;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font-weight:900;transition:transform .2s,box-shadow .2s,background .2s;}
+.btn-primary{background:#fff;color:#047857;font-size:16px;padding:14px 32px;box-shadow:var(--shadow-sm);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+.btn-secondary{background:rgba(255,255,255,.12);color:#fff;font-size:15px;padding:14px 28px;border:1px solid rgba(255,255,255,.38);}
+.btn-secondary:hover{background:rgba(255,255,255,.2);}
+.stats{background:#111;padding:32px 20px;}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;text-align:center;}
+.stat-num{font-family:Inter,"Noto Sans JP",sans-serif;font-size:32px;font-weight:900;color:#fff;}
+.stat-num span{font-size:15px;color:#a7f3d0;margin-left:2px;}
+.stat-label{font-size:11px;color:#a3a3a3;margin-top:4px;}
+section{padding:72px 20px;}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.section-title{font-size:clamp(22px,4vw,34px);font-weight:900;line-height:1.35;margin-bottom:14px;color:var(--gray-900);}
+.section-sub{font-size:15px;color:var(--gray-600);line-height:1.9;}
+.problem,.blog{background:var(--gray-50);}
+.problem-cards,.features-grid,.money-grid,.blog-grid{display:grid;gap:20px;}
+.problem-cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:40px;}
+.problem-card,.feature-card,.money-card,.blog-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);box-shadow:none;overflow:hidden;}
+.problem-card{padding:24px;text-align:center;}
+.problem-emoji,.feature-icon,.money-icon,.ijyu-point-icon{display:inline-flex;align-items:center;justify-content:center;background:#ecfdf5;color:var(--green);border-radius:12px;}
+.problem-emoji{width:52px;height:52px;font-size:22px;margin-bottom:14px;}
+.problem-card h3{font-size:15px;font-weight:800;margin-bottom:8px;line-height:1.6;}
+.problem-card p,.feature-card p,.money-card p{font-size:13px;color:var(--gray-600);line-height:1.8;}
+.features-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:46px;}
+.feature-card{padding:28px;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.feature-card:hover,.money-card:hover,.blog-card:hover{border-color:#bbf7d0;box-shadow:var(--shadow-sm);transform:translateY(-3px);}
+.feature-icon{width:48px;height:48px;font-size:21px;margin-bottom:16px;}
+.feature-card h3{font-size:17px;font-weight:900;margin-bottom:8px;}
+.how{background:#f8fffc;border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-top:44px;}
+.step{text-align:center;}
+.step-num{width:48px;height:48px;border-radius:999px;background:var(--green);color:#fff;font-family:Inter,"Noto Sans JP",sans-serif;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.step h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+.step p{font-size:13px;color:var(--gray-600);}
+.money-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:40px;}
+.money-card{padding:20px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.money-icon{width:44px;height:44px;font-size:20px;margin:0 auto 10px;}
+.money-card h3{font-size:14px;font-weight:800;margin-bottom:4px;}
+.money-amount{font-family:Inter,"Noto Sans JP",sans-serif;font-size:18px;font-weight:900;color:var(--green);}
+.ijyu-special{background:linear-gradient(135deg,#064e3b,#0f766e);padding:72px 20px;color:#fff;}
+.ijyu-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.ijyu-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:5px 14px;border-radius:999px;font-size:11px;font-weight:800;margin-bottom:16px;}
+.ijyu-special h2{font-size:clamp(22px,4vw,36px);font-weight:900;line-height:1.35;margin-bottom:16px;}
+.ijyu-special p{color:rgba(255,255,255,.86);font-size:15px;line-height:1.9;margin-bottom:28px;}
+.ijyu-points{display:flex;flex-direction:column;gap:14px;}
+.ijyu-point{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:14px 18px;}
+.ijyu-point-icon{width:36px;height:36px;background:rgba(255,255,255,.14);color:#d1fae5;font-size:16px;flex-shrink:0;}
+.ijyu-point-text{font-size:14px;font-weight:800;}
+.ijyu-point-amount{font-size:12px;color:#a7f3d0;margin-top:2px;}
+.blog-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:16px;}
+.blog-more{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:800;color:var(--green);border:1px solid #a7f3d0;background:#fff;padding:8px 18px;border-radius:999px;transition:.2s;}
+.blog-more:hover{background:#ecfdf5;}
+.blog-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;}
+.blog-card{display:block;color:var(--gray-900);transition:transform .2s,box-shadow .2s,border-color .2s;}
+.blog-thumb{height:168px;background-size:cover;background-position:center;position:relative;overflow:hidden;}
+.blog-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.18));}
+.blog-cat{position:absolute;top:12px;left:12px;z-index:1;display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;padding:3px 10px;border-radius:999px;background:var(--green);color:#fff;}
+.blog-body{padding:18px;}
+.blog-title{font-size:15px;font-weight:800;line-height:1.6;margin-bottom:8px;}
+.blog-meta{font-family:Inter,"Noto Sans JP",sans-serif;font-size:11px;color:var(--gray-400);display:flex;gap:12px;flex-wrap:wrap;}
+.blog-meta span{display:inline-flex;align-items:center;gap:5px;}
+.app-banner{background:#fff;border:1px solid #bbf7d0;border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:24px;margin:40px 0;}
+.app-banner-inner{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.app-banner-emoji{width:44px;height:44px;background:#ecfdf5;color:var(--green);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.app-banner-text{flex:1;min-width:200px;}
+.app-banner-title{font-size:18px;font-weight:900;color:var(--gray-900);margin-bottom:4px;}
+.app-banner-sub{font-size:13px;color:var(--gray-600);}
+.app-banner-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--green);color:#fff;font-weight:900;font-size:14px;padding:12px 24px;border-radius:999px;white-space:nowrap;transition:.2s;}
+.app-banner-btn:hover{background:var(--dark-green);transform:translateY(-1px);}
+.cta-section{background:linear-gradient(135deg,var(--green),var(--teal));padding:78px 20px;text-align:center;}
+.cta-section h2{font-size:clamp(22px,4vw,38px);font-weight:900;color:#fff;margin-bottom:14px;line-height:1.35;}
+.cta-section p{font-size:16px;color:rgba(255,255,255,.86);margin-bottom:34px;}
+.cta-section .btn-primary{font-size:18px;padding:17px 38px;}
+.faq-list{max-width:760px;margin:40px auto 0;display:flex;flex-direction:column;gap:12px;}
+.faq-item{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:12px;padding:18px 20px;font-size:15px;font-weight:800;color:var(--gray-900);transition:background .2s;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary:hover{background:var(--gray-50);}
+.faq-q{flex-shrink:0;width:26px;height:26px;border-radius:999px;background:var(--green);color:#fff;font-family:Inter,"Noto Sans JP",sans-serif;font-size:13px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;margin-top:1px;}
+.faq-toggle{margin-left:auto;color:var(--green);font-size:18px;font-weight:900;transition:transform .2s;flex-shrink:0;}
+.faq-item[open] .faq-toggle{transform:rotate(45deg);}
+.faq-a{display:flex;gap:12px;padding:0 20px 18px;border-top:1px solid var(--gray-100,#f5f5f5);}
+.faq-a .faq-q{background:#0d9488;margin-top:14px;}
+.faq-a p{font-size:14px;color:var(--gray-600);line-height:1.9;padding-top:14px;}
+footer{background:#111;color:#a3a3a3;padding:40px 20px;text-align:center;}
+footer .footer-logo{font-size:18px;font-weight:900;color:#fff;margin-bottom:12px;}
+footer p{font-size:12px;line-height:2;}
+footer a{color:#d4d4d4;}
+footer a:hover{color:#fff;}
+@media(max-width:768px){.ijyu-inner{grid-template-columns:1fr;gap:36px;}}
+@media(max-width:600px){.container{padding:0 16px;}.hero{padding:60px 16px 76px;}section{padding:52px 16px;}.stats-grid{grid-template-columns:repeat(2,1fr);}.blog-grid{grid-template-columns:1fr;}.nav-cta{font-size:11px;padding:8px 12px;}.logo{font-size:14px;}}
+</style>
+</head>
+<body>
+
+<!-- ナビ -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">
+      <div class="logo-icon"><i class="fas fa-sack-dollar"></i></div>
+      もらえるお金ナビ
+    </a>
+    <a href="/" class="nav-cta"><i class="fas fa-magnifying-glass"></i> 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="hero-badge"><i class="fas fa-sparkles"></i> 全国321市区・1,637件の補助金情報を無料公開中</div>
+    <h1>見逃してませんか？<br><span>あなたのもらえるお金。</span></h1>
+    <p>お住まいの市区町村名を選ぶだけ。子育て・住まい・移住の補助金が1分でわかります。<br>知らないだけで損している補助金・助成金が、きっとあります。</p>
+    <div class="hero-btns">
+      <a href="/" class="btn-primary"><i class="fas fa-magnifying-glass"></i> 今すぐ無料で調べる</a>
+      <a href="#how" class="btn-secondary">仕組みを見る ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- 統計バー -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-num">321<span>市区</span></div>
+        <div class="stat-label">全国対応エリア</div>
+      </div>
+      <div>
+        <div class="stat-num">1,637<span>件</span></div>
+        <div class="stat-label">掲載補助金・助成金</div>
+      </div>
+      <div>
+        <div class="stat-num">47<span>都道府県</span></div>
+        <div class="stat-label">北海道〜沖縄</div>
+      </div>
+      <div>
+        <div class="stat-num">¥0</div>
+        <div class="stat-label">完全無料・登録不要</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 課題提起 -->
+<section class="problem">
+  <div class="container">
+    <p class="section-label">Problem</p>
+    <h2 class="section-title">こんな思い、ありませんか？</h2>
+    <p class="section-sub">日本には数千種類もの補助金・助成金がありますが、<br>その多くは「申請しないともらえない」制度です。</p>
+    <div class="problem-cards">
+      <div class="problem-card">
+        <div class="problem-emoji"><i class="far fa-face-frown"></i></div>
+        <h3>制度が多すぎて<br>何からすべきかわからない</h3>
+        <p>自治体のサイトは難しくて、どこに何があるか調べるだけで1日かかる…</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-emoji"><i class="far fa-clock"></i></div>
+        <h3>締め切りを過ぎて<br>もらい損ねた…</h3>
+        <p>申請期限があることを知らず、対象の補助金を受け取れなかった経験がある</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-emoji"><i class="far fa-circle-question"></i></div>
+        <h3>自分が対象かどうか<br>判断できない</h3>
+        <p>難しい条件文が並んでいて、自分が対象なのかどうかさっぱりわからない</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-emoji"><i class="fas fa-location-dot"></i></div>
+        <h3>まさか！住んでいない<br>場所でもらえるとは知らなかった</h3>
+        <p>移住支援金は「移住先」からもらえる。東京に住みながら長野の支援金が受け取れる！</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 特徴 -->
+<section>
+  <div class="container">
+    <p class="section-label">Features</p>
+    <h2 class="section-title">もらえるお金ナビが<br>選ばれる理由</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#dcfce7;"><i class="fas fa-magnifying-glass"></i></div>
+        <h3>市区町村で絞り込み検索</h3>
+        <p>住んでいる市区を選ぶだけで、あなたが対象の補助金が一覧表示。難しい手続きは一切不要。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#dbeafe;"><i class="fas fa-baby"></i></div>
+        <h3>条件別フィルタリング</h3>
+        <p>子育て・持ち家・高齢者同居・自転車利用など、家庭の状況に合わせて絞り込み。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fef3c7;"><i class="fas fa-plane"></i></div>
+        <h3>移住支援金も全国対応</h3>
+        <p>今住んでいない場所の移住補助金も検索可能。最大100万円以上の支援金を見逃しなく。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fce7f3;"><i class="fas fa-mobile-screen-button"></i></div>
+        <h3>スマホで1分完結</h3>
+        <p>登録不要・完全無料。スマートフォンから気軽に検索できるシンプル設計。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#ede9fe;"><i class="far fa-bell"></i></div>
+        <h3>補助金アラート機能</h3>
+        <p>締切が近い補助金や新しい制度をアラートでお知らせ。申請し忘れを防止。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#ecfdf5;"><i class="fas fa-store"></i></div>
+        <h3>地域業者とのマッチング</h3>
+        <p>補助金申請をサポートしてくれる地域の専門業者を簡単に見つけられる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 使い方 -->
+<section class="how" id="how">
+  <div class="container">
+    <p class="section-label">How to Use</p>
+    <h2 class="section-title">たった3ステップで<br>もらえるお金がわかる</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>エリアを選択</h3>
+        <p>住んでいる都道府県・市区町村を選ぶだけ</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>条件を入力</h3>
+        <p>子育て中・持ち家あり など当てはまるものをタップ</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>補助金一覧を確認</h3>
+        <p>あなたが対象の補助金が一覧で表示。申請方法も確認できる</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <a href="/" class="btn-primary" style="background:var(--green);color:#fff;box-shadow:0 4px 20px rgba(16,185,129,.4);"><i class="fas fa-magnifying-glass"></i> 今すぐ無料で検索する</a>
+    </div>
+  </div>
+</section>
+
+<!-- もらえるお金の種類 -->
+<section>
+  <div class="container">
+    <p class="section-label">Categories</p>
+    <h2 class="section-title">こんなお金が見つかります</h2>
+    <p class="section-sub">知らないだけで損している補助金・助成金。あなたの家庭に合ったものを探してみてください。</p>
+    <div class="money-grid">
+      <div class="money-card">
+        <div class="money-icon"><i class="fas fa-baby"></i></div>
+        <h3>子育て支援</h3>
+        <div class="money-amount">年数万円〜</div>
+        <p>医療費・保育料・出産祝い金など</p>
+      </div>
+      <div class="money-card">
+        <div class="money-icon"><i class="fas fa-house"></i></div>
+        <h3>住まい・リフォーム</h3>
+        <div class="money-amount">最大200万円</div>
+        <p>耐震・断熱・バリアフリー改修</p>
+      </div>
+      <div class="money-card">
+        <div class="money-icon"><i class="fas fa-plane"></i></div>
+        <h3>移住支援金</h3>
+        <div class="money-amount">最大100万円+</div>
+        <p>地方移住で世帯最大100万円</p>
+      </div>
+      <div class="money-card">
+        <div class="money-icon"><i class="fas fa-ring"></i></div>
+        <h3>結婚・新生活</h3>
+        <div class="money-amount">最大30万円</div>
+        <p>引越し・家賃・新居費用の補助</p>
+      </div>
+      <div class="money-card">
+        <div class="money-icon"><i class="fas fa-leaf"></i></div>
+        <h3>省エネ・エコ</h3>
+        <div class="money-amount">最大3万円〜</div>
+        <p>家電買替・太陽光・蓄電池設置</p>
+      </div>
+      <div class="money-card">
+        <div class="money-icon"><i class="fas fa-shield-heart"></i></div>
+        <h3>高齢者・福祉</h3>
+        <div class="money-amount">最大18万円〜</div>
+        <p>補聴器・住宅改修・福祉用具</p>
+      </div>
+      <div class="money-card">
+        <div class="money-icon"><i class="fas fa-bicycle"></i></div>
+        <h3>自転車・安全</h3>
+        <div class="money-amount">最大2,000円</div>
+        <p>ヘルメット購入補助（全年齢）</p>
+      </div>
+      <div class="money-card">
+        <div class="money-icon"><i class="fas fa-star"></i></div>
+        <h3>ユニーク制度</h3>
+        <div class="money-amount">家具〜職人</div>
+        <p>全国の面白い補助金を特集</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 移住特集 -->
+<div class="ijyu-special">
+  <div class="container">
+    <div class="ijyu-inner">
+      <div>
+        <div class="ijyu-badge"><i class="fas fa-plane"></i> 移住支援金特集</div>
+        <h2>東京に住みながら<br>長野の100万円を<br>狙える！？</h2>
+        <p>移住支援金は「今住んでいる場所」が出す制度ではありません。<span style="color:#6ee7b7;font-weight:700;">「移住先」の自治体</span>が支給します。つまり、まだ移住していなくても計画段階からリサーチして、お得な移住先を探せます。</p>
+        <a href="/blog/001-ijyu-nagano.html" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#065f46;font-weight:900;padding:12px 24px;border-radius:10px;font-size:14px;transition:.2s;">
+          <i class="fas fa-book-open"></i> 移住でもらえるお金の全解説を読む <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="ijyu-points">
+        <div class="ijyu-point">
+          <div class="ijyu-point-icon"><i class="fas fa-piggy-bank"></i></div>
+          <div>
+            <div class="ijyu-point-text">世帯移住支援金</div>
+            <div class="ijyu-point-amount">最大100万円（東京圏<i class="fas fa-arrow-right"></i>地方）</div>
+          </div>
+        </div>
+        <div class="ijyu-point">
+          <div class="ijyu-point-icon"><i class="fas fa-user"></i></div>
+          <div>
+            <div class="ijyu-point-text">単身移住支援金</div>
+            <div class="ijyu-point-amount">最大60万円</div>
+          </div>
+        </div>
+        <div class="ijyu-point">
+          <div class="ijyu-point-icon"><i class="fas fa-baby"></i></div>
+          <div>
+            <div class="ijyu-point-text">子ども加算（1人につき）</div>
+            <div class="ijyu-point-amount">+30万円 ※子どもが多いほどお得</div>
+          </div>
+        </div>
+        <div class="ijyu-point">
+          <div class="ijyu-point-icon"><i class="fas fa-map-location-dot"></i></div>
+          <div>
+            <div class="ijyu-point-text">対象エリア</div>
+            <div class="ijyu-point-amount">全国60件以上の移住支援金を掲載</div>
+          </div>
+        </div>
+        <div style="margin-top:8px;">
+          <a href="/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);color:#fff;font-weight:700;padding:12px 24px;border-radius:10px;font-size:14px;width:100%;justify-content:center;">
+            <i class="fas fa-magnifying-glass"></i> 移住支援金を検索する <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">よくあるご質問</h2>
+    <p class="section-sub">はじめてご利用になる方からよくいただくご質問をまとめました。</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary><span class="faq-q">Q</span>もらえるお金ナビは本当に無料ですか？<span class="faq-toggle">+</span></summary>
+        <div class="faq-a">
+          <span class="faq-q">A</span>
+          <p>はい、完全無料・登録不要でご利用いただけます。運営費用は地域スポンサー企業様の広告掲載料でまかなう仕組みのため、利用者の方に料金をいただくことはありません。</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q</span>掲載されている情報は正確ですか？<span class="faq-toggle">+</span></summary>
+        <div class="faq-a">
+          <span class="faq-q">A</span>
+          <p>各自治体の公式サイトを一次情報として確認のうえ掲載し、確認日の表示にも努めています。ただし、制度は年度途中で変更・終了する場合がありますので、申請前に必ず各自治体の公式サイトで最新情報をご確認いただくようお願いいたします。</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q</span>個人情報の登録は必要ですか？<span class="faq-toggle">+</span></summary>
+        <div class="faq-a">
+          <span class="faq-q">A</span>
+          <p>いいえ、必要ありません。お住まいの市区町村と当てはまる条件を選ぶだけで検索でき、氏名やメールアドレスなどの入力は不要です。</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q</span>どんな補助金・助成金が見つかりますか？<span class="faq-toggle">+</span></summary>
+        <div class="faq-a">
+          <span class="faq-q">A</span>
+          <p>子育て支援、住まい・リフォーム、移住支援金（最大100万円超）、結婚・新生活、省エネ・エコ、高齢者福祉、自転車ヘルメット購入補助など、暮らしに身近な制度を全国321市区・1,637件掲載しています（毎月更新）。</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q</span>自分の住んでいる市区がない場合はどうすればいいですか？<span class="faq-toggle">+</span></summary>
+        <div class="faq-a">
+          <span class="faq-q">A</span>
+          <p>現在は全国321市区に対応しており、毎月新しい市区のデータを追加しています。お住まいの市区が未対応の場合も順次拡充を予定しておりますので、時間をおいて再度ご確認いただけますと幸いです。</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ブログ -->
+<section class="blog">
+  <div class="container">
+    <div class="blog-header">
+      <div>
+        <p class="section-label">Blog</p>
+        <h2 class="section-title" style="margin-bottom:0;">お金の知識コラム</h2>
+      </div>
+      <a href="/blog/" class="blog-more">記事一覧を見る <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="blog-grid">
+      <a href="/blog/001-ijyu-nagano.html" class="blog-card">
+        <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1512432716927-9d7e0dd75e17?w=480&q=80');background-size:cover;background-position:center;">
+          <span class="blog-cat"><i class="fas fa-plane"></i> 移住支援</span>
+        </div>
+        <div class="blog-body">
+          <h3 class="blog-title">東京に住みながら長野の移住支援金100万円がもらえる！申請方法を完全解説</h3>
+          <div class="blog-meta"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-tag"></i> 移住支援</span></div>
+        </div>
+      </a>
+      <a href="/blog/002-kosodate-joseikin.html" class="blog-card">
+        <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=480&q=80');background-size:cover;background-position:center;">
+          <span class="blog-cat"><i class="fas fa-baby"></i> 子育て</span>
+        </div>
+        <div class="blog-body">
+          <h3 class="blog-title">子育て世帯必見！2026年度の補助金・助成金まとめ【もらい忘れゼロへ】</h3>
+          <div class="blog-meta"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-tag"></i> 子育て</span></div>
+        </div>
+      </a>
+      <a href="/blog/003-mado-renovate.html" class="blog-card">
+        <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=480&q=80');background-size:cover;background-position:center;">
+          <span class="blog-cat"><i class="fas fa-house"></i> 住まい</span>
+        </div>
+        <div class="blog-body">
+          <h3 class="blog-title">窓リノベ補助金で最大200万円！先進的窓リノベ2025年度の使い方</h3>
+          <div class="blog-meta"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-tag"></i> 住まい</span></div>
+        </div>
+      </a>
+      <a href="/blog/004-mama-okane.html" class="blog-card">
+        <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=480&q=80');background-size:cover;background-position:center;">
+          <span class="blog-cat"><i class="fas fa-piggy-bank"></i> お金管理</span>
+        </div>
+        <div class="blog-body">
+          <h3 class="blog-title">ママのお金管理術｜補助金・助成金をフル活用する家計の作り方</h3>
+          <div class="blog-meta"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-tag"></i> お金管理</span></div>
+        </div>
+      </a>
+      <a href="/blog/005-global-subsidy.html" class="blog-card">
+        <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=480&q=80');background-size:cover;background-position:center;">
+          <span class="blog-cat"><i class="fas fa-earth-asia"></i> 海外情報</span>
+        </div>
+        <div class="blog-body">
+          <h3 class="blog-title">海外でも「もらえるお金」がある！各国の個人向け給付・補助金制度まとめ</h3>
+          <div class="blog-meta"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-tag"></i> 海外情報</span></div>
+        </div>
+      </a>
+      <a href="/blog/" class="blog-card" style="display:flex;align-items:center;justify-content:center;min-height:200px;border:2px dashed var(--gray-200);background:transparent;">
+        <div style="text-align:center;color:var(--gray-400);">
+          <div style="font-size:32px;margin-bottom:8px;"><i class="fas fa-book-open"></i></div>
+          <p style="font-weight:700;font-size:14px;">記事一覧を見る</p>
+          <p style="font-size:12px;margin-top:4px;">全記事 <i class="fas fa-arrow-right"></i> ブログへ</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTAセクション -->
+<div class="cta-section">
+  <div class="container">
+    <h2>あなたのもらえるお金を<br>今すぐ確認しよう</h2>
+    <p>登録不要・完全無料。1分で補助金がわかります。</p>
+    <a href="/" class="btn-primary"><i class="fas fa-magnifying-glass"></i> 無料で補助金を検索する</a>
+    <p style="color:rgba(255,255,255,.6);font-size:12px;margin-top:20px;">全国321市区・1,637件対応 ／ 毎月更新</p>
+  </div>
+</div>
+
+<!-- フッター -->
+<footer>
+  <div class="container">
+    <div class="footer-logo"><i class="fas fa-piggy-bank"></i> もらえるお金ナビ</div>
+    <p>補助金・助成金の情報は各自治体の公式情報をもとに作成しています。<br>
+    最新の情報・申請詳細は必ず各自治体の公式サイトでご確認ください。</p>
+    <p style="margin-top:16px;">
+      <a href="/">アプリトップ</a> ／
+      <a href="/blog/">ブログ一覧</a> ／
+      <a href="/sponsor_lp.html">スポンサー様へ</a>
+    </p>
+    <p style="margin-top:12px;">
+      <a href="/legal/privacy.html">プライバシーポリシー</a> ／
+      <a href="/legal/terms.html">利用規約</a> ／
+      <a href="/legal/disclaimer.html">免責事項</a> ／
+      <a href="/legal/tokushoho.html">特定商取引法に基づく表記</a>
+    </p>
+    <p style="margin-top:8px;font-size:11px;">運営：株式会社テラデザイン ／ お問い合わせ：<a href="mailto:terradesignik@gmail.com">terradesignik@gmail.com</a></p>
+    <p style="margin-top:20px;font-size:11px;">© 2026 もらえるお金ナビ | Operated by 株式会社テラデザイン</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>リフォームで使える補助金まとめ2026年版！国+都道府県+市区の『3重取り』で最大400万円｜もらえるお金ナビ</title>
+<meta name="description" content="住宅リフォームには国・都道府県・市区町村の補助金が使える！耐震・断熱・バリアフリー・省エネ・窓リノベの補助金を組み合わせれば最大400万円以上の補助を受けられる。">
+<meta name="keywords" content="リフォーム補助金 2026,住宅補助金 国,窓リノベ 補助金,断熱 リフォーム 補助,耐震 補助金,バリアフリー 補助金,先進的窓リノベ,子育てエコホーム,給湯省エネ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.reform-card{border-radius:20px;padding:24px;margin:20px 0;position:relative;overflow:hidden;}
+.reform-card.national{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;}
+.reform-card.pref{background:linear-gradient(135deg,#f0fdf4,#d1fae5);border:2px solid #6ee7b7;}
+.reform-card.city{background:linear-gradient(135deg,#fff7ed,#fed7aa);border:2px solid #fb923c;}
+.reform-card.warning{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:2px solid #fca5a5;}
+.reform-card-label{font-size:11px;font-weight:900;letter-spacing:.08em;margin-bottom:8px;opacity:.7;}
+.reform-card-headline{font-size:clamp(16px,3vw,21px);font-weight:900;line-height:1.4;margin-bottom:10px;color:#111827;}
+.reform-amount{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:6px 14px;margin:8px 0 12px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.reform-amount strong{font-size:22px;font-weight:900;color:#2563eb;}
+.reform-amount span{font-size:12px;color:#6b7280;}
+.reform-body{font-size:14px;color:#374151;line-height:1.8;}
+.reform-body strong{color:#111827;}
+.reform-body em{font-style:normal;font-weight:900;color:#2563eb;}
+
+.subsidy-list{display:flex;flex-direction:column;gap:14px;margin:16px 0;}
+.subsidy-item{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px;}
+.subsidy-item-icon{font-size:28px;flex-shrink:0;}
+.subsidy-item-body h4{font-size:14px;font-weight:900;color:#111827;margin-bottom:4px;}
+.subsidy-item-body .sub{font-size:12px;color:#6b7280;margin-bottom:8px;}
+.subsidy-item-body .desc{font-size:13px;color:#374151;line-height:1.7;}
+.subsidy-item-amount{background:#2563eb;color:#fff;font-size:13px;font-weight:900;padding:3px 12px;border-radius:20px;white-space:nowrap;margin-top:4px;display:inline-block;}
+
+/* 3重取りシミュレーション */
+.triple-box{background:linear-gradient(135deg,#0f172a,#1e1b4b);border-radius:20px;padding:32px;margin:28px 0;color:#fff;border:2px solid #6366f1;}
+.triple-box h3{font-size:18px;font-weight:900;margin-bottom:24px;color:#fff;text-align:center;}
+.triple-item{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start;}
+.triple-layer{min-width:80px;border-radius:10px;padding:6px 10px;text-align:center;flex-shrink:0;}
+.layer-1{background:linear-gradient(135deg,#3b82f6,#1e40af);}
+.layer-2{background:linear-gradient(135deg,#10b981,#059669);}
+.layer-3{background:linear-gradient(135deg,#f59e0b,#d97706);}
+.layer-label{font-size:10px;font-weight:900;color:rgba(255,255,255,.8);}
+.layer-gov{font-size:13px;font-weight:900;color:#fff;}
+.triple-detail{flex:1;}
+.triple-name{font-size:14px;font-weight:900;color:#fff;margin-bottom:4px;}
+.triple-desc{font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:6px;}
+.triple-amount{font-size:18px;font-weight:900;color:#a5f3fc;}
+.triple-divider{height:1px;background:rgba(255,255,255,.1);margin:16px 0;}
+.triple-total-row{display:flex;justify-content:space-between;align-items:center;padding-top:16px;}
+.triple-total-label{font-size:17px;font-weight:900;color:#fff;}
+.triple-total-value{font-size:36px;font-weight:900;color:#34d399;}
+
+.pref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:18px 0;}
+.pref-card{background:#fff;border:2px solid #d1fae5;border-radius:14px;padding:16px;}
+.pref-card-icon{font-size:24px;margin-bottom:8px;}
+.pref-card-title{font-size:13px;font-weight:900;color:#166534;margin-bottom:4px;}
+.pref-card-body{font-size:12px;color:#374151;line-height:1.7;margin-bottom:8px;}
+.pref-card-amount{font-size:15px;font-weight:900;color:#059669;}
+
+.caution-box{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:2px solid #fca5a5;border-radius:16px;padding:22px;margin:24px 0;}
+.caution-box h3{font-size:15px;font-weight:900;color:#dc2626;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.caution-list{display:flex;flex-direction:column;gap:10px;}
+.caution-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#374151;line-height:1.7;}
+.caution-badge{background:#dc2626;color:#fff;font-size:11px;font-weight:900;padding:2px 8px;border-radius:6px;white-space:nowrap;margin-top:2px;flex-shrink:0;}
+
+.flow-box{background:#1e293b;border-radius:16px;padding:24px;margin:20px 0;}
+.flow-box h3{color:#fff;font-size:16px;font-weight:900;margin-bottom:16px;}
+.flow-step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;}
+.flow-num{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.flow-text{color:rgba(255,255,255,.9);font-size:14px;line-height:1.7;}
+.flow-text strong{color:#fde68a;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">🏠 住まい・リフォーム</span>
+    <h1>リフォームで使える補助金まとめ2026年版！<br>国+都道府県+市区の『3重取り』で<br>最大400万円</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 住まい・リフォーム</span>
+      <span>⏱ 読了約9分</span>
+      <span>🏠 リフォーム検討者必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「リフォームって高い…」と躊躇している方に、知っておいてほしい事実があります。</p>
+<p>住宅リフォームの補助金は<strong>国・都道府県・市区町村の3段重ねで申請できます。</strong>しかも各補助金は（条件を満たせば）<strong>同時に受け取ることができる</strong>のです。</p>
+<p>うまく組み合わせれば<strong>最大350万〜400万円超</strong>の補助を受けながらリフォームできます。「知らなかった」では取り返せない大きなお金の話、今すぐ確認しましょう。</p>
+
+<!-- 目次 -->
+<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:16px;padding:20px 24px;margin:24px 0;">
+  <h3 style="font-size:13px;font-weight:900;color:#1e40af;margin-bottom:12px;">📋 この記事でわかること</h3>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="#kuni" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#1e40af;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🏛</span>
+      国の補助金3種（先進的窓リノベ・給湯省エネ・子育てエコホーム）
+    </a>
+    <a href="#pref" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">📍</span>
+      都道府県の補助金と上乗せ金額
+    </a>
+    <a href="#city" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#f59e0b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🏙</span>
+      市区町村の補助金（耐震・バリアフリー・空き家）
+    </a>
+    <a href="#simulation" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🧮</span>
+      3重取りシミュレーション（最大350万円超の計算）
+    </a>
+    <a href="#chui" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#dc2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">⚠️</span>
+      絶対失敗しない「工事前申請」の重要性
+    </a>
+  </div>
+</div>
+
+<!-- h2① -->
+<h2 id="kuni">🏛 国の補助金3種（先進的窓リノベ・給湯省エネ・子育てエコホーム）</h2>
+
+<div class="reform-card national">
+  <div class="reform-card-label">🇯🇵 国（国土交通省・経済産業省）の主要リフォーム補助金</div>
+  <div class="reform-card-headline">国の補助金だけで<br>最大<em>350万円超</em>に達することも</div>
+  <div class="reform-amount"><strong>3種合計で最大350万円超</strong><span>条件を満たした場合の最大額</span></div>
+</div>
+
+<div class="subsidy-list">
+  <div class="subsidy-item">
+    <div class="subsidy-item-icon">🪟</div>
+    <div class="subsidy-item-body">
+      <h4>先進的窓リノベ2024事業</h4>
+      <div class="sub">主管：経済産業省・環境省</div>
+      <div class="desc">窓の断熱改修（内窓設置・窓交換・ガラス交換）に対する補助金。断熱等級4以上の製品が対象。全窓を内窓で断熱化すると冷暖房費が大幅に削減できる。<strong>戸建て・マンションどちらも対象</strong>で、人気のため予算が早期に枯渇することも多い。</div>
+      <span class="subsidy-item-amount">最大200万円</span>
+    </div>
+  </div>
+  <div class="subsidy-item">
+    <div class="subsidy-item-icon">🚿</div>
+    <div class="subsidy-item-body">
+      <h4>給湯省エネ2024事業</h4>
+      <div class="sub">主管：経済産業省</div>
+      <div class="desc">エコキュート・エネファーム・ハイブリッド給湯器などの高効率給湯器への交換に補助。給湯器は家庭のエネルギー消費の約1/3を占めるため、<strong>交換効果が非常に高い</strong>補助金。工事費込みで5〜15万円程度の負担減になるケースが多い。</div>
+      <span class="subsidy-item-amount">最大18万円</span>
+    </div>
+  </div>
+  <div class="subsidy-item">
+    <div class="subsidy-item-icon">👨‍👩‍👧</div>
+    <div class="subsidy-item-body">
+      <h4>子育てエコホーム支援事業</h4>
+      <div class="sub">主管：国土交通省</div>
+      <div class="desc">子育て世帯・若者夫婦世帯向けの省エネリフォーム補助。断熱改修・エコ設備（太陽光・蓄電池等）・バリアフリー改修など幅広い工事が対象。<strong>子どもがいる世帯や若い夫婦は優先的に申請すべき</strong>補助金。</div>
+      <span class="subsidy-item-amount">最大60万円</span>
+    </div>
+  </div>
+</div>
+
+<div class="highlight-box">
+  <span class="amount">🔑 国の補助金を受けるには「登録業者」が必須</span>
+  <p>国の補助金は全て、<strong>補助金事業の登録業者（施工業者）を通じて申請</strong>します。「こだわりの業者に頼みたい」という場合は、その業者が登録事業者かどうか必ず確認してください。未登録業者では補助金が受け取れません。</p>
+</div>
+
+<!-- h2② -->
+<h2 id="pref">📍 都道府県の補助金（太陽光・ZEH・省エネ改修など）と上乗せ金額</h2>
+
+<p>国の補助金に加えて、各都道府県が独自の上乗せ補助金を設けています。同一工事で<strong>国の補助金＋都道府県補助金を同時に受け取れる</strong>ケースがほとんどです。</p>
+
+<div class="reform-card pref">
+  <div class="reform-card-label">📍 都道府県補助金の主な種類</div>
+  <div class="reform-card-headline">都道府県の補助で<br>さらに<em>最大50万円</em>上乗せ可能</div>
+</div>
+
+<div class="pref-grid">
+  <div class="pref-card">
+    <div class="pref-card-icon">☀️</div>
+    <div class="pref-card-title">太陽光発電補助</div>
+    <div class="pref-card-body">都道府県独自の太陽光設置補助。東京都ZEV補助や神奈川県の補助が有名。国の補助と重複申請可。</div>
+    <div class="pref-card-amount">最大15〜30万円</div>
+  </div>
+  <div class="pref-card">
+    <div class="pref-card-icon">🏠</div>
+    <div class="pref-card-title">ZEH（ゼッチ）補助</div>
+    <div class="pref-card-body">ネット・ゼロ・エネルギー・ハウスへのリフォーム。断熱・省エネ・創エネを組み合わせた高水準リフォームに大型補助。</div>
+    <div class="pref-card-amount">最大50万円</div>
+  </div>
+  <div class="pref-card">
+    <div class="pref-card-icon">🪟</div>
+    <div class="pref-card-title">省エネ改修上乗せ</div>
+    <div class="pref-card-body">国の先進的窓リノベ事業に都道府県が上乗せ補助。東京都・埼玉県・愛知県などで実施。</div>
+    <div class="pref-card-amount">最大10〜20万円</div>
+  </div>
+  <div class="pref-card">
+    <div class="pref-card-icon">🔋</div>
+    <div class="pref-card-title">蓄電池設置補助</div>
+    <div class="pref-card-body">太陽光発電と組み合わせた家庭用蓄電池の設置補助。停電時の自立電源確保にも有効。</div>
+    <div class="pref-card-amount">最大30万円</div>
+  </div>
+</div>
+
+<!-- h2③ -->
+<h2 id="city">🏙 市区町村の補助金（耐震・バリアフリー・空き家改修）</h2>
+
+<p>市区町村レベルでも独自の補助金が多数あります。特に<strong>耐震・バリアフリー・空き家改修</strong>は市区独自の手厚い補助が充実しています。</p>
+
+<div class="subsidy-list">
+  <div class="subsidy-item">
+    <div class="subsidy-item-icon">🏗️</div>
+    <div class="subsidy-item-body">
+      <h4>耐震診断・耐震改修補助</h4>
+      <div class="sub">1981年以前の旧耐震基準の建物が主な対象</div>
+      <div class="desc">旧耐震基準（1981年以前）の住宅の耐震診断費・改修工事費への補助。市区によっては<strong>工事費の最大2/3、最大100万円</strong>が補助されます。能登半島地震以降、各自治体が予算を増額している傾向があります。</div>
+      <span class="subsidy-item-amount">最大100万円</span>
+    </div>
+  </div>
+  <div class="subsidy-item">
+    <div class="subsidy-item-icon">♿</div>
+    <div class="subsidy-item-body">
+      <h4>バリアフリーリフォーム補助</h4>
+      <div class="sub">高齢者・障がい者のいる世帯が対象</div>
+      <div class="desc">手すり設置・段差解消・浴室改修・スロープ設置などに補助。介護保険の住宅改修（最大20万円）と合わせると補助額がさらに増える。<strong>親が高齢になってきた家庭は今のうちに検討</strong>を。</div>
+      <span class="subsidy-item-amount">最大50万円</span>
+    </div>
+  </div>
+  <div class="subsidy-item">
+    <div class="subsidy-item-icon">🏚️</div>
+    <div class="subsidy-item-body">
+      <h4>空き家・中古住宅活用補助</h4>
+      <div class="sub">空き家バンク登録物件・中古購入物件が対象</div>
+      <div class="desc">空き家を購入・改修して居住する場合の特別補助。地方移住・UIターンと組み合わせると<strong>最大200万円超の支援</strong>を受けられる市区も。移住促進政策の一環として急増中。</div>
+      <span class="subsidy-item-amount">最大100万円</span>
+    </div>
+  </div>
+</div>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<!-- h2④ -->
+<h2 id="simulation">🧮 3重取りシミュレーション（大規模リフォームで最大350万円超の計算）</h2>
+
+<div class="triple-box">
+  <h3>💎 リフォーム補助金3重取りシミュレーション<br>（戸建て・大規模リフォームのモデルケース）</h3>
+
+  <!-- 国 -->
+  <div class="triple-item">
+    <div class="triple-layer layer-1">
+      <div class="layer-label">❶ 国</div>
+      <div class="layer-gov">国の補助</div>
+    </div>
+    <div class="triple-detail">
+      <div class="triple-name">先進的窓リノベ事業（全窓交換）</div>
+      <div class="triple-desc">全窓を断熱内窓に交換。冷暖房費年間5万円削減の効果</div>
+      <div class="triple-amount">最大200万円</div>
+    </div>
+  </div>
+  <div class="triple-item">
+    <div class="triple-layer layer-1">
+      <div class="layer-label">❶ 国</div>
+      <div class="layer-gov">国の補助</div>
+    </div>
+    <div class="triple-detail">
+      <div class="triple-name">子育てエコホーム支援事業（断熱＋太陽光）</div>
+      <div class="triple-desc">子育て世帯向け省エネリフォーム包括補助</div>
+      <div class="triple-amount">最大60万円</div>
+    </div>
+  </div>
+
+  <div class="triple-divider"></div>
+
+  <!-- 都道府県 -->
+  <div class="triple-item">
+    <div class="triple-layer layer-2">
+      <div class="layer-label">❷ 都道府県</div>
+      <div class="layer-gov">県の補助</div>
+    </div>
+    <div class="triple-detail">
+      <div class="triple-name">省エネ改修上乗せ補助（東京都・神奈川県等）</div>
+      <div class="triple-desc">国の補助に都道府県が独自上乗せ。同時受取可能</div>
+      <div class="triple-amount">最大50万円</div>
+    </div>
+  </div>
+
+  <div class="triple-divider"></div>
+
+  <!-- 市区 -->
+  <div class="triple-item">
+    <div class="triple-layer layer-3">
+      <div class="layer-label">❸ 市区</div>
+      <div class="layer-gov">市の補助</div>
+    </div>
+    <div class="triple-detail">
+      <div class="triple-name">耐震改修補助（旧耐震基準の建物）</div>
+      <div class="triple-desc">1981年以前建築の戸建て。耐震診断＋改修工事費を補助</div>
+      <div class="triple-amount">最大100万円</div>
+    </div>
+  </div>
+
+  <div class="triple-divider"></div>
+
+  <div class="triple-total-row">
+    <span class="triple-total-label">🎉 合計最大補助額</span>
+    <span class="triple-total-value">最大410万円</span>
+  </div>
+</div>
+
+<div class="highlight-box">
+  <span class="amount">📌 現実的な受取目安</span>
+  <p>全ての補助金を満額受け取るには大規模工事が必要です。現実的な中規模リフォーム（窓断熱＋省エネ設備）では<strong>150〜250万円程度の補助</strong>を受け取れるケースが多く報告されています。それでも十分な金額です。</p>
+</div>
+
+<!-- h2⑤ -->
+<h2 id="chui">⚠️ 申請で絶対失敗しないための「工事前申請」の重要性</h2>
+
+<div class="flow-box">
+  <h3>✅ リフォーム補助金 申請の正しい流れ</h3>
+  <div class="flow-step">
+    <div class="flow-num">1</div>
+    <div class="flow-text"><strong>補助金の存在を確認・選択</strong>→ もらえるお金ナビ・自治体サイト・リフォーム会社に確認</div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">2</div>
+    <div class="flow-text"><strong>登録事業者（施工業者）を選ぶ</strong>→ 国の補助金は登録業者のみ対応。必ず確認</div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">3</div>
+    <div class="flow-text"><strong>工事前に補助金申請（予約）を行う</strong>→ この順番を守ることが最重要！工事後では受付不可</div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">4</div>
+    <div class="flow-text"><strong>工事を実施</strong>→ 申請承認後にリフォーム工事を開始</div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">5</div>
+    <div class="flow-text"><strong>完了後に実績報告・補助金受取</strong>→ 施工証明書・領収書等を提出して補助金が振込</div>
+  </div>
+</div>
+
+<!-- 注意ボックス -->
+<div class="caution-box">
+  <h3>🚨 リフォーム補助金で絶対やってはいけないこと</h3>
+  <div class="caution-list">
+    <div class="caution-item">
+      <span class="caution-badge">NG①</span>
+      <span><strong>工事を先に始めてしまう</strong>：全ての補助金は「工事前申請」が原則。着工後の申請は原則受付不可です。「どうせ申請は後でいい」は通用しません。</span>
+    </div>
+    <div class="caution-item">
+      <span class="caution-badge">NG②</span>
+      <span><strong>未登録業者に頼む</strong>：国の補助金は登録事業者を通じた申請が必須。「安いから」と未登録業者を選ぶと補助金が0円になります。</span>
+    </div>
+    <div class="caution-item">
+      <span class="caution-badge">NG③</span>
+      <span><strong>申請期間を過ぎてから気づく</strong>：補助金には年度末や予算枯渇による受付終了があります。「また来年」と後回しにすると予算が消えていることも。</span>
+    </div>
+    <div class="caution-item">
+      <span class="caution-badge">NG④</span>
+      <span><strong>補助金を最初から考慮しない見積もりを取る</strong>：補助金を前提にした工事計画・見積もりを取ることで、補助申請書類の整合性が取れます。最初から補助金前提で話を進めましょう。</span>
+    </div>
+  </div>
+</div>
+
+<p>リフォームを検討しているなら、まず「もらえるお金ナビ」でお住まいの市区の補助金を確認してから、工事の計画を立てましょう。<strong>補助金を知ってからリフォームする人と、知らずに全額自腹で払う人とでは、数百万円の差</strong>が生まれます。</p>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<!-- 関連記事 -->
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid">
+<a href="045-ofuro-chikujo.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">🛁</div><div class="related-body">お風呂で10万円！全国ユニーク補助金10選</div></a>
+<a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？驚き補助金まとめ</div></a>
+<a href="088-kakuteishinkoku.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">💳</div><div class="related-body">確定申告で取り戻せるお金まとめ</div></a>
+<a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え！もらえるお金大全</div></a>
+</div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に必ず各自治体の公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

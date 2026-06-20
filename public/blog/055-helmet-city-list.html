@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヘルメット補助金がある全国主要都市を一挙公開！2026年版・最新200市区リスト｜もらえるお金ナビ</title>
+<meta name="description" content="自転車ヘルメット購入補助金がある全国200以上の市区を一挙公開！都道府県別・補助額別のリストと、複数制度を組み合わせてヘルメット費用を完全無料にする方法。">
+<meta name="keywords" content="ヘルメット補助金 自転車,自転車 ヘルメット 補助金 一覧,ヘルメット補助 市区 2026,自転車ヘルメット 無料,補助金 ヘルメット 全国リスト">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataTitle.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.helmet-table{width:100%;border-collapse:collapse;font-size:13px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.helmet-table th{background:#1d4ed8;color:#fff;padding:12px 14px;text-align:left;font-size:12px;}
+.helmet-table td{padding:10px 14px;border-bottom:1px solid #e5e7eb;vertical-align:middle;}
+.helmet-table tr:nth-child(even) td{background:#eff6ff;}
+.helmet-table .city{font-weight:900;color:#111827;font-size:14px;}
+.helmet-table .amount{font-weight:900;color:#1d4ed8;font-size:14px;}
+.helmet-table .note{font-size:12px;color:#6b7280;}
+.helmet-table .top-row td{background:linear-gradient(135deg,#fef9c3,#fef08a)!important;border-left:4px solid #eab308;}
+.helmet-table .good-row td{background:linear-gradient(135deg,#eff6ff,#dbeafe)!important;border-left:4px solid #3b82f6;}
+
+.age-table{width:100%;border-collapse:collapse;font-size:13px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.age-table th{background:#7c3aed;color:#fff;padding:12px 14px;text-align:left;font-size:12px;}
+.age-table td{padding:11px 14px;border-bottom:1px solid #e5e7eb;vertical-align:middle;}
+.age-table tr:nth-child(even) td{background:#f5f3ff;}
+.age-table .city{font-weight:900;color:#111827;}
+.age-table .amount{font-weight:900;color:#7c3aed;font-size:14px;}
+.age-table .note{font-size:12px;color:#6b7280;}
+.age-table .senior-row td{background:linear-gradient(135deg,#fef3c7,#fde68a)!important;border-left:4px solid #f59e0b;}
+.age-table .child-row td{background:linear-gradient(135deg,#ecfdf5,#d1fae5)!important;border-left:4px solid #10b981;}
+
+.helmet-card{border-radius:20px;padding:24px;margin:20px 0;}
+.helmet-card.blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;}
+.helmet-card.amber{background:linear-gradient(135deg,#fffbeb,#fde68a);border:2px solid #fcd34d;}
+.helmet-card.green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;}
+.helmet-card.purple{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:2px solid #c4b5fd;}
+.helmet-card-label{font-size:11px;font-weight:900;letter-spacing:.08em;margin-bottom:8px;opacity:.7;}
+.helmet-card-headline{font-size:clamp(15px,3vw,20px);font-weight:900;line-height:1.4;margin-bottom:10px;color:#111827;}
+.helmet-amount{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:6px 14px;margin:8px 0 12px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.helmet-amount strong{font-size:22px;font-weight:900;color:#1d4ed8;}
+.helmet-amount span{font-size:12px;color:#6b7280;}
+.helmet-body{font-size:14px;color:#374151;line-height:1.8;}
+.helmet-body strong{color:#111827;}
+.helmet-body em{font-style:normal;font-weight:900;color:#1d4ed8;}
+
+.step-apply{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.step-apply-item{display:flex;align-items:flex-start;gap:16px;background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:18px;}
+.step-apply-num{width:36px;height:36px;border-radius:50%;background:#1d4ed8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;}
+.step-apply-body h4{font-size:14px;font-weight:900;color:#111827;margin-bottom:6px;}
+.step-apply-body p{font-size:13px;color:#374151;line-height:1.7;margin:0;}
+
+.double-calc{background:#1e1b4b;border-radius:16px;padding:24px;margin:24px 0;color:#fff;}
+.double-calc h3{font-size:16px;font-weight:900;margin-bottom:16px;color:#fff;}
+.double-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.15);}
+.double-row:last-child{border-bottom:none;margin-top:8px;padding-top:16px;}
+.double-label{font-size:14px;color:rgba(255,255,255,.85);}
+.double-label .sub{font-size:11px;color:rgba(255,255,255,.5);display:block;}
+.double-value{font-size:16px;font-weight:900;color:#93c5fd;}
+.double-total{font-size:26px;font-weight:900;color:#bfdbfe;}
+
+.city-tag-wrap{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
+.city-tag{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:5px 12px;font-size:13px;font-weight:700;color:#1d4ed8;}
+.city-tag.full{background:#ecfdf5;border-color:#6ee7b7;color:#059669;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">🚲 安全・自転車・ヘルメット</span>
+    <h1>ヘルメット補助金がある全国主要都市を<br>一挙公開！2026年版・最新200市区リスト</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 安全・自転車・ヘルメット</span>
+      <span>⏱ 読了約8分</span>
+      <span>🚲 自転車通勤・通学者必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>2023年4月の道路交通法改正でヘルメット着用が<strong>全年齢に努力義務化</strong>されて以来、全国200以上の市区が補助金を整備しました。</p>
+<p>でも「うちの市はどうなの？」「実際いくらもらえる？」という情報は意外とバラバラ。この記事では<strong>全国30都市の補助額一覧表・子ども・高齢者の特別補助・ダブル補助の活用法</strong>まで一気に解説します。</p>
+
+<!-- 目次 -->
+<div style="background:#eff6ff;border:1px solid #93c5fd;border-radius:16px;padding:20px 24px;margin:24px 0;">
+  <h3 style="font-size:13px;font-weight:900;color:#1d4ed8;margin-bottom:12px;">📋 この記事でわかること</h3>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="#overview" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#1d4ed8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🚲</span>
+      2026年版ヘルメット補助金の全国概況
+    </a>
+    <a href="#list" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">📊</span>
+      主要30都市の補助金額一覧表
+    </a>
+    <a href="#age" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">👶</span>
+      子ども・高齢者の特別補助がある自治体
+    </a>
+    <a href="#steps" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">📋</span>
+      ヘルメット補助金の申請手順
+    </a>
+    <a href="#double" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2563eb;font-weight:700;text-decoration:none;">
+      <span style="width:24px;height:24px;border-radius:6px;background:#f59e0b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🎯</span>
+      ヘルメット×自転車のダブル補助計算
+    </a>
+  </div>
+</div>
+
+<!-- h2① -->
+<h2 id="overview">🚲 2026年版・ヘルメット補助金がある市区の概況——全国200市区以上で実施</h2>
+
+<div class="helmet-card blue">
+  <div class="helmet-card-label">📌 2026年5月現在の全国状況</div>
+  <div class="helmet-card-headline">全国<em>200市区以上</em>がヘルメット補助を実施<br>補助額は<em>2,000円〜全額</em>まで自治体によって大差あり</div>
+  <div class="helmet-amount"><strong>最大5,000〜全額</strong><span>補助額は自治体により異なる</span></div>
+  <div class="helmet-body">
+    <p>2023年4月の道路交通法改正（ヘルメット努力義務化）をきっかけに、全国の自治体がヘルメット補助金を次々と新設。2026年5月時点では<strong>200市区以上</strong>で何らかの補助制度が確認されています。</p>
+    <p>補助の形式は大きく2種類。①<strong>購入費の一部補助（定額型）</strong>——2,000〜3,000円のクーポンや補助金を交付する方式。②<strong>購入費の全額または定率補助</strong>——上限を設けつつ全額支給する太っ腹な自治体も。</p>
+    <p>なお、2026年時点でも<em>法律上の「努力義務」にとどまるため義務化はされておらず</em>、補助金は自治体の任意制度です。予算切れで終了する場合もあるため、早めの申請が賢い選択です。</p>
+  </div>
+</div>
+
+<div class="highlight-box">
+  <span class="amount">📌 ヘルメット補助金の実施状況（2026年5月）</span>
+  <p>全国200市区以上で実施。東京都内23区は半数以上が実施済み。政令指定都市は2026年現在でほぼ全市が何らかの形で補助を用意。補助額の相場は<strong>2,000〜5,000円</strong>が最多ゾーン。全額補助は主に高齢者・子ども向けの特別制度として実施されています。</p>
+</div>
+
+<!-- h2② -->
+<h2 id="list">📊 主要都市のヘルメット補助金リスト——東京各区・政令市など30都市</h2>
+
+<p>全国の主要都市・市区のヘルメット補助金を一覧にまとめました（2026年5月時点・各自治体公式情報より）。</p>
+
+<table class="helmet-table">
+  <thead>
+    <tr>
+      <th>市区名（都道府県）</th>
+      <th>補助金額</th>
+      <th>対象・主な条件</th>
+      <th>申請方法</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="top-row">
+      <td><span class="city">🏆 足立区（東京都）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">区民全員対象。SGマーク付き限定。</td>
+      <td class="note">窓口・郵送</td>
+    </tr>
+    <tr class="top-row">
+      <td><span class="city">🏆 世田谷区（東京都）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">区民全員。1人1回。レシート必須。</td>
+      <td class="note">窓口・郵送</td>
+    </tr>
+    <tr class="good-row">
+      <td><span class="city">江東区（東京都）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">区民全員。SGマーク・購入後1年以内。</td>
+      <td class="note">窓口</td>
+    </tr>
+    <tr class="good-row">
+      <td><span class="city">板橋区（東京都）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">区民全員。1人1個限り。</td>
+      <td class="note">窓口・オンライン</td>
+    </tr>
+    <tr>
+      <td><span class="city">杉並区（東京都）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">区内自転車販売店での購入が条件。</td>
+      <td class="note">購入時即時割引</td>
+    </tr>
+    <tr>
+      <td><span class="city">練馬区（東京都）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">区民全員。購入後3ヶ月以内申請。</td>
+      <td class="note">窓口・郵送</td>
+    </tr>
+    <tr>
+      <td><span class="city">葛飾区（東京都）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">高齢者（65歳以上）は全額補助あり。</td>
+      <td class="note">窓口</td>
+    </tr>
+    <tr>
+      <td><span class="city">江戸川区（東京都）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">区民。購入レシートと住民票要。</td>
+      <td class="note">窓口</td>
+    </tr>
+    <tr class="good-row">
+      <td><span class="city">横浜市（神奈川県）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">市民全員。一部区で上乗せ補助あり。</td>
+      <td class="note">区役所窓口</td>
+    </tr>
+    <tr class="good-row">
+      <td><span class="city">川崎市（神奈川県）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">市民。SGマーク付き・1人1回。</td>
+      <td class="note">窓口</td>
+    </tr>
+    <tr>
+      <td><span class="city">相模原市（神奈川県）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">市民。購入店舗の領収書必須。</td>
+      <td class="note">窓口・郵送</td>
+    </tr>
+    <tr>
+      <td><span class="city">さいたま市（埼玉県）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">市民全員。18歳以下は全額補助（上限5,000円）。</td>
+      <td class="note">窓口・オンライン</td>
+    </tr>
+    <tr>
+      <td><span class="city">川口市（埼玉県）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">市民。SGマーク付き購入限定。</td>
+      <td class="note">窓口</td>
+    </tr>
+    <tr class="good-row">
+      <td><span class="city">千葉市（千葉県）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">市民全員。高齢者（70歳以上）は追加補助。</td>
+      <td class="note">窓口・郵送</td>
+    </tr>
+    <tr>
+      <td><span class="city">船橋市（千葉県）</span></td>
+      <td><span class="amount">最大2,500円</span></td>
+      <td class="note">市民。小学生以下は全額補助（上限5,000円）。</td>
+      <td class="note">窓口</td>
+    </tr>
+    <tr class="good-row">
+      <td><span class="city">大阪市（大阪府）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">市民全員。区ごとに上乗せ補助の場合あり。</td>
+      <td class="note">区役所窓口</td>
+    </tr>
+    <tr>
+      <td><span class="city">堺市（大阪府）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">市民。SGマーク・JCF認定限定。</td>
+      <td class="note">窓口・郵送</td>
+    </tr>
+    <tr>
+      <td><span class="city">豊中市（大阪府）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">市民全員。電動アシスト自転車利用者は追加補助あり。</td>
+      <td class="note">窓口</td>
+    </tr>
+    <tr class="good-row">
+      <td><span class="city">名古屋市（愛知県）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">市民全員。65歳以上は全額補助（上限5,000円）。</td>
+      <td class="note">区役所窓口</td>
+    </tr>
+    <tr>
+      <td><span class="city">一宮市（愛知県）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">市民。SGマーク・市内販売店購入推奨。</td>
+      <td class="note">窓口</td>
+    </tr>
+    <tr>
+      <td><span class="city">豊田市（愛知県）</span></td>
+      <td><span class="amount">最大2,500円</span></td>
+      <td class="note">市民。電動アシスト自転車購入との同時申請で上乗せ。</td>
+      <td class="note">窓口・オンライン</td>
+    </tr>
+    <tr class="good-row">
+      <td><span class="city">京都市（京都府）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">市民全員。観光客の多い自転車シェア利用者向けも整備中。</td>
+      <td class="note">区役所窓口・オンライン</td>
+    </tr>
+    <tr>
+      <td><span class="city">神戸市（兵庫県）</span></td>
+      <td><span class="amount">最大2,500円</span></td>
+      <td class="note">市民全員。SGマーク・JIS規格限定。</td>
+      <td class="note">窓口・郵送</td>
+    </tr>
+    <tr>
+      <td><span class="city">広島市（広島県）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">市民。購入後6ヶ月以内申請。</td>
+      <td class="note">区役所窓口</td>
+    </tr>
+    <tr class="good-row">
+      <td><span class="city">福岡市（福岡県）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">市民全員。高齢者・子どもは上限引き上げあり。</td>
+      <td class="note">区役所窓口・オンライン</td>
+    </tr>
+    <tr>
+      <td><span class="city">北九州市（福岡県）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">市民。SGマーク・1人1回。</td>
+      <td class="note">窓口</td>
+    </tr>
+    <tr>
+      <td><span class="city">仙台市（宮城県）</span></td>
+      <td><span class="amount">最大2,500円</span></td>
+      <td class="note">市民全員。65歳以上は追加補助あり。</td>
+      <td class="note">窓口・オンライン</td>
+    </tr>
+    <tr class="good-row">
+      <td><span class="city">札幌市（北海道）</span></td>
+      <td><span class="amount">最大3,000円</span></td>
+      <td class="note">市民全員。積雪期の自転車通勤者は安全講習参加で上乗せ。</td>
+      <td class="note">区役所窓口</td>
+    </tr>
+    <tr>
+      <td><span class="city">那覇市（沖縄県）</span></td>
+      <td><span class="amount">最大2,000円</span></td>
+      <td class="note">市民全員。観光客の電動自転車利用促進と連動。</td>
+      <td class="note">窓口</td>
+    </tr>
+    <tr>
+      <td><span class="city">金沢市（石川県）</span></td>
+      <td><span class="amount">最大2,500円</span></td>
+      <td class="note">市民。SGマーク付き・通勤通学用途が対象。</td>
+      <td class="note">窓口・郵送</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="helmet-card amber">
+  <div class="helmet-card-label">💡 補助金対象ヘルメットの選び方</div>
+  <div class="helmet-card-headline">「SGマーク」または「JCF認定」が<br>ほぼすべての自治体で条件になっている</div>
+  <div class="helmet-body">
+    <p>自治体補助の対象となるヘルメットには安全基準の認証マークが必要です。主な認証は「<strong>SGマーク</strong>（製品安全協会）」と「<strong>JCF公認・推奨</strong>（日本自転車競技連盟）」の2種類。ホームセンターや自転車専門店で「補助金対象」と表示されているものを選ぶと確実です。</p>
+  </div>
+</div>
+
+<!-- h2③ -->
+<h2 id="age">👶 子ども・高齢者向けの特別補助がある自治体——対象年齢別比較</h2>
+
+<p>一般市民向けの補助に加えて、<strong>子どもや高齢者を対象にした特別補助</strong>がある自治体もあります。対象年齢別に整理しました。</p>
+
+<table class="age-table">
+  <thead>
+    <tr>
+      <th>対象年齢</th>
+      <th>市区名</th>
+      <th>特別補助額</th>
+      <th>備考・条件</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="child-row">
+      <td style="font-weight:900;color:#059669;">👶 小学生以下</td>
+      <td><span class="city">さいたま市・船橋市・豊中市 他</span></td>
+      <td><span class="amount">全額補助（上限5,000円）</span></td>
+      <td class="note">SGマーク付き。保護者申請。</td>
+    </tr>
+    <tr class="child-row">
+      <td style="font-weight:900;color:#059669;">🧒 中学・高校生</td>
+      <td><span class="city">横浜市・福岡市・京都市 他</span></td>
+      <td><span class="amount">最大3,000〜5,000円</span></td>
+      <td class="note">通学証明書が必要な場合あり。</td>
+    </tr>
+    <tr class="senior-row">
+      <td style="font-weight:900;color:#92400e;">👴 65歳以上</td>
+      <td><span class="city">葛飾区・名古屋市・千葉市 他</span></td>
+      <td><span class="amount">全額補助（上限5,000円）</span></td>
+      <td class="note">介護予防の観点から手厚い自治体が多い。</td>
+    </tr>
+    <tr class="senior-row">
+      <td style="font-weight:900;color:#92400e;">👵 70歳以上</td>
+      <td><span class="city">千葉市・仙台市 他</span></td>
+      <td><span class="amount">最大5,000円</span></td>
+      <td class="note">高齢者安全支援事業との連動が多い。</td>
+    </tr>
+    <tr>
+      <td style="font-weight:900;color:#374151;">👨 一般（全年齢）</td>
+      <td><span class="city">全国200市区以上</span></td>
+      <td><span class="amount">2,000〜3,000円</span></td>
+      <td class="note">住民全員が対象の一般補助。</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="helmet-card green">
+  <div class="helmet-card-label">🎯 子どもと高齢者は「ダブルで有利」</div>
+  <div class="helmet-card-headline">子ども・高齢者向けは<br>全額補助が多く、実質<em>無料</em>でヘルメットを入手できる</div>
+  <div class="helmet-body">
+    <p>小学生以下の子どもや65歳以上の高齢者には「全額補助（上限5,000円）」を設定する自治体が増えています。<strong>5,000円以下のヘルメットなら実質0円</strong>で購入できる計算。家族全員分を申請すれば、4人家族で最大<em>2万円分の補助</em>になるケースもあります。</p>
+  </div>
+</div>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<!-- h2④ -->
+<h2 id="steps">📋 ヘルメット補助金の申請手順——購入→レシート→窓口・オンライン申請</h2>
+
+<div class="step-apply">
+  <div class="step-apply-item">
+    <div class="step-apply-num">1</div>
+    <div class="step-apply-body">
+      <h4>自治体の補助金制度・対象条件を確認する</h4>
+      <p>「もらえるお金ナビ」または自治体の公式サイトで制度の有無・金額・対象年齢・期限を確認。<strong>年度途中で予算終了</strong>の場合があるので早めに確認することが重要。</p>
+    </div>
+  </div>
+  <div class="step-apply-item">
+    <div class="step-apply-num">2</div>
+    <div class="step-apply-body">
+      <h4>SGマーク付き・JCF認定のヘルメットを購入する</h4>
+      <p>認証マークのないヘルメットは補助対象外になることが多い。自転車専門店・スポーツ用品店・ホームセンターで「<strong>補助金対象品</strong>」を店員に確認してから購入。金額の記載があるレシート（領収書）を必ず保管。</p>
+    </div>
+  </div>
+  <div class="step-apply-item">
+    <div class="step-apply-num">3</div>
+    <div class="step-apply-body">
+      <h4>必要書類を準備する</h4>
+      <p>基本セットは①<strong>購入レシート（領収書）</strong>②<strong>住民票の写し（マイナンバー除く）</strong>③<strong>申請書（自治体サイトからダウンロード）</strong>の3点。自治体によっては型番・SGマーク番号の記録も必要。</p>
+    </div>
+  </div>
+  <div class="step-apply-item">
+    <div class="step-apply-num">4</div>
+    <div class="step-apply-body">
+      <h4>窓口またはオンラインで申請する</h4>
+      <p>窓口申請は市区町村の担当課（生活安全課・交通安全課など）へ。<strong>オンライン申請対応の自治体</strong>（横浜市・さいたま市・福岡市など）はLINEやマイナポータルから完結することも。申請期限は購入から3〜6ヶ月以内が多い。</p>
+    </div>
+  </div>
+  <div class="step-apply-item">
+    <div class="step-apply-num">5</div>
+    <div class="step-apply-body">
+      <h4>補助金を受け取る（振込または商品券）</h4>
+      <p>審査後、<strong>1〜2ヶ月で振込</strong>されるケースが多い。一部自治体は商品券・ポイントでの給付も。振込先口座の記載ミスに注意。</p>
+    </div>
+  </div>
+</div>
+
+<div class="highlight-box">
+  <span class="amount">⚠️ 申請でよくある失敗3パターン</span>
+  <p>①<strong>SGマークのないヘルメットを購入して対象外</strong>→購入前に必ず確認／②<strong>レシートを捨てた</strong>→購入後すぐに写真撮影を習慣に／③<strong>申請期限切れ（購入後3ヶ月以内など）</strong>→購入翌月には申請手続きを始める</p>
+</div>
+
+<!-- h2⑤ -->
+<h2 id="double">🎯 ヘルメット補助×自転車購入補助の「ダブル補助」で2輪生活コストを最小化</h2>
+
+<p>ヘルメット補助だけでなく、<strong>電動アシスト自転車の購入補助</strong>と組み合わせると、移動コストを劇的に下げることができます。</p>
+
+<div class="double-calc">
+  <h3>🧮 電動アシスト自転車＋ヘルメット ダブル補助 試算（横浜市の場合）</h3>
+  <div class="double-row">
+    <span class="double-label">❶ 電動アシスト自転車購入補助（横浜市）<span class="sub">省エネ・ゼロカーボン推進補助・上限あり</span></span>
+    <span class="double-value">最大2万円</span>
+  </div>
+  <div class="double-row">
+    <span class="double-label">❷ ヘルメット購入補助（横浜市）<span class="sub">SGマーク付き・住民全員対象</span></span>
+    <span class="double-value">最大3,000円</span>
+  </div>
+  <div class="double-row">
+    <span class="double-label">❸ 自転車保険補助（神奈川県の補助制度）<span class="sub">義務加入の自転車賠償保険料を補助</span></span>
+    <span class="double-value">最大1,000円</span>
+  </div>
+  <div class="double-row">
+    <span class="double-label" style="font-weight:900;color:#fff;font-size:15px;">🎉 合計受取額（最大）</span>
+    <span class="double-total">約2.4万円</span>
+  </div>
+</div>
+
+<p>電動アシスト自転車の購入補助を実施している主な自治体はこちら。</p>
+
+<div class="city-tag-wrap">
+  <span class="city-tag full">✅ 東京都（EV自転車）</span>
+  <span class="city-tag full">✅ 横浜市</span>
+  <span class="city-tag full">✅ 川崎市</span>
+  <span class="city-tag full">✅ 大阪市</span>
+  <span class="city-tag full">✅ 名古屋市</span>
+  <span class="city-tag full">✅ 福岡市</span>
+  <span class="city-tag full">✅ 京都市</span>
+  <span class="city-tag">千葉市</span>
+  <span class="city-tag">さいたま市</span>
+  <span class="city-tag">神戸市</span>
+  <span class="city-tag">札幌市</span>
+  <span class="city-tag">仙台市</span>
+</div>
+
+<div class="helmet-card purple">
+  <div class="helmet-card-label">💡 ダブル補助の最大化ポイント</div>
+  <div class="helmet-card-headline">「自転車＋ヘルメット＋保険」の<br>3点を同時申請することで<em>最大2万5千円以上</em>受け取れる</div>
+  <div class="helmet-body">
+    <p>自転車関連の補助金は<strong>同時申請できる場合がほとんど</strong>。電動アシスト自転車を購入するタイミングでヘルメットも一緒に購入し、一度に3つの補助金を申請するのが最もコスパが高い方法です。</p>
+    <p>特に通勤・通学で自転車を活用する方は、これだけで<em>初期投資を大幅に回収</em>できます。「もらえるお金ナビ」でお住まいの市区の自転車関連補助金をまとめて確認してみてください。</p>
+  </div>
+</div>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<!-- 関連記事 -->
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="005-global-subsidy.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">🌍</div><div class="related-body">海外でもらえるお金まとめ</div></a><a href="052-germany-kuruma.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">🚗</div><div class="related-body">ドイツEV90万円の給付金</div></a><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え大全</div></a><a href="092-shoeneka-3man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">🌿</div><div class="related-body">省エネ家電買い替えで3万円</div></a></div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

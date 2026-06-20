@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中学校の給食費がずっと無料！明石市の「給食費完全無償化」で家計が年16万円浮く｜もらえるお金ナビ</title>
+<meta name="description" content="明石市は中学校の給食費が所得制限なしで完全無料！小中12年間で累計200万円以上お得になる計算も。全国の給食費無償化自治体一覧と申請方法も解説。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+/* シミュレーション計算 */
+.sim-box{background:linear-gradient(135deg,#7c3aed,#6d28d9);border-radius:16px;padding:24px;color:#fff;margin:24px 0;}
+.sim-box h3{font-size:16px;font-weight:900;margin-bottom:16px;color:#fff;}
+.sim-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.15);}
+.sim-row:last-child{border-bottom:none;padding-top:12px;}
+.sim-label{font-size:13px;color:rgba(255,255,255,.9);}
+.sim-val{font-size:15px;font-weight:700;color:#c4b5fd;}
+.sim-val.free{color:#6ee7b7;}
+.sim-total{font-size:26px;font-weight:900;color:#fde047;}
+.sim-note{font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;}
+
+/* 月次・年次計算表 */
+.calc-table{width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.calc-table th{background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;padding:12px 16px;text-align:left;}
+.calc-table td{padding:12px 16px;border-bottom:1px solid #ede9fe;}
+.calc-table tr:nth-child(even) td{background:#faf5ff;}
+.calc-table .amount{font-weight:900;color:#7c3aed;font-size:15px;}
+.calc-table .free-row td{background:linear-gradient(135deg,#ecfdf5,#d1fae5) !important;font-weight:700;}
+.calc-table .total-row td{background:linear-gradient(135deg,#faf5ff,#ede9fe) !important;font-weight:900;font-size:15px;}
+.zero{color:#059669;font-weight:900;}
+
+/* 自治体カード */
+.city-card{border-radius:14px;padding:18px;margin-bottom:14px;border:2px solid #ddd6fe;background:linear-gradient(135deg,#faf5ff,#ede9fe);transition:transform .2s;}
+.city-card:hover{transform:translateY(-2px);}
+.city-header{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap;}
+.city-emoji{font-size:24px;}
+.city-info{flex:1;}
+.city-name{font-size:15px;font-weight:900;color:#7c3aed;}
+.city-pref{font-size:11px;color:#8b5cf6;}
+.city-badge{display:inline-block;background:#7c3aed;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.city-body{font-size:13px;color:#374151;line-height:1.8;}
+.city-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.city-tag{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:#ede9fe;color:#6d28d9;border:1px solid #ddd6fe;}
+.city-tag.green{background:#ecfdf5;color:#059669;border-color:#d1fae5;}
+
+/* ランキングカード */
+.rank-grid{display:grid;gap:14px;margin:24px 0;}
+.rank-item{display:flex;align-items:flex-start;gap:14px;padding:16px;background:#faf5ff;border-radius:12px;border:1px solid #ddd6fe;}
+.rank-num{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;flex-shrink:0;background:linear-gradient(135deg,#7c3aed,#6d28d9);}
+.rank-content{flex:1;}
+.rank-title{font-size:14px;font-weight:900;color:#111827;margin-bottom:4px;}
+.rank-desc{font-size:13px;color:#4b5563;line-height:1.7;}
+.rank-badge{display:inline-block;background:#ecfdf5;color:#059669;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-top:4px;border:1px solid #d1fae5;}
+
+/* サマリー */
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:24px 0;}
+.summary-card{background:linear-gradient(135deg,#faf5ff,#ede9fe);border:1px solid #c4b5fd;border-radius:12px;padding:16px;text-align:center;}
+.summary-num{font-size:20px;font-weight:900;color:#7c3aed;}
+.summary-label{font-size:11px;color:#5b21b6;margin-top:4px;}
+
+/* 注意ボックス */
+.info-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #6ee7b7;border-radius:12px;padding:18px;margin:20px 0;}
+.info-green p{color:#065f46;font-size:13px;line-height:1.8;margin:0;}
+
+@media(max-width:600px){
+  .calc-table{font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">👶 子育て・給食費</span>
+    <h1>中学校の給食費がずっと無料！<br>明石市の「給食費完全無償化」で<br>家計が年16万円浮く</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🍱 給食費無償化</span>
+      <span>⏱ 読了約5分</span>
+      <span>👨‍👩‍👧 子育て世代必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p><strong>中学校3年間、給食代を1円も払わない市が存在する。</strong>しかも所得制限なし、手続きも不要で、自動的に無料になる。それが兵庫県・明石市だ。</p>
+
+<p>子ども2人を小中合わせて12年間育てると、給食費だけで<em>100万円以上かかる</em>と言われている。それが大幅に圧縮されるとなれば、住む場所を選ぶうえで無視できない話になってくる。全国に広がる給食費無償化の実態を明石市を起点にまとめました。</p>
+
+<div class="summary-grid">
+  <div class="summary-card"><div class="summary-num">年間約16万円</div><div class="summary-label">中学生1人あたりの節約額（明石市）</div></div>
+  <div class="summary-card"><div class="summary-num">所得制限なし</div><div class="summary-label">明石市の給食費無償化の条件</div></div>
+  <div class="summary-card"><div class="summary-num">申請不要</div><div class="summary-label">自動適用される仕組み</div></div>
+  <div class="summary-card"><div class="summary-num">100以上</div><div class="summary-label">給食費無償化の自治体数（推計・2026年）</div></div>
+</div>
+
+<h2>① 明石市の給食費無償化の詳細</h2>
+
+<p>明石市は2021年に「中学校給食費の完全無償化」を実施。その後も継続しており、<strong>所得制限なし・申請手続き不要</strong>で中学校に通う全生徒の給食費が無料になっています。</p>
+
+<ul>
+  <li><strong>対象：</strong>明石市立中学校に通う全生徒（市立校のみ）</li>
+  <li><strong>金額：</strong>月額約5,000円が無料（年間約55,000〜60,000円分）</li>
+  <li><strong>期間：</strong>中学1〜3年生の3年間（合計180,000円相当）</li>
+  <li><strong>所得制限：</strong>なし（全世帯対象）</li>
+  <li><strong>手続き：</strong>不要（自動適用）</li>
+</ul>
+
+<div class="info-green">
+<p>✅ 明石市はこの給食費無償化に加えて、<strong>おむつ無料宅配・18歳まで医療費無料・第2子以降の保育料無料・コミュニティバス無料（中学生以下）</strong>など子育て支援が全国トップクラスに充実。「5つの無料」として知られています。</p>
+</div>
+
+<h2>② 給食費無償化で実際いくら得する？（12年間シミュレーション）</h2>
+
+<table class="calc-table">
+  <thead>
+    <tr>
+      <th>学校種別・学年</th>
+      <th>月額給食費（一般）</th>
+      <th>年間費用</th>
+      <th>明石市の場合</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>小学1〜2年生</td>
+      <td>約4,000円</td>
+      <td>約48,000円</td>
+      <td>48,000円（有料）</td>
+    </tr>
+    <tr>
+      <td>小学3〜4年生</td>
+      <td>約4,200円</td>
+      <td>約50,400円</td>
+      <td>50,400円（有料）</td>
+    </tr>
+    <tr>
+      <td>小学5〜6年生</td>
+      <td>約4,500円</td>
+      <td>約54,000円</td>
+      <td>54,000円（有料）</td>
+    </tr>
+    <tr class="free-row">
+      <td><strong>中学1〜3年生</strong></td>
+      <td>約5,000円</td>
+      <td>約60,000円</td>
+      <td><span class="zero">0円（完全無料）</span></td>
+    </tr>
+    <tr class="total-row">
+      <td><strong>小中12年間の合計</strong></td>
+      <td>—</td>
+      <td><strong>約504,000円</strong></td>
+      <td><span class="zero">約324,000円（▼18万円節約）</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="sim-box">
+  <h3>💰 子ども2人の場合の12年間シミュレーション</h3>
+  <div class="sim-row"><span class="sim-label">子ども1人の小中12年間給食費（他自治体）</span><span class="sim-val">約504,000円</span></div>
+  <div class="sim-row"><span class="sim-label">子ども2人の合計（他自治体）</span><span class="sim-val">約1,008,000円</span></div>
+  <div class="sim-row"><span class="sim-label">明石市・中学3年間の無償化（2人分）</span><span class="sim-val free">▲360,000円OFF</span></div>
+  <div class="sim-row"><span class="sim-label">明石市での実質負担額（2人・12年間）</span><span class="sim-total">約648,000円</span></div>
+  <div class="sim-note">※上記は小学校給食費が有料の場合の試算。小学校も無償化している自治体ではさらに節約額が増えます。</div>
+</div>
+
+<p>子ども2人の場合、中学の給食費だけで<strong>36万円</strong>の節約。さらに明石市の医療費・保育料無償化なども合わせると、子育てコストの削減は<em>年間50万円以上</em>になるケースもあります。</p>
+
+<h2>③ 全国の給食費無償化自治体（主要10市区）</h2>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🏅</div>
+    <div class="city-info">
+      <div class="city-name">明石市</div>
+      <div class="city-pref">兵庫県</div>
+    </div>
+    <div class="city-badge">中学生完全無料</div>
+  </div>
+  <div class="city-body">中学校給食費を所得制限なし・申請不要で完全無料化。5つの無料政策のひとつ。人口増加が続く全国トップクラスの子育て支援都市。</div>
+  <div class="city-tags"><span class="city-tag green">✅ 所得制限なし</span><span class="city-tag green">✅ 申請不要</span><span class="city-tag">👶 5つの無料</span></div>
+</div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🌟</div>
+    <div class="city-info">
+      <div class="city-name">東京都（23区の一部）</div>
+      <div class="city-pref">東京都</div>
+    </div>
+    <div class="city-badge">区によって異なる</div>
+  </div>
+  <div class="city-body">東京都は2023年度から都立学校の給食費無償化に向けた補助を開始。江戸川区・葛飾区など先行して無償化した区もあり、2024年以降は都内全域への拡大傾向にある。</div>
+  <div class="city-tags"><span class="city-tag green">✅ 拡大中</span><span class="city-tag">🏙 区ごとに確認</span></div>
+</div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🌾</div>
+    <div class="city-info">
+      <div class="city-name">秋田県（県内全域）</div>
+      <div class="city-pref">秋田県</div>
+    </div>
+    <div class="city-badge">小中全学年無料</div>
+  </div>
+  <div class="city-body">秋田県は2023年度から県内全市町村の小中学校給食費を無償化。人口流出対策として思い切った政策を実施し、移住先として注目が高まっている。</div>
+  <div class="city-tags"><span class="city-tag green">✅ 小中全学年</span><span class="city-tag green">✅ 県全域</span></div>
+</div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🌸</div>
+    <div class="city-info">
+      <div class="city-name">千葉県松戸市</div>
+      <div class="city-pref">千葉県</div>
+    </div>
+    <div class="city-badge">小中全学年無料</div>
+  </div>
+  <div class="city-body">松戸市は2023年から小中全学年の給食費を無償化。都内へのアクセスも良好で、子育て世代の移住先として人気が急上昇している。</div>
+  <div class="city-tags"><span class="city-tag green">✅ 小中全学年</span><span class="city-tag">🚃 都心アクセス良好</span></div>
+</div>
+
+<div class="city-card">
+  <div class="city-header">
+    <div class="city-emoji">🏔</div>
+    <div class="city-info">
+      <div class="city-name">長野県（多くの市町村）</div>
+      <div class="city-pref">長野県</div>
+    </div>
+    <div class="city-badge">移住×給食費無料の組み合わせ</div>
+  </div>
+  <div class="city-body">長野県内の多くの市町村が独自に給食費無償化を実施。移住支援金との組み合わせで、子育て世代には非常にお得な県となっている。</div>
+  <div class="city-tags"><span class="city-tag">✈ 移住支援金あり</span><span class="city-tag green">✅ 市町村によっては無料</span></div>
+</div>
+
+<h2>④ 給食費無償化の申請・手続きは必要？（自動適用の仕組み）</h2>
+
+<p>給食費無償化の手続きは自治体によって異なりますが、<strong>明石市のように申請不要・自動適用</strong>のケースと、<strong>毎年申請が必要なケース</strong>に分かれます。</p>
+
+<div class="info-green">
+<p>📋 <strong>自動適用の自治体の場合：</strong>入学時に学校から配布される書類に口座情報を記入するだけ（または口座への振込なしで費用が発生しない）。保護者が特別な申請をする必要はない。<br><br>
+📋 <strong>申請が必要な場合：</strong>毎年4月頃に学校から配布される「給食費減免申請書」や自治体の窓口で手続き。所得制限がある場合は源泉徴収票などの提出が必要なケースもある。</p>
+</div>
+
+<p>給食費無償化の制度は、<em>転居前に必ず最新の情報を各市区町村の公式サイトや教育委員会に確認する</em>ことが重要。2024〜2026年にかけて対象拡大・新規実施する自治体が増えており、情報が急速に変化しています。</p>
+
+<h2>⑤ 明石市以外で子育てしやすい「給食費無料」自治体ランキング</h2>
+
+<div class="rank-grid">
+  <div class="rank-item">
+    <div class="rank-num">1</div>
+    <div class="rank-content">
+      <div class="rank-title">秋田県 全市町村（小中全学年無料・移住支援金あり）</div>
+      <div class="rank-desc">給食費無料×移住支援金100万円×子ども加算の三重取りが可能。東京からの移住者向け支援が充実しており、子育て費用を抑えたい家族に最適。</div>
+      <span class="rank-badge">小中全学年+移住支援金</span>
+    </div>
+  </div>
+  <div class="rank-item">
+    <div class="rank-num">2</div>
+    <div class="rank-content">
+      <div class="rank-title">兵庫県 明石市（中学無料＋5つの無料政策）</div>
+      <div class="rank-desc">給食費だけでなく医療費・保育料・おむつなど5つの無料政策を組み合わせた日本最高水準の子育て支援都市。大阪・神戸へのアクセスも良好。</div>
+      <span class="rank-badge">5つの無料・利便性◎</span>
+    </div>
+  </div>
+  <div class="rank-item">
+    <div class="rank-num">3</div>
+    <div class="rank-content">
+      <div class="rank-title">千葉県 松戸市（小中全学年無料・都心アクセス良）</div>
+      <div class="rank-desc">東京駅まで電車30分圏内で給食費が小中全学年無料。都心でのテレワーク・通勤と、子育て費用の節約を両立したい家族に向いている。</div>
+      <span class="rank-badge">小中全学年・都心近く</span>
+    </div>
+  </div>
+  <div class="rank-item">
+    <div class="rank-num">4</div>
+    <div class="rank-content">
+      <div class="rank-title">東京都 葛飾区・江戸川区（区独自に先行無償化）</div>
+      <div class="rank-desc">東京23区内で先行して給食費無償化を実施した区。家賃は高いが教育費・医療費無料化など総合的な子育て支援が充実している。</div>
+      <span class="rank-badge">都内・利便性最高</span>
+    </div>
+  </div>
+  <div class="rank-item">
+    <div class="rank-num">5</div>
+    <div class="rank-content">
+      <div class="rank-title">高知県 大豊町（子ども加算100万円＋給食費無料）</div>
+      <div class="rank-desc">子ども加算100万円×人という全国最高水準の移住支援に加え、給食費も無料化。山間部の自然豊かな環境で総合的な子育てコストを大幅削減できる。</div>
+      <span class="rank-badge">子加算100万円/人・給食無料</span>
+    </div>
+  </div>
+</div>
+
+<div class="info-box"><p>👶 <strong>「もらえるお金ナビ」で給食費無償化＋子育て支援補助金を一緒にチェック！</strong>移住候補地の自治体別補助金を比較して、子育て世代に最もお得な住み替え先を見つけましょう。</p></div>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid">
+<a href="006-ijyu-ranking.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">✈️</div><div class="related-body">全国移住支援金ランキングTOP20</div></a>
+<a href="041-kekkon-combo.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">💒</div><div class="related-body">結婚×移住×引越しの補助金トリプルコンボ</div></a>
+<a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え！もらえるお金大全</div></a>
+<a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？驚き補助金まとめ</div></a>
+</div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に必ず各自治体の公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

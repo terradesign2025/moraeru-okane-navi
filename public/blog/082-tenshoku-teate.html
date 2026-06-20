@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>転職・就職で使える給付金まとめ2026年版【再就職手当・失業給付の全貌】｜もらえるお金ナビ</title>
+<meta name="description" content="転職活動中にもらえるお金を最大化する方法。失業給付金・再就職手当・職業訓練手当を使い倒して、転職期間中の収入ダウンを最小限に抑える完全ガイド。">
+<meta name="keywords" content="再就職手当,失業給付金 計算,職業訓練 月10万円,転職 給付金,ハローワーク 失業保険,もらえるお金ナビ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.kyufu-hero{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:20px;padding:28px;margin:28px 0;text-align:center;position:relative;overflow:hidden;}
+.kyufu-hero::before{content:'💼';font-size:120px;position:absolute;right:-15px;bottom:-20px;opacity:.1;}
+.kyufu-hero-label{font-size:13px;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:8px;}
+.kyufu-hero-main{font-size:clamp(20px,4.5vw,30px);font-weight:900;color:#a78bfa;line-height:1.5;}
+.kyufu-hero-sub{font-size:13px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.8;}
+
+.kyufu-calc-box{background:linear-gradient(135deg,#0f172a,#1e1b4b);border-radius:16px;padding:24px;margin:24px 0;}
+.kyufu-calc-title{color:#a78bfa;font-size:16px;font-weight:900;margin-bottom:16px;text-align:center;}
+.calc-formula{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;margin:16px 0;}
+.calc-block{background:rgba(255,255,255,.1);border-radius:12px;padding:12px 18px;text-align:center;}
+.calc-block-label{font-size:11px;color:rgba(255,255,255,.6);margin-bottom:4px;}
+.calc-block-value{font-size:20px;font-weight:900;color:#c4b5fd;}
+.calc-operator{font-size:24px;color:#a78bfa;font-weight:900;}
+.calc-result{background:rgba(167,139,250,.2);border:2px solid #a78bfa;border-radius:12px;padding:16px 20px;text-align:center;margin-top:16px;}
+.calc-result-label{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:6px;}
+.calc-result-value{font-size:clamp(28px,6vw,44px);font-weight:900;color:#c4b5fd;}
+
+.saisyushoku-box{background:linear-gradient(135deg,#064e3b,#065f46);border-radius:16px;padding:24px;margin:24px 0;}
+.saisyushoku-title{color:#34d399;font-size:16px;font-weight:900;margin-bottom:16px;}
+.saisyushoku-example{background:rgba(255,255,255,.08);border-radius:12px;padding:16px;margin:12px 0;}
+.saisyushoku-example-title{color:#6ee7b7;font-size:14px;font-weight:700;margin-bottom:8px;}
+.saisyushoku-example-body{color:rgba(255,255,255,.8);font-size:13px;line-height:1.8;}
+.highlight-amount{color:#34d399;font-weight:900;}
+
+.training-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:20px 0;}
+.training-card{background:#fff;border:2px solid #ddd6fe;border-radius:14px;padding:18px;}
+.training-card-emoji{font-size:28px;margin-bottom:8px;}
+.training-card-title{font-size:14px;font-weight:900;color:#4c1d95;margin-bottom:6px;}
+.training-card-amount{font-size:18px;font-weight:900;color:#7c3aed;margin-bottom:6px;}
+.training-card-body{font-size:12px;color:#374151;line-height:1.7;}
+
+.sim-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.sim-table th{background:#1e293b;color:#fff;padding:10px 14px;text-align:left;font-weight:900;}
+.sim-table td{padding:10px 14px;border-bottom:1px solid #e5e7eb;vertical-align:top;line-height:1.7;}
+.sim-table tr:nth-child(even) td{background:#f9fafb;}
+.sim-table .best-row td{background:#f5f3ff!important;}
+.amount-purple{color:#7c3aed;font-weight:900;}
+.amount-green{color:#059669;font-weight:900;}
+.amount-orange{color:#d97706;font-weight:900;}
+
+.checklist{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:20px 0;}
+.check-item{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px;}
+.check-item-icon{font-size:28px;margin-bottom:8px;}
+.check-item-title{font-size:14px;font-weight:900;color:#111827;margin-bottom:6px;}
+.check-item-body{font-size:12px;color:#374151;line-height:1.7;}
+.check-badge{display:inline-block;font-size:10px;font-weight:900;padding:2px 8px;border-radius:6px;background:#f5f3ff;color:#4c1d95;border:1px solid #ddd6fe;margin-top:6px;}
+
+.toc-box{background:#f9fafb;border:1px solid #e5e7eb;border-radius:16px;padding:20px 24px;margin:24px 0;}
+.toc-box h3{font-size:13px;font-weight:900;color:#111827;margin-bottom:12px;}
+.toc-box ol{margin:0 0 0 20px;}
+.toc-box li{font-size:14px;color:#2563eb;font-weight:700;margin-bottom:8px;}
+.toc-box a{color:#2563eb;}
+
+.alert-box{background:#fffbeb;border:2px solid #fde68a;border-radius:14px;padding:18px 20px;margin:20px 0;}
+.alert-box-title{font-weight:900;font-size:15px;color:#92400e;margin-bottom:8px;}
+.alert-box-body{font-size:13px;color:#78350f;line-height:1.8;}
+
+.info-box{background:#f5f3ff;border:2px solid #ddd6fe;border-radius:14px;padding:18px 20px;margin:20px 0;}
+.info-box-title{font-weight:900;font-size:15px;color:#4c1d95;margin-bottom:8px;}
+.info-box-body{font-size:13px;color:#3b0764;line-height:1.8;}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner"><a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a><a href="/" class="nav-cta">▶ 無料で補助金を検索</a></div></nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">💼 転職・リスキリング</span>
+    <h1>転職・就職で使える給付金まとめ<br>2026年版<br>【再就職手当・失業給付の全貌】</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 転職・リスキリング</span>
+      <span>⏱ 読了約10分</span>
+      <span>💼 転職検討者必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「転職中は収入がゼロになるから怖い」——そう思っていませんか？</p>
+<p>実は、うまく制度を活用すれば<strong>転職中も給料の50〜80%の収入を維持できる</strong>のです。</p>
+<p>失業給付・再就職手当・職業訓練受講給付金を組み合わせると、転職活動期間中の家計ダメージを最小限に抑えられます。全部解説します。</p>
+
+<div class="kyufu-hero">
+  <div class="kyufu-hero-label">転職期間中の収入維持率（制度フル活用時）</div>
+  <div class="kyufu-hero-main">失業給付で<strong>月収の50〜80%</strong>を維持<br>早期再就職なら<strong>一括ボーナス</strong>まで受取可</div>
+  <div class="kyufu-hero-sub">制度を知っているか知らないかだけで、転職の「怖さ」がまったく変わります。</div>
+</div>
+
+<div class="toc-box">
+  <h3>📋 この記事の目次</h3>
+  <ol>
+    <li><a href="#koyohoken">失業給付（雇用保険）の仕組みと金額計算</a></li>
+    <li><a href="#saisyushoku">再就職手当（早期就職ボーナス）とは</a></li>
+    <li><a href="#training">職業訓練受講給付金（月10万円）</a></li>
+    <li><a href="#simulation">転職のタイミング別・もらえる金額シミュレーション</a></li>
+    <li><a href="#checklist">ハローワークに行く前の準備リスト</a></li>
+  </ol>
+</div>
+
+<h2 id="koyohoken">① 失業給付（雇用保険）の仕組みと金額計算</h2>
+
+<p>雇用保険（失業給付）は、会社を退職した際に「次の仕事を探している間」に受け取れる給付金です。<strong>月収の50〜80%が、最大330日間受け取れます。</strong></p>
+
+<div class="kyufu-calc-box">
+  <div class="kyufu-calc-title">💰 失業給付の計算式（日額）</div>
+  <div class="calc-formula">
+    <div class="calc-block">
+      <div class="calc-block-label">直近6ヶ月の</div>
+      <div class="calc-block-value">平均賃金</div>
+    </div>
+    <div class="calc-operator">×</div>
+    <div class="calc-block">
+      <div class="calc-block-label">給付率</div>
+      <div class="calc-block-value">50〜80%</div>
+    </div>
+    <div class="calc-operator">=</div>
+    <div class="calc-block">
+      <div class="calc-block-label">1日あたりの</div>
+      <div class="calc-block-value">基本手当日額</div>
+    </div>
+  </div>
+  <div class="calc-result">
+    <div class="calc-result-label">月収30万円の方の場合（給付率67%の例）</div>
+    <div class="calc-result-value">月約<strong>13〜15万円</strong></div>
+  </div>
+</div>
+
+<p>給付率は<strong>賃金が低い人ほど高い（最大80%）</strong>、賃金が高い人は50%程度になる仕組みです。また、給付日数は在職期間と退職理由によって変わります。</p>
+
+<div class="table-wrap">
+  <table class="sim-table">
+    <thead>
+      <tr>
+        <th>退職理由</th>
+        <th>待期期間</th>
+        <th>被保険者期間1年以上5年未満</th>
+        <th>10年以上20年未満</th>
+        <th>20年以上</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>自己都合退職</strong></td>
+        <td class="amount-orange">2〜3ヶ月の給付制限</td>
+        <td>90日分</td>
+        <td>120日分</td>
+        <td>150日分</td>
+      </tr>
+      <tr>
+        <td><strong>会社都合退職</strong>（解雇・リストラ等）</td>
+        <td class="amount-green">7日後すぐ給付開始</td>
+        <td>90〜120日分</td>
+        <td>180日分</td>
+        <td>240日分</td>
+      </tr>
+      <tr>
+        <td><strong>特定理由（やむを得ない自己都合）</strong></td>
+        <td class="amount-green">給付制限なし</td>
+        <td>90〜150日分</td>
+        <td>120〜180日分</td>
+        <td>150〜240日分</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="info-box">
+  <div class="info-box-title">💡 2025年改正ポイント</div>
+  <div class="info-box-body">2025年4月から自己都合退職の給付制限が「3ヶ月」から「2ヶ月」に短縮されました。また、正当な理由（ハラスメント・過労・介護等）による退職は「特定理由離職者」扱いとなり、給付制限なしで早期に給付が開始されます。</div>
+</div>
+
+<h2 id="saisyushoku">② 再就職手当（早期就職ボーナス）とは</h2>
+
+<p>失業給付の受給中に早期に再就職できた場合、<strong>残りの給付日数に応じたボーナス「再就職手当」が一括支給</strong>されます。</p>
+
+<div class="saisyushoku-box">
+  <div class="saisyushoku-title">🎯 再就職手当の計算式</div>
+  <div class="saisyushoku-example">
+    <div class="saisyushoku-example-title">給付残日数が3分の2以上（67%以上）残っている場合</div>
+    <div class="saisyushoku-example-body">残日数 × 基本手当日額 × <span class="highlight-amount">70%</span> が一括支給</div>
+  </div>
+  <div class="saisyushoku-example">
+    <div class="saisyushoku-example-title">給付残日数が3分の1以上（33%以上）残っている場合</div>
+    <div class="saisyushoku-example-body">残日数 × 基本手当日額 × <span class="highlight-amount">60%</span> が一括支給</div>
+  </div>
+  <div class="saisyushoku-example">
+    <div class="saisyushoku-example-title">具体例：基本手当日額6,000円・給付残100日で再就職した場合</div>
+    <div class="saisyushoku-example-body">6,000円 × 100日 × 70% = <span class="highlight-amount" style="font-size:20px;">42万円</span>が一括支給！</div>
+  </div>
+</div>
+
+<p>「早く就職すると損」と思っている方もいますが、再就職手当があるため<strong>実は早期就職のほうが総受取額が増えるケースが多い</strong>です。焦らず就活しながらも、良い求人があれば積極的に動くのが得策です。</p>
+
+<h2 id="training">③ 職業訓練受講給付金（月10万円）で勉強しながら給付を受ける</h2>
+
+<p>「転職を機にスキルアップしたい」という方に最強なのが、<strong>職業訓練（ハロートレーニング）を受講しながら月10万円を受け取れる制度</strong>です。</p>
+
+<div class="training-cards">
+  <div class="training-card">
+    <div class="training-card-emoji">📚</div>
+    <div class="training-card-title">公共職業訓練</div>
+    <div class="training-card-amount">受講料<strong>無料</strong>＋給付継続</div>
+    <div class="training-card-body">失業給付受給中に受講すると、給付が延長されながら無料でITや建築・介護などを学べる。</div>
+  </div>
+  <div class="training-card">
+    <div class="training-card-emoji">💻</div>
+    <div class="training-card-title">求職者支援訓練</div>
+    <div class="training-card-amount">月<strong>10万円</strong>受給可能</div>
+    <div class="training-card-body">雇用保険を受給できない方が対象。一定条件を満たすと月10万円の職業訓練受講給付金が支給される。</div>
+  </div>
+  <div class="training-card">
+    <div class="training-card-emoji">🎓</div>
+    <div class="training-card-title">教育訓練給付金</div>
+    <div class="training-card-amount">受講費の最大<strong>70%</strong>補助</div>
+    <div class="training-card-body">在職中でも受講可能。専門実践教育訓練では最大168万円（3年）の給付が受けられる。</div>
+  </div>
+  <div class="training-card">
+    <div class="training-card-emoji">🏫</div>
+    <div class="training-card-title">専門実践教育訓練</div>
+    <div class="training-card-amount">最大<strong>168万円</strong></div>
+    <div class="training-card-body">看護・IT・保育など専門性の高い訓練が対象。受講費の70%（年間上限56万円×3年）が支給。</div>
+  </div>
+</div>
+
+<!-- app-banner 1 -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2 id="simulation">④ 転職のタイミング別・もらえる金額シミュレーション</h2>
+
+<p>退職理由とタイミングによって、受取額は大きく変わります。月収30万円・雇用保険加入10年・給付日数120日のケースで比較します。</p>
+
+<div class="table-wrap">
+  <table class="sim-table">
+    <thead>
+      <tr>
+        <th>退職ケース</th>
+        <th>給付開始まで</th>
+        <th>失業給付（目安）</th>
+        <th>再就職手当（目安）</th>
+        <th>合計受取（目安）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>自己都合退職</strong><br>（一般的な転職）</td>
+        <td>申請後 <strong>2〜3ヶ月後</strong>から給付開始</td>
+        <td>月約14万×4ヶ月 = <span class="amount-orange">約56万円</span></td>
+        <td>残60日×6,700円×70% = <span class="amount-green">約28万円</span></td>
+        <td class="amount-purple"><strong>約84万円</strong></td>
+      </tr>
+      <tr class="best-row">
+        <td><strong>会社都合退職</strong><br>（解雇・希望退職）</td>
+        <td>申請後 <strong>7日後</strong>から給付開始</td>
+        <td>月約14万×4ヶ月 = <span class="amount-green">約56万円</span></td>
+        <td>残80日×6,700円×70% = <span class="amount-green">約37万円</span></td>
+        <td class="amount-purple"><strong>約93万円 🏆</strong></td>
+      </tr>
+      <tr>
+        <td><strong>妊娠中の退職</strong><br>（産休前に退職）</td>
+        <td>受給期間延長（出産後まで延長申請推奨）</td>
+        <td>出産手当金（月収の2/3）＋育児休業給付金も検討</td>
+        <td>—</td>
+        <td class="amount-purple"><strong>出産手当金が優先</strong></td>
+      </tr>
+      <tr>
+        <td><strong>職業訓練受講</strong><br>（スキルアップ転職）</td>
+        <td>訓練期間中は給付延長</td>
+        <td>給付延長分として月14万×訓練月数</td>
+        <td>訓練後の再就職で受取可</td>
+        <td class="amount-purple"><strong>総額100万円超も可</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="alert-box">
+  <div class="alert-box-title">⚠️ 妊娠中の退職は出産手当金との兼ね合いに注意</div>
+  <div class="alert-box-body">在職中に産前産後休業を取得した場合は「出産手当金（月収の約2/3）」が優先されます。退職後に失業給付を受ける場合は、受給期間を出産後まで延長する手続きが必要です。ハローワークで個別相談を受けることを強くお勧めします。</div>
+</div>
+
+<h2 id="checklist">⑤ ハローワークに行く前の準備リスト</h2>
+
+<p>ハローワークに行く前に<strong>必要書類と手順を把握</strong>しておくと、手続きがスムーズに進みます。</p>
+
+<div class="checklist">
+  <div class="check-item">
+    <div class="check-item-icon">📄</div>
+    <div class="check-item-title">離職票（1・2）</div>
+    <div class="check-item-body">会社から退職後に送られてくる最重要書類。届くまで10日〜2週間かかる場合があるため、退職前に人事部に確認しておくと安心。</div>
+    <div class="check-badge">退職後に会社から郵送</div>
+  </div>
+  <div class="check-item">
+    <div class="check-item-icon">🪪</div>
+    <div class="check-item-title">マイナンバーカード or 個人番号確認書類</div>
+    <div class="check-item-body">マイナンバーカード1枚でOK。ない場合は通知カード＋身分証明書の組み合わせが必要。</div>
+    <div class="check-badge">本人確認書類</div>
+  </div>
+  <div class="check-item">
+    <div class="check-item-icon">📸</div>
+    <div class="check-item-title">証明写真2枚</div>
+    <div class="check-item-body">縦3cm×横2.5cmのもの。スピード写真でOK。雇用保険受給資格者証に貼付するため持参が必要。</div>
+    <div class="check-badge">コンビニや駅で撮影</div>
+  </div>
+  <div class="check-item">
+    <div class="check-item-icon">🏦</div>
+    <div class="check-item-title">振込先口座の通帳・キャッシュカード</div>
+    <div class="check-item-body">給付金の振込先を登録するために必要。本人名義の口座に限る（家族名義は不可）。</div>
+    <div class="check-badge">普通預金口座</div>
+  </div>
+  <div class="check-item">
+    <div class="check-item-icon">📋</div>
+    <div class="check-item-title">雇用保険被保険者証</div>
+    <div class="check-item-body">転職経験がある方は前職の会社で保管しているはず。紛失した場合はハローワークで再発行可能。</div>
+    <div class="check-badge">紛失時は再発行</div>
+  </div>
+  <div class="check-item">
+    <div class="check-item-icon">📅</div>
+    <div class="check-item-title">退職日の確認と退職理由の記録</div>
+    <div class="check-item-body">退職理由（自己都合 or 会社都合）は給付日数と給付開始時期に直結。離職票の退職理由欄に不備があれば異議申し立てができる。</div>
+    <div class="check-badge">離職票を必ず確認</div>
+  </div>
+</div>
+
+<p>上記を揃えてハローワークへ。初回は<strong>「求職申込み」と「失業給付の受給申請」を同日に行う</strong>のが基本の流れです。待機期間（7日間）が終わると、受給資格が確定します。</p>
+
+<p>再就職手当・職業訓練の申請も、すべてハローワークで相談できます。「転職中にもらえるお金を最大化したい」と担当者に伝えてみましょう。</p>
+
+<!-- app-banner 2 -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div>
+</div>
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid">
+<a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え！もらえるお金大全</div></a>
+<a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？驚き補助金まとめ</div></a>
+<a href="081-reskilling-56man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">📚</div><div class="related-body">リスキリングで最大56万円もらいながらスキルアップ</div></a>
+<a href="088-kakuteishinkoku.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">💳</div><div class="related-body">確定申告で取り戻せるお金まとめ</div></a>
+</div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に必ず各自治体の公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

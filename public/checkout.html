@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>スポンサー申込み 決済 | もらえるお金ナビ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#2563eb', 'blue-dark': '#1d4ed8', 'blue-light': '#eff6ff',
+              green: '#059669', 'green-dark': '#047857', 'green-light': '#ecfdf5',
+            }
+          },
+          fontFamily: { sans: ['Noto Sans JP', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Noto Sans JP', sans-serif; }
+    .plan-card { transition: all 0.15s ease; cursor: pointer; }
+    .plan-card.selected { border-color: #2563eb; background: #eff6ff; }
+    .plan-card:not(.selected):hover { border-color: #93c5fd; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+  <div class="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center">
+        <span class="text-white text-xs font-bold">¥</span>
+      </div>
+      <div>
+        <div class="text-sm font-bold text-brand-blue leading-none">もらえるお金ナビ</div>
+        <div class="text-xs text-gray-500 leading-none">スポンサー申込み 決済</div>
+      </div>
+    </div>
+    <a href="sponsor_lp.html" class="text-xs text-gray-500 hover:text-gray-700 underline">← 詳細を見る</a>
+  </div>
+</header>
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <!-- ステップ表示 -->
+  <div class="flex items-center justify-center gap-2 mb-8 text-xs">
+    <div class="flex items-center gap-1.5">
+      <div class="w-6 h-6 rounded-full bg-brand-blue text-white font-black flex items-center justify-center">1</div>
+      <span class="font-bold text-brand-blue">プラン選択</span>
+    </div>
+    <div class="w-8 h-px bg-gray-300"></div>
+    <div class="flex items-center gap-1.5">
+      <div class="w-6 h-6 rounded-full bg-brand-blue text-white font-black flex items-center justify-center">2</div>
+      <span class="font-bold text-brand-blue">市区・情報入力</span>
+    </div>
+    <div class="w-8 h-px bg-gray-300"></div>
+    <div class="flex items-center gap-1.5">
+      <div class="w-6 h-6 rounded-full bg-gray-300 text-gray-500 font-black flex items-center justify-center">3</div>
+      <span class="text-gray-400">Stripe 決済</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       STEP 1: プラン選択
+  ============================================================ -->
+  <section id="step1" class="mb-6">
+    <h2 class="text-lg font-black text-gray-900 mb-4">① 掲載プランを選択</h2>
+    <div class="space-y-3">
+
+      <!-- 1年プラン -->
+      <div class="plan-card border-2 border-gray-200 rounded-2xl p-4 flex items-center gap-4"
+           data-plan="1year" data-price="120000" data-label="1年プラン">
+        <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 radio-dot"></div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-0.5">
+            <span class="text-sm font-black text-gray-900">1年プラン</span>
+            <span class="text-xs text-gray-400">/ 1市区1社独占</span>
+          </div>
+          <div class="text-xl font-black text-gray-900">¥120,000 <span class="text-xs font-normal text-gray-500">（税別 / 一括払い）</span></div>
+          <div class="text-xs text-gray-500 mt-0.5">月換算 ¥10,000</div>
+        </div>
+      </div>
+
+      <!-- 2年プラン（おすすめ） -->
+      <div class="plan-card border-2 border-gray-200 rounded-2xl p-4 flex items-center gap-4 relative"
+           data-plan="2year" data-price="216000" data-label="2年プラン（10%OFF）">
+        <div class="absolute -top-2.5 left-4 bg-yellow-400 text-yellow-900 text-[10px] font-black px-2 py-0.5 rounded-full">おすすめ</div>
+        <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 radio-dot"></div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-0.5">
+            <span class="text-sm font-black text-gray-900">2年プラン</span>
+            <span class="text-xs bg-yellow-100 text-yellow-700 font-bold px-1.5 py-0.5 rounded">10% OFF</span>
+          </div>
+          <div class="text-xl font-black text-gray-900">¥216,000 <span class="text-xs font-normal text-gray-500">（税別 / 一括払い）</span></div>
+          <div class="text-xs text-gray-500 mt-0.5">月換算 ¥9,000・¥24,000お得</div>
+        </div>
+      </div>
+
+      <!-- 3年プラン -->
+      <div class="plan-card border-2 border-gray-200 rounded-2xl p-4 flex items-center gap-4"
+           data-plan="3year" data-price="306000" data-label="3年プラン（15%OFF）">
+        <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 radio-dot"></div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-0.5">
+            <span class="text-sm font-black text-gray-900">3年プラン</span>
+            <span class="text-xs bg-green-100 text-green-700 font-bold px-1.5 py-0.5 rounded">15% OFF</span>
+          </div>
+          <div class="text-xl font-black text-gray-900">¥306,000 <span class="text-xs font-normal text-gray-500">（税別 / 一括払い）</span></div>
+          <div class="text-xs text-gray-500 mt-0.5">月換算 ¥8,500・¥54,000お得</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STEP 2: 市区・会社情報
+  ============================================================ -->
+  <section id="step2" class="mb-6">
+    <h2 class="text-lg font-black text-gray-900 mb-4">② 掲載市区と会社情報</h2>
+    <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-4">
+
+      <!-- 掲載希望市区 -->
+      <div>
+        <label for="city" class="block text-sm font-bold text-gray-700 mb-1.5">
+          掲載希望の市区 <span class="text-red-500">*</span>
+        </label>
+        <input type="text" id="city" placeholder="例：八王子市"
+               class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+        <p class="text-xs text-gray-400 mt-1">全国278市区に対応。複数希望の場合はまず1市区をご選択ください。</p>
+      </div>
+
+      <!-- 会社名 -->
+      <div>
+        <label for="company" class="block text-sm font-bold text-gray-700 mb-1.5">
+          会社名・屋号 <span class="text-red-500">*</span>
+        </label>
+        <input type="text" id="company" placeholder="株式会社テラデザイン"
+               class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+      </div>
+
+      <!-- メールアドレス -->
+      <div>
+        <label for="email" class="block text-sm font-bold text-gray-700 mb-1.5">
+          メールアドレス <span class="text-red-500">*</span>
+        </label>
+        <input type="email" id="email" placeholder="info@example.co.jp"
+               class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+        <p class="text-xs text-gray-400 mt-1">決済完了後のご連絡・掲載設定の連絡先となります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       注文確認
+  ============================================================ -->
+  <section id="order-summary" class="mb-6 hidden">
+    <div class="bg-brand-blue-light border border-brand-blue/30 rounded-2xl p-5">
+      <h3 class="text-sm font-black text-brand-blue mb-3">ご注文内容の確認</h3>
+      <div class="space-y-2 text-sm">
+        <div class="flex justify-between">
+          <span class="text-gray-600">プラン</span>
+          <span class="font-bold text-gray-900" id="summary-plan">---</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-600">掲載市区</span>
+          <span class="font-bold text-gray-900" id="summary-city">---</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-600">会社名</span>
+          <span class="font-bold text-gray-900" id="summary-company">---</span>
+        </div>
+        <div class="border-t border-brand-blue/20 pt-2 flex justify-between">
+          <span class="font-black text-gray-700">お支払い金額（税別）</span>
+          <span class="font-black text-xl text-brand-blue" id="summary-price">---</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STEP 3: Stripe 決済ボタン
+  ============================================================ -->
+  <section>
+    <button id="proceed-btn" onclick="proceedToStripe()"
+            class="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-black text-base py-4 rounded-2xl transition-colors shadow-lg flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+      </svg>
+      Stripe でセキュア決済
+    </button>
+
+    <p class="text-center text-xs text-gray-400 mt-3">
+      SSL暗号化通信・Stripeによる安全な決済。カード情報は当サイトに保存されません。
+    </p>
+
+    <div class="mt-4 bg-yellow-50 border border-yellow-200 rounded-xl p-3 text-xs text-gray-700">
+      <span class="font-bold text-yellow-700">📌 決済後の流れ：</span>
+      決済完了後、登録メールに掲載設定フォームをお送りします（2営業日以内）。
+      会社名・キャッチコピー・URL・電話番号等をご入力いただくと掲載が開始されます。
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="border-t border-gray-200 py-6 px-4 mt-8 text-center text-xs text-gray-400">
+  <p>© 2026 もらえるお金ナビ / 株式会社テラデザイン</p>
+  <p class="mt-1">ご不明な点は <a href="mailto:terradesignik@gmail.com" class="underline">terradesignik@gmail.com</a> までお問合せください</p>
+</footer>
+
+
+<!-- ============================================================
+     JavaScript
+============================================================ -->
+<script>
+  // ============================================================
+  // Stripe Payment Links（Stripeダッシュボードで作成後に差し替え）
+  // 作成手順:
+  //   1. https://dashboard.stripe.com/ にログイン
+  //   2. 「支払いリンク」→「新しい支払いリンク」
+  //   3. 商品名・価格を入力して作成 → URLをここに貼る
+  // ============================================================
+  const STRIPE_PAYMENT_LINKS = {
+    '1year':  'https://buy.stripe.com/test_cNidRb1OZ1jK2trbxF7Vm0c',
+    '2year':  'https://buy.stripe.com/test_6oU8wR2T3aUk4Bz0T17Vm0d',
+    '3year':  'https://buy.stripe.com/test_eVqeVf8dnfaA9VT9px7Vm0e',
+  };
+
+  const PLAN_INFO = {
+    '1year':  { label: '1年プラン', price: '¥120,000' },
+    '2year':  { label: '2年プラン（10%OFF）', price: '¥216,000' },
+    '3year':  { label: '3年プラン（15%OFF）', price: '¥306,000' },
+  };
+
+  let selectedPlan = null;
+
+  // URLパラメータでプラン・市区を初期セット
+  const urlParams = new URLSearchParams(location.search);
+  const initPlan = urlParams.get('plan');
+  const initCity = urlParams.get('city') || '';
+  if (initPlan && PLAN_INFO[initPlan]) {
+    setTimeout(() => selectPlan(initPlan), 50);
+  }
+  if (initCity) {
+    const cityInput = document.getElementById('city');
+    if (cityInput) { cityInput.value = initCity; updateSummary(); }
+  }
+
+  // プランカード選択
+  document.querySelectorAll('.plan-card').forEach(card => {
+    card.addEventListener('click', () => selectPlan(card.dataset.plan));
+  });
+
+  function selectPlan(planKey) {
+    selectedPlan = planKey;
+    document.querySelectorAll('.plan-card').forEach(c => {
+      const dot = c.querySelector('.radio-dot');
+      if (c.dataset.plan === planKey) {
+        c.classList.add('selected');
+        dot.innerHTML = '<div class="w-3 h-3 rounded-full bg-brand-blue"></div>';
+      } else {
+        c.classList.remove('selected');
+        dot.innerHTML = '';
+      }
+    });
+    updateSummary();
+  }
+
+  // 入力変更時にサマリー更新
+  ['city', 'company', 'email'].forEach(id => {
+    document.getElementById(id)?.addEventListener('input', updateSummary);
+  });
+
+  function updateSummary() {
+    const city = document.getElementById('city').value.trim();
+    const company = document.getElementById('company').value.trim();
+    const plan = selectedPlan ? PLAN_INFO[selectedPlan] : null;
+    const summary = document.getElementById('order-summary');
+
+    if (plan && city && company) {
+      document.getElementById('summary-plan').textContent = plan.label;
+      document.getElementById('summary-city').textContent = city;
+      document.getElementById('summary-company').textContent = company;
+      document.getElementById('summary-price').textContent = plan.price;
+      summary.classList.remove('hidden');
+    } else {
+      summary.classList.add('hidden');
+    }
+  }
+
+  function proceedToStripe() {
+    const city    = document.getElementById('city').value.trim();
+    const company = document.getElementById('company').value.trim();
+    const email   = document.getElementById('email').value.trim();
+
+    if (!selectedPlan) { alert('プランを選択してください。'); return; }
+    if (!city)         { alert('掲載希望の市区を入力してください。'); return; }
+    if (!company)      { alert('会社名を入力してください。'); return; }
+    if (!email || !email.includes('@')) { alert('正しいメールアドレスを入力してください。'); return; }
+
+    const link = STRIPE_PAYMENT_LINKS[selectedPlan];
+    if (!link || link.includes('YOUR_')) {
+      alert('決済リンクが設定されていません。\nStripeダッシュボードでPayment Linkを作成し、\ncheckout.html の STRIPE_PAYMENT_LINKS を更新してください。');
+      return;
+    }
+
+    // Stripe Payment Link に prefill パラメータを付与
+    const url = new URL(link);
+    url.searchParams.set('prefilled_email', email);
+    url.searchParams.set('client_reference_id', `${city}_${company}_${selectedPlan}`);
+
+    window.location.href = url.toString();
+  }
+</script>
+
+</body>
+</html>

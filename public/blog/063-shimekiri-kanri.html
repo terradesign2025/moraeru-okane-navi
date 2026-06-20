@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>補助金のもらい忘れゼロへ！「申請期限」を管理するための超実践的スケジュール術｜もらえるお金ナビ</title>
+<meta name="description" content="補助金申請の最大の敵は「期限切れ」。先着順・年度末集中・更新忘れで損している人が続出。Googleカレンダー・アラート設定・年間管理表を使った補助金期限管理術を解説。">
+<meta name="keywords" content="補助金 期限,補助金 管理,補助金 申請忘れ,補助金 スケジュール,先着順 補助金,Googleカレンダー 補助金">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.schedule-hero{background:linear-gradient(135deg,#1f2937,#111827);border-radius:20px;padding:28px;margin:24px 0;text-align:center;position:relative;overflow:hidden;}
+.schedule-hero::before{content:'📅';font-size:120px;position:absolute;right:-10px;bottom:-10px;opacity:.08;}
+.schedule-hero-label{font-size:13px;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:8px;}
+.schedule-hero-main{font-size:clamp(32px,7vw,52px);font-weight:900;color:#f59e0b;line-height:1.2;}
+.schedule-hero-sub{font-size:13px;color:rgba(255,255,255,.75);margin-top:14px;line-height:1.9;}
+
+.toc-box{background:#fefce8;border:1px solid #fef08a;border-radius:16px;padding:20px 24px;margin:24px 0;}
+.toc-box h3{font-size:13px;font-weight:900;color:#713f12;margin-bottom:12px;}
+.toc-box ol{margin:0 0 0 20px;}
+.toc-box li{font-size:14px;color:#b45309;font-weight:700;margin-bottom:8px;}
+.toc-box a{color:#b45309;}
+
+.reason-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin:16px 0;}
+.reason-card{background:#fff;border:2px solid #fca5a5;border-radius:16px;padding:20px;}
+.reason-card-num{display:inline-block;background:#dc2626;color:#fff;font-size:12px;font-weight:900;padding:4px 12px;border-radius:8px;margin-bottom:10px;}
+.reason-card-title{font-size:15px;font-weight:900;color:#b91c1c;margin-bottom:10px;}
+.reason-card-body{font-size:13px;color:#374151;line-height:1.9;}
+
+.tool-list{display:grid;gap:16px;margin:16px 0;}
+.tool-item{display:flex;gap:16px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:20px;align-items:flex-start;}
+.tool-item-icon{font-size:40px;flex-shrink:0;}
+.tool-item-title{font-size:16px;font-weight:900;color:#111827;margin-bottom:8px;}
+.tool-item-steps{list-style:none;padding:0;margin:0;}
+.tool-item-steps li{font-size:13px;color:#374151;padding:4px 0;padding-left:20px;position:relative;line-height:1.8;}
+.tool-item-steps li::before{content:'▶';position:absolute;left:0;color:#f59e0b;font-size:10px;top:6px;}
+.tool-item-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:8px;background:#fef3c7;color:#92400e;margin-bottom:8px;}
+
+.calendar-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.calendar-table th{padding:10px 14px;background:#1f2937;color:#fff;font-weight:900;text-align:left;}
+.calendar-table td{padding:10px 14px;border-bottom:1px solid #e5e7eb;vertical-align:top;}
+.calendar-table tr:nth-child(even) td{background:#f9fafb;}
+.month-badge{display:inline-block;font-size:12px;font-weight:900;padding:4px 12px;border-radius:10px;margin-bottom:4px;color:#fff;}
+.m-jan{background:#3b82f6;}
+.m-feb{background:#8b5cf6;}
+.m-mar{background:#ef4444;}
+.m-apr{background:#10b981;}
+.m-may{background:#f59e0b;}
+.m-jun{background:#06b6d4;}
+.m-jul{background:#f97316;}
+.m-aug{background:#84cc16;}
+.m-sep{background:#6366f1;}
+.m-oct{background:#ec4899;}
+.m-nov{background:#14b8a6;}
+.m-dec{background:#dc2626;}
+.task-tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;background:#ecfdf5;color:#065f46;border:1px solid #6ee7b7;margin-right:4px;margin-bottom:4px;display:inline-block;}
+.alert-tag{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.danger-tag{background:#fef2f2;color:#b91c1c;border-color:#fca5a5;}
+
+.rule-list{display:grid;gap:12px;margin:16px 0;}
+.rule-item{display:flex;gap:12px;background:#fff;border-left:4px solid #f59e0b;border-radius:0 12px 12px 0;padding:16px;align-items:flex-start;}
+.rule-item-emoji{font-size:28px;flex-shrink:0;}
+.rule-item-title{font-size:14px;font-weight:900;color:#92400e;margin-bottom:4px;}
+.rule-item-body{font-size:13px;color:#374151;line-height:1.8;}
+
+.feature-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:16px 0;}
+.feature-card{background:#fff;border:1px solid #d1fae5;border-radius:14px;padding:18px;text-align:center;}
+.feature-card-icon{font-size:36px;margin-bottom:10px;}
+.feature-card-title{font-size:14px;font-weight:900;color:#065f46;margin-bottom:8px;}
+.feature-card-body{font-size:12px;color:#374151;line-height:1.8;}
+
+.info-box{background:#fffbeb;border-left:4px solid #f59e0b;border-radius:0 12px 12px 0;padding:16px 20px;margin:20px 0;}
+.info-box-title{font-size:14px;font-weight:900;color:#92400e;margin-bottom:8px;}
+.info-box-body{font-size:13px;color:#374151;line-height:1.8;}
+
+.shock-box{background:linear-gradient(135deg,#dc2626,#b91c1c);border-radius:16px;padding:20px 24px;margin:20px 0;color:#fff;}
+.shock-box-title{font-size:16px;font-weight:900;margin-bottom:10px;}
+.shock-box-body{font-size:13px;color:rgba(255,255,255,.9);line-height:1.9;}
+.shock-box-amount{font-size:clamp(28px,6vw,42px);font-weight:900;color:#fbbf24;margin:8px 0;}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner"><a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a><a href="/" class="nav-cta">▶ 無料で補助金を検索</a></div></nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">💡 お金管理・スケジュール</span>
+    <h1>補助金のもらい忘れゼロへ！<br>「申請期限」を管理するための<br>超実践的スケジュール術</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 お金管理・スケジュール</span>
+      <span>⏱ 読了約8分</span>
+      <span>💡 補助金申請者全員必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「あの補助金、期限が切れてた！」</p>
+<p>こんな後悔、したことありませんか？</p>
+<p>実は補助金・給付金の<strong>申請ミスの第1位は「期限切れ」</strong>です。制度の存在は知っていても、忙しい日々の中で申請を後回しにしているうちに、<strong>先着順で予算が終了</strong>したり、<strong>年度末で受付終了</strong>になってしまう。これで損をしている人が毎年続出しているのです。</p>
+
+<div class="shock-box">
+  <div class="shock-box-title">⚡ これが補助金「もらい忘れ」の現実</div>
+  <div class="shock-box-amount">年間10〜30万円</div>
+  <div class="shock-box-body">期限管理ができていないだけで、受け取れるはずだった補助金が消えています。期限を1日でも過ぎたら遡及受給は原則不可。スケジュール管理は補助金活用の「最初のスキル」です。</div>
+</div>
+
+<div class="schedule-hero">
+  <div class="schedule-hero-label">補助金申請のスケジュール管理を制した人だけが、もらい続けられる</div>
+  <div class="schedule-hero-main">知っている人と知らない人で<br>年間30万円の差が生まれる</div>
+  <div class="schedule-hero-sub">Googleカレンダー・スプレッドシート・スマホメモ<br>3つのツールで補助金期限管理は完全にできます。この記事でその方法をすべて解説します。</div>
+</div>
+
+<div class="toc-box">
+  <h3>📋 この記事の目次</h3>
+  <ol>
+    <li><a href="#why">なぜ補助金申請を忘れるのか（3つの構造的原因）</a></li>
+    <li><a href="#tools">補助金期限を管理する実践ツール</a></li>
+    <li><a href="#calendar">年間の補助金申請カレンダー（月別重要タスク一覧表）</a></li>
+    <li><a href="#senchaku">「先着順」補助金に絶対負けないための早期申請ルール</a></li>
+    <li><a href="#app">もらえるお金ナビのアラート機能活用法</a></li>
+  </ol>
+</div>
+
+<h2 id="why">① なぜ補助金申請を忘れるのか（3つの構造的原因）</h2>
+
+<p>「知っていれば申請していた」という後悔をなくすために、まず<strong>なぜ申請を忘れてしまうのかの構造</strong>を理解しましょう。原因がわかれば対策も明確になります。</p>
+
+<div class="reason-cards">
+  <div class="reason-card">
+    <div class="reason-card-num">原因①</div>
+    <div class="reason-card-title">「期限がいつか」が一箇所に集約されていない</div>
+    <div class="reason-card-body">補助金の情報は自治体のウェブサイト・チラシ・SNS・口コミなど様々な場所に散らばっています。「見た」「知った」という瞬間はあっても、期限情報を自分のスケジュールに落とし込む習慣がない。<strong>情報と行動の間に溝</strong>があるのです。</div>
+  </div>
+  <div class="reason-card">
+    <div class="reason-card-num">原因②</div>
+    <div class="reason-card-title">「まだ時間がある」という思い込み</div>
+    <div class="reason-card-body">「申請期限は来月末だから大丈夫」と思っていると、書類準備・証明書取得などに意外と時間がかかることを見落としがちです。特に<strong>添付書類の準備（住民票・課税証明書など）に1〜2週間かかる</strong>ケースも多く、余裕を見ていなければ間に合いません。</div>
+  </div>
+  <div class="reason-card">
+    <div class="reason-card-num">原因③</div>
+    <div class="reason-card-title">先着順・予算枯渇という概念が抜けている</div>
+    <div class="reason-card-body">補助金には「〇〇月〇〇日まで」という明示的な期限がある場合と、<strong>「予算がなくなり次第終了」</strong>という先着順の場合があります。後者は表示上の期限が来る前に締め切られます。公式ページの「受付終了」通知を見て初めて気づく——この繰り返しが損失を積み重ねます。</div>
+  </div>
+</div>
+
+<h2 id="tools">② 補助金期限を管理する実践ツール（Googleカレンダー・スプレッドシート・スマホメモ）</h2>
+
+<p>原因がわかったら、具体的な管理ツールと使い方を覚えましょう。<strong>3つのツールを組み合わせるだけ</strong>で補助金の申請期限は完全に管理できます。</p>
+
+<div class="tool-list">
+  <div class="tool-item">
+    <div class="tool-item-icon">📅</div>
+    <div>
+      <div class="tool-item-tag">メイン管理ツール</div>
+      <div class="tool-item-title">Googleカレンダー：アラートを2段階で設定</div>
+      <ul class="tool-item-steps">
+        <li>補助金の申請期限を「終日イベント」として登録する</li>
+        <li>アラートを「期限の30日前」「14日前」の2段階に設定する</li>
+        <li>イベントの説明欄に「必要書類・申請URL・担当窓口の電話番号」を記入しておく</li>
+        <li>スマホ・PCの両方でカレンダーを共有して見落としを防ぐ</li>
+        <li>家族共有カレンダーを使えば配偶者・家族全員でチェックできる</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tool-item">
+    <div class="tool-item-icon">📊</div>
+    <div>
+      <div class="tool-item-tag">一覧管理ツール</div>
+      <div class="tool-item-title">Googleスプレッドシート：補助金マスター台帳</div>
+      <ul class="tool-item-steps">
+        <li>列を「補助金名／自治体／申請期限／金額／申請状況／必要書類」で作成する</li>
+        <li>申請状況は「未確認／準備中／申請済／受給済」の4段階で管理</li>
+        <li>期限列に条件付き書式を設定し、期限が近い行を自動で赤くする</li>
+        <li>年度ごとにシートを分けて蓄積していくと、翌年の申請準備が格段に楽になる</li>
+        <li>スマホのスプレッドシートアプリと連携してどこでも確認できるようにする</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tool-item">
+    <div class="tool-item-icon">📝</div>
+    <div>
+      <div class="tool-item-tag">即時メモツール</div>
+      <div class="tool-item-title">スマホメモ（Notion / Apple メモ / Google Keep）</div>
+      <ul class="tool-item-steps">
+        <li>補助金の情報を見つけた「その場」でメモする習慣をつける</li>
+        <li>メモには「補助金名・期限・金額・URL・メモした日付」の5点を必ず記録</li>
+        <li>週1回「メモ→カレンダー登録→台帳記入」の作業をルーティン化する</li>
+        <li>Notionを使えばWebクリップ機能でページを丸ごと保存できる</li>
+        <li>SNSや自治体サイトで見かけた補助金情報はすぐスクショ保存も有効</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="info-box">
+  <div class="info-box-title">💡 書類準備には意外と時間がかかる！バックキャスト管理のすすめ</div>
+  <div class="info-box-body">申請期限から逆算して「書類収集開始日」を別途カレンダーに登録しましょう。住民票・課税証明書は役所窓口での取得に数日かかることがあり、混雑期（3〜4月）は1週間以上かかる場合もあります。<strong>期限の3〜4週間前には書類収集を開始</strong>するのが安全です。</div>
+</div>
+
+<h2 id="calendar">③ 年間の補助金申請カレンダー（月別重要タスク一覧表）</h2>
+
+<p>補助金には「申請が集中する時期」があります。年間を通じた動きを把握しておくだけで、<strong>準備が格段にスムーズ</strong>になります。</p>
+
+<div class="table-wrap">
+  <table class="calendar-table">
+    <thead>
+      <tr>
+        <th style="width:100px;">月</th>
+        <th>主な補助金・手続きのタイミング</th>
+        <th>アクション</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="month-badge m-jan">1月</span></td>
+        <td>確定申告準備スタート（e-Tax）<br>新年度予算の情報収集開始</td>
+        <td><span class="task-tag">e-Tax準備</span><span class="task-tag">情報収集</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-feb">2月</span></td>
+        <td>確定申告受付開始（〜3月15日）<br>住宅ローン控除・医療費控除の申請</td>
+        <td><span class="danger-tag">確定申告期限</span><span class="task-tag">書類収集</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-mar">3月</span></td>
+        <td>各種補助金の年度末締切が集中<br>確定申告最終期限（3月15日）</td>
+        <td><span class="danger-tag">年度末締切</span><span class="danger-tag">確定申告最終</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-apr">4月</span></td>
+        <td>新年度の補助金公募スタート<br>子育て・教育系給付金の更新手続き</td>
+        <td><span class="task-tag">新年度確認</span><span class="task-tag">更新手続</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-may">5月</span></td>
+        <td>住民税決定通知書の受取・確認<br>非課税世帯給付金の申請受付（自治体による）</td>
+        <td><span class="alert-tag">住民税確認</span><span class="task-tag">給付金確認</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-jun">6月</span></td>
+        <td>年金生活者支援給付金の改定反映<br>エアコン補助・省エネ家電補助（自治体）</td>
+        <td><span class="task-tag">年金確認</span><span class="task-tag">省エネ補助</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-jul">7月</span></td>
+        <td>住宅リフォーム補助金の申請ピーク<br>子育て支援給付金の申請（一部自治体）</td>
+        <td><span class="alert-tag">リフォーム補助</span><span class="task-tag">残予算確認</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-aug">8月</span></td>
+        <td>夏季の省エネ補助金・エアコン補助<br>各種補助金の予算執行状況確認</td>
+        <td><span class="task-tag">省エネ確認</span><span class="task-tag">残枠チェック</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-sep">9月</span></td>
+        <td>年度後半の補助金情報収集<br>結婚・子育て支援の申請窓口確認</td>
+        <td><span class="task-tag">後半準備</span><span class="task-tag">台帳更新</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-oct">10月</span></td>
+        <td>年金現況届の確認・提出<br>来年度に向けた補助金調査スタート</td>
+        <td><span class="alert-tag">現況届確認</span><span class="task-tag">来年度調査</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-nov">11月</span></td>
+        <td>年末調整の書類提出<br>ふるさと納税のワンストップ特例（12/10締切）</td>
+        <td><span class="danger-tag">年末調整</span><span class="alert-tag">ふるさと納税</span></td>
+      </tr>
+      <tr>
+        <td><span class="month-badge m-dec">12月</span></td>
+        <td>年度末補助金の締切ラッシュ前の最終確認<br>来年の補助金カレンダー作成</td>
+        <td><span class="danger-tag">年度末準備</span><span class="task-tag">来年カレンダー</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>特に<strong>3月と12月は申請期限が集中する危険月</strong>です。毎年この2ヶ月は補助金の駆け込み申請で窓口が混雑します。早め早めの動きが何より大切です。</p>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2 id="senchaku">④ 「先着順」補助金に絶対負けないための早期申請ルール</h2>
+
+<p>補助金の中で最も「もらい損ね」が多いのが<strong>先着順の補助金</strong>です。受付開始日に一斉に申請が殺到し、数日〜数週間で予算が枯渇します。「知っていたのに間に合わなかった」を防ぐための鉄則ルールを紹介します。</p>
+
+<div class="rule-list">
+  <div class="rule-item">
+    <div class="rule-item-emoji">🔔</div>
+    <div>
+      <div class="rule-item-title">ルール①：受付開始日をカレンダーに登録し、当日朝にアラートを出す</div>
+      <div class="rule-item-body">先着順の補助金は「開始日」が最重要。前年度の開始日を参考に毎年の受付開始日を予測してカレンダーに仮登録しておき、公式発表が出たら正式日程に更新します。開始当日の朝8時にアラートが鳴るよう設定しておくだけで勝率が大きく上がります。</div>
+    </div>
+  </div>
+  <div class="rule-item">
+    <div class="rule-item-emoji">📂</div>
+    <div>
+      <div class="rule-item-title">ルール②：申請書類を「事前に全部揃えておく」</div>
+      <div class="rule-item-body">先着順補助金の申請受付開始前に、必要書類のリストを入手して事前に収集を完了させておきます。住民票・課税証明書・工事見積書など、日数がかかる書類は<strong>受付開始の2〜3週間前には取得済み</strong>の状態にしておくのが鉄則。「書類が揃っていれば申請できる」状態で開始日を待ちます。</div>
+    </div>
+  </div>
+  <div class="rule-item">
+    <div class="rule-item-emoji">🌐</div>
+    <div>
+      <div class="rule-item-title">ルール③：オンライン申請と窓口申請を並行して確認する</div>
+      <div class="rule-item-body">先着順補助金でも、オンライン申請と郵送・窓口申請で締切や枠が異なる場合があります。<strong>オンライン申請の方が圧倒的に速い</strong>ため、対象補助金のオンライン申請ページをブックマークし、受付開始と同時にアクセスできる準備を整えておきましょう。</div>
+    </div>
+  </div>
+  <div class="rule-item">
+    <div class="rule-item-emoji">📱</div>
+    <div>
+      <div class="rule-item-title">ルール④：自治体の公式LINE・メルマガを登録する</div>
+      <div class="rule-item-body">多くの自治体が補助金の受付開始情報を<strong>公式LINEアカウントやメールマガジン</strong>で告知しています。住んでいる自治体の公式LINEを登録しておくと、情報をリアルタイムでキャッチできます。先着順補助金の情報は公開と同時に登録者にプッシュ通知される場合も多く、非常に有効です。</div>
+    </div>
+  </div>
+  <div class="rule-item">
+    <div class="rule-item-emoji">🔁</div>
+    <div>
+      <div class="rule-item-title">ルール⑤：今年ダメでも来年の準備をする</div>
+      <div class="rule-item-body">先着順に乗り遅れた場合でも、<strong>「補正予算での追加募集」</strong>や「次年度の早期申請」に備えるチャンスがあります。不採択・申請漏れになった補助金はスプレッドシートの「来年再挑戦」欄に記録し、翌年度の計画に組み込みましょう。</div>
+    </div>
+  </div>
+</div>
+
+<h2 id="app">⑤ もらえるお金ナビのアラート機能活用法</h2>
+
+<p>「自分でカレンダーを管理するのは面倒」という方のために、<strong>もらえるお金ナビ</strong>では補助金情報の検索・確認を一箇所でできるようにしています。どう活用するかをご紹介します。</p>
+
+<div class="feature-cards">
+  <div class="feature-card">
+    <div class="feature-card-icon">🔍</div>
+    <div class="feature-card-title">エリア×条件で絞り込み検索</div>
+    <div class="feature-card-body">お住まいの市区町村と状況（子育て・移住・リフォームなど）を選ぶだけで、今使える補助金を一覧表示。全国278市区・1,308件のデータから即検索できます。</div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-card-icon">📋</div>
+    <div class="feature-card-title">申請期限の一覧確認</div>
+    <div class="feature-card-body">各補助金の申請期限を一覧で確認できます。「期限が近い順」に並び替えることで、今すぐ動くべき補助金が一目でわかります。</div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-card-icon">🗂️</div>
+    <div class="feature-card-title">カテゴリ別の整理された表示</div>
+    <div class="feature-card-body">移住・子育て・省エネ・リフォームなどカテゴリ別に整理されているため、自分のライフステージに合わせて素早く確認できます。カレンダー管理の前段階として最適です。</div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-card-icon">📲</div>
+    <div class="feature-card-title">スマホで使えるモバイル対応</div>
+    <div class="feature-card-body">スマホからもPC同様に使えるレスポンシブ設計。外出中に自治体のチラシを見て「これって対象？」と思ったときにその場で確認できます。</div>
+  </div>
+</div>
+
+<div class="info-box">
+  <div class="info-box-title">📌 活用フロー：もらえるお金ナビ → カレンダー登録の流れ</div>
+  <div class="info-box-body">
+    ①もらえるお金ナビで自分の条件に合う補助金を検索 → ②申請期限・必要書類・申請先を確認 → ③Googleカレンダーに期限を登録（アラート2段階）→ ④スプレッドシートの台帳に追加 → ⑤書類収集を期限3〜4週間前までに完了 → ⑥申請・受給確認。このルーティンを毎月繰り返すだけで、補助金のもらい忘れは限りなくゼロに近づきます。
+  </div>
+</div>
+
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え大全</div></a><a href="088-kakuteishinkoku.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">💳</div><div class="related-body">確定申告で取り戻せるお金</div></a><a href="009-nenkin-midori.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">🏦</div><div class="related-body">緑の封筒を無視すると0円！年金給付金</div></a><a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">驚き補助金まとめポータル</div></a></div></div></div>
+
+</div>
+</div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

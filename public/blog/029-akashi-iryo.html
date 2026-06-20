@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>医療費タダは当たり前!? 明石市の「高校3年生まで無料」で家計の医療費負担がゼロに｜もらえるお金ナビ</title>
+<meta name="description" content="明石市では所得制限なしで高校3年生まで医療費が完全無料！他市の医療費助成と比較してどのくらいお得になるか、全国の医療費助成制度まとめを解説。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+/* シミュレーション */
+.sim-box{background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:16px;padding:24px;color:#fff;margin:24px 0;}
+.sim-box h3{font-size:16px;font-weight:900;margin-bottom:16px;color:#fff;}
+.sim-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.15);}
+.sim-row:last-child{border-bottom:none;padding-top:12px;}
+.sim-label{font-size:13px;color:rgba(255,255,255,.9);}
+.sim-val{font-size:15px;font-weight:700;color:#bae6fd;}
+.sim-val.free{color:#6ee7b7;}
+.sim-total{font-size:26px;font-weight:900;color:#fde047;}
+.sim-note{font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;}
+
+/* テーブル */
+.calc-table{width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.calc-table th{background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;padding:12px 16px;text-align:left;}
+.calc-table td{padding:12px 16px;border-bottom:1px solid #e0f2fe;}
+.calc-table tr:nth-child(even) td{background:#f0f9ff;}
+.calc-table .free-row td{background:linear-gradient(135deg,#ecfdf5,#d1fae5) !important;font-weight:700;}
+.calc-table .total-row td{background:linear-gradient(135deg,#f0f9ff,#e0f2fe) !important;font-weight:900;font-size:15px;}
+.zero{color:#059669;font-weight:900;}
+.paid{color:#dc2626;font-weight:700;}
+
+/* 都市比較カード */
+.city-compare{border-radius:14px;padding:18px;margin-bottom:14px;border:2px solid #bae6fd;background:linear-gradient(135deg,#f0f9ff,#e0f2fe);transition:transform .2s;}
+.city-compare:hover{transform:translateY(-2px);}
+.city-header{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap;}
+.city-emoji{font-size:24px;}
+.city-info{flex:1;}
+.city-name{font-size:15px;font-weight:900;color:#0284c7;}
+.city-pref{font-size:11px;color:#0ea5e9;}
+.city-badge{display:inline-block;background:#0284c7;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.city-body{font-size:13px;color:#374151;line-height:1.8;}
+.city-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.city-tag{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:#e0f2fe;color:#0284c7;border:1px solid #bae6fd;}
+.city-tag.green{background:#ecfdf5;color:#059669;border-color:#d1fae5;}
+.city-tag.red{background:#fef2f2;color:#dc2626;border-color:#fecaca;}
+
+/* サマリー */
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:24px 0;}
+.summary-card{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:1px solid #7dd3fc;border-radius:12px;padding:16px;text-align:center;}
+.summary-num{font-size:20px;font-weight:900;color:#0284c7;}
+.summary-label{font-size:11px;color:#0369a1;margin-top:4px;}
+
+/* ステップボックス */
+.step-list{list-style:none;padding:0;margin:20px 0;}
+.step-list li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #e0f2fe;}
+.step-list li:last-child{border-bottom:none;}
+.step-num{width:32px;height:32px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;}
+.step-content{flex:1;}
+.step-title{font-size:14px;font-weight:900;color:#0c4a6e;margin-bottom:4px;}
+.step-desc{font-size:13px;color:#374151;line-height:1.8;}
+
+/* 注意ボックス */
+.info-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:12px;padding:18px;margin:20px 0;}
+.info-blue p{color:#1e40af;font-size:13px;line-height:1.8;margin:0;}
+.info-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #6ee7b7;border-radius:12px;padding:18px;margin:20px 0;}
+.info-green p{color:#065f46;font-size:13px;line-height:1.8;margin:0;}
+
+/* 年齢別医療費表 */
+.age-table{width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;border-radius:12px;overflow:hidden;}
+.age-table th{background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;padding:12px 16px;text-align:center;}
+.age-table td{padding:12px 16px;border-bottom:1px solid #e0f2fe;text-align:center;}
+.age-table tr:nth-child(even) td{background:#f0f9ff;}
+
+@media(max-width:600px){
+  .calc-table,.age-table{font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">👶 子育て・医療費</span>
+    <h1>医療費タダは当たり前!?<br>明石市の「高校3年生まで無料」で<br>家計の医療費負担がゼロに</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏥 医療費助成</span>
+      <span>⏱ 読了約6分</span>
+      <span>👨‍👩‍👧 子育て世代必読</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p><strong>子どもが熱を出すたびに「また医療費がかかる…」と頭を抱えていませんか？</strong>実は住む場所を変えるだけで、その心配が丸ごと消える自治体が存在します。</p>
+
+<p>兵庫県・明石市では<em>高校3年生（18歳）まで</em>、所得制限なし・入院も通院も、医療費が<strong>完全無料</strong>です。子どもが何回病院に行っても、手術を受けても、1円も払わなくていい。この制度を知っているかどうかで、子育て世代の家計は年間で大きく変わってきます。</p>
+
+<div class="summary-grid">
+  <div class="summary-card"><div class="summary-num">18歳まで</div><div class="summary-label">明石市の医療費無料対象年齢（高3まで）</div></div>
+  <div class="summary-card"><div class="summary-num">所得制限なし</div><div class="summary-label">全世帯に適用される</div></div>
+  <div class="summary-card"><div class="summary-num">入院・通院</div><div class="summary-label">どちらも完全無料</div></div>
+  <div class="summary-card"><div class="summary-num">18歳まで対応</div><div class="summary-label">全国で広がる医療費無料化</div></div>
+</div>
+
+<h2>① 明石市「高校3年生まで医療費無料」の詳細（所得制限なし・入院通院）</h2>
+
+<p>明石市の子ども医療費助成制度は、全国でもトップクラスの充実ぶりです。その内容を詳しく見ていきましょう。</p>
+
+<ul>
+  <li><strong>対象：</strong>明石市在住・在学の0歳〜18歳（高校3年生修了まで）の子ども</li>
+  <li><strong>対象医療：</strong>保険診療内の入院費・通院費・調剤薬局費用すべて</li>
+  <li><strong>自己負担：</strong><span class="zero">0円（完全無料）</span></li>
+  <li><strong>所得制限：</strong>なし（世帯年収に関係なく全員対象）</li>
+  <li><strong>手続き：</strong>「マル子医療費受給者証」を市役所で取得。医療機関窓口に提示するだけ</li>
+  <li><strong>対象外：</strong>保険診療外（自由診療・歯科の矯正・美容目的など）</li>
+</ul>
+
+<div class="info-green">
+<p>✅ <strong>ポイント：</strong>明石市では「マル子カード」と呼ばれる受給者証を医療機関に提示するだけでOK。窓口でのお金のやり取りが一切なく、後から申請する手間もありません。子どもが急に熱を出した夜間救急でも、財布を気にせず病院に連れて行けます。</p>
+</div>
+
+<h2>② 子どもの医療費はいくらかかる？（年齢別平均医療費の表）</h2>
+
+<p>明石市の無料制度がいかにありがたいか、まず「一般的な子どもの医療費」を知っておきましょう。子どもは免疫が発達途中のため、大人に比べて圧倒的に病院のお世話になります。</p>
+
+<table class="age-table">
+  <thead>
+    <tr>
+      <th>年齢区分</th>
+      <th>年間通院回数（平均）</th>
+      <th>1回あたり自己負担（3割）</th>
+      <th>年間医療費自己負担（目安）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0〜2歳（乳児期）</td>
+      <td>10〜15回</td>
+      <td>約600〜1,500円</td>
+      <td><strong>約10,000〜20,000円</strong></td>
+    </tr>
+    <tr>
+      <td>3〜5歳（幼児期）</td>
+      <td>8〜12回</td>
+      <td>約500〜1,200円</td>
+      <td><strong>約8,000〜15,000円</strong></td>
+    </tr>
+    <tr>
+      <td>6〜11歳（小学生）</td>
+      <td>5〜8回</td>
+      <td>約500〜1,500円</td>
+      <td><strong>約5,000〜12,000円</strong></td>
+    </tr>
+    <tr>
+      <td>12〜14歳（中学生）</td>
+      <td>4〜6回</td>
+      <td>約600〜2,000円</td>
+      <td><strong>約5,000〜12,000円</strong></td>
+    </tr>
+    <tr>
+      <td>15〜18歳（高校生）</td>
+      <td>3〜5回</td>
+      <td>約600〜2,500円</td>
+      <td><strong>約5,000〜12,000円</strong></td>
+    </tr>
+    <tr>
+      <td>入院（骨折・手術など）</td>
+      <td>1回</td>
+      <td>高額療養費適用後でも</td>
+      <td><strong>数万〜10万円以上</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>子ども1人あたり年間<strong>5,000〜20,000円</strong>が通院費の目安。子ども2人なら年間<strong>1〜4万円</strong>の節約になる計算です。さらに入院や手術が重なれば、その額は数十万円規模になることも。</p>
+
+<div class="sim-box">
+  <h3>💰 子ども2人・0歳〜18歳の医療費シミュレーション</h3>
+  <div class="sim-row"><span class="sim-label">年間通院費（一般自治体・子ども1人あたり平均）</span><span class="sim-val">約12,000円</span></div>
+  <div class="sim-row"><span class="sim-label">18年間の累計（子ども1人）</span><span class="sim-val">約216,000円</span></div>
+  <div class="sim-row"><span class="sim-label">子ども2人分の累計</span><span class="sim-val">約432,000円</span></div>
+  <div class="sim-row"><span class="sim-label">明石市の負担額（入院・通院すべて）</span><span class="sim-val free">0円</span></div>
+  <div class="sim-row"><span class="sim-label">入院・手術が1回あった場合の追加節約</span><span class="sim-val free">▲30,000〜100,000円以上</span></div>
+  <div class="sim-row"><span class="sim-label">18年間の節約総額（通院のみ試算）</span><span class="sim-total">約43万円以上</span></div>
+  <div class="sim-note">※実際の医療費は子どもの体質・環境により異なります。入院・手術を含めると節約額はさらに増加。</div>
+</div>
+
+<h2>③ 明石市vs全国主要都市の医療費助成比較表（18歳まで無料の都市一覧）</h2>
+
+<!-- アプリバナー① -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<table class="calc-table">
+  <thead>
+    <tr>
+      <th>自治体</th>
+      <th>助成対象年齢</th>
+      <th>所得制限</th>
+      <th>自己負担</th>
+      <th>特徴</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="free-row">
+      <td><strong>明石市（兵庫）</strong></td>
+      <td><span class="zero">18歳（高3）まで</span></td>
+      <td><span class="zero">なし</span></td>
+      <td><span class="zero">0円</span></td>
+      <td>入院・通院・薬局すべて無料</td>
+    </tr>
+    <tr>
+      <td>東京都（23区）</td>
+      <td>15歳（中3）まで</td>
+      <td>なし（一部区は所得制限あり）</td>
+      <td>0〜200円/日</td>
+      <td>区ごとに制度が異なる</td>
+    </tr>
+    <tr>
+      <td>大阪府</td>
+      <td>15歳（中3）まで</td>
+      <td>あり（一部）</td>
+      <td>一部自己負担あり</td>
+      <td>市町村によって異なる</td>
+    </tr>
+    <tr>
+      <td>愛知県名古屋市</td>
+      <td>15歳（中3）まで</td>
+      <td>なし</td>
+      <td>通院200円/回</td>
+      <td>入院は無料</td>
+    </tr>
+    <tr>
+      <td>福岡市</td>
+      <td>12歳（小6）まで</td>
+      <td>一部あり</td>
+      <td>一部自己負担あり</td>
+      <td>拡大傾向にある</td>
+    </tr>
+    <tr>
+      <td>札幌市</td>
+      <td>12歳（小6）まで</td>
+      <td>なし</td>
+      <td>通院200円/回</td>
+      <td>入院は別途</td>
+    </tr>
+    <tr class="total-row">
+      <td colspan="5"><strong>※明石市は全国でも「18歳まで・所得制限なし・完全無料」の三拍子がそろった希少な自治体</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="city-compare">
+  <div class="city-header">
+    <div class="city-emoji">🏅</div>
+    <div class="city-info">
+      <div class="city-name">明石市（兵庫県）</div>
+      <div class="city-pref">18歳まで完全無料</div>
+    </div>
+    <div class="city-badge">全国最高水準</div>
+  </div>
+  <div class="city-body">所得制限なし、入院・通院・薬局すべて完全無料。「マル子カード」提示だけで医療費が一切かからない。5つの無料政策の一環で、住民満足度・人口増加率ともに全国トップクラス。</div>
+  <div class="city-tags"><span class="city-tag green">✅ 18歳まで</span><span class="city-tag green">✅ 所得制限なし</span><span class="city-tag green">✅ 完全無料</span></div>
+</div>
+
+<div class="city-compare">
+  <div class="city-header">
+    <div class="city-emoji">🌸</div>
+    <div class="city-info">
+      <div class="city-name">千葉県流山市</div>
+      <div class="city-pref">独自に18歳まで助成</div>
+    </div>
+    <div class="city-badge">都心近くで18歳まで</div>
+  </div>
+  <div class="city-body">東京へのアクセスが良好で、独自の子育て支援として18歳まで医療費助成を実施。共働き・テレワーク世代に人気の移住先で、補助金の充実度も高い。</div>
+  <div class="city-tags"><span class="city-tag green">✅ 18歳まで</span><span class="city-tag">🚃 都心アクセス良好</span></div>
+</div>
+
+<div class="city-compare">
+  <div class="city-header">
+    <div class="city-emoji">🏔</div>
+    <div class="city-info">
+      <div class="city-name">長野県・一部市町村</div>
+      <div class="city-pref">移住支援×医療費助成</div>
+    </div>
+    <div class="city-badge">移住でさらにお得</div>
+  </div>
+  <div class="city-body">長野県内の複数の市町村が18歳まで医療費助成を実施。移住支援金（最大100万円）との組み合わせで、子育て世代の経済的負担を大幅に削減できる。</div>
+  <div class="city-tags"><span class="city-tag green">✅ 一部18歳まで</span><span class="city-tag">✈ 移住支援金あり</span></div>
+</div>
+
+<h2>④ 医療費助成の申請方法（マル子カード・受給者証の取得手順）</h2>
+
+<p>明石市に引っ越した場合、または子どもが生まれた場合は、できるだけ早く「マル子医療費受給者証」を取得しましょう。取得は簡単ですが、取得前の医療費は遡って請求できないため注意が必要です。</p>
+
+<ul class="step-list">
+  <li>
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <div class="step-title">転入・出生後すぐに市役所へ</div>
+      <div class="step-desc">明石市に転入した日（または子どもが生まれた日）から<strong>14日以内</strong>に市民窓口課または各市民センターへ。郵送申請も可能。</div>
+    </div>
+  </li>
+  <li>
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <div class="step-title">必要書類を持参</div>
+      <div class="step-desc">子どもの健康保険証・保護者の身分証（マイナンバーカード等）・印鑑が必要。転入の場合は転入届と同時に申請できる。</div>
+    </div>
+  </li>
+  <li>
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <div class="step-title">マル子カード（受給者証）を受け取る</div>
+      <div class="step-desc">申請当日または後日郵送で「マル子医療費受給者証（子ども医療費助成受給者証）」が交付される。有効期限は毎年8月1日更新が多い。</div>
+    </div>
+  </li>
+  <li>
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <div class="step-title">医療機関で受給者証を提示するだけ</div>
+      <div class="step-desc">以後は病院・薬局の窓口で「健康保険証＋マル子受給者証」を提示するだけ。窓口での支払いは<strong>0円</strong>になる。</div>
+    </div>
+  </li>
+</ul>
+
+<div class="info-blue">
+<p>📋 <strong>注意点：</strong>マル子カード取得前に受診した医療費は後から申請（償還払い）で返金を受けることができます。ただし申請期限がある自治体も多いため、転入後は速やかに手続きを。</p>
+</div>
+
+<h2>⑤ 医療費助成と医療費控除の組み合わせ（確定申告での二重活用）</h2>
+
+<p>「医療費無料なのに医療費控除？」と思うかもしれませんが、実はこの二つを組み合わせることで<strong>さらにお得になる</strong>ケースがあります。</p>
+
+<!-- アプリバナー② -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<div class="info-blue">
+<p>📌 <strong>医療費控除の基本：</strong>1年間に支払った医療費が<strong>10万円を超える場合</strong>（または所得の5%を超える場合）、超過分が所得控除の対象になります。これを確定申告することで、払いすぎた税金が返ってきます。</p>
+</div>
+
+<p><strong>明石市の子ども医療費助成との関係：</strong></p>
+
+<ul>
+  <li>子どもの医療費：助成で0円→医療費控除の対象外（補助金で補填された分は控除できない）</li>
+  <li><strong>大人（保護者）の医療費</strong>：通常通り医療費控除の対象</li>
+  <li>子どもの<em>保険外診療</em>（矯正歯科・眼鏡など）：医療費控除の対象になるケースあり</li>
+  <li>妊娠・出産費用：出産育児一時金との差額が医療費控除の対象に</li>
+</ul>
+
+<div class="sim-box">
+  <h3>💰 医療費控除の節税シミュレーション例</h3>
+  <div class="sim-row"><span class="sim-label">保護者（年収500万円）の年間医療費</span><span class="sim-val">15万円</span></div>
+  <div class="sim-row"><span class="sim-label">控除対象額（15万円 − 10万円）</span><span class="sim-val">5万円</span></div>
+  <div class="sim-row"><span class="sim-label">所得税還付（税率20%の場合）</span><span class="sim-val free">約10,000円</span></div>
+  <div class="sim-row"><span class="sim-label">住民税の軽減（税率10%）</span><span class="sim-val free">約5,000円</span></div>
+  <div class="sim-row"><span class="sim-label">年間節税効果</span><span class="sim-total">約15,000円</span></div>
+  <div class="sim-note">※実際の還付額は所得・控除状況により異なります。詳細は税理士または税務署にご相談ください。</div>
+</div>
+
+<p>子どもの医療費は助成で0円になっているため控除対象外ですが、<strong>保護者自身の医療費</strong>は忘れずに確定申告しましょう。歯の矯正（医療目的）や妊娠・出産費用との組み合わせで、意外に大きな節税効果が生まれることがあります。</p>
+
+<div class="info-green">
+<p>🎯 <strong>まとめ：</strong>明石市は「子どもの医療費が18歳まで完全無料」という日本最高水準の医療費助成制度を持つ自治体です。子ども2人を0歳から育てれば、通院費だけで<strong>40万円以上</strong>の節約になり、入院・手術が重なればさらに大きな金額に。住む場所を選ぶ際の重要な検討材料になります。まずはあなたの自治体の医療費助成制度を「もらえるお金ナビ」で調べてみましょう。</p>
+</div>
+
+</div><!-- /container -->
+</div><!-- /article-body -->
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid"><a href="008-akashi-omutu.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">👶</div><div class="related-body">おむつが毎月タダ！明石市の神対応</div></a><a href="002-kosodate-joseikin.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">👶</div><div class="related-body">子育て補助金まとめ2026年版</div></a><a href="034-sangyo-shikkoku.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">🍼</div><div class="related-body">産休中のママに出産手当金の仕組み</div></a><a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え大全</div></a></div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

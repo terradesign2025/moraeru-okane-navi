@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>補助金・助成金の「二重取り」は違法？国と自治体の制度を賢く組み合わせる合法ワザ｜もらえるお金ナビ</title>
+<meta name="description" content="国の補助金と自治体の補助金は同時に申請できる？二重取りのルールと組み合わせ可能なケース・NGなケースを徹底解説。合法的に補助金を最大化する黄金ルートを紹介。">
+<meta name="keywords" content="補助金 二重取り,助成金 組み合わせ,国 自治体 補助金 同時申請,補助金 重複 違法,もらえるお金ナビ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="blog.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.verdict-hero{border-radius:20px;padding:28px;margin:28px 0;text-align:center;position:relative;overflow:hidden;}
+.verdict-hero.ok{background:linear-gradient(135deg,#064e3b,#065f46);}
+.verdict-hero.ok::before{content:'✅';font-size:120px;position:absolute;right:-10px;bottom:-20px;opacity:.1;}
+.verdict-hero-label{font-size:13px;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:8px;}
+.verdict-hero-main{font-size:clamp(22px,5vw,36px);font-weight:900;color:#34d399;line-height:1.4;}
+.verdict-hero-sub{font-size:13px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.8;}
+
+.ok-ng-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.ok-ng-table th{background:#1e293b;color:#fff;padding:10px 14px;text-align:left;font-weight:900;}
+.ok-ng-table td{padding:10px 14px;border-bottom:1px solid #e5e7eb;vertical-align:top;line-height:1.7;}
+.ok-ng-table tr:nth-child(even) td{background:#f9fafb;}
+.ok-ng-table .ok-row td{background:#ecfdf5!important;}
+.ok-ng-table .ng-row td{background:#fef2f2!important;}
+.ok-badge{display:inline-block;background:#10b981;color:#fff;font-size:11px;font-weight:900;padding:2px 10px;border-radius:20px;margin-right:6px;}
+.ng-badge{display:inline-block;background:#ef4444;color:#fff;font-size:11px;font-weight:900;padding:2px 10px;border-radius:20px;margin-right:6px;}
+.amount-green{color:#059669;font-weight:900;}
+
+.ng-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:20px 0;}
+.ng-card{background:#fff;border:2px solid #fca5a5;border-radius:14px;padding:18px;}
+.ng-card-icon{font-size:30px;margin-bottom:8px;}
+.ng-card-title{font-size:14px;font-weight:900;color:#b91c1c;margin-bottom:6px;}
+.ng-card-body{font-size:12px;color:#374151;line-height:1.7;}
+
+.combo-cards{display:grid;gap:16px;margin:20px 0;}
+.combo-card{background:#fff;border:2px solid #d1fae5;border-radius:16px;padding:20px;}
+.combo-card-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.combo-card-num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#10b981,#059669);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:#fff;flex-shrink:0;}
+.combo-card-title{font-size:16px;font-weight:900;color:#064e3b;}
+.combo-card-amount{font-size:20px;font-weight:900;color:#059669;margin-bottom:8px;}
+.combo-card-body{font-size:13px;color:#374151;line-height:1.8;}
+.combo-detail{background:#f0fdf4;border-radius:10px;padding:12px;margin-top:10px;font-size:12px;color:#065f46;line-height:1.7;}
+
+.doc-tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:20px 0;}
+.doc-tip{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px;}
+.doc-tip-icon{font-size:28px;margin-bottom:8px;}
+.doc-tip-title{font-size:13px;font-weight:900;color:#111827;margin-bottom:6px;}
+.doc-tip-body{font-size:12px;color:#4b5563;line-height:1.7;}
+
+.toc-box{background:#f9fafb;border:1px solid #e5e7eb;border-radius:16px;padding:20px 24px;margin:24px 0;}
+.toc-box h3{font-size:13px;font-weight:900;color:#111827;margin-bottom:12px;}
+.toc-box ol{margin:0 0 0 20px;}
+.toc-box li{font-size:14px;color:#2563eb;font-weight:700;margin-bottom:8px;}
+.toc-box a{color:#2563eb;}
+
+.alert-box{background:#fef2f2;border:2px solid #fca5a5;border-radius:14px;padding:18px 20px;margin:20px 0;}
+.alert-box-title{font-weight:900;font-size:15px;color:#b91c1c;margin-bottom:8px;}
+.alert-box-body{font-size:13px;color:#7f1d1d;line-height:1.8;}
+
+.info-box{background:#eff6ff;border:2px solid #bfdbfe;border-radius:14px;padding:18px 20px;margin:20px 0;}
+.info-box-title{font-weight:900;font-size:15px;color:#1e40af;margin-bottom:8px;}
+.info-box-body{font-size:13px;color:#1e3a8a;line-height:1.8;}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner"><a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a><a href="/" class="nav-cta">▶ 無料で補助金を検索</a></div></nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">💡 お金管理・テクニック</span>
+    <h1>補助金・助成金の「二重取り」は違法？<br>国と自治体の制度を賢く組み合わせる<br>合法ワザ</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 お金管理・テクニック</span>
+      <span>⏱ 読了約9分</span>
+      <span>💡 補助金上級者向け</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「国の補助金と市の補助金を両方もらったら二重取りになる？」</p>
+<p>「同時に申請したら不正になるの？」</p>
+<p>実は……<strong>補助金の「二重取り」は合法なケースが多い</strong>のです！知らずに損をしている人が続出しています。</p>
+
+<div class="verdict-hero ok">
+  <div class="verdict-hero-label">知っておきたい大原則</div>
+  <div class="verdict-hero-main">「同一制度の重複申請」はNG<br>「別制度の組み合わせ」は合法</div>
+  <div class="verdict-hero-sub">国の制度と自治体の制度は別物。同じ工事・同じ目的でも、別々の補助金を重ねることは<strong>多くの場合で適法</strong>です。</div>
+</div>
+
+<div class="toc-box">
+  <h3>📋 この記事の目次</h3>
+  <ol>
+    <li><a href="#definition">「二重取り」の定義と実際のルール</a></li>
+    <li><a href="#ok-patterns">組み合わせOKの補助金パターン</a></li>
+    <li><a href="#ng-examples">組み合わせNGの例と理由</a></li>
+    <li><a href="#best-combos">最強の合法コンボ5選</a></li>
+    <li><a href="#doc-tips">申請書類の書き方のコツ</a></li>
+  </ol>
+</div>
+
+<h2 id="definition">① 「二重取り」の定義と実際のルール</h2>
+
+<p>「二重取り」と言っても、法的にNGなケースと合法なケースはまったく異なります。まずこの違いをきっちり理解しましょう。</p>
+
+<div class="ok-ng-table">
+  <table>
+    <thead>
+      <tr>
+        <th>種類</th>
+        <th>具体例</th>
+        <th>判定</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="ng-row">
+        <td><strong>同一制度への重複申請</strong></td>
+        <td>国の「先進的窓リノベ」に同一工事で2回申請する</td>
+        <td><span class="ng-badge">NG・不正</span>詐欺罪・補助金不正取得として返還命令の対象</td>
+      </tr>
+      <tr class="ng-row">
+        <td><strong>同一費用への上乗せ超過</strong></td>
+        <td>100万円の工事に対し、補助金合計が100万円を超えるように申請する</td>
+        <td><span class="ng-badge">NG・規約違反</span>補助金は「実費」を超えて受け取ることは不可</td>
+      </tr>
+      <tr class="ok-row">
+        <td><strong>別制度・別財源の同時申請</strong></td>
+        <td>国の断熱補助＋市の省エネ補助を同一リフォームで申請</td>
+        <td><span class="ok-badge">OK・合法</span>多くの場合で適法。ただし各制度の「併用禁止規定」を要確認</td>
+      </tr>
+      <tr class="ok-row">
+        <td><strong>異なる目的の制度を同時に受ける</strong></td>
+        <td>移住支援金（引越し支援）＋結婚助成金（新生活支援）</td>
+        <td><span class="ok-badge">OK・合法</span>目的が異なる制度は原則として組み合わせ可能</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="info-box">
+  <div class="info-box-title">💡 確認すべきポイント：「併用禁止規定」</div>
+  <div class="info-box-body">各補助金の要綱には「他の補助金との併用を禁止する場合があります」という記載が入ることがあります。申請前に要綱のPDFを必ず確認し、明記されていなければ多くの場合で組み合わせはOKです。不明な場合は担当窓口に電話確認するのが確実です。</div>
+</div>
+
+<h2 id="ok-patterns">② 組み合わせOKの補助金パターン（表形式・5パターン）</h2>
+
+<p>実際によく使われる合法コンボを5パターン紹介します。</p>
+
+<div class="table-wrap">
+  <table class="ok-ng-table">
+    <thead>
+      <tr>
+        <th>パターン</th>
+        <th>国の制度</th>
+        <th>自治体の制度</th>
+        <th>合計（目安）</th>
+        <th>判定</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="ok-row">
+        <td><strong>①断熱リフォーム</strong></td>
+        <td>先進的窓リノベ（最大200万）</td>
+        <td>市の断熱改修補助（最大50万）</td>
+        <td class="amount-green"><strong>最大250万円</strong></td>
+        <td><span class="ok-badge">OK</span>別財源・別制度</td>
+      </tr>
+      <tr class="ok-row">
+        <td><strong>②省エネ家電</strong></td>
+        <td>省エネ家電購入補助（各都道府県）</td>
+        <td>物価高騰対策生活支援給付金</td>
+        <td class="amount-green"><strong>最大5万円</strong></td>
+        <td><span class="ok-badge">OK</span>目的が異なる</td>
+      </tr>
+      <tr class="ok-row">
+        <td><strong>③移住＋結婚</strong></td>
+        <td>移住支援金（最大100万）</td>
+        <td>結婚新生活支援（最大60万）</td>
+        <td class="amount-green"><strong>最大160万円</strong></td>
+        <td><span class="ok-badge">OK</span>目的が異なる</td>
+      </tr>
+      <tr class="ok-row">
+        <td><strong>④子育て医療＋出産</strong></td>
+        <td>出産育児一時金（50万）</td>
+        <td>子育て医療費助成（18歳まで）</td>
+        <td class="amount-green"><strong>長期で数百万円</strong></td>
+        <td><span class="ok-badge">OK</span>時期・対象が異なる</td>
+      </tr>
+      <tr class="ok-row">
+        <td><strong>⑤育休＋社保免除</strong></td>
+        <td>育児休業給付金（賃金の67%）</td>
+        <td>育休中の社会保険料免除</td>
+        <td class="amount-green"><strong>実質月収の80%超</strong></td>
+        <td><span class="ok-badge">OK</span>給付と免除は別制度</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="ng-examples">③ 組み合わせNGの例と理由（同一費用への重複申請）</h2>
+
+<p>ここをしっかり理解しておかないと、後から返還命令が来る最悪の事態になります。</p>
+
+<div class="ng-cards">
+  <div class="ng-card">
+    <div class="ng-card-icon">🚫</div>
+    <div class="ng-card-title">同一工事で同一補助金に2回申請</div>
+    <div class="ng-card-body">例：同じ窓リノベ工事を「先進的窓リノベ」に2事業年度で重複申請。これは明確な不正行為で補助金全額返還＋加算金の対象。</div>
+  </div>
+  <div class="ng-card">
+    <div class="ng-card-icon">🚫</div>
+    <div class="ng-card-title">補助金合計が実費を超える組み合わせ</div>
+    <div class="ng-card-body">例：100万円の工事に対して国70万＋市70万＝合計140万円の申請。実費超過分は原則不可。要綱に「合計が実費を超えないこと」が明記されている場合がほとんど。</div>
+  </div>
+  <div class="ng-card">
+    <div class="ng-card-icon">🚫</div>
+    <div class="ng-card-title">要綱に「他補助金との併用禁止」明記のケース</div>
+    <div class="ng-card-body">例：一部の国の補助金は「他の国庫補助との併用禁止」を要綱に明記。同じ「国」の予算から来る制度同士は競合しやすいため要確認。</div>
+  </div>
+  <div class="ng-card">
+    <div class="ng-card-icon">🚫</div>
+    <div class="ng-card-title">すでに受給済みの要件に違反する場合</div>
+    <div class="ng-card-body">例：移住支援金を受給した後、要件である「5年以上の定住」を果たさずに転出。受給した支援金の返還を求められる場合がある。</div>
+  </div>
+</div>
+
+<!-- app-banner 1 -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+<h2 id="best-combos">④ 最強の合法コンボ5選（詳細説明付き）</h2>
+
+<p>「合法的に最大限もらえるコンボ」を厳選して5つ紹介します。</p>
+
+<div class="combo-cards">
+  <div class="combo-card">
+    <div class="combo-card-header">
+      <div class="combo-card-num">1</div>
+      <div class="combo-card-title">🏚️ 空き家購入＋断熱補助＋移住支援金コンボ</div>
+    </div>
+    <div class="combo-card-amount">合計最大<strong>350〜450万円</strong></div>
+    <div class="combo-card-body">地方の格安空き家を購入し、断熱・耐震リフォームを行いながら移住支援金も受け取る。3制度がほぼ完全に独立しているため組み合わせしやすい最強コンボ。</div>
+    <div class="combo-detail">空き家改修補助（市）100〜150万円 ＋ 先進的窓リノベ（国）最大200万円 ＋ 移住支援金（国・県）100万円＋子加算</div>
+  </div>
+  <div class="combo-card">
+    <div class="combo-card-header">
+      <div class="combo-card-num">2</div>
+      <div class="combo-card-title">💍 結婚＋移住＋新婚家賃補助コンボ</div>
+    </div>
+    <div class="combo-card-amount">合計最大<strong>230万円＋月3万円×2年</strong></div>
+    <div class="combo-card-body">東京から地方へ移住した新婚夫婦が、移住支援金・結婚新生活支援・家賃補助の3制度を同時に受ける合法コンボ。</div>
+    <div class="combo-detail">移住支援金100万円 ＋ 結婚新生活支援60万円 ＋ 家賃補助月3万×24ヶ月＝72万円 → 合計232万円</div>
+  </div>
+  <div class="combo-card">
+    <div class="combo-card-header">
+      <div class="combo-card-num">3</div>
+      <div class="combo-card-title">👶 出産＋子育て給付金フル受給コンボ</div>
+    </div>
+    <div class="combo-card-amount">合計（子1人で）<strong>累計200万円超</strong></div>
+    <div class="combo-card-body">出産時から乳幼児期・学齢期にかけて、複数の給付金を時系列で受け取る正攻法コンボ。すべて独立した制度のため重複問題なし。</div>
+    <div class="combo-detail">出産育児一時金50万 ＋ 出産・子育て応援給付金10万 ＋ 児童手当（〜高校卒業）累計約200万 ＋ 医療費助成（18歳まで）など</div>
+  </div>
+  <div class="combo-card">
+    <div class="combo-card-header">
+      <div class="combo-card-num">4</div>
+      <div class="combo-card-title">📚 失業給付＋リスキリング給付コンボ</div>
+    </div>
+    <div class="combo-card-amount">合計最大<strong>280万円超</strong></div>
+    <div class="combo-card-body">退職後にハローワークで失業給付を受けながら、教育訓練給付金（最大168万円）でスキルアップする合法コンボ。</div>
+    <div class="combo-detail">失業給付（月20〜30万円×6ヶ月）＋ 専門実践教育訓練給付金（受講費の70%・上限168万/3年）</div>
+  </div>
+  <div class="combo-card">
+    <div class="combo-card-header">
+      <div class="combo-card-num">5</div>
+      <div class="combo-card-title">🌿 省エネ家電＋住宅ローン控除＋断熱補助コンボ</div>
+    </div>
+    <div class="combo-card-amount">合計最大<strong>450万円超</strong></div>
+    <div class="combo-card-body">新築・リフォーム住宅購入時に住宅ローン控除を使いながら、省エネ・断熱補助も受け取る節税＋補助の最強組み合わせ。</div>
+    <div class="combo-detail">住宅ローン控除（最大年40万×13年）＋ 先進的窓リノベ最大200万円 ＋ 省エネ家電補助（都道府県）1〜5万円</div>
+  </div>
+</div>
+
+<h2 id="doc-tips">⑤ 二重取りを疑われないための申請書類の書き方</h2>
+
+<p>複数の補助金を同時申請する場合、書類の書き方で「不正を疑われるリスク」を下げることが重要です。</p>
+
+<div class="doc-tips">
+  <div class="doc-tip">
+    <div class="doc-tip-icon">📋</div>
+    <div class="doc-tip-title">各制度の「他の補助金」欄を正直に記入</div>
+    <div class="doc-tip-body">申請書類に「他の補助金申請の有無」を記入する欄がある場合、必ず正直に記入します。隠すと後で発覚した際に問題になります。</div>
+  </div>
+  <div class="doc-tip">
+    <div class="doc-tip-icon">📂</div>
+    <div class="doc-tip-title">費用の内訳を別々に管理する</div>
+    <div class="doc-tip-body">「どの費用にどの補助金を充てるか」を書類上で明確にしておくことで、実費超過の疑いを防げます。</div>
+  </div>
+  <div class="doc-tip">
+    <div class="doc-tip-icon">📞</div>
+    <div class="doc-tip-title">不明点は事前に担当窓口へ確認</div>
+    <div class="doc-tip-body">「この2つの補助金を同時に申請しても問題ありませんか？」と電話で確認し、担当者名と日時をメモしておくと安心。</div>
+  </div>
+  <div class="doc-tip">
+    <div class="doc-tip-icon">🗓️</div>
+    <div class="doc-tip-title">申請スケジュールを整理する</div>
+    <div class="doc-tip-body">国の補助金と自治体の補助金では申請タイミングが異なることが多い。Excelで一覧管理して締切を見逃さないようにしましょう。</div>
+  </div>
+</div>
+
+<div class="alert-box">
+  <div class="alert-box-title">⚠️ 最終確認：不明なら必ず聞くこと</div>
+  <div class="alert-box-body">補助金の「組み合わせOK/NG」は制度によって異なり、年度ごとに変わることもあります。この記事の情報はあくまで一般的な傾向です。申請前には必ず各補助金の最新の要綱を確認し、不明な点は各窓口に問い合わせてください。</div>
+</div>
+
+<!-- app-banner 2 -->
+<div class="app-banner"><div class="app-banner-inner"><div class="app-banner-emoji">💰</div><div class="app-banner-text"><p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p><p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p></div><a href="/" class="app-banner-btn">今すぐ確認する →</a></div></div>
+
+</div>
+</div>
+
+<div class="related"><div class="container"><h3>📚 関連記事</h3><div class="related-grid">
+<a href="079-sougaku-1000man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div><div class="related-body">総額1,000万円超え！もらえるお金大全</div></a>
+<a href="007-unique-portal.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">😲</div><div class="related-body">えっこれでもお金もらえるの？驚き補助金まとめ</div></a>
+<a href="081-reskilling-56man.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">📚</div><div class="related-body">リスキリングで最大56万円もらいながらスキルアップ</div></a>
+<a href="088-kakuteishinkoku.html" class="related-card"><div class="related-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">💳</div><div class="related-body">確定申告で取り戻せるお金まとめ</div></a>
+</div></div></div>
+
+<footer><div class="container"><div class="footer-logo">💰 もらえるお金ナビ</div><p>情報は2026年5月時点。申請前に必ず各自治体の公式サイトをご確認ください。</p><p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p><p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p></div></footer>
+
+</body>
+</html>

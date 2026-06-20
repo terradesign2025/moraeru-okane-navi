@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>引っ越し代も国が負担!? 移住支援金を使えば家具家電もカバーできる？使い道を徹底解説｜もらえるお金ナビ</title>
+<meta name="description" content="移住支援金の使い道は「自由」だから引っ越し代にも家具にも使える！移住支援金100万円の賢い使い方と、引っ越し代が別途補助される制度の組み合わせを解説。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<!-- Google tag --><!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<style>
+.use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:24px 0;}
+.use-card{border-radius:14px;padding:18px 20px;border:2px solid #d1fae5;background:linear-gradient(135deg,#ecfdf5,#f0fdf4);}
+.use-card.highlight{border-color:#10b981;background:linear-gradient(135deg,#d1fae5,#a7f3d0);}
+.use-card-icon{font-size:28px;margin-bottom:8px;}
+.use-card-title{font-size:14px;font-weight:900;color:#065f46;margin-bottom:6px;}
+.use-card-amount{font-size:20px;font-weight:900;color:#059669;margin-bottom:6px;}
+.use-card-desc{font-size:12px;color:#4b5563;line-height:1.7;}
+
+.cost-table{width:100%;border-collapse:collapse;font-size:13px;margin:20px 0;}
+.cost-table th{background:#065f46;color:#fff;padding:10px 14px;text-align:left;}
+.cost-table td{padding:10px 14px;border-bottom:1px solid #e5e7eb;}
+.cost-table tr:nth-child(even) td{background:#f9fafb;}
+.cost-table .amount{font-weight:700;color:#059669;}
+.cost-table .covered{font-size:11px;background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+.cost-table .uncovered{font-size:11px;background:#fee2e2;color:#dc2626;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+.cost-table .total-row td{font-weight:900;background:linear-gradient(135deg,#ecfdf5,#d1fae5);color:#065f46;}
+
+.combo-box{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:16px;padding:24px;margin:24px 0;color:#fff;}
+.combo-box h3{font-size:16px;font-weight:900;color:#fff;margin-bottom:16px;}
+.combo-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.15);}
+.combo-item:last-child{border-bottom:none;padding-top:14px;}
+.combo-label{font-size:13px;color:rgba(255,255,255,.85);}
+.combo-sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
+.combo-val{font-size:18px;font-weight:900;color:#a5b4fc;}
+.combo-total{font-size:26px;font-weight:900;color:#fde047;}
+.combo-note{font-size:11px;color:rgba(255,255,255,.5);margin-top:12px;}
+
+.priority-list{counter-reset:priority;margin:20px 0;}
+.priority-item{display:flex;gap:16px;padding:16px 20px;border-radius:12px;margin-bottom:10px;border:1px solid #e5e7eb;background:#fff;align-items:flex-start;}
+.priority-item.top3{border-color:#10b981;background:linear-gradient(135deg,#ecfdf5,#fff);}
+.priority-num{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#10b981,#0d9488);color:#fff;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.priority-item:nth-child(4) .priority-num,
+.priority-item:nth-child(5) .priority-num{background:linear-gradient(135deg,#6b7280,#4b5563);}
+.priority-body{flex:1;}
+.priority-title{font-size:15px;font-weight:900;color:#111827;margin-bottom:6px;}
+.priority-reason{font-size:13px;color:#4b5563;line-height:1.7;}
+.priority-amount{font-size:12px;font-weight:700;color:#059669;margin-top:4px;}
+
+.schedule-row{display:flex;gap:0;margin:24px 0;overflow-x:auto;padding-bottom:8px;}
+.sched-block{min-width:130px;flex:1;border:2px solid #e5e7eb;border-right:none;padding:14px 12px;text-align:center;}
+.sched-block:first-child{border-radius:12px 0 0 12px;}
+.sched-block:last-child{border-right:2px solid #e5e7eb;border-radius:0 12px 12px 0;}
+.sched-block.active{border-color:#10b981;background:linear-gradient(135deg,#ecfdf5,#d1fae5);}
+.sched-month{font-size:11px;font-weight:700;color:#9ca3af;margin-bottom:4px;}
+.sched-event{font-size:12px;font-weight:700;color:#111827;}
+.sched-sub{font-size:11px;color:#9ca3af;margin-top:4px;}
+.sched-block.active .sched-event{color:#065f46;}
+.sched-block.active .sched-sub{color:#10b981;}
+
+.badge-wrap{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.badge{padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;}
+.badge.green{background:#d1fae5;color:#065f46;}
+.badge.blue{background:#dbeafe;color:#1d4ed8;}
+.badge.yellow{background:#fef3c7;color:#92400e;}
+.badge.red{background:#fee2e2;color:#dc2626;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container-wide nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">💰</div>もらえるお金ナビ</a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">✈️ 移住・資金活用</span>
+    <h1>引っ越し代も国が負担!? 移住支援金を使えば<br>家具家電もカバーできる？使い道を徹底解説</h1>
+    <div class="article-meta">
+      <span>📅 2026年5月14日</span>
+      <span>🏷 移住支援金・資金活用</span>
+      <span>⏱ 読了約6分</span>
+      <span>💡 使い道の制限なし</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="container">
+
+<p>「移住支援金って、何に使っていいの？引っ越し代にも使えるの？」――これ、超よくある質問です。<strong>答えは「ほぼ何に使ってもOK」。</strong></p>
+
+<p>引っ越し代、家具家電の購入、敷金礼金、生活準備費…全部使えます。しかも引っ越し代が<em>別途補助される制度</em>と組み合わせれば、移住コストがほぼゼロになる可能性も。今回は移住支援金の使い道と組み合わせ戦略を完全解説します。</p>
+
+<div class="info-box"><p>📌 移住支援金は「給付金」です。使い道に関する法的な制限はなく、移住に関わる費用全般に自由に充てることができます（ただし申請には就業・居住などの条件を満たす必要あり）。</p></div>
+
+<h2>🎯 移住支援金の使い道｜制限なし・引っ越し代OK・家具OK</h2>
+
+<p>移住支援金は「条件を満たした人に自治体から給付されるお金」です。ローンの返済に使っても、食費に使っても、法的には問題ありません。ただし、実際の移住費用に充てると最も効率よく新生活を立ち上げられます。</p>
+
+<div class="use-grid">
+  <div class="use-card highlight">
+    <div class="use-card-icon">🚛</div>
+    <div class="use-card-title">引っ越し費用</div>
+    <div class="use-card-amount">約10〜30万円</div>
+    <div class="use-card-desc">東京から地方への長距離引っ越しは繁忙期で20〜30万円前後。移住支援金でそのまま充当できる。</div>
+  </div>
+  <div class="use-card highlight">
+    <div class="use-card-icon">🛋</div>
+    <div class="use-card-title">家具・家電の購入</div>
+    <div class="use-card-amount">約15〜50万円</div>
+    <div class="use-card-desc">冷蔵庫・洗濯機・ベッドなどの大型家電家具を新調する費用に充当可能。</div>
+  </div>
+  <div class="use-card">
+    <div class="use-card-icon">🏠</div>
+    <div class="use-card-title">敷金・礼金・仲介料</div>
+    <div class="use-card-amount">約10〜30万円</div>
+    <div class="use-card-desc">賃貸物件の初期費用。地方は安いが、まとまったお金が必要。支援金で対応可。</div>
+  </div>
+  <div class="use-card">
+    <div class="use-card-icon">🚗</div>
+    <div class="use-card-title">車の購入・維持費</div>
+    <div class="use-card-amount">首頭金の一部に</div>
+    <div class="use-card-desc">地方は車必須。頭金や自動車税・車検費の積み立てにも活用できる。</div>
+  </div>
+  <div class="use-card">
+    <div class="use-card-icon">🛠</div>
+    <div class="use-card-title">空き家の簡易修繕</div>
+    <div class="use-card-amount">別途補助と組合せ◎</div>
+    <div class="use-card-desc">空き家リフォーム補助が使えない細かい修繕に活用。補助と組み合わせて最大効果。</div>
+  </div>
+  <div class="use-card">
+    <div class="use-card-icon">📦</div>
+    <div class="use-card-title">生活立ち上げ費用全般</div>
+    <div class="use-card-amount">自由に使える</div>
+    <div class="use-card-desc">食費・光熱費の立ち上げ、地域の交流活動参加費など、移住後の生活費に充当OK。</div>
+  </div>
+</div>
+
+<h2>💰 移住時にかかる費用一覧と移住支援金でのカバー計算表</h2>
+
+<p>東京から地方へ引っ越す際の費用を一覧化しました。移住支援金<strong>100万円（世帯）</strong>でどこまでカバーできるかを試算します。</p>
+
+<div class="table-wrap">
+<table class="cost-table">
+  <thead>
+    <tr>
+      <th>費用項目</th>
+      <th>目安金額</th>
+      <th>移住支援金でカバー？</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>長距離引っ越し（東京→地方）</td>
+      <td class="amount">15〜25万円</td>
+      <td><span class="covered">◎ 充当可</span></td>
+      <td>繁忙期（3〜4月）は30万円超えも</td>
+    </tr>
+    <tr>
+      <td>敷金・礼金・仲介料</td>
+      <td class="amount">5〜20万円</td>
+      <td><span class="covered">◎ 充当可</span></td>
+      <td>地方は敷礼ゼロの物件も多い</td>
+    </tr>
+    <tr>
+      <td>家具・家電の新調</td>
+      <td class="amount">20〜50万円</td>
+      <td><span class="covered">◎ 充当可</span></td>
+      <td>一式揃えるなら30〜50万円見込む</td>
+    </tr>
+    <tr>
+      <td>車の購入（頭金）</td>
+      <td class="amount">10〜30万円</td>
+      <td><span class="covered">◎ 充当可</span></td>
+      <td>中古車なら50万円前後で購入可</td>
+    </tr>
+    <tr>
+      <td>空き家の簡易修繕</td>
+      <td class="amount">5〜20万円</td>
+      <td><span class="covered">◎ 充当可</span></td>
+      <td>大規模はリフォーム補助を別途活用</td>
+    </tr>
+    <tr>
+      <td>生活立ち上げ費（2〜3ヶ月分）</td>
+      <td class="amount">15〜30万円</td>
+      <td><span class="covered">◎ 充当可</span></td>
+      <td>新しい仕事の給与が入るまでの生活費</td>
+    </tr>
+    <tr>
+      <td>子どもの転校・入学準備</td>
+      <td class="amount">3〜10万円</td>
+      <td><span class="covered">◎ 充当可</span></td>
+      <td>制服・学用品・習い事の入会金等</td>
+    </tr>
+    <tr>
+      <td>大規模リフォーム（空き家）</td>
+      <td class="amount">100〜500万円</td>
+      <td><span class="uncovered">△ 別途補助が必要</span></td>
+      <td>自治体のリフォーム補助を活用する</td>
+    </tr>
+    <tr class="total-row">
+      <td colspan="2">移住支援金 100万円（世帯）でカバーできる目安</td>
+      <td colspan="2">引っ越し〜生活立ち上げのほぼ全額（車は頭金のみ）</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="info-box"><p>💡 移住支援金<strong>100万円</strong>があれば、引っ越し代（最大25万）＋家具家電（40万）＋敷金礼金（15万）＋車頭金（10万）＋生活費2ヶ月（10万）で合計<strong>約100万円</strong>が丸々カバーできる計算になります。実質「移住コストゼロ」も夢ではありません。</p></div>
+
+<h2>🔀 引っ越し代補助が別途ある制度｜結婚新生活支援との合わせ技</h2>
+
+<p>さらにお得なのが、<strong>引っ越し費用を「別の制度」で補助してもらいながら、移住支援金は他の費用に丸々充てる</strong>という戦略です。代表的な組み合わせをご紹介します。</p>
+
+<div class="combo-box">
+  <h3>🎉 組み合わせ試算モデル：新婚夫婦が地方へ移住する場合</h3>
+  <div class="combo-item">
+    <div>
+      <div class="combo-label">移住支援金（世帯）</div>
+      <div class="combo-sub">東京23区在住→地方移住の基本給付</div>
+    </div>
+    <div class="combo-val">100万円</div>
+  </div>
+  <div class="combo-item">
+    <div>
+      <div class="combo-label">結婚新生活支援事業（国）</div>
+      <div class="combo-sub">新婚世帯の引っ越し代・家賃補助。2026年度は最大60万円</div>
+    </div>
+    <div class="combo-val">+60万円</div>
+  </div>
+  <div class="combo-item">
+    <div>
+      <div class="combo-label">自治体独自の移住祝い金</div>
+      <div class="combo-sub">移住先によっては独自加算（〇〇市お試し体験助成など）</div>
+    </div>
+    <div class="combo-val">+10〜30万円</div>
+  </div>
+  <div class="combo-item">
+    <div>
+      <div class="combo-label">空き家リフォーム補助（地方自治体）</div>
+      <div class="combo-sub">空き家を購入してリフォームする場合の補助金</div>
+    </div>
+    <div class="combo-val">+50〜100万円</div>
+  </div>
+  <div class="combo-item">
+    <div>
+      <div class="combo-label" style="font-weight:900;color:#fde047;">💰 合計受取額（最大試算）</div>
+      <div class="combo-sub" style="color:rgba(255,255,255,.6);">※全制度の最大値の合算。各制度に申請条件あり</div>
+    </div>
+    <div class="combo-total">290万円！</div>
+  </div>
+  <div class="combo-note">※結婚新生活支援は夫婦ともに39歳以下・世帯収入500万円未満などの条件あり。リフォーム補助は空き家購入が前提。</div>
+</div>
+
+<div class="badge-wrap">
+  <span class="badge green">✅ 移住支援金（世帯）100万円</span>
+  <span class="badge blue">✅ 結婚新生活支援 最大60万円</span>
+  <span class="badge yellow">✅ 自治体独自支援 最大30万円</span>
+  <span class="badge green">✅ 空き家リフォーム補助 最大100万円</span>
+</div>
+
+<p>「引っ越し代は結婚新生活支援でカバー」→「移住支援金は家具・車・生活費に全充当」というように、<strong>制度ごとに使い先を分けること</strong>で無駄なく最大活用できます。</p>
+
+<!-- アプリバナー① -->
+<div class="app-banner">
+  <div class="app-banner-inner">
+    <div class="app-banner-emoji">💰</div>
+    <div class="app-banner-text">
+      <p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p>
+      <p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p>
+    </div>
+    <a href="/" class="app-banner-btn">今すぐ確認する →</a>
+  </div>
+</div>
+
+<h2>🏆 移住支援金を賢く使う5つの優先順位</h2>
+
+<p>「何から使うか」で移住後の生活の安定度が変わります。以下の優先順位で資金を振り分けると、新生活を最もスムーズに立ち上げられます。</p>
+
+<div class="priority-list">
+  <div class="priority-item top3">
+    <div class="priority-num">1</div>
+    <div class="priority-body">
+      <div class="priority-title">生活立ち上げ費（2〜3ヶ月分）を先に確保</div>
+      <div class="priority-reason">新しい就業先での給与が安定するまでの生活費。移住直後に「お金がない」状態は精神的にキつく、移住失敗の引き金になる。<strong>最低20〜30万円</strong>を手元に残しておく。</div>
+      <div class="priority-amount">目安：20〜30万円をキープ</div>
+    </div>
+  </div>
+  <div class="priority-item top3">
+    <div class="priority-num">2</div>
+    <div class="priority-body">
+      <div class="priority-title">車の購入費（地方では必須インフラ）</div>
+      <div class="priority-reason">地方で車がないと生活が成立しない地域が大半。公共交通機関は都市部より格段に少ない。<strong>中古車10〜30万円</strong>を早期に確保するのが地方移住の最優先事項。</div>
+      <div class="priority-amount">目安：頭金10〜30万円</div>
+    </div>
+  </div>
+  <div class="priority-item top3">
+    <div class="priority-num">3</div>
+    <div class="priority-body">
+      <div class="priority-title">家具・家電の必需品（冷蔵庫・洗濯機・ベッド）</div>
+      <div class="priority-reason">都市部から地方への引っ越しで家電を全て持ってくると輸送コストが跳ね上がることも。現地で中古品を揃えると引っ越し代が大幅に減る。支援金から<strong>20〜30万円</strong>で一式購入が現実的。</div>
+      <div class="priority-amount">目安：20〜30万円</div>
+    </div>
+  </div>
+  <div class="priority-item">
+    <div class="priority-num">4</div>
+    <div class="priority-body">
+      <div class="priority-title">引っ越し代（結婚新生活支援等で代替できるなら不要）</div>
+      <div class="priority-reason">新婚世帯なら結婚新生活支援を活用して引っ越し代を別制度でカバーし、移住支援金は上位3つに集中させる。結婚新生活支援が使えない場合のみ、ここに移住支援金を充てる。</div>
+      <div class="priority-amount">目安：15〜25万円（他制度と重複不可）</div>
+    </div>
+  </div>
+  <div class="priority-item">
+    <div class="priority-num">5</div>
+    <div class="priority-body">
+      <div class="priority-title">地域交流・子どもの習い事・自己投資</div>
+      <div class="priority-reason">地域コミュニティに早期に溶け込むための交流費用（地元の祭り参加・消防団・PTAなど）。子どもの習い事の入会金・教材費。残った支援金を有意義に使う最後の使い道。</div>
+      <div class="priority-amount">目安：残金を自由に使用</div>
+    </div>
+  </div>
+</div>
+
+<h2>🗓 申請から入金までのスケジュール｜目安期間</h2>
+
+<p>移住支援金は「引っ越し後すぐに振り込まれる」わけではありません。実際の流れを把握して、<strong>引っ越しの資金計画は移住支援金の入金前提では組まない</strong>のが鉄則です。</p>
+
+<div class="schedule-row">
+  <div class="sched-block active">
+    <div class="sched-month">STEP 1</div>
+    <div class="sched-event">住民票を移す</div>
+    <div class="sched-sub">カウント開始</div>
+  </div>
+  <div class="sched-block">
+    <div class="sched-month">STEP 2</div>
+    <div class="sched-event">就業開始・就労証明の取得</div>
+    <div class="sched-sub">1〜2ヶ月後</div>
+  </div>
+  <div class="sched-block active">
+    <div class="sched-month">STEP 3</div>
+    <div class="sched-event">申請書類を準備・提出</div>
+    <div class="sched-sub">2〜6ヶ月後</div>
+  </div>
+  <div class="sched-block">
+    <div class="sched-month">STEP 4</div>
+    <div class="sched-event">自治体が審査</div>
+    <div class="sched-sub">申請後1〜2ヶ月</div>
+  </div>
+  <div class="sched-block active">
+    <div class="sched-month">STEP 5</div>
+    <div class="sched-event">銀行口座に入金</div>
+    <div class="sched-sub">申請後2〜3ヶ月</div>
+  </div>
+</div>
+
+<div class="warning-box"><p>⚠️ 住民票を移してから入金まで、早くても<strong>3〜5ヶ月</strong>かかるのが一般的です。引っ越し費用・敷金礼金・家電購入費は「移住支援金が入ってから払う」ことができないため、<strong>手持ちの自己資金で先に支払い、後から補填する</strong>形が基本になります。移住前に50〜100万円の手元資金を用意しておくと安心です。</p></div>
+
+<div class="info-box"><p>💡 移住支援金が入金されたら、先に立て替えた引っ越し費用・家電購入費の補填に充て、残りを生活費・車購入費に回すと最もスムーズです。先払い→後補填の流れを頭に入れて資金計画を立てましょう。</p></div>
+
+<!-- アプリバナー② -->
+<div class="app-banner">
+  <div class="app-banner-inner">
+    <div class="app-banner-emoji">💰</div>
+    <div class="app-banner-text">
+      <p class="app-banner-title">あなたのもらえるお金、見逃してませんか？</p>
+      <p class="app-banner-sub">全国278市区・1,308件の補助金を無料検索</p>
+    </div>
+    <a href="/" class="app-banner-btn">今すぐ確認する →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 関連記事 -->
+<div class="related">
+  <div class="container">
+    <h3>📚 関連記事</h3>
+    <div class="related-grid">
+      <a href="006-ijyu-ranking.html" class="related-card">
+        <div class="related-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">✈️</div>
+        <div class="related-body">全国移住支援金ランキングTOP20</div>
+      </a>
+      <a href="011-ijyu-kodomo-kasan.html" class="related-card">
+        <div class="related-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">👶</div>
+        <div class="related-body">子ども加算の破壊力を試算</div>
+      </a>
+      <a href="079-sougaku-1000man.html" class="related-card">
+        <div class="related-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">💰</div>
+        <div class="related-body">総額1,000万円超え大全</div>
+      </a>
+      <a href="001-ijyu-nagano.html" class="related-card">
+        <div class="related-thumb" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);">🏔</div>
+        <div class="related-body">東京に住みながら長野の100万円</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">💰 もらえるお金ナビ</div>
+    <p>情報は2026年5月時点。申請前に各自治体公式サイトをご確認ください。</p>
+    <p style="margin-top:12px;"><a href="/lp.html">サイトトップ</a> ／ <a href="/blog/">ブログ一覧</a> ／ <a href="/">補助金を検索</a></p>
+    <p style="margin-top:16px;font-size:11px;">© 2026 もらえるお金ナビ | テラデザイン株式会社</p>
+  </div>
+</footer>
+
+</body>
+</html>

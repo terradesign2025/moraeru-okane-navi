@@ -312,6 +312,68 @@
     .cta-btn-main:hover { transform: translateY(-2px); }
     .cta-note { color: rgba(255,255,255,0.55); font-size: 11px; }
 
+    /* ===== CONTACT FORM ===== */
+    .contact-section { padding: 60px 24px; background: #f8fafc; }
+    .contact-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 24px;
+      padding: 40px 32px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    }
+    .contact-title { font-size: 22px; font-weight: 900; text-align: center; margin-bottom: 6px; }
+    .contact-sub { text-align: center; color: var(--gray-500); font-size: 13px; margin-bottom: 28px; }
+    .form-group { margin-bottom: 18px; }
+    .form-label { display: block; font-size: 12px; font-weight: 700; color: var(--gray-700); margin-bottom: 6px; }
+    .form-label .required { color: #ef4444; margin-left: 4px; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      border: 1.5px solid #d1d5db;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--gray-900);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+      background: var(--white);
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    }
+    .form-textarea { resize: vertical; min-height: 110px; }
+    .form-hint { font-size: 11px; color: var(--gray-500); margin-top: 4px; }
+    .submit-btn {
+      width: 100%;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 900;
+      font-size: 16px;
+      padding: 16px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 8px;
+    }
+    .submit-btn:hover { background: var(--blue-dark); }
+    .submit-btn:active { transform: scale(0.98); }
+    .submit-btn:disabled { background: #9ca3af; cursor: not-allowed; }
+    .form-note { font-size: 11px; color: var(--gray-500); text-align: center; margin-top: 12px; line-height: 1.6; }
+    .success-msg {
+      display: none;
+      background: var(--green-light);
+      border: 1.5px solid #6ee7b7;
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .success-msg h3 { color: var(--green); font-size: 18px; font-weight: 900; margin-bottom: 6px; }
+    .success-msg p { color: var(--gray-700); font-size: 13px; }
+
     .footer { background: var(--gray-900); padding: 28px 24px; text-align: center; color: rgba(255,255,255,0.4); font-size: 11px; }
     .footer a { color: rgba(255,255,255,0.6); }
     .text-center { text-align: center; }
@@ -355,7 +417,7 @@
   <a href="/" class="header-logo">
     <span class="logo-icon">💰</span>もらえるお金ナビ
   </a>
-  <a href="#cta" class="header-cta">掲載を相談する</a>
+  <a href="#contact-form" class="header-cta" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'}); return false;">掲載を相談する</a>
 </header>
 
 <section class="hero">
@@ -376,7 +438,7 @@
       <div class="hero-stat-label">お役立ちブログ</div>
     </div>
   </div>
-  <a href="#cta" class="hero-cta-btn">無料で掲載内容を相談する →</a>
+  <a href="#contact-form" class="hero-cta-btn" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'}); return false;">無料で掲載内容を相談する →</a>
   <p class="hero-cta-sub">お問い合わせは無料。返信まで最短1営業日。</p>
 </section>
 
@@ -594,12 +656,110 @@
   <div class="container">
     <h2>まずは無料で<br>エリアの空き状況を確認する</h2>
     <p>お問い合わせは無料。返信まで最短1営業日。<br>強引な営業はいたしません。</p>
-    <a href="mailto:terradesignik@gmail.com?subject=%E3%82%82%E3%82%89%E3%81%88%E3%82%8B%E3%81%8A%E9%87%91%E3%83%8A%E3%83%93%20%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%E6%8E%B2%E8%BC%89%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&body=%E3%80%90%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E3%82%A8%E3%83%AA%E3%82%A2%E3%80%91%0A%0A%E3%80%90%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E3%83%BB%E6%A5%AD%E7%A8%AE%E3%80%91%0A%0A%E3%80%90%E4%BC%9A%E7%A4%BE%E5%90%8D%E3%83%BB%E3%81%8A%E5%90%8D%E5%89%8D%E3%80%91%0A%0A%E3%80%90%E3%81%94%E8%B3%AA%E5%95%8F%E3%83%BB%E3%81%94%E8%A6%81%E6%9C%9B%E3%80%91" class="cta-btn-main">
-      📩 掲載内容をメールで相談する
+    <a href="#contact-form" class="cta-btn-main" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'}); return false;">
+      📋 無料で掲載を相談する →
     </a>
-    <p class="cta-note">送信後、1営業日以内に担当者よりご連絡いたします。</p>
+    <p class="cta-note">フォームから送信 → 1営業日以内にご連絡します</p>
   </div>
 </section>
+
+<!-- ===== CONTACT FORM ===== -->
+<section class="contact-section" id="contact-form">
+  <div class="contact-box">
+    <h2 class="contact-title">掲載のご相談（無料）</h2>
+    <p class="contact-sub">必要事項をご入力ください。1営業日以内にご連絡いたします。</p>
+
+    <form id="sponsorForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="8b664d19-f0b7-4739-bbfc-e9c1417eac98">
+      <input type="hidden" name="subject" value="【もらえるお金ナビ】スポンサー掲載のご相談">
+      <input type="hidden" name="from_name" value="もらえるお金ナビ スポンサーフォーム">
+      <input type="hidden" name="redirect" value="">
+
+      <div class="form-group">
+        <label class="form-label">会社名・お名前<span class="required">*</span></label>
+        <input type="text" name="company_name" class="form-input" placeholder="例：株式会社〇〇 / 山田 太郎" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">メールアドレス<span class="required">*</span></label>
+        <input type="email" name="email" class="form-input" placeholder="例：info@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">電話番号（任意）</label>
+        <input type="tel" name="phone" class="form-input" placeholder="例：03-1234-5678">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">ご希望のエリア<span class="required">*</span></label>
+        <input type="text" name="area" class="form-input" placeholder="例：神奈川県横浜市、埼玉県全域 など" required>
+        <p class="form-hint">複数エリアでも構いません</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">業種・サービス内容<span class="required">*</span></label>
+        <select name="category" class="form-select" required>
+          <option value="">選択してください</option>
+          <option>不動産仲介・賃貸管理</option>
+          <option>保険代理店</option>
+          <option>FP・ファイナンシャルプランナー事務所</option>
+          <option>引越し業者</option>
+          <option>リフォーム会社</option>
+          <option>ハウスクリーニング</option>
+          <option>保育・託児サービス</option>
+          <option>学習塾・習い事</option>
+          <option>住宅ローン相談</option>
+          <option>太陽光・蓄電池</option>
+          <option>その他</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">ご質問・ご要望（任意）</label>
+        <textarea name="message" class="form-textarea" placeholder="ご不明な点・ご要望などをご自由にご記入ください"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">
+        送信する（無料・強引な営業はしません）
+      </button>
+      <p class="form-note">送信内容は暗号化されて安全に送信されます。<br>個人情報は掲載のご提案以外には使用しません。</p>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      <h3>✅ 送信が完了しました</h3>
+      <p>ご相談ありがとうございます。<br>1営業日以内に担当者よりご連絡いたします。</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('sponsorForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = '送信中...';
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(this)))
+      });
+      const data = await res.json();
+      if (data.success) {
+        this.style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = '送信する（無料・強引な営業はしません）';
+        alert('送信に失敗しました。時間をおいて再度お試しください。');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = '送信する（無料・強引な営業はしません）';
+      alert('通信エラーが発生しました。時間をおいて再度お試しください。');
+    }
+  });
+</script>
 
 <footer class="footer">
   <p><a href="/">もらえるお金ナビ</a> ／ 運営: 株式会社テラデザイン（東京都八王子市）</p>

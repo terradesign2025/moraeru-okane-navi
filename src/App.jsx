@@ -4,7 +4,7 @@ import {
   Heart, Home, Baby, Bike, Map, Award, Sparkles, Star,
   TrendingUp, CheckCircle2, Mail, ArrowRight,
   ExternalLink, Settings, LogOut, Shield, Zap, Trophy, Wrench, Leaf, Info,
-  Phone, Lock, ChevronUp, Plane, MoveRight,
+  Phone, Lock, ChevronUp, Plane, MoveRight, BookOpen,
 } from 'lucide-react';
 import {
   META, ALL_TRENDS, ALL_CITIES, SUBSIDIES, CITY_RECYCLERS, SPONSOR_INQUIRY_EMAIL,
@@ -607,6 +607,42 @@ export default function App() {
                     <p className="text-[10px] font-black text-emerald-800 leading-tight">{item.label}</p>
                     <p className="text-[9px] text-emerald-500">{item.sub}</p>
                   </div>
+                ))}
+              </div>
+            </section>
+
+            <div className="h-2 bg-gray-100" />
+
+            {/* お役立ち情報（ブログ） */}
+            <section className="bg-white px-4 py-5">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-1.5">
+                  <BookOpen size={14} className="text-blue-500" />
+                  <h3 className="text-sm font-black text-gray-900">お役立ち情報</h3>
+                </div>
+                <a href="/blog/" className="text-[11px] text-blue-500 font-bold flex items-center gap-0.5 hover:text-blue-700 transition-colors">
+                  一覧を見る <ChevronRight size={12} />
+                </a>
+              </div>
+              <div className="space-y-2">
+                {[
+                  { emoji: '✈️', cat: '移住支援', catColor: 'text-emerald-700 bg-emerald-50', title: '東京にいながら長野の移住支援金100万円がもらえる！申請方法を完全解説', file: '001-ijyu-nagano.html' },
+                  { emoji: '👶', cat: '子育て', catColor: 'text-pink-700 bg-pink-50', title: 'ベビー用品・保育料……知らないと損する出産・子育て給付金まとめ', file: '002-kosodate-joseikin.html' },
+                  { emoji: '🏠', cat: '住まい', catColor: 'text-blue-700 bg-blue-50', title: '窓の断熱リフォームで最大200万円補助！先進的窓リノベの条件と申請方法', file: '003-mado-renovate.html' },
+                  { emoji: '💍', cat: '結婚', catColor: 'text-rose-700 bg-rose-50', title: '結婚したら60万円もらえる！婚姻新生活支援制度の対象条件と申請手順', file: '012-kekkon-60man.html' },
+                ].map(post => (
+                  <a
+                    key={post.file}
+                    href={`/blog/${post.file}`}
+                    className="flex items-start gap-3 bg-gray-50 border border-gray-100 rounded-xl px-3.5 py-3 hover:border-blue-200 hover:bg-blue-50/40 transition-all no-underline"
+                  >
+                    <span className="text-xl shrink-0 mt-0.5">{post.emoji}</span>
+                    <div className="flex-1 min-w-0">
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${post.catColor} inline-block mb-1`}>{post.cat}</span>
+                      <p className="text-xs font-bold text-gray-800 leading-snug line-clamp-2">{post.title}</p>
+                    </div>
+                    <ChevronRight size={14} className="text-gray-300 shrink-0 mt-1" />
+                  </a>
                 ))}
               </div>
             </section>

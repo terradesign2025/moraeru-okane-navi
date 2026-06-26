@@ -365,6 +365,32 @@ export default function App() {
     }
   }, [selectedPref, selectedCity]);
 
+  // ブラウザ戻るボタン対応
+  const _isPopstate = useRef(false);
+  const _isFirstNav = useRef(true);
+  useEffect(() => {
+    const handler = (e) => {
+      if (!e.state) return;
+      _isPopstate.current = true;
+      const { view: v, selectedRegion: r, selectedPref: p, selectedCity: c } = e.state;
+      setView(v ?? 'top');
+      setSelectedRegion(r ?? '');
+      setSelectedPref(p ?? '');
+      setSelectedCity(c ?? '');
+    };
+    window.addEventListener('popstate', handler);
+    return () => window.removeEventListener('popstate', handler);
+  }, []);
+  useEffect(() => {
+    if (_isFirstNav.current) {
+      _isFirstNav.current = false;
+      window.history.replaceState({ view, selectedRegion, selectedPref, selectedCity }, '');
+      return;
+    }
+    if (_isPopstate.current) { _isPopstate.current = false; return; }
+    window.history.pushState({ view, selectedRegion, selectedPref, selectedCity }, '');
+  }, [view, selectedRegion, selectedPref, selectedCity]);
+
   const Back = ({ to, label = 'もどる' }) => (
     <div className="flex items-center justify-between mb-4">
       <button onClick={() => setView(to)} className="flex items-center gap-1 text-sm font-bold text-gray-400 hover:text-gray-700 transition-colors">

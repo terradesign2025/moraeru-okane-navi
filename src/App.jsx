@@ -1022,7 +1022,9 @@ export default function App() {
                       <div>
                         <p className="text-[10px] font-black text-blue-600 mb-2">{selectedPref} の市区町村</p>
                         <div className="space-y-1.5 max-h-96 overflow-y-auto pr-1">
-                          {[...new Map(ALL_CITIES.filter(c => c.pref === selectedPref).map(c => [`${c.pref}:${c.city}`, c])).values()]
+                          {ALL_CITIES
+                            .filter(c => c.pref === selectedPref)
+                            .filter((c, i, arr) => arr.findIndex(x => x.city === c.city) === i)
                             .sort((a, b) => (b.hasData ? 1 : 0) - (a.hasData ? 1 : 0))
                             .map(c => (
                             <button key={c.city} onClick={() => handleCitySelect(c.city)}

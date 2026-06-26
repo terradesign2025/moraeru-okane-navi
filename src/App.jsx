@@ -675,6 +675,41 @@ export default function App() {
 
             <div className="h-2 bg-gray-100" />
 
+            {/* シェア・拡散セクション */}
+            <section className="bg-blue-50 px-4 py-5">
+              <div className="text-center mb-3">
+                <p className="text-sm font-black text-gray-900 mb-1">📣 友だちにも教えてあげてください</p>
+                <p className="text-[11px] text-gray-500 leading-relaxed">知らないと損する補助金情報。あなたのシェアが、誰かの大きな助けになります。</p>
+              </div>
+              <div className="flex gap-2 mb-3">
+                <a
+                  href="https://twitter.com/intent/tweet?text=%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%84%E3%81%A8%E6%90%8D%EF%BC%81%E8%A3%9C%E5%8A%A9%E9%87%91%E3%82%92%E7%84%A1%E6%96%99%E3%81%A7%E6%A4%9C%E7%B4%A2%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%81%8C%E4%BE%BF%E5%88%A9%E3%81%99%E3%81%8E%E3%82%8B&url=https%3A%2F%2Fmoraeru-okane.jp%2F&hashtags=%E3%82%82%E3%82%89%E3%81%88%E3%82%8B%E3%81%8A%E9%87%91%2C%E8%A3%9C%E5%8A%A9%E9%87%91"
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex-1 bg-black hover:bg-gray-800 active:scale-[0.98] text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-sm transition-all"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.74-8.855L1.254 2.25H8.08l4.253 5.622 5.892-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  Xでシェア
+                </a>
+                <a
+                  href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fmoraeru-okane.jp%2F"
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex-1 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-sm transition-all active:scale-[0.98]"
+                  style={{ backgroundColor: '#06c755' }}
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738S0 4.935 0 10.304c0 4.813 4.269 8.842 10.035 9.607.391.085.924.259 1.058.594.121.305.079.785.038 1.094l-.172 1.031c-.053.305-.242 1.191 1.043.65 1.285-.542 6.938-4.087 9.469-6.997C23.204 14.136 24 12.31 24 10.304z"/></svg>
+                  LINEで送る
+                </a>
+              </div>
+              <a
+                href="/media-kit.html"
+                className="flex items-center justify-center gap-2 w-full text-[11px] text-blue-600 font-bold border border-blue-200 rounded-xl py-2.5 bg-white hover:bg-blue-50 transition-colors"
+              >
+                <ExternalLink size={11} /> バナー素材・埋め込みコードを取得する（Webサイト掲載OK・リンク自由）
+              </a>
+            </section>
+
+            <div className="h-2 bg-gray-100" />
+
             {/* グローバルスポンサー枠（TOP） */}
             <GlobalSponsorBlock />
           </div>

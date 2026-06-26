@@ -1,360 +1,1340 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>補助金・助成金お役立ちブログ｜もらえるお金ナビ</title>
-  <meta name="description" content="補助金・助成金の最新情報を分かりやすく解説。移住支援・子育て・住まいリノベ・海外制度まで幅広くカバーするもらえるお金ナビ公式ブログ。">
+  <title>ブログ一覧｜全100記事の補助金・助成金お役立ち情報｜もらえるお金ナビ</title>
+  <meta name="description" content="もらえるお金ナビが届ける補助金・助成金・給付金の実用記事100本。移住支援金・子育て・住まいのリフォーム・エコ・働き方まで、知らないと損するお金の情報をカテゴリ別に一覧でお届けします。">
+  <meta property="og:title" content="ブログ一覧｜全100記事の補助金・助成金お役立ち情報｜もらえるお金ナビ">
+  <meta property="og:description" content="補助金・助成金・給付金の実用記事100本。移住・子育て・住まい・エコ・働き方まで、知らないと損するお金の情報をカテゴリ別に一覧でお届けします。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moraeru-okane-navi.vercel.app/blog/">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="blog.css">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Google tag (gtag.js) ※ G-XXXXXXXXXXをあなたの計測IDに置き換え -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ブログ一覧｜全100記事の補助金・助成金お役立ち情報",
+    "url": "https://moraeru-okane-navi.vercel.app/blog/",
+    "description": "もらえるお金ナビが届ける補助金・助成金・給付金の実用記事100本。移住支援金・子育て・住まいのリフォーム・エコ・働き方まで、知らないと損するお金の情報をカテゴリ別に一覧でお届けします。",
+    "publisher": {
+      "@type": "Organization",
+      "name": "もらえるお金ナビ",
+      "url": "https://moraeru-okane-navi.vercel.app"
+    }
+  }
+  </script>
+  <style>
+    /* ---- INDEX 専用スタイル ---- */
+    .index-hero {
+      background: linear-gradient(160deg, #f0fdf4 0%, #ecfdf5 60%, #d1fae5 100%);
+      border-bottom: 1px solid #bbf7d0;
+      padding: 56px 20px 40px;
+      text-align: center;
+    }
+
+    .index-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #10b981;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+
+    .index-hero h1 {
+      color: #111;
+      font-size: clamp(22px, 5vw, 38px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .index-hero-sub {
+      color: #404040;
+      font-size: 14px;
+      line-height: 1.85;
+      max-width: 540px;
+      margin: 0 auto 24px;
+    }
+
+    /* SNSシェア */
+    .share-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .share-label {
+      color: #525252;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      color: #fff;
+      transition: opacity .2s, transform .2s;
+      text-decoration: none;
+    }
+
+    .share-btn:hover {
+      opacity: .85;
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .share-btn--x    { background: #000; }
+    .share-btn--line { background: #06c755; }
+
+    /* 検索 */
+    .search-wrap {
+      background: #fff;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 20px;
+    }
+
+    .search-inner {
+      max-width: 620px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9ca3af;
+      font-size: 16px;
+      pointer-events: none;
+    }
+
+    #searchInput {
+      width: 100%;
+      border: 1.5px solid #d4d4d4;
+      border-radius: 999px;
+      background: #fafafa;
+      color: #111;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 20px 12px 42px;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    #searchInput:focus {
+      border-color: #10b981;
+      background: #fff;
+    }
+
+    #searchInput::placeholder {
+      color: #9ca3af;
+      font-weight: 400;
+    }
+
+    .search-count {
+      text-align: center;
+      color: #525252;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    /* カテゴリタブ */
+    .cat-tabs-wrap {
+      background: #fff;
+      border-bottom: 1px solid #f0f0f0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .cat-tabs-wrap::-webkit-scrollbar { display: none; }
+
+    .cat-tabs {
+      display: flex;
+      gap: 6px;
+      padding: 12px 20px;
+      min-width: max-content;
+    }
+
+    .cat-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 16px;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 999px;
+      background: #fff;
+      color: #525252;
+      cursor: pointer;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: border-color .2s, color .2s, background .2s, transform .15s;
+    }
+
+    .cat-tab:hover {
+      border-color: #a7f3d0;
+      color: #047857;
+      background: #f0fdf4;
+      transform: translateY(-1px);
+    }
+
+    .cat-tab.is-active {
+      border-color: #10b981;
+      background: #10b981;
+      color: #fff;
+    }
+
+    .cat-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.3);
+      font-size: 10px;
+      font-weight: 900;
+      padding: 0 4px;
+    }
+
+    .cat-tab:not(.is-active) .cat-count {
+      background: #f0f0f0;
+      color: #525252;
+    }
+
+    /* グリッド */
+    .articles-section {
+      background: #fafafa;
+      min-height: 400px;
+      padding: 32px 20px 64px;
+    }
+
+    .articles-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .articles-grid   { grid-template-columns: 1fr; gap: 14px; }
+      .articles-section { padding: 24px 16px 52px; }
+      .index-hero      { padding: 40px 16px 32px; }
+    }
+
+    /* 記事カード */
+    .art-card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1.5px solid #f0f0f0;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #111;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+
+    .art-card:hover {
+      border-color: #6ee7b7;
+      box-shadow: 0 12px 36px rgba(16,185,129,.12);
+      transform: translateY(-3px);
+      text-decoration: none;
+    }
+
+    .art-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 16px 16px 0;
+    }
+
+    .art-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      min-width: 36px;
+      height: 34px;
+      border-radius: 10px;
+      background: #ecfdf5;
+      color: #059669;
+      font-size: 11px;
+      font-weight: 900;
+      font-family: "Inter", "Noto Sans JP", sans-serif;
+    }
+
+    .art-cat-label {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 7px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      color: #047857;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .art-card-body {
+      flex: 1;
+      padding: 10px 16px 14px;
+    }
+
+    .art-title {
+      color: #111;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+
+    .art-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #10b981;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .art-card-cta::after {
+      content: " →";
+    }
+
+    /* 空状態 */
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: #9ca3af;
+      grid-column: 1 / -1;
+    }
+
+    .no-results-icon { font-size: 40px; margin-bottom: 12px; }
+    .no-results-text { font-size: 14px; line-height: 1.8; }
+
+    /* フッターバナー */
+    .footer-banner {
+      background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #10b981 100%);
+      padding: 56px 20px;
+      text-align: center;
+    }
+
+    .footer-banner h2 {
+      color: #fff;
+      font-size: clamp(18px, 4vw, 28px);
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .footer-banner p {
+      color: #a7f3d0;
+      font-size: 14px;
+      line-height: 1.85;
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-banner-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border-radius: 999px;
+      background: #fff;
+      color: #047857;
+      font-size: 15px;
+      font-weight: 900;
+      transition: opacity .2s, transform .2s;
+      text-decoration: none;
+    }
+
+    .footer-banner-btn:hover {
+      opacity: .92;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    /* hidden */
+    .art-card.is-hidden { display: none; }
+  </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="container-wide nav-inner">
-    <a href="/" class="logo"><div class="logo-icon"><i class="fas fa-sack-dollar"></i></div>もらえるお金ナビ</a>
-    <a href="/" class="nav-cta"><i class="fas fa-magnifying-glass"></i> 無料で補助金を検索</a>
+    <a href="/" class="logo">
+      <div class="logo-icon">💰</div>もらえるお金ナビ
+    </a>
+    <a href="/" class="nav-cta">▶ 無料で補助金を検索</a>
   </div>
 </nav>
 
-<section class="blog-list-hero">
-  <div class="container">
-    <h1>補助金・助成金 お役立ちブログ</h1>
-    <p>知らないと損する「もらえるお金」を面白くわかりやすく解説</p>
-    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:16px 0;color:#525252;font-size:13px;">
-      <span><i class="far fa-file-lines"></i> <strong style="color:#10b981;font-size:18px;">100</strong>記事掲載</span>
-      <span><i class="fas fa-plane"></i> <strong style="color:#10b981;">移住支援</strong>25本</span>
-      <span><i class="fas fa-baby"></i> <strong style="color:#10b981;">子育て</strong>20本</span>
-      <span><i class="fas fa-star"></i> <strong style="color:#10b981;">ユニーク</strong>15本</span>
-      <span><i class="fas fa-house"></i> <strong style="color:#10b981;">住まい</strong>15本</span>
-    </div>
-    <div class="blog-cats">
-      <a href="#" class="blog-cat-btn" data-cat="all">すべて</a>
-      <a href="#" class="blog-cat-btn" data-cat="移住支援"><i class="fas fa-plane"></i> 移住支援</a>
-      <a href="#" class="blog-cat-btn" data-cat="子育て"><i class="fas fa-baby"></i> 子育て</a>
-      <a href="#" class="blog-cat-btn" data-cat="住まい"><i class="fas fa-house"></i> 住まい</a>
-      <a href="#" class="blog-cat-btn" data-cat="お金管理"><i class="fas fa-piggy-bank"></i> お金管理</a>
-      <a href="#" class="blog-cat-btn" data-cat="ユニーク"><i class="fas fa-star"></i> ユニーク</a>
-      <a href="#" class="blog-cat-btn" data-cat="省エネ"><i class="fas fa-leaf"></i> 省エネ</a>
-      <a href="#" class="blog-cat-btn" data-cat="海外情報"><i class="fas fa-earth-asia"></i> 海外</a>
-      <a href="#" class="blog-cat-btn" data-cat="リスキリング"><i class="fas fa-book-open"></i> スキルアップ</a>
-    </div>
+<!-- HERO -->
+<section class="index-hero">
+  <div class="index-hero-badge">📰 全100記事 補助金お役立ちブログ</div>
+  <h1>知らないともったいない、<br>「もらえるお金」を全力解説</h1>
+  <p class="index-hero-sub">移住支援金・子育て助成・住まいのリフォーム・エコ家電・働き方まで、<br>申請できるお金を100記事にまとめました。</p>
+  <div class="share-bar">
+    <span class="share-label">この一覧をシェア：</span>
+    <a class="share-btn share-btn--x"
+       href="https://twitter.com/intent/tweet?text=%E3%82%82%E3%82%89%E3%81%88%E3%82%8B%E3%81%8A%E9%87%91%E3%83%8A%E3%83%93%E3%83%96%E3%83%AD%E3%82%B0%E5%85%A8100%E8%A8%98%E4%BA%8B%EF%BC%81%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%84%E3%81%A8%E6%90%8D%E3%81%AA%E8%A3%9C%E5%8A%A9%E9%87%91%E3%82%92%E3%81%BE%E3%81%A8%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82&url=https%3A%2F%2Fmoraeru-okane-navi.vercel.app%2Fblog%2F"
+       target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      X（Twitter）でシェア
+    </a>
+    <a class="share-btn share-btn--line"
+       href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fmoraeru-okane-navi.vercel.app%2Fblog%2F"
+       target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.149 2 11.25c0 4.07 2.634 7.554 6.393 8.963.274.074.649.228.745.524.085.27.056.693.027.966l-.12.718c-.037.214-.17.84.738.458 4.476-1.864 7.635-6.338 7.635-11.629C22 6.149 17.523 2 12 2z"/></svg>
+      LINEで送る
+    </a>
   </div>
 </section>
 
-<div class="container-wide">
-  <div class="blog-grid" id="blog-grid">
+<!-- 検索 -->
+<div class="search-wrap">
+  <div class="search-inner">
+    <span class="search-icon">🔍</span>
+    <input type="search" id="searchInput" placeholder="記事タイトルを検索（例：移住、エアコン、子育て…）" autocomplete="off">
+  </div>
+  <p class="search-count" id="searchCount">全 100 記事</p>
+</div>
 
-    <a href="007-unique-portal.html" class="blog-card" data-cat="ユニーク">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-star"></i> ユニーク</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">知らなきゃ損！えっこれでもお金もらえるの？申請しないと0円の給付金まとめ</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-fire"></i> 注目</span></div></div>
-    </a>
-
-    <a href="045-ofuro-chikujo.html" class="blog-card" data-cat="ユニーク">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-star"></i> ユニーク</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">お風呂に入るだけで10万円もらえる！福岡県築上町の謎すぎる『お風呂給付金』</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-fire"></i> バズ</span></div></div>
-    </a>
-
-    <a href="008-akashi-omutu.html" class="blog-card" data-cat="子育て">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-baby"></i> 子育て</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">おむつが1歳まで毎月タダで届く！明石市の『おむつ定期便』が凄すぎる件</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-fire"></i> 人気</span></div></div>
-    </a>
-
-    <a href="009-nenkin-midori.html" class="blog-card" data-cat="お金管理">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-piggy-bank"></i> お金管理</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">【罠】緑の封筒を無視すると0円！『年金生活者支援給付金』の落とし穴</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-fire"></i> 必読</span></div></div>
-    </a>
-
-    <a href="053-takatsuki-jitensya.html" class="blog-card" data-cat="ユニーク">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-leaf"></i> 省エネ</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">自転車買うだけで5万円!? 大阪府高槻市に住めばママチャリが高級車になる件</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span></div></div>
-    </a>
-
-    <a href="051-kuruma-35man.html" class="blog-card" data-cat="省エネ">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-leaf"></i> 省エネ・EV</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">車を買ったら35万円もらえる！愛知県岡崎市の『特大・自動車支援金』が激アツ</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span></div></div>
-    </a>
-
-    <a href="043-chori-katsushika.html" class="blog-card" data-cat="ユニーク">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-star"></i> ユニーク</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">【主婦歓喜】高級鍋が90%オフで買える!? 東京都葛飾区の『調理器具補助』が神すぎる</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-fire"></i> バズ</span></div></div>
-    </a>
-
-    <a href="026-deito-yokote.html" class="blog-card" data-cat="ユニーク">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-star"></i> ユニーク</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">デート代は市が払います！秋田県横手市の恋愛・婚活支援給付金のカラクリ</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-fire"></i> バズ</span></div></div>
-    </a>
-
-    <a href="010-eakon-miotodamachi.html" class="blog-card" data-cat="省エネ">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-leaf"></i> 省エネ</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">エアコン買うなら御代田町へ引越せ!? 全額補助（最大7万3千円）の衝撃</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span></div></div>
-    </a>
-
-    <a href="006-ijyu-ranking.html" class="blog-card" data-cat="移住支援">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1512432716927-9d7e0dd75e17?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-plane"></i> 移住支援</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">【2026年版】全国移住支援金ランキングTOP20！世帯で最大350万円超え自治体も</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-chart-simple"></i> ランキング</span></div></div>
-    </a>
-
-    <a href="001-ijyu-nagano.html" class="blog-card" data-cat="移住支援">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1512432716927-9d7e0dd75e17?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-plane"></i> 移住支援</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">東京に住みながら長野の移住支援金100万円がもらえる！申請方法を完全解説</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span></div></div>
-    </a>
-
-    <a href="002-kosodate-joseikin.html" class="blog-card" data-cat="子育て">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-baby"></i> 子育て</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">子育て世帯必見！2026年度の補助金・助成金まとめ【もらい忘れゼロへ】</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span></div></div>
-    </a>
-
-    <a href="003-mado-renovate.html" class="blog-card" data-cat="住まい">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-house"></i> 住まい</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">窓リノベ補助金で最大200万円！先進的窓リノベの申請方法と注意点【2026年度版】</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span></div></div>
-    </a>
-
-    <a href="004-mama-okane.html" class="blog-card" data-cat="お金管理">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-piggy-bank"></i> お金管理</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">ママのお金管理術｜補助金・助成金をフル活用する家計の作り方</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span></div></div>
-    </a>
-
-    <a href="005-global-subsidy.html" class="blog-card" data-cat="海外情報">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-earth-asia"></i> 海外情報</span>
-      </div>
-      <div class="blog-body"><div class="blog-title">海外でも「もらえるお金」がある！各国の個人向け給付・補助金制度まとめ</div><div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span></div></div>
-    </a>
-
-    <!-- 記事6（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="移住支援">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1512432716927-9d7e0dd75e17?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-plane"></i> 移住支援</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">地方移住で最大300万円！自治体別移住補助金ランキング2026</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <!-- 記事7（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="子育て">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-baby"></i> 子育て</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">出産一時金から育児休業給付まで｜産前産後にもらえるお金全リスト</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <!-- 記事8（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="省エネ">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-leaf"></i> 省エネ</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">太陽光パネル設置に最大100万円補助！各都道府県の違いをまとめて比較</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <!-- 記事9（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="住まい">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-house"></i> 住まい</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">新築・リフォームで使える補助金一覧【2026年度最新版】</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <!-- 記事10（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="投資・資産">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-piggy-bank"></i> お金管理</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">新NISA完全ガイド｜2026年からの積立戦略と補助金の組み合わせ術</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <a href="040-furano-kosodate.html" class="blog-card" data-cat="移住支援">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1512432716927-9d7e0dd75e17?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-plane"></i> 移住支援</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">子連れワーケーションで保育料も半額補助!? 北海道富良野市の神対応が話題</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-fire"></i> 注目</span></div>
-      </div>
-    </a>
-
-    <!-- 記事12（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="子育て">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-baby"></i> 子育て</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">学童保育料の無償化はどこまで？都市別・2026年最新比較</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <a href="042-eakon-kagami.html" class="blog-card" data-cat="省エネ">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-leaf"></i> 省エネ</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">エアコン全額補助のカラクリ！物価高騰対策補助金でエアコンを「実質0円」にする方法</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-fire"></i> 人気</span></div>
-      </div>
-    </a>
-
-    <!-- 記事14（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="お金管理">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-piggy-bank"></i> お金管理</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">ふるさと納税2026年版｜改正ポイントと最高還元率の使い方</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <a href="047-akiya-zero.html" class="blog-card" data-cat="住まい">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-house"></i> 住まい</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">0円物件の現実とからくりを正直に解説！「タダより高い家」の落とし穴5つ</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 2026.05.14</span><span><i class="fas fa-fire"></i> 注目</span></div>
-      </div>
-    </a>
-
-    <!-- 記事16（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="移住支援">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1512432716927-9d7e0dd75e17?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-plane"></i> 移住支援</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">沖縄移住で得られる補助金まとめ｜IT・農業・観光従事者向け制度も</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <!-- 記事17（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="投資・資産">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-piggy-bank"></i> お金管理</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">iDeCo（個人型確定拠出年金）と補助金の両立戦略｜節税効果も解説</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <!-- 記事18（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="子育て">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-baby"></i> 子育て</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">大学授業料無償化2026年スタート！対象条件と申請手続きを完全解説</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <!-- 記事19（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="お金管理">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-piggy-bank"></i> お金管理</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">年収別「もらえる補助金」シミュレーション｜300万〜800万円帯別ガイド</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
-    <!-- 記事20（プレースホルダー） -->
-    <a href="#" class="blog-card" data-cat="省エネ">
-      <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=480&q=80');background-size:cover;background-position:center;">
-        <span class="blog-cat-tag"><i class="fas fa-leaf"></i> 省エネ</span>
-      </div>
-      <div class="blog-body">
-        <div class="blog-title">EV・電気自動車購入補助金2026完全ガイド｜国＋自治体で最大140万円</div>
-        <div class="blog-meta-row"><span><i class="far fa-calendar"></i> 近日公開</span></div>
-      </div>
-    </a>
-
+<!-- カテゴリタブ -->
+<div class="cat-tabs-wrap">
+  <div class="cat-tabs" id="catTabs" role="tablist" aria-label="カテゴリで絞り込む">
+    <button class="cat-tab is-active" data-cat="all"   role="tab" aria-selected="true">すべて <span class="cat-count">100</span></button>
+    <button class="cat-tab" data-cat="移住"    role="tab" aria-selected="false">🏡 移住    <span class="cat-count">18</span></button>
+    <button class="cat-tab" data-cat="子育て"  role="tab" aria-selected="false">👶 子育て  <span class="cat-count">11</span></button>
+    <button class="cat-tab" data-cat="住まい"  role="tab" aria-selected="false">🏠 住まい  <span class="cat-count">16</span></button>
+    <button class="cat-tab" data-cat="エコ"    role="tab" aria-selected="false">🌿 エコ    <span class="cat-count">10</span></button>
+    <button class="cat-tab" data-cat="結婚"    role="tab" aria-selected="false">💍 結婚    <span class="cat-count">4</span></button>
+    <button class="cat-tab" data-cat="ユニーク" role="tab" aria-selected="false">✨ ユニーク <span class="cat-count">16</span></button>
+    <button class="cat-tab" data-cat="働き方"  role="tab" aria-selected="false">💼 働き方  <span class="cat-count">12</span></button>
+    <button class="cat-tab" data-cat="お金"    role="tab" aria-selected="false">💰 お金    <span class="cat-count">16</span></button>
   </div>
 </div>
 
-<footer>
+<!-- 記事グリッド -->
+<section class="articles-section">
+  <div class="articles-grid" id="articlesGrid">
+
+    <a class="art-card" href="./001-ijyu-nagano.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#001</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">東京に住みながら長野の移住支援金100万円がもらえる！申請方法を完全解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./002-kosodate-joseikin.html" data-cats="子育て">
+      <div class="art-card-header"><span class="art-num">#002</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">子育て世帯必見！2026年度の補助金・助成金まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./003-mado-renovate.html" data-cats="住まい">
+      <div class="art-card-header"><span class="art-num">#003</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">窓リノベ補助金で最大200万円！先進的窓リノベの申請方法と注意点</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./004-mama-okane.html" data-cats="子育て">
+      <div class="art-card-header"><span class="art-num">#004</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">ママのお金管理術｜補助金・助成金をフル活用する家計の作り方</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./005-global-subsidy.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#005</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">海外でも「もらえるお金」がある！各国の個人向け給付・補助金制度まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./006-ijyu-ranking.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#006</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">【2026年版】全国移住支援金ランキングTOP20！世帯で最大350万円超え自治体も</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./007-unique-portal.html" data-cats="ユニーク">
+      <div class="art-card-header"><span class="art-num">#007</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">【驚き】知らなきゃ損！申請しないともらえないお金まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./008-akashi-omutu.html" data-cats="子育て ユニーク">
+      <div class="art-card-header"><span class="art-num">#008</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">おむつが1歳まで毎月タダで届く！明石市の「おむつ定期便」が凄すぎる件</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./009-nenkin-midori.html" data-cats="ユニーク お金">
+      <div class="art-card-header"><span class="art-num">#009</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">【罠】緑の封筒を無視すると0円！「年金生活者支援給付金」の落とし穴</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./010-eakon-miotodamachi.html" data-cats="エコ ユニーク">
+      <div class="art-card-header"><span class="art-num">#010</span><span class="art-cat-label">エコ</span></div>
+      <div class="art-card-body">
+        <p class="art-title">エアコン買うなら御代田町へ引越せ!? 全額補助（最大7万3千円）の衝撃</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./011-ijyu-kodomo-kasan.html" data-cats="移住 子育て">
+      <div class="art-card-header"><span class="art-num">#011</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">子どもが多いほど儲かる!? 移住支援金「子ども1人100万円加算」の破壊力</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./012-kekkon-60man.html" data-cats="結婚">
+      <div class="art-card-header"><span class="art-num">#012</span><span class="art-cat-label">結婚</span></div>
+      <div class="art-card-body">
+        <p class="art-title">【夫婦限定】新婚で引っ越すと最大60万円もらえる！結婚新生活支援事業完全ガイド</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./013-akiya-bank.html" data-cats="住まい 移住">
+      <div class="art-card-header"><span class="art-num">#013</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">空き家バンクで格安の家を手に入れる！月数千円の一戸建て物件の探し方ガイド</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./014-yuki-kakigomi.html" data-cats="ユニーク">
+      <div class="art-card-header"><span class="art-num">#014</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">雪かきするだけで2万円？北海道岩見沢市の「冬の暮らし支援金」が意外すぎる</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./015-tokai-ijyu.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#015</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">お試し移住で家賃タダ同然!? 1泊1,000円〜で住める「お試し住宅」完全ガイド</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./016-kanto-ijyu-2jiku.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#016</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">関東からの移住を「二拠点生活」で始める方法と使える補助金まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./017-miyazaki-surf.html" data-cats="ユニーク 働き方">
+      <div class="art-card-header"><span class="art-num">#017</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">宮崎県でサーフィンしながら年収維持!? ワーケーション補助金の全容</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./018-yamanashi-duallife.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#018</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">山梨県の二拠点生活支援金が凄い！最大200万円＋移住者コミュニティまで</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./019-minpaku-reform.html" data-cats="住まい 移住">
+      <div class="art-card-header"><span class="art-num">#019</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">民泊・古民家リフォームに使える補助金まとめ！最大300万円の事例も</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./020-oita-onsen.html" data-cats="移住 ユニーク">
+      <div class="art-card-header"><span class="art-num">#020</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">温泉付き社宅で働く!? 大分県の移住×就業支援の全体像</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./021-okinawa-ijyu.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#021</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">沖縄移住の補助金完全ガイド！県・市町村別に使える制度を総まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./022-ijyu-otameshi.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#022</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">「お試し移住」で失敗しない！補助金付き短期滞在プログラム16選</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./023-ijyu-hikoshi.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#023</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">移住の引越し費用に使える補助金まとめ！最大50万円の自治体一覧</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./024-akiya-chintai.html" data-cats="移住 住まい">
+      <div class="art-card-header"><span class="art-num">#024</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">空き家を借りたら補助金がもらえる！全国の空き家活用支援制度まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./025-ijyu-top10.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#025</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">2026年版・移住したい自治体TOP10！補助金・子育て・自然のバランスで選んだ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./026-deito-yokote.html" data-cats="結婚 ユニーク">
+      <div class="art-card-header"><span class="art-num">#026</span><span class="art-cat-label">結婚</span></div>
+      <div class="art-card-body">
+        <p class="art-title">横手市でデートすると2,000円もらえる!? 全国のユニーク「恋愛支援金」まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./027-akashi-106man.html" data-cats="子育て ユニーク">
+      <div class="art-card-header"><span class="art-num">#027</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">明石市に住むだけで106万円!? 子育て支援の神都市の実態</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./028-akashi-kyushoku.html" data-cats="子育て">
+      <div class="art-card-header"><span class="art-num">#028</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">明石市の給食費完全無料！市の子育て支援の全貌まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./029-akashi-iryo.html" data-cats="子育て">
+      <div class="art-card-header"><span class="art-num">#029</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">明石市では医療費が18歳まで0円！医療費助成の仕組みを解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./030-akashi-hoikuryou.html" data-cats="子育て">
+      <div class="art-card-header"><span class="art-num">#030</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">明石市の保育料が実質無料!? 子育て支援の圧倒的な手厚さを解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./031-gakudo.html" data-cats="子育て">
+      <div class="art-card-header"><span class="art-num">#031</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">学童保育の費用を補助金で減らす！全国の放課後支援制度まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./032-nisa-kosodate.html" data-cats="お金 子育て">
+      <div class="art-card-header"><span class="art-num">#032</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">NISAと補助金の合わせ技！子育て世帯が資産形成する最短ルート</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./033-kekkon-morenai.html" data-cats="結婚 お金">
+      <div class="art-card-header"><span class="art-num">#033</span><span class="art-cat-label">結婚</span></div>
+      <div class="art-card-body">
+        <p class="art-title">「結婚新生活支援事業」でもらえないケースとは？落とし穴を全部解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./034-sangyo-shikkoku.html" data-cats="ユニーク">
+      <div class="art-card-header"><span class="art-num">#034</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">「産業用漆黒太陽電池」って何!? 補助金DXの最前線レポート</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./035-sanjuro.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#035</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">30代が絶対に申請すべき補助金・給付金まとめ2026年版</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./036-miyoshi-100man.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#036</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">三好市の移住支援金が100万円超え！四国の穴場移住地の魅力</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./037-tokyo-futari.html" data-cats="住まい お金">
+      <div class="art-card-header"><span class="art-num">#037</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">東京で2人暮らし、補助金フル活用したら家計がこう変わった</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./038-tottori-kosodate.html" data-cats="子育て 移住">
+      <div class="art-card-header"><span class="art-num">#038</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">鳥取県の子育て支援が神レベル！医療費・保育・移住まですべて無料級</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./039-fukui-kosodate.html" data-cats="子育て 移住">
+      <div class="art-card-header"><span class="art-num">#039</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">福井県の子育て支援は日本一!? 給食費・医療費・塾代まで全部ゼロへ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./040-furano-kosodate.html" data-cats="子育て 移住">
+      <div class="art-card-header"><span class="art-num">#040</span><span class="art-cat-label">子育て</span></div>
+      <div class="art-card-body">
+        <p class="art-title">富良野市の子育て支援が破格すぎる！北海道移住の最有力候補</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./041-kekkon-combo.html" data-cats="結婚 移住">
+      <div class="art-card-header"><span class="art-num">#041</span><span class="art-cat-label">結婚</span></div>
+      <div class="art-card-body">
+        <p class="art-title">結婚支援金×移住支援金のコンボが最強！2つの制度を同時申請する方法</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./042-eakon-kagami.html" data-cats="エコ 住まい">
+      <div class="art-card-header"><span class="art-num">#042</span><span class="art-cat-label">エコ</span></div>
+      <div class="art-card-body">
+        <p class="art-title">エアコンの補助金2026！購入前に必ず確認すべき国・都道府県・市の制度まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./043-chori-katsushika.html" data-cats="働き方 ユニーク">
+      <div class="art-card-header"><span class="art-num">#043</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">葛飾区の調理師支援が凄い！技能習得からの補助金フルパッケージ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./044-futon-tsukuba.html" data-cats="ユニーク 住まい">
+      <div class="art-card-header"><span class="art-num">#044</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">布団を買い替えると補助金がもらえる!? つくば市のユニークな支援制度</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./045-ofuro-chikujo.html" data-cats="住まい">
+      <div class="art-card-header"><span class="art-num">#045</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">お風呂のリフォームに補助金！給湯器・浴室改修で使える制度まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./046-kyutoki-hojo.html" data-cats="住まい エコ">
+      <div class="art-card-header"><span class="art-num">#046</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">給湯器を変えると最大14万円！給湯省エネ2026の申請方法を解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./047-akiya-zero.html" data-cats="住まい">
+      <div class="art-card-header"><span class="art-num">#047</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">空き家の管理・解体に使える補助金まとめ！費用ゼロで実現した事例も</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./048-chinchiku.html" data-cats="住まい">
+      <div class="art-card-header"><span class="art-num">#048</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">賃貸でも使える補助金がある！知らないと損する入居者向け支援制度まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./049-china-kaden.html" data-cats="エコ 住まい">
+      <div class="art-card-header"><span class="art-num">#049</span><span class="art-cat-label">エコ</span></div>
+      <div class="art-card-body">
+        <p class="art-title">中国製家電を省エネ製品に買い替えると補助金！対象製品と申請先まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./050-nagano-eakon.html" data-cats="エコ">
+      <div class="art-card-header"><span class="art-num">#050</span><span class="art-cat-label">エコ</span></div>
+      <div class="art-card-body">
+        <p class="art-title">長野県のエアコン補助金が熱い！最大5万円の支援を受ける方法</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./051-kuruma-35man.html" data-cats="エコ">
+      <div class="art-card-header"><span class="art-num">#051</span><span class="art-cat-label">エコ</span></div>
+      <div class="art-card-body">
+        <p class="art-title">車を買い替えると最大35万円！EV・PHV購入補助金2026年版</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./052-germany-kuruma.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#052</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">ドイツのEV補助金が廃止されたら？日本との比較でわかる補助金の差</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./053-takatsuki-jitensya.html" data-cats="エコ ユニーク">
+      <div class="art-card-header"><span class="art-num">#053</span><span class="art-cat-label">エコ</span></div>
+      <div class="art-card-body">
+        <p class="art-title">高槻市の自転車補助金が太っ腹！ヘルメット・電動アシスト・保険がセットに</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./054-helmet-2000.html" data-cats="エコ">
+      <div class="art-card-header"><span class="art-num">#054</span><span class="art-cat-label">エコ</span></div>
+      <div class="art-card-body">
+        <p class="art-title">自転車ヘルメット補助金2026！全国で使える2,000円助成の申請方法</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./055-helmet-city-list.html" data-cats="エコ">
+      <div class="art-card-header"><span class="art-num">#055</span><span class="art-cat-label">エコ</span></div>
+      <div class="art-card-body">
+        <p class="art-title">ヘルメット補助金のある自治体一覧！都道府県別で完全網羅</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./056-workation-hojo.html" data-cats="働き方">
+      <div class="art-card-header"><span class="art-num">#056</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">ワーケーションで補助金をもらう方法！対象地域と申請条件まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./057-toyama-workation.html" data-cats="働き方">
+      <div class="art-card-header"><span class="art-num">#057</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">富山でワーケーション！県の交通費補助＋宿泊支援の全貌</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./058-fukui-workation.html" data-cats="働き方">
+      <div class="art-card-header"><span class="art-num">#058</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">福井のワーケーション支援が充実！ITエンジニアが移住前に使える制度</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./059-freelance-workation.html" data-cats="働き方">
+      <div class="art-card-header"><span class="art-num">#059</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">フリーランスがワーケーション補助金を使う方法！個人事業主OKの制度まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./060-ijyu-telework-koseki.html" data-cats="移住 働き方">
+      <div class="art-card-header"><span class="art-num">#060</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">テレワーク移住で補助金！住民票を移さずに使える制度はある？</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./061-nenkin-zoroshiki.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#061</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">国民年金の「ぞろ目申請」って何!? 保険料免除・猶予の正しい活用法</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./062-nyanko-ibaraki.html" data-cats="ユニーク">
+      <div class="art-card-header"><span class="art-num">#062</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">猫を飼うと補助金がもらえる!? 茨城県のペット支援が予想外だった</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./063-shimekiri-kanri.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#063</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">補助金の締め切り管理術！申請漏れゼロにする3つのコツ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./064-siyakusyo-kakure.html" data-cats="ユニーク お金">
+      <div class="art-card-header"><span class="art-num">#064</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">市役所が教えてくれない「隠れ補助金」の探し方完全ガイド</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./065-denki-setuyaku.html" data-cats="エコ 住まい">
+      <div class="art-card-header"><span class="art-num">#065</span><span class="art-cat-label">エコ</span></div>
+      <div class="art-card-body">
+        <p class="art-title">電気代を補助金で半額に！省エネ家電・太陽光・蓄電池の申請まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./066-2jyu-dori.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#066</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">2重取りできる補助金の組み合わせ！国・都道府県・市区の重複申請ガイド</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./067-seimei-minaoshi.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#067</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">生命保険の見直しで補助金がもらえる!? 知らないと損する制度を解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./068-mamotomo-naisho.html" data-cats="子育て ユニーク">
+      <div class="art-card-header"><span class="art-num">#068</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">ママ友には内緒にしたい補助金ベスト10！知ってる人だけが得してる制度</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./069-chiiki-kigyo.html" data-cats="働き方">
+      <div class="art-card-header"><span class="art-num">#069</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">地域の中小企業が使える補助金まとめ！IT・省エネ・人材採用まで</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./070-chiikiokoshi-kyuyo.html" data-cats="働き方">
+      <div class="art-card-header"><span class="art-num">#070</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">地域おこし協力隊の給与補助！月20万円＋起業支援の全貌</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./071-ijyu-3nen-nori.html" data-cats="移住">
+      <div class="art-card-header"><span class="art-num">#071</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">移住補助金をもらった後の義務！3年縛り・返還条件を完全解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./072-sakijyu-hojokin.html" data-cats="移住 ユニーク">
+      <div class="art-card-header"><span class="art-num">#072</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">先住者補助金って何!? 地域の受け入れ制度と使える支援まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./073-zekin-hojokin.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#073</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">税金と補助金の違いを知ると得する！節税と受給のW戦略</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./074-ryoshusho.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#074</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">領収書の正しい保管方法！補助金申請で失敗しないためのコツ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./075-taisyoku-plan.html" data-cats="働き方 お金">
+      <div class="art-card-header"><span class="art-num">#075</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">退職後に使える補助金・給付金まとめ！再就職・起業・移住で使える制度</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./076-madoguchi-himitsu.html" data-cats="お金 ユニーク">
+      <div class="art-card-header"><span class="art-num">#076</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">補助金の窓口担当者が教えてくれる「裏ワザ」申請術</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./077-koeki-yushi.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#077</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">公益財団の助成金を個人が使う方法！意外と知られていない民間補助金</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./078-2026-henka.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#078</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">2026年から変わった補助金制度まとめ！廃止・新設・拡充を一覧で解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./079-sougaku-1000man.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#079</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">人生で受け取れる補助金の総額を計算してみたら1,000万円超えだった件</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./080-kanagawa-sagamihara.html" data-cats="移住 子育て">
+      <div class="art-card-header"><span class="art-num">#080</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">相模原市の補助金まとめ！移住・子育て・省エネを徹底解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./081-reskilling-56man.html" data-cats="働き方">
+      <div class="art-card-header"><span class="art-num">#081</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">リスキリング補助金で56万円！教育訓練給付金の全種類と申請方法</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./082-tenshoku-teate.html" data-cats="働き方">
+      <div class="art-card-header"><span class="art-num">#082</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">転職すると手当がもらえる!? 求職者支援・雇用保険の活用術</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./083-kagu-present.html" data-cats="移住 ユニーク">
+      <div class="art-card-header"><span class="art-num">#083</span><span class="art-cat-label">移住</span></div>
+      <div class="art-card-body">
+        <p class="art-title">家具をプレゼントしてくれる自治体がある！移住者向け支援の全貌</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./084-nogyotaiken.html" data-cats="ユニーク 働き方">
+      <div class="art-card-header"><span class="art-num">#084</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">農業体験で補助金がもらえる!? 新規就農支援と体験助成の違いを解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./085-50dai-reskilling.html" data-cats="働き方">
+      <div class="art-card-header"><span class="art-num">#085</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">50代から使えるリスキリング補助金！第2の人生設計に役立つ制度まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./086-syokuninijyu.html" data-cats="働き方 ユニーク">
+      <div class="art-card-header"><span class="art-num">#086</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">職人の技術継承に使える補助金！伝統工芸・職人育成支援まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./087-unique-ranking.html" data-cats="ユニーク">
+      <div class="art-card-header"><span class="art-num">#087</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">日本一ユニークな補助金ランキング！「え、これも!?」と思った制度ベスト15</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./088-kakuteishinkoku.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#088</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">確定申告で補助金を取り戻す！申告漏れしがちな控除・還付まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./089-furusato-triple.html" data-cats="お金 移住">
+      <div class="art-card-header"><span class="art-num">#089</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">ふるさと納税×補助金×移住支援の3重取り戦略！最大節税と受給を同時に</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./090-solar-2026.html" data-cats="住まい エコ">
+      <div class="art-card-header"><span class="art-num">#090</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">太陽光パネルの補助金2026！国・都道府県・市区の制度を完全まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./091-haiko.html" data-cats="ユニーク 住まい">
+      <div class="art-card-header"><span class="art-num">#091</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">廃校活用プロジェクトに補助金！地域再生で使える制度まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./092-shoeneka-3man.html" data-cats="エコ 住まい">
+      <div class="art-card-header"><span class="art-num">#092</span><span class="art-cat-label">エコ</span></div>
+      <div class="art-card-body">
+        <p class="art-title">省エネ家電の補助金2026！エアコン・冷蔵庫・給湯器を3万円以上安く買う方法</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./093-reform-all.html" data-cats="住まい">
+      <div class="art-card-header"><span class="art-num">#093</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">リフォーム補助金2026完全版！耐震・断熱・バリアフリーを全部まとめた</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./094-taishin-100man.html" data-cats="住まい">
+      <div class="art-card-header"><span class="art-num">#094</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">耐震リフォームで最大100万円！助成金の申請方法と注意点を解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./095-barrier-free.html" data-cats="住まい">
+      <div class="art-card-header"><span class="art-num">#095</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">バリアフリーリフォーム補助金！高齢者・障害者向け改修で使える制度まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./096-chinki-sekkei.html" data-cats="住まい ユニーク">
+      <div class="art-card-header"><span class="art-num">#096</span><span class="art-cat-label">住まい</span></div>
+      <div class="art-card-body">
+        <p class="art-title">ちんき設計で空き家を再生！建築士補助金と活用事例を解説</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./097-musubi.html" data-cats="ユニーク 移住">
+      <div class="art-card-header"><span class="art-num">#097</span><span class="art-cat-label">ユニーク</span></div>
+      <div class="art-card-body">
+        <p class="art-title">「むすび」プロジェクトで地域と繋がる！関係人口支援の補助金まとめ</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./098-calendar-2026.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#098</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">2026年の補助金申請カレンダー！月別に締め切りを管理する方法</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./099-app-guide.html" data-cats="お金">
+      <div class="art-card-header"><span class="art-num">#099</span><span class="art-cat-label">お金</span></div>
+      <div class="art-card-body">
+        <p class="art-title">もらえるお金ナビの使い方ガイド！補助金検索を最大活用する方法</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <a class="art-card" href="./100-kigyo.html" data-cats="働き方 お金">
+      <div class="art-card-header"><span class="art-num">#100</span><span class="art-cat-label">働き方</span></div>
+      <div class="art-card-body">
+        <p class="art-title">法人・起業家が使える補助金まとめ！創業・IT・人材採用・省エネまで</p>
+        <span class="art-card-cta">記事を読む</span>
+      </div>
+    </a>
+
+    <!-- 空状態 -->
+    <div class="no-results" id="noResults" style="display:none;">
+      <div class="no-results-icon">🔍</div>
+      <p class="no-results-text">該当する記事が見つかりませんでした。<br>別のキーワードやカテゴリをお試しください。</p>
+    </div>
+
+  </div><!-- /articles-grid -->
+</section>
+
+<!-- フッターバナー -->
+<div class="footer-banner">
   <div class="container">
-    <div class="footer-logo"><i class="fas fa-piggy-bank"></i> もらえるお金ナビ</div>
-    <p>※本サイトの情報は一般的な情報提供を目的としており、各補助金・助成金の最新情報や詳細条件は必ず各自治体・公的機関の公式情報をご確認ください。<br>情報の正確性には万全を期していますが、制度変更等により内容が変わる場合があります。</p>
-    <p style="margin-top:12px;">
-      <a href="/">トップページ</a> ｜
-      <a href="/blog/">ブログ一覧</a> ｜
-      <a href="#">プライバシーポリシー</a> ｜
-      <a href="#">お問い合わせ</a>
-    </p>
-    <p style="margin-top:12px;">© 2026 もらえるお金ナビ</p>
+    <h2>あなたに合った補助金、<br>アプリで無料検索できます</h2>
+    <p>関東78市区・366件の補助金・助成金をリアルタイム検索。<br>移住・子育て・住まいのリフォームまで、あなたの状況に合った制度をすぐに見つけられます。</p>
+    <a href="/" class="footer-banner-btn">💰 もらえるお金ナビを使ってみる</a>
   </div>
+</div>
+
+<!-- フッター -->
+<footer>
+  <div class="footer-logo">💰 もらえるお金ナビ</div>
+  <p>
+    補助金・助成金・給付金の情報をわかりやすくお届けするメディアです。<br>
+    掲載情報は各自治体・省庁の公式情報に基づいていますが、制度は随時変更されます。<br>
+    申請前に必ず各窓口でご確認ください。<br>
+    <br>
+    &copy; 2026 もらえるお金ナビ &nbsp;|&nbsp; <a href="/">アプリTOP</a>
+  </p>
 </footer>
 
 <script>
-  // カテゴリーフィルター
-  const catBtns = document.querySelectorAll('.blog-cat-btn');
-  const cards = document.querySelectorAll('.blog-card');
-  catBtns.forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const cat = btn.dataset.cat;
-      catBtns.forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      cards.forEach(card => {
-        if (cat === 'all' || card.dataset.cat === cat) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+(function () {
+  'use strict';
+  var grid      = document.getElementById('articlesGrid');
+  var cards     = Array.from(grid.querySelectorAll('.art-card'));
+  var noResults = document.getElementById('noResults');
+  var countEl   = document.getElementById('searchCount');
+  var searchEl  = document.getElementById('searchInput');
+  var tabBtns   = document.querySelectorAll('.cat-tab');
+
+  var currentCat = 'all';
+  var currentQ   = '';
+
+  function filterCards() {
+    var visible = 0;
+    cards.forEach(function (card) {
+      var cats  = card.dataset.cats || '';
+      var title = card.querySelector('.art-title').textContent;
+      var catOK = currentCat === 'all' || cats.indexOf(currentCat) !== -1;
+      var qOK   = currentQ === '' || title.indexOf(currentQ) !== -1;
+      if (catOK && qOK) {
+        card.classList.remove('is-hidden');
+        visible++;
+      } else {
+        card.classList.add('is-hidden');
+      }
+    });
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+    if (currentCat === 'all' && currentQ === '') {
+      countEl.textContent = '全 100 記事';
+    } else {
+      countEl.textContent = visible + ' 件表示中';
+    }
+  }
+
+  /* カテゴリタブ */
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabBtns.forEach(function (b) {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
       });
+      this.classList.add('is-active');
+      this.setAttribute('aria-selected', 'true');
+      currentCat = this.dataset.cat;
+      filterCards();
     });
   });
-</script>
 
+  /* 検索 */
+  searchEl.addEventListener('input', function () {
+    currentQ = this.value.trim();
+    filterCards();
+  });
+})();
+</script>
 </body>
 </html>

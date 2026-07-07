@@ -3,3 +3,10 @@ dist
 .env
 .vercel
 .wrangler
+
+dev_server.log
+preview_server.log
+_archive/
+verification/
+.playwright-mcp/
+.vercel/

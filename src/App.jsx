@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import {
   Search, Bell, MapPin, User, ChevronRight, ChevronLeft,
   Heart, Home, Baby, Bike, Map, Award, Sparkles, Star,
@@ -63,12 +63,12 @@ const loadGsiMuniMap = () => {
 };
 
 const REGION_MAP = {
-  '関東':       { emoji: '🗼', img: '/images/icons/region-kanto.png',           color: 'bg-blue-600',   prefs: ['茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県'], hasData: true },
-  '北海道・東北': { emoji: '❄️', img: '/images/icons/region-tohoku.png',          color: 'bg-sky-500',    prefs: ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県'], hasData: true },
-  '中部':       { emoji: '⛰️', img: '/images/icons/region-chubu.png',           color: 'bg-green-600',  prefs: ['新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県'], hasData: true },
-  '近畿':       { emoji: '🏯', img: '/images/icons/region-kinki.png',           color: 'bg-orange-500', prefs: ['滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県'], hasData: true },
-  '中国・四国': { emoji: '🌊', img: '/images/icons/region-chugoku-shikoku.png', color: 'bg-teal-500',   prefs: ['鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県'], hasData: true },
-  '九州・沖縄': { emoji: '🌺', img: '/images/icons/region-kyushu-okinawa.png',  color: 'bg-pink-500',   prefs: ['福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'], hasData: true },
+  '関東':       { emoji: '🗼', img: '/images/icons/region-kanto.webp',           color: 'bg-blue-600',   prefs: ['茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県'], hasData: true },
+  '北海道・東北': { emoji: '❄️', img: '/images/icons/region-tohoku.webp',          color: 'bg-sky-500',    prefs: ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県'], hasData: true },
+  '中部':       { emoji: '⛰️', img: '/images/icons/region-chubu.webp',           color: 'bg-green-600',  prefs: ['新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県'], hasData: true },
+  '近畿':       { emoji: '🏯', img: '/images/icons/region-kinki.webp',           color: 'bg-orange-500', prefs: ['滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県'], hasData: true },
+  '中国・四国': { emoji: '🌊', img: '/images/icons/region-chugoku-shikoku.webp', color: 'bg-teal-500',   prefs: ['鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県'], hasData: true },
+  '九州・沖縄': { emoji: '🌺', img: '/images/icons/region-kyushu-okinawa.webp',  color: 'bg-pink-500',   prefs: ['福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'], hasData: true },
 };
 
 const ACCENT = {
@@ -76,6 +76,20 @@ const ACCENT = {
   green:  { bg: 'bg-green-50',  border: 'border-green-100',  badge: 'bg-green-100 text-green-700',  btn: 'bg-green-600 hover:bg-green-700' },
   purple: { bg: 'bg-purple-50', border: 'border-purple-100', badge: 'bg-purple-100 text-purple-700',btn: 'bg-purple-600 hover:bg-purple-700' },
   orange: { bg: 'bg-orange-50', border: 'border-orange-100', badge: 'bg-orange-100 text-orange-700',btn: 'bg-orange-500 hover:bg-orange-600' },
+};
+
+// ─── 無料アラート登録の送信先（Google Apps Script ウェブアプリURL） ───
+// セットアップ手順: scripts/alert_gas/README_セットアップ.md
+// 空('')の間は送信せず、登録完了画面のみ表示する（従来動作）
+const ALERT_WEBHOOK_URL = '';
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// 登録データ送信用：条件キー→日本語ラベル
+const CONDITION_LABELS = {
+  hasChildren: '子供がいる', usesBike: '自転車に乗る', ownsHome: '持ち家',
+  hasElderly: '高齢者同居', isNewlywed: '結婚予定・新婚', isPregnant: '妊娠中・出産予定',
+  isRelocating: '移住検討中', isSingleParent: 'ひとり親世帯', hasDisability: '障害のある家族',
 };
 
 const MOCK_USER = {
@@ -95,15 +109,27 @@ const NOTIFICATIONS = [
 // 申請期限が今日から1ヶ月以内かチェック
 const isDeadlineSoon = (deadlineStr) => {
   if (!deadlineStr) return false;
-  const deadline = new Date(deadlineStr);
+  // 'YYYY-MM-DD' はUTC解釈になるため '/' 区切りに変換してローカル(日本)時間で比較する
+  const deadline = new Date(String(deadlineStr).replace(/-/g, '/'));
+  if (Number.isNaN(deadline.getTime())) return false;
   const now = new Date();
   const diffDays = (deadline - now) / (1000 * 60 * 60 * 24);
   return diffDays >= 0 && diffDays <= 31;
 };
 
-// period が [終了] または [期限確認中] で始まるかチェック
-const isExpiredPeriod = (period) => period && (period.startsWith('[終了]') || period.startsWith('[期限確認中]'));
-const isCheckingPeriod = (period) => period && period.startsWith('[期限確認中]');
+// 受付終了とみなす period 表記（「予算なくなり次第終了」等の受付中表記は除外）
+const isExpiredPeriod = (period) => {
+  if (!period) return false;
+  if (period.startsWith('[終了]') || period.startsWith('[期限確認中]')) return true;
+  if (/次第終了|終了次第/.test(period)) return false; // 「なくなり次第終了」= 受付中
+  return /受付終了|受付を終了|年度終了|終了済/.test(period);
+};
+// 「前年度は終了・今年度は未確定」など継続確認中の period 表記
+const isCheckingPeriod = (period) => {
+  if (!period) return false;
+  if (period.startsWith('[期限確認中]')) return true;
+  return isExpiredPeriod(period) && /要確認|継続|未告知|未定|見込み/.test(period);
+};
 
 const TOPICS_PER_PAGE = 6;
 
@@ -135,20 +161,22 @@ export default function App() {
   const [registerBackTo, setRegisterBackTo]   = useState('results');
   const [selectedRegion, setSelectedRegion]   = useState('');
   const [dataNotReadyMsg, setDataNotReadyMsg] = useState('');
+  const [registerError, setRegisterError]     = useState('');
+  const [registerSending, setRegisterSending] = useState(false);
   const [gpsState, setGpsState]               = useState('idle'); // 'idle'|'loading'|'found'|'error'|'notfound'
   const [gpsFoundCity, setGpsFoundCity]       = useState('');
   const [showScrollTop, setShowScrollTop]     = useState(false);
   const searchRef = useRef(null);
   const cityListRef = useRef(null);
 
-  const filteredSubsidies = SUBSIDIES
+  const filteredSubsidies = useMemo(() => SUBSIDIES
     .filter(i => !selectedCity || i.city === selectedCity)
     .filter(i => {
       if (i.condition !== 'all') return !!userProfile[i.condition];
       // condition='all' でもタイトルがキーワード条件に該当する場合はチェック時のみ表示
       const kw = Object.entries(KEYWORD_CONDITIONS).find(([, re]) => re.test(i.title || ''));
       return kw ? !!userProfile[kw[0]] : true;
-    });
+    }), [selectedCity, userProfile]);
 
   // TOP画面PR枠：初回マウント時にランダムで市区を固定
   const [topPrCity] = useState(() => {
@@ -185,12 +213,12 @@ export default function App() {
             </div>
           </div>
         )}
-        {/* PR：エリアのお金のプロ */}
-        {recs.length > 0 && (
+        {/* PR：エリアのお金のプロ（スポンサー契約時は独占表示のため非表示） */}
+        {!sp && recs.length > 0 && (
           <div className="bg-white border border-gray-100 rounded-xl p-3 mb-3">
-            <p className="text-[10px] font-black text-gray-400 mb-2 px-1">🏢 {sponsorCity} のおすすめ企業</p>
+            <p className="text-[10px] font-black text-gray-400 mb-2 px-1">💰 {sponsorCity} のおすすめお金の相談窓口</p>
             <div className="space-y-1.5">
-              {recs.slice(0, 3).map((r, i) => (
+              {recs.slice(0, 10).map((r, i) => (
                 <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-gray-50 transition-colors">
                   <span className="text-[9px] font-black text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded shrink-0">PR</span>
@@ -210,8 +238,8 @@ export default function App() {
             <span className="text-[10px] font-black bg-white text-blue-600 px-2 py-0.5 rounded">PR枠</span>
             <span className="text-xs font-bold opacity-90">{sponsorCity} エリア</span>
           </div>
-          <p className="text-sm font-black mb-1">💼 FP・税理士・社労士の方へ<br/>PR掲載のご案内</p>
-          <p className="text-[11px] text-blue-100 mb-3 leading-relaxed">補助金を調べている{sponsorCity}エリアのユーザーへ、あなたのサービスを届けませんか。地域密着の士業・専門家の方を募集しています。</p>
+          <p className="text-sm font-black mb-1">💼 {sponsorCity}のスポンサーになりませんか？</p>
+          <p className="text-[11px] text-blue-100 mb-3 leading-relaxed">個人のお金のご相談を受けている事業者さま向け。上の相談窓口枠を<span className="font-black text-white">御社のみの独占表示</span>に切り替え、ロゴ・バナー・URLリンク・ご紹介文を掲載できます。</p>
           <div className="flex gap-2">
             <a href={`mailto:${SPONSOR_INQUIRY_EMAIL}?subject=${encodeURIComponent(`【PR掲載】${sponsorCity}の掲載について`)}&body=${encodeURIComponent('もらえるお金ナビ PR掲載問い合わせ\n\n事務所名：\nご担当者：\n対象エリア：' + sponsorCity + '\nご質問・ご要望：\n')}`}
               className="flex-1 bg-white text-blue-700 font-black text-xs py-2 rounded-lg text-center hover:bg-blue-50 transition-colors">
@@ -238,10 +266,10 @@ export default function App() {
   };
   const selectSuggestion = (item) => {
     setSelectedPref(item.pref); setSelectedCity(item.city);
-    setSearchQuery(''); setSuggestions([]);
+    setSearchQuery(''); setSuggestions([]); setDataNotReadyMsg('');
     setTimeout(() => setView('condition'), 100);
   };
-  const handleCitySelect = (city) => { setSelectedCity(city); setTimeout(() => setView('condition'), 200); };
+  const handleCitySelect = (city) => { setSelectedCity(city); setDataNotReadyMsg(''); setTimeout(() => setView('condition'), 200); };
 
   const handleGpsLocate = () => {
     if (!navigator.geolocation) { setGpsState('error'); return; }
@@ -322,6 +350,35 @@ export default function App() {
     if (cityRow?.hasData) { setDataNotReadyMsg(''); setView('results'); }
     else { setDataNotReadyMsg(`「${selectedCity}」はComing Soon（データ準備中）です。現在${META.completedCities}市区・${META.totalSubsidies.toLocaleString()}件を収録済み、全国${META.totalCities.toLocaleString()}市区町村へ順次拡充中です。`); }
   };
+  // 無料アラート登録：入力チェック → スプレッドシート記録（GAS）→ 完了画面
+  const handleRegisterSubmit = async () => {
+    const name = (userProfile.name || '').trim();
+    const email = (userProfile.email || '').trim();
+    if (!name) { setRegisterError('お名前を入力してください'); return; }
+    if (!EMAIL_RE.test(email)) { setRegisterError('メールアドレスの形式をご確認ください'); return; }
+    setRegisterError('');
+    if (ALERT_WEBHOOK_URL) {
+      setRegisterSending(true);
+      try {
+        await fetch(ALERT_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors', // GASはCORSヘッダを返さないため送信専用モード
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            name, email,
+            age: userProfile.age || '',
+            area: `${selectedPref} ${selectedCity}`.trim() || '未選択',
+            conditions: Object.keys(CONDITION_LABELS).filter(k => userProfile[k]).map(k => CONDITION_LABELS[k]).join('・') || 'なし',
+          }),
+        });
+      } catch (e) {
+        console.warn('アラート登録の送信に失敗しました', e);
+      }
+      setRegisterSending(false);
+    }
+    setView('success');
+  };
+
   const goDetail = (s, backTo = 'results') => { setSelectedSubsidy(s); setDetailBackTo(backTo); setView('detail'); };
   const goSponsor = (s) => { setSelectedSponsor(s); setView('sponsorDetail'); };
 
@@ -459,7 +516,7 @@ export default function App() {
         <div className="flex justify-between items-center">
           <button onClick={() => setView('top')} className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-xl overflow-hidden shadow-sm shadow-blue-200 shrink-0">
-              <img src="/images/icons/app-icon.png" alt="もらえるお金ナビ" className="w-full h-full object-cover" />
+              <img src="/images/icons/app-icon.webp" alt="もらえるお金ナビ" className="w-full h-full object-cover" />
             </div>
             <div className="leading-tight">
               <p className="text-sm font-black text-gray-900">もらえるお金ナビ</p>
@@ -1169,6 +1226,16 @@ export default function App() {
                 className="w-full bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white font-bold py-4 rounded-xl shadow-sm shadow-blue-200 flex items-center justify-center gap-2 transition-all">
                 <Sparkles size={17} /> 診断結果を見る
               </button>
+              {dataNotReadyMsg && (
+                <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl flex items-start gap-2">
+                  <Info size={14} className="text-amber-500 mt-0.5 shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-xs text-amber-700 mb-2">{dataNotReadyMsg}</p>
+                    <button onClick={() => { setDataNotReadyMsg(''); setSelectedCity(''); setView('area'); }}
+                      className="text-xs font-bold text-blue-600 underline">別の市区を選び直す</button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -1272,12 +1339,12 @@ export default function App() {
               );
             })()}
 
-            {/* おすすめ枠：お金のプロ */}
-            {CITY_RECYCLERS[selectedCity]?.recommended?.length > 0 && (
+            {/* おすすめ枠：お金のプロ（スポンサー契約時は独占表示のため非表示） */}
+            {!CITY_RECYCLERS[selectedCity]?.sponsor && CITY_RECYCLERS[selectedCity]?.recommended?.length > 0 && (
               <div className="bg-white border border-gray-100 rounded-xl p-3 mb-3">
-                <p className="text-[10px] font-black text-gray-400 mb-2 px-1">🏢 {selectedCity} のおすすめ企業</p>
+                <p className="text-[10px] font-black text-gray-400 mb-2 px-1">💰 {selectedCity} のおすすめお金の相談窓口</p>
                 <div className="space-y-1.5">
-                  {CITY_RECYCLERS[selectedCity].recommended.map((r, i) => (
+                  {CITY_RECYCLERS[selectedCity].recommended.slice(0, 10).map((r, i) => (
                     <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
                       className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-gray-50 transition-colors">
                       <span className="text-[9px] font-black text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded shrink-0">PR</span>
@@ -1297,8 +1364,8 @@ export default function App() {
                 <span className="text-[10px] font-black bg-white text-blue-600 px-2 py-0.5 rounded">PR枠</span>
                 <span className="text-xs font-bold opacity-90">{selectedCity || 'このエリア'} エリア</span>
               </div>
-              <p className="text-sm font-black mb-1">💼 FP・税理士・社労士の方へ<br/>PR掲載のご案内</p>
-              <p className="text-[11px] text-blue-100 mb-3 leading-relaxed">補助金を調べている{selectedCity || 'このエリア'}のユーザーへ、あなたのサービスを届けませんか。地域密着の士業・専門家の方を募集しています。</p>
+              <p className="text-sm font-black mb-1">💼 {selectedCity || 'このエリア'}のスポンサーになりませんか？</p>
+              <p className="text-[11px] text-blue-100 mb-3 leading-relaxed">個人のお金のご相談を受けている事業者さま向け。上の相談窓口枠を<span className="font-black text-white">御社のみの独占表示</span>に切り替え、ロゴ・バナー・URLリンク・ご紹介文を掲載できます。</p>
               <div className="flex gap-2">
                 <a href={`mailto:${SPONSOR_INQUIRY_EMAIL}?subject=${encodeURIComponent(`【PR掲載】${selectedCity || 'このエリア'}の掲載について`)}&body=${encodeURIComponent('もらえるお金ナビ PR掲載問い合わせ\n\n事務所名：\nご担当者：\n対象エリア：' + (selectedCity || '') + '\nご質問・ご要望：\n')}`}
                   className="flex-1 bg-white text-blue-700 font-black text-xs py-2 rounded-lg text-center hover:bg-blue-50 transition-colors">
@@ -1415,10 +1482,10 @@ export default function App() {
               <ExternalLink size={15} /> {selectedSubsidy.verified ? '公式サイトで詳細を確認' : `「${selectedSubsidy.title}」を検索する`}
             </button>
 
-            {/* 補助金申請をサポートできるお金のプロPR */}
-            {CITY_RECYCLERS[selectedSubsidy?.city]?.recommended?.length > 0 && (
+            {/* 補助金申請をサポートできるお金のプロPR（スポンサー契約時は独占表示のため非表示） */}
+            {!CITY_RECYCLERS[selectedSubsidy?.city]?.sponsor && CITY_RECYCLERS[selectedSubsidy?.city]?.recommended?.length > 0 && (
               <div className="mb-4 bg-white border border-gray-100 rounded-xl p-3">
-                <p className="text-[10px] font-black text-gray-400 mb-2 px-1">🏢 {selectedSubsidy.city} のおすすめ企業</p>
+                <p className="text-[10px] font-black text-gray-400 mb-2 px-1">💰 {selectedSubsidy.city} のおすすめお金の相談窓口</p>
                 <div className="space-y-1.5">
                   {CITY_RECYCLERS[selectedSubsidy.city].recommended.slice(0, 2).map((r, i) => (
                     <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
@@ -1700,7 +1767,16 @@ export default function App() {
               </div>
             </div>
             <p className="text-[10px] text-gray-400 text-center mb-4">登録することで<span className="text-blue-600 font-bold">利用規約</span>・<span className="text-blue-600 font-bold">プライバシーポリシー</span>に同意したものとみなされます</p>
-            <button onClick={() => setView('success')} className="w-full bg-orange-500 hover:bg-orange-600 active:scale-[0.98] text-white font-bold py-4 rounded-xl shadow-sm shadow-orange-200 transition-all">登録を完了する</button>
+            {registerError && (
+              <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-xl flex items-start gap-2">
+                <Info size={14} className="text-red-500 mt-0.5 shrink-0" />
+                <p className="text-xs font-bold text-red-600">{registerError}</p>
+              </div>
+            )}
+            <button onClick={handleRegisterSubmit} disabled={registerSending}
+              className="w-full bg-orange-500 hover:bg-orange-600 active:scale-[0.98] disabled:opacity-60 text-white font-bold py-4 rounded-xl shadow-sm shadow-orange-200 transition-all">
+              {registerSending ? '送信中…' : '登録を完了する'}
+            </button>
           </div>
         )}
 

@@ -107,15 +107,15 @@
 
       <!-- 3年プラン -->
       <div class="plan-card border-2 border-gray-200 rounded-2xl p-4 flex items-center gap-4"
-           data-plan="3year" data-price="306000" data-label="3年プラン（15%OFF）">
+           data-plan="3year" data-price="300000" data-label="3年プラン（約17%OFF）">
         <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 radio-dot"></div>
         <div class="flex-1">
           <div class="flex items-center gap-2 mb-0.5">
             <span class="text-sm font-black text-gray-900">3年プラン</span>
-            <span class="text-xs bg-green-100 text-green-700 font-bold px-1.5 py-0.5 rounded">15% OFF</span>
+            <span class="text-xs bg-green-100 text-green-700 font-bold px-1.5 py-0.5 rounded">約17% OFF</span>
           </div>
-          <div class="text-xl font-black text-gray-900">¥306,000 <span class="text-xs font-normal text-gray-500">（税別 / 一括払い）</span></div>
-          <div class="text-xs text-gray-500 mt-0.5">月換算 ¥8,500・¥54,000お得</div>
+          <div class="text-xl font-black text-gray-900">¥300,000 <span class="text-xs font-normal text-gray-500">（税別 / 一括払い）</span></div>
+          <div class="text-xs text-gray-500 mt-0.5">月換算 ¥8,333・¥60,000お得</div>
         </div>
       </div>
     </div>
@@ -135,7 +135,7 @@
         </label>
         <input type="text" id="city" placeholder="例：八王子市"
                class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
-        <p class="text-xs text-gray-400 mt-1">全国278市区に対応。複数希望の場合はまず1市区をご選択ください。</p>
+        <p class="text-xs text-gray-400 mt-1">全国321市区に対応。複数希望の場合はまず1市区をご選択ください。</p>
       </div>
 
       <!-- 会社名 -->
@@ -240,22 +240,25 @@
   const PLAN_INFO = {
     '1year':  { label: '1年プラン', price: '¥120,000' },
     '2year':  { label: '2年プラン（10%OFF）', price: '¥216,000' },
-    '3year':  { label: '3年プラン（15%OFF）', price: '¥306,000' },
+    '3year':  { label: '3年プラン（約17%OFF）', price: '¥300,000' },
   };
 
   let selectedPlan = null;
 
-  // URLパラメータでプラン・市区を初期セット
+  // URLパラメータでプラン・市区・会社名・メールを初期セット
+  // 例: /checkout.html?plan=2year&city=八王子市&company=〇〇事務所&email=info@example.com
   const urlParams = new URLSearchParams(location.search);
   const initPlan = urlParams.get('plan');
-  const initCity = urlParams.get('city') || '';
   if (initPlan && PLAN_INFO[initPlan]) {
     setTimeout(() => selectPlan(initPlan), 50);
   }
-  if (initCity) {
-    const cityInput = document.getElementById('city');
-    if (cityInput) { cityInput.value = initCity; updateSummary(); }
-  }
+  [['city', 'city'], ['company', 'company'], ['email', 'email']].forEach(([param, id]) => {
+    const v = urlParams.get(param) || '';
+    if (v) {
+      const el = document.getElementById(id);
+      if (el) { el.value = v; updateSummary(); }
+    }
+  });
 
   // プランカード選択
   document.querySelectorAll('.plan-card').forEach(card => {
@@ -316,9 +319,13 @@
     }
 
     // Stripe Payment Link に prefill パラメータを付与
+    // client_reference_id は英数・ハイフン・アンダースコアのみ許可のため、
+    // 日本語（市区・会社名）はURLセーフBase64に変換して渡す（ダッシュボードで復号可能）
+    const ref = btoa(unescape(encodeURIComponent(`${city}|${company}|${selectedPlan}`)))
+      .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '').slice(0, 200);
     const url = new URL(link);
     url.searchParams.set('prefilled_email', email);
-    url.searchParams.set('client_reference_id', `${city}_${company}_${selectedPlan}`);
+    url.searchParams.set('client_reference_id', ref);
 
     window.location.href = url.toString();
   }

@@ -58,12 +58,12 @@ const lines = [
   'export const PR_COMPANIES = {',
 ];
 for (const [city, info] of Object.entries(cities)) {
-  lines.push(`  '${city}': {`);
+  // JSON.stringifyでJSリテラル化（改行・引用符・特殊文字をExcel手編集で混入しても壊れない）
+  lines.push(`  ${JSON.stringify(city)}: {`);
   lines.push('    sponsor: null,');
   lines.push('    recommended: [');
   for (const r of info.recommended) {
-    const esc = (s) => s.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-    lines.push(`      { name: '${esc(r.name)}', url: '${esc(r.url)}', tag: '${esc(r.tag)}' },`);
+    lines.push(`      { name: ${JSON.stringify(r.name)}, url: ${JSON.stringify(r.url)}, tag: ${JSON.stringify(r.tag)} },`);
   }
   lines.push('    ],');
   lines.push('  },');

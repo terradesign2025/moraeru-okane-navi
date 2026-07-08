@@ -6,10 +6,16 @@
 // =============================================================
 import { readFileSync, writeFileSync } from 'fs';
 
-const src = readFileSync('src/data/master.js', 'utf8');
-const start = src.indexOf('export const CITY_RECYCLERS');
+// ※ 2026-07-08 以降、正データは data/pr_money_advisors.csv（このスクリプトは初回移行用）
+// master.js は import 参照に変わったため、解析対象を pr_companies.js に変更
+const src = readFileSync('src/data/pr_companies.js', 'utf8');
+const start = src.indexOf('export const PR_COMPANIES');
 const end = src.indexOf('\n};', start);
 const block = src.slice(start, end);
+if (start < 0) {
+  console.error('PR_COMPANIES が見つかりません。CSVマスターが正です。上書きを中止します。');
+  process.exit(1);
+}
 
 const rows = [['市区', '事務所名', 'URL', 'タグ（業種・得意分野）', 'スポンサー契約', '備考']];
 let currentCity = null;

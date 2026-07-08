@@ -310,7 +310,7 @@
     if (!selectedPlan) { alert('プランを選択してください。'); return; }
     if (!city)         { alert('掲載希望の市区を入力してください。'); return; }
     if (!company)      { alert('会社名を入力してください。'); return; }
-    if (!email || !email.includes('@')) { alert('正しいメールアドレスを入力してください。'); return; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('正しいメールアドレスを入力してください。'); return; }
 
     const link = STRIPE_PAYMENT_LINKS[selectedPlan];
     if (!link || link.includes('YOUR_')) {

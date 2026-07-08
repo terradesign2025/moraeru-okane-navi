@@ -1371,7 +1371,7 @@ export default function App() {
                   className="flex-1 bg-white text-blue-700 font-black text-xs py-2 rounded-lg text-center hover:bg-blue-50 transition-colors">
                   メールで問い合わせ
                 </a>
-                <a href={`/sponsor_lp.html?city=${encodeURIComponent(selectedCity || '')}`} target="_blank"
+                <a href={`/sponsor_lp.html?city=${encodeURIComponent(selectedCity || '')}`} target="_blank" rel="noopener noreferrer"
                   className="flex-1 bg-blue-500 text-white font-black text-xs py-2 rounded-lg text-center border border-blue-400 hover:bg-blue-400 transition-colors">
                   詳細を見る <ExternalLink size={10} className="inline ml-0.5" />
                 </a>
